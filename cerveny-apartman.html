@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Červený apartmán – Apartmány Černý vlk | Borová Lada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <style>
+:root,[data-theme="light"]{--color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;--color-surface-offset:#f3f0ec;--color-surface-offset-2:#edeae5;--color-surface-dynamic:#e6e4df;--color-divider:#dcd9d5;--color-border:#d4d1ca;--color-text:#28251d;--color-text-muted:#7a7974;--color-text-faint:#bab9b4;--color-text-inverse:#f9f8f4;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-active:#0f3638;--color-primary-highlight:#cedcd8;--color-warning:#964219;--color-warning-hover:#713417;--color-warning-active:#4b2614;--color-warning-highlight:#ddcfc6;--color-error:#a12c7b;--color-error-hover:#7d1e5e;--color-error-active:#561740;--color-error-highlight:#e0ced7;--color-notification:#a13544;--color-notification-hover:#782b33;--color-notification-active:#521f24;--color-notification-highlight:#dececb;--color-orange:#da7101;--color-orange-hover:#c55700;--color-orange-active:#ac3e00;--color-orange-highlight:#e7d7c4;--color-gold:#d19900;--color-gold-hover:#b07a00;--color-gold-active:#8a5b00;--color-gold-highlight:#e9e0c6;--color-yellow:#d19900;--color-yellow-hover:#b07a00;--color-yellow-active:#8a5b00;--color-yellow-highlight:#e6ddc4;--color-success:#437a22;--color-success-hover:#2e5c10;--color-success-active:#1e3f0a;--color-success-highlight:#d4dfcc;--color-blue:#006494;--color-blue-hover:#0b5177;--color-blue-active:#0b3751;--color-blue-highlight:#c6d8e4;--color-purple:#7a39bb;--color-purple-hover:#5f2699;--color-purple-active:#431673;--color-purple-highlight:#dacfde;--radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-full:9999px;--transition:180ms cubic-bezier(0.16,1,0.3,1);--shadow-sm:0 1px 2px oklch(0.2 0.01 80/0.06);--shadow-md:0 4px 12px oklch(0.2 0.01 80/0.08);--shadow-lg:0 12px 32px oklch(0.2 0.01 80/0.12);--content-narrow:640px;--content-default:960px;--content-wide:1200px;--content-full:100%;--text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);--text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);--text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-3xl:clamp(2.5rem,1rem + 4vw,5rem);--text-hero:clamp(3rem,0.5rem + 7vw,8rem);--space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;--font-display:'DM Sans',sans-serif;--font-body:'DM Sans',sans-serif}
+[data-theme="dark"]{--color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;--color-surface-offset:#1d1c1a;--color-surface-offset-2:#22211f;--color-surface-dynamic:#2d2c2a;--color-divider:#262523;--color-border:#393836;--color-text:#cdccca;--color-text-muted:#797876;--color-text-faint:#5a5957;--color-text-inverse:#2b2a28;--color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-active:#1a626b;--color-primary-highlight:#313b3b;--color-warning:#bb653b;--color-warning-hover:#b95525;--color-warning-active:#993d10;--color-warning-highlight:#564942;--color-error:#d163a7;--color-error-hover:#b9478f;--color-error-active:#9b2f76;--color-error-highlight:#4c3d46;--color-notification:#dd6974;--color-notification-hover:#c24a59;--color-notification-active:#a53142;--color-notification-highlight:#574848;--color-orange:#fdab43;--color-orange-hover:#fec47e;--color-orange-active:#fdd1a4;--color-orange-highlight:#564b3e;--color-gold:#e8af34;--color-gold-hover:#fdc551;--color-gold-active:#feda74;--color-gold-highlight:#4d4332;--color-yellow:#edb336;--color-yellow-hover:#fdc452;--color-yellow-active:#feda74;--color-yellow-highlight:#574e3d;--color-success:#6daa45;--color-success-hover:#4d8f25;--color-success-active:#387015;--color-success-highlight:#3a4435;--color-blue:#5591c7;--color-blue-hover:#3b78ab;--color-blue-active:#275f8e;--color-blue-highlight:#3a4550;--color-purple:#a86fdf;--color-purple-hover:#9250d0;--color-purple-active:#7537ba;--color-purple-highlight:#4e4652;--shadow-sm:0 1px 2px oklch(0 0 0/0.2);--shadow-md:0 4px 12px oklch(0 0 0/0.3);--shadow-lg:0 12px 32px oklch(0 0 0/0.4)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-moz-text-size-adjust:none;-webkit-text-size-adjust:none;text-size-adjust:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;scroll-behavior:smooth;hanging-punctuation:first last;scroll-padding-top:var(--space-16)}
+body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg)}
+img,picture,video,canvas,svg{display:block;max-width:100%;height:auto}
+ul[role="list"],ol[role="list"]{list-style:none}
+input,button,textarea,select{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;line-height:1.1;font-weight:400}
+p,li{text-wrap:pretty;max-width:72ch}
+a{color:inherit;text-decoration:none;transition:color var(--transition)}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8);background:linear-gradient(to bottom,oklch(from var(--color-bg) l c h/0.95),transparent);backdrop-filter:blur(12px)}
+.nav-logo{display:flex;align-items:center;gap:var(--space-3)}
+.nav-logo svg{width:32px;height:32px;filter:invert(1) sepia(1) saturate(0.5) hue-rotate(5deg)}
+[data-theme="light"] .nav-logo svg{filter:none}
+.nav-logo-text{font-size:var(--text-lg);letter-spacing:.02em;color:var(--color-primary)}
+.nav-links{display:flex;gap:var(--space-8);align-items:center}
+.nav-links a{font-size:var(--text-sm);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-muted)}
+.nav-links a:hover{color:var(--color-primary)}
+.nav-cta{padding:0.85rem 1.3rem;border-radius:999px;background:var(--color-primary);color:var(--color-text-inverse)!important;box-shadow:var(--shadow-sm)}
+.nav-theme{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--color-border);background:oklch(from var(--color-surface) l c h/0.8);color:var(--color-primary)}
+.nav-theme:hover{background:var(--color-surface);border-color:var(--color-primary-highlight)}
+.nav-hamburger{display:none}
+
+.hero{position:relative;min-height:70vh;display:grid;align-items:end;padding-top:84px;overflow:hidden;background:linear-gradient(160deg,rgba(27,34,27,.55),rgba(42,35,24,.45)),url('file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny01.jpeg') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,oklch(from var(--color-bg) l c h/0.96) 0%,oklch(from var(--color-bg) l c h/0.18) 45%,transparent 78%)}
+.hero-content{position:relative;z-index:2;max-width:var(--content-wide);margin:0 auto;width:100%;padding:var(--space-20) var(--space-8) var(--space-12)}
+.hero-eyebrow{font-size:var(--text-sm);letter-spacing:.18em;text-transform:uppercase;color:#f4eee4;margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-3)}
+.hero-eyebrow::before{content:'';display:block;width:44px;height:1px;background:rgba(255,255,255,.55)}
+.hero h1{font-size:clamp(2.5rem,1.5rem + 3vw,4.5rem);max-width:16ch;color:#fff;margin-bottom:var(--space-6);font-weight:300}
+.hero h1 em{font-style:italic;color:#dfe9d8}
+.hero-perex{font-size:var(--text-lg);max-width:48rem;color:rgba(255,250,244,.88);margin-bottom:var(--space-8)}
+.hero-cta{display:flex;gap:var(--space-4);flex-wrap:wrap}
+.btn-primary,.btn-secondary{padding:1rem 1.4rem;border-radius:999px;font-size:var(--text-sm);letter-spacing:.08em;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:var(--space-2)}
+.btn-primary{background:var(--color-primary);color:var(--color-text-inverse);box-shadow:var(--shadow-md)}
+.btn-secondary{background:oklch(from var(--color-surface-2) l c h/0.14);color:#fff;border:1px solid rgba(255,255,255,.28)}
+.btn-primary:hover{background:var(--color-primary-hover)}
+.btn-secondary:hover{background:oklch(from var(--color-surface-2) l c h/0.22)}
+
+section{padding:clamp(var(--space-12),6vw,var(--space-20)) var(--space-4)}
+.section-inner{max-width:var(--content-wide);margin:0 auto}
+.section-label{font-size:var(--text-sm);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-3)}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--color-primary)}
+.section-title{font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-6);font-weight:300}
+.section-title em{font-style:italic;color:var(--color-primary)}
+.section-lead{font-size:var(--text-lg);color:var(--color-text-muted);max-width:54rem;line-height:1.8}
+
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-4);margin-top:var(--space-8)}
+.stat-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6);text-align:center}
+.stat-value{font-size:var(--text-2xl);font-weight:300;color:var(--color-primary);margin-bottom:var(--space-2)}
+.stat-label{font-size:var(--text-sm);color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase}
+
+.prose{max-width:65ch;margin:var(--space-8) auto}
+.prose p{margin-bottom:var(--space-6);line-height:1.8}
+.prose p:last-child{margin-bottom:0}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-4);margin-top:var(--space-10)}
+.gallery img{width:100%;height:280px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--color-border)}
+
+.layout-section{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-8);margin-top:var(--space-10)}
+.layout-section h3{font-size:var(--text-xl);margin-bottom:var(--space-6);color:var(--color-text)}
+.layout-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-8)}
+.layout-text ul{list-style:disc;margin-left:var(--space-6);color:var(--color-text)}
+.layout-text li{margin-bottom:var(--space-3);max-width:none}
+.floor-plan{width:100%;border-radius:var(--radius-md);border:1px solid var(--color-border)}
+
+.feature-list{display:grid;gap:var(--space-6);margin-top:var(--space-10)}
+.feature-item{display:flex;gap:var(--space-4);align-items:flex-start}
+.feature-icon{width:36px;height:36px;border-radius:50%;background:var(--color-primary-highlight);color:var(--color-primary);display:grid;place-items:center;flex-shrink:0;font-size:var(--text-lg)}
+.feature-item h3{font-size:var(--text-lg);margin-bottom:var(--space-2);color:var(--color-text)}
+.feature-item p{max-width:none;color:var(--color-text-muted)}
+
+.cta-section{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-active));border-radius:var(--radius-xl);padding:var(--space-16) var(--space-8);text-align:center;margin-top:var(--space-16)}
+.cta-section h2{color:#fff;font-size:var(--text-2xl);margin-bottom:var(--space-4)}
+.cta-section p{color:rgba(255,255,255,.9);font-size:var(--text-lg);margin-bottom:var(--space-8)}
+.cta-section .btn-primary{background:#fff;color:var(--color-primary)}
+.cta-section .btn-primary:hover{background:rgba(255,255,255,.92)}
+
+footer{background:var(--color-surface);border-top:1px solid var(--color-border);padding:var(--space-16) var(--space-4) var(--space-8)}
+.footer-inner{max-width:var(--content-wide);margin:0 auto;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:var(--space-12)}
+.footer-brand p{color:var(--color-text-muted);margin-top:var(--space-4);line-height:1.7}
+.footer-col h4{font-size:var(--text-base);margin-bottom:var(--space-4);color:var(--color-text);font-weight:500}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:var(--space-3)}
+.footer-col a{color:var(--color-text-muted);font-size:var(--text-sm)}
+.footer-col a:hover{color:var(--color-primary)}
+.footer-bottom{max-width:var(--content-wide);margin:var(--space-12) auto 0;padding-top:var(--space-8);border-top:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center;font-size:var(--text-sm);color:var(--color-text-muted)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+
+@media (max-width:1024px){
+  .footer-inner{grid-template-columns:1fr 1fr;gap:var(--space-8)}
+  .footer-brand{grid-column:1/-1}
+}
+@media (max-width:640px){
+  nav{padding:var(--space-3) var(--space-4)}
+  .nav-links{display:none}
+  .hero{min-height:65vh}
+  .hero h1{font-size:clamp(2rem,5vw,2.8rem)}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .layout-content{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="./apartmany-cerny-vlk.html" class="nav-logo">
+    <svg viewBox="0 0 1746 2012" xmlns="http://www.w3.org/2000/svg" aria-label="Černý vlk logo">
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2109.87 544-550.872 459.931" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2095 551h280.28" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2364 553.628 2768.353 368" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2752 388v248.245" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2563 798.706 2759.458 619" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2580 792h226.89" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2785 944.502V782" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2456 1286.18 333.721-357.182" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2463.58 1268-7.578 1062.06" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2472.22 2308h-415.221" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2081 2296.78 11.463-306.782" transform="translate(-1086 -343)"/>
+    </svg>
+    <span class="nav-logo-text">Černý vlk</span>
+  </a>
+  <div class="nav-links">
+    <a href="./apartmany-cerny-vlk.html#apartmany">Apartmány</a>
+    <a href="./vybaveni.html">Vybavení</a>
+    <a href="./apartmany-cerny-vlk.html#okoli">Lokalita</a>
+    <a href="./apartmany-cerny-vlk.html#rezervace" class="nav-cta">Rezervace</a>
+    <button class="nav-theme" data-theme-toggle aria-label="Přepnout světlý/tmavý režim">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Červený apartmán</p>
+    <h1>Nejprostornější apartmán pro <em>společný pobyt</em></h1>
+    <p class="hero-perex">Dost místa pro osm hostů, společné večery v 50 m² společenské místnosti i soukromí ve třech ložnicích. Apartmán pro rodiny a přátele, kteří chtějí být spolu — a přitom pohodlně.</p>
+    <div class="hero-cta">
+      <a href="./apartmany-cerny-vlk.html#rezervace" class="btn-primary">Rezervovat apartmán</a>
+      <a href="#galerie" class="btn-secondary">Prohlédnout fotky</a>
+    </div>
+  </div>
+</section>
+
+<section id="prehled">
+  <div class="section-inner">
+    <p class="section-label reveal">Rychlý přehled</p>
+    <h2 class="section-title reveal reveal-delay-1">Apartmán v <em>číslech</em></h2>
+    <div class="stat-grid">
+      <div class="stat-card reveal">
+        <div class="stat-value">8</div>
+        <div class="stat-label">Osob</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-value">116 m²</div>
+        <div class="stat-label">Plocha</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Ložnice</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-value">2</div>
+        <div class="stat-label">Koupelny</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-value">1</div>
+        <div class="stat-label">Samostatné WC</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-value">116</div>
+        <div class="stat-label">Objekt č.p.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pro-koho">
+  <div class="section-inner">
+    <p class="section-label reveal">Pro koho je ideální</p>
+    <h2 class="section-title reveal reveal-delay-1">Velká rodina nebo <em>parta přátel</em></h2>
+    <div class="prose reveal reveal-delay-2">
+      <p>Červený apartmán je největší z našich apartmánů a dává smysl především pro skupiny, které chtějí více prostoru — dvě spřátelené rodiny nebo parta přátel si jej užijí nejvíce.</p>
+      <p>Velká společenská místnost (50 m²) s kuchyní a jidelní částí je srdcem apartmánu. Večer se zde může sejít celá společnost – nejen z tohoto apartmánu, ale i z ostatních, pokud přijede větší parta. Tři ložnice nabízejí dostatek soukromí — jedna s manželskou postelí, druhá s dvěma oddělitelnými lůžky a třetí s oblíbeným čtyřlůžkem, což oceňují především rodiny s dětmi.</p>
+    </div>
+  </div>
+</section>
+
+<section id="dispozice">
+  <div class="section-inner">
+    <p class="section-label reveal">Dispozice</p>
+    <h2 class="section-title reveal reveal-delay-1">Jak vypadá <em>apartmán uvnitř</em></h2>
+    
+    <div class="layout-section reveal reveal-delay-2">
+      <h3>Přízemí</h3>
+      <div class="layout-content">
+        <div class="layout-text">
+          <ul>
+            <li><strong>Společenská místnost (50 m²)</strong> s kuchyní, jidelní částí, obyvacím koutem a přímým výstupem na tři světové strany.</li>
+            <li><strong>Koupelna se sprchou a WC</strong></li>
+            <li><strong>Vstupní chodba se skladem</strong></li>
+          </ul>
+        </div>
+        <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_domy/dum-116/116_Pudorys_prizemi.jpg" alt="Půdorys přízemí domu 116" class="floor-plan" width="800" height="600" loading="lazy">
+      </div>
+    </div>
+
+    <div class="layout-section reveal">
+      <h3>Patro</h3>
+      <div class="layout-content">
+        <div class="layout-text">
+          <ul>
+            <li><strong>Ložnice č. 1</strong> s manželskou postelí</li>
+            <li><strong>Ložnice č. 2</strong> se dvěma oddělitelnými lůžky</li>
+            <li><strong>Ložnice č. 3</strong> s oblíbeným čtyřlůžkem</li>
+            <li><strong>Koupelna s vanou</strong></li>
+            <li><strong>Samostatné WC</strong></li>
+          </ul>
+        </div>
+        <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_domy/dum-116/116_Pudorys_1patro.jpg" alt="Půdorys patra domu 116" class="floor-plan" width="800" height="600" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vyhody">
+  <div class="section-inner">
+    <p class="section-label reveal">Co ho dělá vyjímečným</p>
+    <h2 class="section-title reveal reveal-delay-1">Prostor, světlo a <em>společné chvíle</em></h2>
+    <div class="feature-list">
+      <div class="feature-item reveal">
+        <div class="feature-icon">✦</div>
+        <div>
+          <h3>Největší společenská místnost</h3>
+          <p>50 m² je skutečně dost místa pro velkou společnost — kuchyně, stůl pro 8–10 lidí i posezení s televizorem.</p>
+        </div>
+      </div>
+      <div class="feature-item reveal reveal-delay-1">
+        <div class="feature-icon">☼</div>
+        <div>
+          <h3>Výstupy na tři světové strany</h3>
+          <p>Apartmán má terasy orientované na jih, východ a západ. Ráno snídejte na východní terase, odpoledne si užijte na jižní zahradě, večer sledujte západ slunce ze západní terasy.</p>
+        </div>
+      </div>
+      <div class="feature-item reveal reveal-delay-2">
+        <div class="feature-icon">◆</div>
+        <div>
+          <h3>Tři ložnice s různým uspořádáním</h3>
+          <p>Manželská postel pro pár, oddělitelná lůžka pro kamarády, čtyřlůžkový pokoj pro rodinu s dětmi. Každá ložnice má vlastní charakter a světelné podmínky.</p>
+        </div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">≈</div>
+        <div>
+          <h3>Dvě koupelny — vana i sprcha</h3>
+          <p>Koupelna v patře s vanou, v přízemí se sprchou. Samostatné WC v patře. Ráno se tak nevytváří fronta, i když je apartmán obsazený.</p>
+        </div>
+      </div>
+      <div class="feature-item reveal reveal-delay-1">
+        <div class="feature-icon">✓</div>
+        <div>
+          <h3>Úložné prostory a sklad</h3>
+          <p>Skříně v ložnicích, sklad v přízemí, prostor na sportovní vybavení v garáži. Osm lidí si má kam dát věci, aniž by se hromadily po celém apartmánu.</p>
+        </div>
+      </div>
+      <div class="feature-item reveal reveal-delay-2">
+        <div class="feature-icon">→</div>
+        <div>
+          <h3>Kódové zámky a snadný vstup</h3>
+          <p>Vstup do domu i apartmánu funguje přes kódové zámky, nemusíte řešit předání klíčů.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galerie">
+  <div class="section-inner">
+    <p class="section-label reveal">Fotogalerie</p>
+    <h2 class="section-title reveal reveal-delay-1">Prohlédněte si <em>apartmán</em></h2>
+    <div class="gallery">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny01.jpeg" alt="Červený apartmán – hlavní pohled" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny02.jpeg" alt="Červený apartmán – interiér" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny03.jpeg" alt="Červený apartmán – detail interiéru" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny04.jpg" alt="Červený apartmán – obytný prostor" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny05.jpeg" alt="Červený apartmán – další pohled do interiéru" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny06.jpg" alt="Červený apartmán – kuchyň a jídelní část" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny07.jpeg" alt="Červený apartmán – posezení" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny08.jpg" alt="Červený apartmán – ložnice" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny09.jpeg" alt="Červený apartmán – další ložnice" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny10.jpeg" alt="Červený apartmán – koupelna" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny11.jpeg" alt="Červený apartmán – koupelna s vanou nebo sprchou" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny12.jpeg" alt="Červený apartmán – detail vybavení" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny13.jpg" alt="Červený apartmán – úložné prostory" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny14.jpg" alt="Červený apartmán – další detail apartmánu" width="400" height="280" loading="lazy">
+      <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/cerveny/Cerveny15.jpeg" alt="Červený apartmán – závěrečný pohled" width="400" height="280" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="cta-section">
+      <h2>Zní to dobře?</h2>
+      <p>Zkontrolujte dostupnost a rezervujte Červený apartmán přímo online.</p>
+      <a href="./apartmany-cerny-vlk.html#rezervace" class="btn-primary">Zkontrolovat dostupnost</a>
+      <p style="margin-top:var(--space-6);font-size:var(--text-sm);opacity:0.8">
+        Potřebujete detaily o vybavení? <a href="./vybaveni.html" style="text-decoration:underline">Projděte si kompletní seznam</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="nav-logo-text">Černý vlk</p>
+      <p>Pět apartmánů v Borových Ladech. Klidné centrum Šumavy, pohodlné zázemí a dobrý výchozí bod pro výlety po české i německé straně.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Stránky</h4>
+      <ul>
+        <li><a href="./apartmany-cerny-vlk.html">Homepage</a></li>
+        <li><a href="./vybaveni.html">Vybavení</a></li>
+        <li><a href="./apartmany-cerny-vlk.html#apartmany">Apartmány</a></li>
+        <li><a href="./apartmany-cerny-vlk.html#okoli">Lokalita</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+420728739288">+420 728 739 288</a></li>
+        <li><a href="tel:+420739753580">+420 739 753 580</a></li>
+        <li><a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a></li>
+        <li>Borová Lada 116 a 117</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rezervace</h4>
+      <ul>
+        <li><a href="./apartmany-cerny-vlk.html#rezervace">Online rezervace</a></li>
+        <li><a href="./apartmany-cerny-vlk.html#recenze">Recenze</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Apartmány Černý vlk</span>
+    <span>Borová Lada · Šumava</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  t&&t.addEventListener('click',()=>{
+    d=d==='dark'?'light':'dark';
+    r.setAttribute('data-theme',d);
+  });
+})();
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

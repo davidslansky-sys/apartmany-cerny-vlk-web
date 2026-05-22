@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartmány Černý vlk – Borová Lada, Šumava</title>
+<meta name="description" content="5 apartmánů v klidném centru Šumavy. Borová Lada – příroda, vybavenost a celá Šumava na dosah.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --font-display:'DM Sans','Helvetica Neue',sans-serif;
+  --font-body:'DM Sans','Helvetica Neue',sans-serif;
+  --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+  --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+  --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+  --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+  --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+  --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+  --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);
+  --text-hero:clamp(3rem,0.5rem + 7vw,7rem);
+  --space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;
+  --space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;
+  --space-16:4rem;--space-20:5rem;--space-24:6rem;
+  --radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;
+  --transition:180ms cubic-bezier(0.16,1,0.3,1);
+  --content-narrow:640px;--content-default:960px;--content-wide:1200px;
+}
+/* ── VIZUÁL E: Lnová · Šalvějová · Dubová ── */
+/* Světlý mód = výchozí */
+:root, [data-theme="light"] {
+  /* Lnové povrchy */
+  --color-bg:             #f4f0e8;
+  --color-surface:        #f8f5ef;
+  --color-surface-2:      #fdfcf9;
+  --color-surface-offset: #ece7dc;
+  --color-surface-dynamic:#e4ddd0;
+  --color-divider:        #dbd4c5;
+  --color-border:         #cec5b3;
+  /* Text – teplé tmavé */
+  --color-text:           #2a2318;
+  --color-text-muted:     #6b6050;
+  --color-text-faint:     #a89e8c;
+  --color-text-inverse:   #faf8f3;
+  /* Šalvějová – primární akcent */
+  --color-primary:        #5a7a5e;
+  --color-primary-hover:  #3f5c43;
+  --color-primary-active: #2d4230;
+  --color-primary-highlight: #dde8de;
+  /* Dubová – sekundární / teplý akcent */
+  --color-oak:            #8b6a30;
+  --color-oak-hover:      #6e5222;
+  --color-oak-highlight:  #f0e6d0;
+  /* Shadows – teplé */
+  --shadow-sm: 0 1px 3px oklch(0.25 0.03 60/0.08);
+  --shadow-md: 0 4px 16px oklch(0.25 0.03 60/0.10);
+  --shadow-lg: 0 12px 40px oklch(0.25 0.03 60/0.13);
+}
+/* Tmavý mód – zachováme ducha, prohloubíme tóny */
+[data-theme="dark"] {
+  --color-bg:             #1a1a14;
+  --color-surface:        #201f18;
+  --color-surface-2:      #26251d;
+  --color-surface-offset: #2b2a21;
+  --color-surface-dynamic:#333229;
+  --color-divider:        #3a3830;
+  --color-border:         #47453b;
+  --color-text:           #e8e2d6;
+  --color-text-muted:     #9a9284;
+  --color-text-faint:     #635d52;
+  --color-text-inverse:   #1a1a14;
+  --color-primary:        #7ea882;
+  --color-primary-hover:  #9abf9e;
+  --color-primary-active: #b5d0b8;
+  --color-primary-highlight: #232e24;
+  --color-oak:            #c8a96e;
+  --color-oak-hover:      #dbbf87;
+  --color-oak-highlight:  #2e2618;
+  --shadow-sm: 0 1px 3px oklch(0 0 0/0.25);
+  --shadow-md: 0 4px 16px oklch(0 0 0/0.35);
+  --shadow-lg: 0 12px 40px oklch(0 0 0/0.45);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:80px}
+body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);line-height:1.65;transition:background 0.3s,color 0.3s}
+img,picture{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;line-height:1.1;font-weight:400}
+p,li{text-wrap:pretty;max-width:68ch}
+a{color:inherit;text-decoration:none;transition:color var(--transition)}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+ul[role="list"]{list-style:none}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:var(--space-4) var(--space-8);
+  background:linear-gradient(to bottom,oklch(from var(--color-bg) l c h/0.95),transparent);
+  backdrop-filter:blur(12px);
+  transition:background var(--transition);
+}
+.nav-logo{display:flex;align-items:center;gap:var(--space-3)}
+.nav-logo svg{width:32px;height:32px;filter:invert(1) sepia(1) saturate(0.5) hue-rotate(5deg)}
+[data-theme="light"] .nav-logo svg{filter:none}
+.nav-logo-text{font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:0.02em;color:var(--color-primary)}
+.nav-links{display:flex;gap:var(--space-8);align-items:center}
+.nav-links a{font-size:var(--text-sm);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-text-muted);transition:color var(--transition)}
+.nav-links a:hover{color:var(--color-primary)}
+.nav-cta{
+  background:var(--color-primary);color:var(--color-text-inverse);
+  padding:var(--space-2) var(--space-6);border-radius:var(--radius-sm);
+  font-size:var(--text-sm);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;
+  transition:background var(--transition);
+}
+.nav-cta:hover{background:var(--color-primary-hover);color:var(--color-text-inverse)}
+.nav-theme{
+  width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+  border-radius:var(--radius-md);color:var(--color-text-muted);
+  transition:color var(--transition),background var(--transition);
+}
+.nav-theme:hover{color:var(--color-text);background:var(--color-surface-offset)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--color-text);transition:all var(--transition)}
+
+/* HERO */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('file:///Users/davidslansky/Downloads/web_komplet_media/_domy/dum-116/IMG_6840.jpeg');
+  background-size:cover;background-position:center 40%;
+  transform:scale(1.05);
+  animation:heroZoom 20s ease-out forwards;
+}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,
+    oklch(0.10 0.02 60/0.92) 0%,
+    oklch(0.10 0.02 60/0.55) 40%,
+    oklch(0.10 0.02 60/0.15) 100%
+  );
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:var(--content-wide);margin:0 auto;width:100%;
+  padding:var(--space-24) var(--space-8) clamp(var(--space-16),8vw,var(--space-24));
+}
+.hero-eyebrow{
+  font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--color-primary);
+  margin-bottom:var(--space-6);display:flex;align-items:center;gap:var(--space-3);
+}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--color-primary)}
+.hero h1{
+  font-size:var(--text-hero);color:#f0ece4;
+  margin-bottom:var(--space-8);
+  max-width:14ch;
+  font-weight:300;letter-spacing:-0.01em;
+}
+.hero h1 em{font-style:italic;color:var(--color-primary)}
+.hero-perex{
+  font-size:var(--text-base);color:oklch(0.85 0.01 60);
+  max-width:52ch;line-height:1.75;margin-bottom:var(--space-10);
+  font-weight:300;
+}
+.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;align-items:center}
+.btn-primary{
+  background:var(--color-primary);color:var(--color-text-inverse);
+  padding:var(--space-4) var(--space-8);border-radius:var(--radius-sm);
+  font-size:var(--text-sm);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  transition:background var(--transition),transform var(--transition);
+  display:inline-flex;align-items:center;gap:var(--space-2);
+}
+.btn-primary:hover{background:var(--color-primary-hover);transform:translateY(-1px)}
+.btn-ghost{
+  border:1px solid oklch(0.85 0.01 60/0.3);color:oklch(0.85 0.01 60);
+  padding:var(--space-4) var(--space-8);border-radius:var(--radius-sm);
+  font-size:var(--text-sm);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
+  transition:border-color var(--transition),color var(--transition),transform var(--transition);
+}
+.btn-ghost:hover{border-color:var(--color-primary);color:var(--color-primary);transform:translateY(-1px)}
+.hero-scroll{
+  position:absolute;bottom:var(--space-8);right:var(--space-8);
+  display:flex;flex-direction:column;align-items:center;gap:var(--space-2);
+  color:oklch(0.7 0.01 60);font-size:var(--text-xs);letter-spacing:0.15em;text-transform:uppercase;
+  writing-mode:vertical-rl;
+}
+.hero-scroll::after{
+  content:'';display:block;width:1px;height:48px;
+  background:linear-gradient(to bottom,var(--color-primary),transparent);
+  animation:scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine{0%,100%{opacity:0.3;transform:scaleY(0.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* STATS BAR */
+.stats-bar{
+  background:var(--color-surface);border-bottom:1px solid var(--color-divider);
+  padding:var(--space-6) var(--space-8);
+}
+.stats-inner{
+  max-width:var(--content-wide);margin:0 auto;
+  display:flex;gap:var(--space-8);justify-content:center;flex-wrap:wrap;
+}
+.stat{display:flex;align-items:center;gap:var(--space-3);color:var(--color-text-muted);font-size:var(--text-sm)}
+.stat-icon{color:var(--color-primary);flex-shrink:0}
+.stat strong{color:var(--color-text);font-weight:500}
+
+/* SECTIONS */
+section{padding:clamp(var(--space-16),8vw,var(--space-24)) var(--space-8)}
+.section-inner{max-width:var(--content-wide);margin:0 auto}
+.section-label{
+  font-family:var(--font-body);font-size:var(--text-xs);font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--color-primary);
+  margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-3);
+}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--color-primary)}
+.section-title{font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-6);font-weight:300}
+.section-title em{font-style:italic;color:var(--color-primary)}
+.section-lead{font-size:var(--text-base);color:var(--color-text-muted);max-width:56ch;line-height:1.8;margin-bottom:var(--space-12)}
+
+/* APARTMÁNY */
+#apartmany{background:var(--color-bg)}
+.apt-grid{display:grid;gap:var(--space-4)}
+.apt-card-big{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--color-surface);border-radius:var(--radius-xl);overflow:hidden;
+  border:1px solid var(--color-border);
+  transition:box-shadow var(--transition),transform var(--transition);
+}
+.apt-card-big:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.apt-photo{position:relative;overflow:hidden}
+.apt-photo img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.apt-card-big .apt-photo{min-height:420px}
+.apt-card-big:hover .apt-photo img{transform:scale(1.04)}
+.apt-info{padding:clamp(var(--space-8),4vw,var(--space-12));display:flex;flex-direction:column;justify-content:center}
+.apt-color-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:var(--space-2);flex-shrink:0}
+.apt-name-row{display:flex;align-items:center;margin-bottom:var(--space-4)}
+.apt-name{font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-text);font-weight:400}
+.apt-meta{
+  display:flex;gap:var(--space-4);flex-wrap:wrap;
+  margin-bottom:var(--space-4);
+}
+.apt-meta-item{
+  font-size:var(--text-xs);color:var(--color-text-muted);
+  display:flex;align-items:center;gap:var(--space-1);
+  letter-spacing:0.04em;
+}
+.apt-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.75;margin-bottom:var(--space-6);flex:1}
+.apt-link{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  color:var(--color-primary);font-size:var(--text-sm);font-weight:500;
+  letter-spacing:0.06em;text-transform:uppercase;
+  transition:gap var(--transition),color var(--transition);
+}
+.apt-link:hover{gap:var(--space-3)}
+.apt-link svg{transition:transform var(--transition)}
+.apt-link:hover svg{transform:translateX(3px)}
+
+/* Small apt cards */
+.apt-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+.apt-row-label{
+  font-size:var(--text-xs);color:var(--color-text-faint);
+  letter-spacing:0.12em;text-transform:uppercase;
+  padding:var(--space-4) 0 var(--space-2);
+  border-top:1px solid var(--color-divider);
+  margin-top:var(--space-2);
+  grid-column:1/-1;
+}
+.apt-card-sm{
+  background:var(--color-surface);border-radius:var(--radius-xl);overflow:hidden;
+  border:1px solid var(--color-border);
+  transition:box-shadow var(--transition),transform var(--transition);
+  display:flex;flex-direction:column;
+}
+.apt-card-sm:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.apt-card-sm .apt-photo{height:220px}
+.apt-card-sm:hover .apt-photo img{transform:scale(1.05)}
+.apt-card-sm .apt-info{padding:var(--space-6)}
+.apt-card-sm .apt-name{font-size:var(--text-lg)}
+
+/* OKOLÍ */
+#okoli{background:var(--color-surface)}
+.okoli-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(var(--space-8),4vw,var(--space-16));align-items:start}
+.okoli-text{}
+.okoli-text p{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.85;margin-bottom:var(--space-6)}
+.okoli-pills{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-8)}
+.pill{
+  padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);
+  background:var(--color-surface-offset);
+  border:1px solid var(--color-border);
+  font-size:var(--text-xs);color:var(--color-text-muted);
+  letter-spacing:0.04em;
+}
+.pill strong{color:var(--color-primary)}
+.okoli-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:var(--space-3)}
+.okoli-photos img{
+  border-radius:var(--radius-lg);width:100%;object-fit:cover;
+  transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.okoli-photos img:hover{transform:scale(1.02)}
+.okoli-photos img:first-child{grid-column:1/-1;height:280px}
+.okoli-photos img:nth-child(2){height:200px}
+.okoli-photos img:nth-child(3){height:200px}
+
+/* RECENZE */
+#recenze{background:var(--color-bg)}
+.recenze-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:var(--space-12);flex-wrap:wrap;gap:var(--space-6)}
+.recenze-score{text-align:right}
+.score-big{font-family:var(--font-display);font-size:var(--text-3xl);color:var(--color-primary);line-height:1;font-weight:300}
+.score-sub{font-size:var(--text-xs);color:var(--color-text-faint);letter-spacing:0.1em;text-transform:uppercase;margin-top:var(--space-1)}
+.score-sources{
+  display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-4);
+  font-size:var(--text-xs);color:var(--color-text-muted);
+  justify-content:flex-end;
+}
+.score-src{padding:var(--space-1) var(--space-3);border-radius:var(--radius-sm);background:var(--color-surface);border:1px solid var(--color-border)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)}
+.review-card{
+  background:var(--color-surface);border-radius:var(--radius-xl);
+  padding:var(--space-8);border:1px solid var(--color-border);
+  display:flex;flex-direction:column;gap:var(--space-4);
+}
+.review-quote{
+  font-family:var(--font-display);font-size:var(--text-lg);
+  color:var(--color-text);line-height:1.6;font-style:italic;
+  flex:1;
+}
+.review-quote::before,.review-quote::after{color:var(--color-primary);font-size:2em;line-height:0.5;vertical-align:-0.3em}
+.review-quote::before{content:'\201E';margin-right:var(--space-1)}
+.review-quote::after{content:'\201C';margin-left:0}
+.review-author{font-size:var(--text-xs);color:var(--color-text-muted);letter-spacing:0.06em;text-transform:uppercase}
+.review-author strong{color:var(--color-text);font-weight:500}
+.recenze-cta{text-align:center;margin-top:var(--space-10)}
+.recenze-cta a{color:var(--color-primary);font-size:var(--text-sm);letter-spacing:0.08em;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:var(--space-2)}
+
+/* REZERVACE */
+#rezervace{background:var(--color-surface)}
+.rezervace-layout{display:grid;grid-template-columns:1fr 2fr;gap:clamp(var(--space-8),4vw,var(--space-16));align-items:start}
+.rezervace-info{}
+.rezervace-info p{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.8;margin-bottom:var(--space-6)}
+.contact-line{display:flex;flex-direction:column;gap:var(--space-3);margin-top:var(--space-8);padding-top:var(--space-8);border-top:1px solid var(--color-divider)}
+.contact-item{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--color-text-muted)}
+.contact-item svg{color:var(--color-primary);flex-shrink:0}
+.contact-item a:hover{color:var(--color-primary)}
+.widget-placeholder{
+  background:var(--color-surface-offset);border-radius:var(--radius-xl);
+  border:1px solid var(--color-border);
+  min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:var(--space-4);color:var(--color-text-faint);
+  font-size:var(--text-sm);text-align:center;padding:var(--space-8);
+}
+.widget-placeholder svg{color:var(--color-primary);opacity:0.5}
+
+/* FOOTER */
+footer{
+  background:var(--color-surface);border-top:1px solid var(--color-divider);
+  padding:var(--space-16) var(--space-8) var(--space-8);
+}
+.footer-inner{max-width:var(--content-wide);margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-8);margin-bottom:var(--space-12)}
+.footer-brand{}
+.footer-logo{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)}
+.footer-logo svg{width:28px;height:28px;filter:invert(1) sepia(1) saturate(0.5) hue-rotate(5deg)}
+[data-theme="light"] .footer-logo svg{filter:none}
+.footer-logo-text{font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-primary)}
+.footer-brand p{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;max-width:28ch}
+.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-6)}
+.social-icon{
+  width:36px;height:36px;border-radius:var(--radius-md);
+  background:var(--color-surface-offset);border:1px solid var(--color-border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--color-text-muted);font-size:var(--text-sm);
+  transition:background var(--transition),color var(--transition),border-color var(--transition);
+}
+.social-icon:hover{background:var(--color-primary-highlight);color:var(--color-primary);border-color:var(--color-primary)}
+.footer-col h4{font-family:var(--font-body);font-size:var(--text-xs);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-4)}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:var(--space-2)}
+.footer-col a{font-size:var(--text-sm);color:var(--color-text-muted);transition:color var(--transition)}
+.footer-col a:hover{color:var(--color-primary)}
+.footer-bottom{border-top:1px solid var(--color-divider);padding-top:var(--space-6);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)}
+.footer-legal{font-size:var(--text-xs);color:var(--color-text-faint)}
+.footer-legal a{color:var(--color-text-faint);transition:color var(--transition)}
+.footer-legal a:hover{color:var(--color-text-muted)}
+.footer-partner{font-size:var(--text-xs);color:var(--color-text-faint)}
+.footer-partner a{color:var(--color-primary)}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .apt-card-big{grid-template-columns:1fr}
+  .apt-card-big .apt-photo{min-height:300px}
+  .okoli-layout{grid-template-columns:1fr}
+  .rezervace-layout{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .reviews-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav{padding:var(--space-4)}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .hero-content{padding:var(--space-24) var(--space-4) var(--space-16)}
+  section{padding:var(--space-12) var(--space-4)}
+  .apt-row{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .recenze-header{flex-direction:column;align-items:flex-start}
+  .recenze-score{text-align:left}
+  .score-sources{justify-content:flex-start}
+  .stats-bar{padding:var(--space-4)}
+  .stats-inner{gap:var(--space-4);justify-content:flex-start}
+}
+@media(max-width:480px){
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+  .hero-bg{animation:none;transform:scale(1)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo" aria-label="Apartmány Černý vlk – úvodní stránka">
+    <svg viewBox="0 0 1746 2012" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2109.87 544-550.872 459.931" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2095 551h280.28" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2364 553.628 2768.353 368" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2752 388v248.245" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2563 798.706 2759.458 619" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2580 792h226.89" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2785 944.502V782" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2456 1286.18 333.721-357.182" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2463.58 1268-7.578 1062.06" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2472.22 2308h-415.221" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2081 2296.78 11.463-306.782" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1565.78 1000-248.776 113.036" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1338 1113 219.92 106.38" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1119 2254.95 1565.532 1195" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1093 2267 446.53 45.92" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1518 2330.39 134.924-400.392" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1627 1946h481.14" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2092 1966.46v-399.459" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1963 1549 148.62 41.86" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1978.4 1570-8.397 210.472" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1650 1886.9 201.655-332.897" transform="translate(-1086 -343)"/>
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1850 1580 118.61 187.87" transform="translate(-1086 -343)"/>
+    </svg>
+    <span class="nav-logo-text">Černý vlk</span>
+  </a>
+  <div class="nav-links">
+    <a href="#apartmany">Apartmány</a>
+    <a href="#okoli">Okolí</a>
+    <a href="#recenze">Recenze</a>
+    <a href="#rezervace" class="nav-cta">Rezervovat</a>
+    <button class="nav-theme" data-theme-toggle aria-label="Přepnout světlý/tmavý režim">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+  </div>
+  <div class="nav-hamburger" id="hamburger" aria-label="Otevřít menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="uvod">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Borová Lada · Šumava</p>
+    <h1>V klidném centru Šumavy. <em>A přesto s veškerým zázemím.</em></h1>
+    <p class="hero-perex">Borová Lada leží v srdci Národního parku – lesy, cyklostezky i běžkařské stopy začínají přímo za obcí. Přitom tu najdete vše: restaurace, skvělou cukrárnu, obchod, sportoviště i dětské hřiště – a to vše do 300 metrů. Celá Šumava – česká i bavorská – je pak dosažitelná do několika desítek minut autem.</p>
+    <div class="hero-actions">
+      <a href="#rezervace" class="btn-primary">
+        Zkontrolovat dostupnost
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#apartmany" class="btn-ghost">Prohlédnout apartmány</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">Scroll</div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+      <span><strong>5 apartmánů</strong> · 2 objekty</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <span><strong>4–8 osob</strong> / apartmán</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M9 11h6"/><path d="M12 8v6"/></svg></span>
+      <span>Celková kapacita <strong>28 osob</strong></span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+      <span>Hodnocení <strong>9.4/10</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- APARTMÁNY -->
+<section id="apartmany">
+  <div class="section-inner">
+    <p class="section-label reveal">Ubytování</p>
+    <h2 class="section-title reveal reveal-delay-1">Pět apartmánů. <em>Jeden charakter.</em></h2>
+    <p class="section-lead reveal reveal-delay-2">Každý apartmán má vlastní osobnost – jméno, barvu i světovou stranu. Všechny sdílejí stejnou péči o detail a vybavenost, na které záleží.</p>
+
+    <div class="apt-grid">
+      <div class="apt-row-label">Objekt č.p. 116</div>
+      <!-- ČERVENÝ – big card -->
+      <div class="apt-card-big reveal">
+        <div class="apt-photo">
+          <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_Apartmany/cerveny/2024_Borovka - 9 of 33 (1).jpeg"
+               alt="Červený apartmán – rozlehlá společenská místnost"
+               width="800" height="500" loading="lazy">
+        </div>
+        <div class="apt-info">
+          <div class="apt-name-row">
+            <span class="apt-color-dot" style="background:#c0392b"></span>
+            <h3 class="apt-name">Červený</h3>
+          </div>
+          <div class="apt-meta">
+            <span class="apt-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>8 osob</span>
+            <span class="apt-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>3 ložnice</span>
+            <span class="apt-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>116 m²</span>
+            <span class="apt-meta-item">č.p. 116</span>
+          </div>
+          <p class="apt-desc">Největší apartmán s rozlehlou společenskou místností (50 m²) přes celé přízemí – s výstupy na tři světové strany. Tři ložnice včetně oblíbeného pokoje se čtyřlůžkem přes celou místnost. Velká koupelna s vanou, druhá koupelna se sprchovým koutem, samostatné WC.</p>
+          <a href="#rezervace" class="apt-link">
+            Rezervovat
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ROW 1: Žlutý + Zelený -->
+      <div class="apt-row">
+        <div class="apt-card-sm reveal">
+          <div class="apt-photo">
+            <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_Apartmany/zluty/2024_Borovka - 17 of 33 (1).jpeg"
+                 alt="Žlutý apartmán – obývací místnost"
+                 width="600" height="300" loading="lazy">
+          </div>
+          <div class="apt-info">
+            <div class="apt-name-row">
+              <span class="apt-color-dot" style="background:#d4a017"></span>
+              <h3 class="apt-name">Žlutý</h3>
+            </div>
+            <div class="apt-meta">
+              <span class="apt-meta-item">4+1 osob</span>
+              <span class="apt-meta-item">2 ložnice</span>
+              <span class="apt-meta-item">56 m²</span>
+            </div>
+            <p class="apt-desc">Světlý apartmán s odpoledním a večerním sluncem. Obývák, kuchyň, WC a sklad v přízemí, dvě ložnice, koupelna s velkým sprchovým koutem a WC v patře.</p>
+            <a href="#rezervace" class="apt-link">Rezervovat <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="apt-card-sm reveal reveal-delay-1">
+          <div class="apt-photo">
+            <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_Apartmany/zeleny/2024_Borovka - 2 of 22.jpeg"
+                 alt="Zelený apartmán – ložnice"
+                 width="600" height="300" loading="lazy">
+          </div>
+          <div class="apt-info">
+            <div class="apt-name-row">
+              <span class="apt-color-dot" style="background:#2e7d32"></span>
+              <h3 class="apt-name">Zelený</h3>
+            </div>
+            <div class="apt-meta">
+              <span class="apt-meta-item">4+1 osob</span>
+              <span class="apt-meta-item">2 ložnice</span>
+              <span class="apt-meta-item">56 m²</span>
+            </div>
+            <p class="apt-desc">Apartmán s ranním sluncem. Stejná dispozice jako Žlutý – ideální pro ty, kdo vstávají se sluncem a rádi vyrážejí na ranní výlet.</p>
+            <a href="#rezervace" class="apt-link">Rezervovat <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 2: Modrý + Šedý -->
+      <div class="apt-row">
+        <div class="apt-row-label">Objekt č.p. 117</div>
+        <div class="apt-card-sm reveal">
+          <div class="apt-photo">
+            <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_Apartmany/modry/2024_Borovka - 18 of 22.jpeg"
+                 alt="Modrý apartmán – obývací pokoj"
+                 width="600" height="300" loading="lazy">
+          </div>
+          <div class="apt-info">
+            <div class="apt-name-row">
+              <span class="apt-color-dot" style="background:#1565c0"></span>
+              <h3 class="apt-name">Modrý</h3>
+            </div>
+            <div class="apt-meta">
+              <span class="apt-meta-item">4+1 osob</span>
+              <span class="apt-meta-item">2 ložnice</span>
+              <span class="apt-meta-item">56 m²</span>
+            </div>
+            <p class="apt-desc">Nadstandardní apartmán s ranním sluncem. Kosmetika Rituals, pračka se sušičkou přímo v domě. Obývák, kuchyň, WC a sklad v přízemí, dvě ložnice a koupelna s WC v patře.</p>
+            <a href="#rezervace" class="apt-link">Rezervovat <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="apt-card-sm reveal reveal-delay-1">
+          <div class="apt-photo">
+            <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_Apartmany/Sedy/2024_Borovka - 14 of 22.jpeg"
+                 alt="Šedý apartmán – interiér"
+                 width="600" height="300" loading="lazy">
+          </div>
+          <div class="apt-info">
+            <div class="apt-name-row">
+              <span class="apt-color-dot" style="background:#607d8b"></span>
+              <h3 class="apt-name">Šedý</h3>
+            </div>
+            <div class="apt-meta">
+              <span class="apt-meta-item">4+1 osob</span>
+              <span class="apt-meta-item">2 ložnice</span>
+              <span class="apt-meta-item">56 m²</span>
+            </div>
+            <p class="apt-desc">Nadstandardní apartmán s odpoledním sluncem. Stejné rozložení a komfort jako Modrý – kosmetika Rituals a pračka se sušičkou v domě.</p>
+            <a href="#rezervace" class="apt-link">Rezervovat <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OKOLÍ -->
+<section id="okoli">
+  <div class="section-inner">
+    <div class="okoli-layout">
+      <div class="okoli-text">
+        <p class="section-label reveal">Lokalita</p>
+        <h2 class="section-title reveal reveal-delay-1">Šumava za dveřmi. <em>V každém ročním období.</em></h2>
+        <p class="reveal reveal-delay-2">Cyklostezky a běžkařské stopy začínají přímo za obcí. Lesní cesty vedou na Bučinu (a dále do Německa), na Kvildu či k pramenům Vltavy – nebo na druhou stranu na Boubín či až na Stožec.</p>
+        <p class="reveal">Můžete se podívat do Srní na vlky nebo prozkoumat vše, co Šumava nabízí, od Železné Rudy až po Lipno. Nebo se vydat za hranice – např. do aquacentra, na nákupy či do michelinské restaurace ve Waldkirchenu.</p>
+        <p class="reveal">V zimě máte množství sjezdovek do 30 minut autem, ať už na české, nebo na německé straně.</p>
+      </div>
+      <div class="okoli-photos reveal">
+        <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_okoli/IMG_8940.jpeg"
+             alt="Šumavská krajina – výhled"
+             width="800" height="280" loading="lazy">
+        <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_okoli/IMG_8869.jpeg"
+             alt="Šumavský les v létě"
+             width="400" height="200" loading="lazy">
+        <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_okoli/IMG_9707.jpeg"
+             alt="Zimní Šumava – běžkařské stopy"
+             width="400" height="200" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENZE -->
+<section id="recenze">
+  <div class="section-inner">
+    <div class="recenze-header">
+      <div>
+        <p class="section-label reveal">Hosté o nás</p>
+        <h2 class="section-title reveal reveal-delay-1">Co o nás <em>píšou hosté</em></h2>
+      </div>
+      <div class="recenze-score reveal">
+        <div class="score-big">9.4</div>
+        <div class="score-sub">z 10 · přes 300 recenzí</div>
+        <div class="score-sources">
+          <span class="score-src">Booking.com 9.3</span>
+          <span class="score-src">Google 4.9★</span>
+          <span class="score-src">Mapy.cz 5.0★</span>
+          <span class="score-src">Recenze hostů 9.7</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <p class="review-quote">Dispozičně skvěle řešeno, vybavenost na výborné úrovni – de facto nám tu nechybělo nic, od vybavení kuchyně po vysoušeč bot. Skvělá poloha – na Kvildě jste do 10 minut.</p>
+        <div class="review-author"><strong>Jindřiška</strong> · duben 2025</div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <p class="review-quote">Beautiful location, stylish apartments, keyless code-doors, directly connected to the surrounding green areas. Well equipped kitchen, practical storage room.</p>
+        <div class="review-author"><strong>Hunor</strong> · Německo · Booking.com</div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <p class="review-quote">Apartmány jsou nové, hezky útulně zařízené. Domácí mazlíčci jsou vítáni. Dovolenou jsme si užili.</p>
+        <div class="review-author"><strong>Tomáš</strong> · Google</div>
+      </div>
+    </div>
+    <div class="recenze-cta reveal">
+      <a href="#recenze">
+        → Přečíst všechny recenze
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REZERVACE -->
+<section id="rezervace">
+  <div class="section-inner">
+    <div class="rezervace-layout">
+      <div class="rezervace-info">
+        <p class="section-label reveal">Rezervace</p>
+        <h2 class="section-title reveal reveal-delay-1">Volné termíny <em>a rezervace</em></h2>
+        <p class="reveal reveal-delay-2">Zkontrolujte dostupnost přímo online. Rezervace jsou potvrzené okamžitě – bez čekání a telefonátů.</p>
+        <div class="contact-line reveal">
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 12 19.79 19.79 0 0 1 1.9 3.37 2 2 0 0 1 3.88 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span><a href="tel:+420728739288">+420 728 739 288</a> · <a href="tel:+420739753580">+420 739 753 580</a></span>
+          </div>
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span><a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="widget-placeholder reveal">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <p style="font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-text-muted)">Rezervační kalendář</p>
+        <p style="max-width:30ch;text-align:center">Zde bude vložen Previo rezervační widget</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg viewBox="0 0 1746 2012" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28">
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2109.87 544-550.872 459.931" transform="translate(-1086 -343)"/>
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2095 551h280.28" transform="translate(-1086 -343)"/>
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2364 553.628 2768.353 368" transform="translate(-1086 -343)"/>
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2752 388v248.245" transform="translate(-1086 -343)"/>
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2456 1286.18 333.721-357.182" transform="translate(-1086 -343)"/>
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2463.58 1268-7.578 1062.06" transform="translate(-1086 -343)"/>
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2472.22 2308h-415.221" transform="translate(-1086 -343)"/>
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1119 2254.95 446.532-1059.95" transform="translate(-1086 -343)"/>
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1093 2267 446.53 45.92" transform="translate(-1086 -343)"/>
+          </svg>
+          <span class="footer-logo-text">Apartmány Černý vlk</span>
+        </div>
+        <p>Borová Lada 116 a 117<br>384 92 Borová Lada<br>Národní park Šumava</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="TripAdvisor">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Apartmány</h4>
+        <ul>
+          <li><a href="#apartmany">Červený</a></li>
+          <li><a href="#apartmany">Žlutý</a></li>
+          <li><a href="#apartmany">Zelený</a></li>
+          <li><a href="#apartmany">Modrý</a></li>
+          <li><a href="#apartmany">Šedý</a></li>
+          <li><a href="vybaveni.html">Vybavení</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informace</h4>
+        <ul>
+          <li><a href="#okoli">Okolí a aktivity</a></li>
+          <li><a href="#recenze">Recenze hostů</a></li>
+          <li><a href="#rezervace">Ceník</a></li>
+          <li><a href="#rezervace">Rezervace</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+420728739288">+420 728 739 288</a></li>
+          <li><a href="tel:+420739753580">+420 739 753 580</a></li>
+          <li><a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        © 2025 Apartmány Černý vlk ·
+        <a href="#">Ochrana osobních údajů</a> ·
+        <a href="#">Obchodní podmínky</a>
+      </div>
+      <div class="footer-partner">Partnerský objekt: <a href="https://cernyvlk.cz" target="_blank" rel="noopener">Penzion Černý vlk</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+(function(){
+  const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  let d=r.getAttribute('data-theme')||'dark';
+  function updateIcon(){
+    if(!t)return;
+    t.innerHTML=d==='dark'
+      ?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      :'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+  updateIcon();
+  t&&t.addEventListener('click',()=>{
+    d=d==='dark'?'light':'dark';
+    r.setAttribute('data-theme',d);
+    updateIcon();
+  });
+})();
+
+// Scroll reveal
+const revealEls=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(el=>observer.observe(el));
+
+// Nav scroll effect
+const nav=document.getElementById('main-nav');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>60){
+    nav.style.background='var(--color-surface)';
+    nav.style.borderBottom='1px solid var(--color-divider)';
+  } else {
+    nav.style.background='';
+    nav.style.borderBottom='';
+  }
+},{passive:true});
+</script>
+</body>
+</html>

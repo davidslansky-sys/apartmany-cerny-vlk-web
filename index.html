@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartmány Černý vlk – Borová Lada, Šumava</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS – Varianta E: Přírodní materiály ===== */
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --color-bg:       #f5f0e8;
+  --color-surface:  #faf7f2;
+  --color-surface2: #ede8df;
+  --color-border:   rgba(80,60,30,0.12);
+  --color-text:     #2c2416;
+  --color-muted:    #7a6e5f;
+  --color-faint:    #b5a898;
+  --color-accent:   #4a6741;
+  --color-accent-h: #385030;
+  --color-oak:      #a07850;
+  --color-linen:    #ede8df;
+
+  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+  --text-hero: clamp(3rem, 1rem + 6vw, 6rem);
+
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+  --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+
+  --radius-sm: 0.25rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem; --radius-xl: 1rem;
+
+  --shadow-sm: 0 1px 3px rgba(44,36,22,0.06);
+  --shadow-md: 0 4px 16px rgba(44,36,22,0.09);
+  --shadow-lg: 0 12px 40px rgba(44,36,22,0.13);
+
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+  --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; transition: color var(--transition); }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+/* ===== NAV ===== */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(245,240,232,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-6);
+}
+.nav-inner {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+.nav-logo svg { flex-shrink: 0; }
+.nav-logo span { color: var(--color-muted); font-size: var(--text-sm); font-family: var(--font-body); font-weight: 300; display: block; }
+.nav-links {
+  display: flex; align-items: center; gap: var(--space-8);
+  list-style: none;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-muted);
+}
+.nav-links a:hover { color: var(--color-text); }
+.btn-nav {
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-2) var(--space-6);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+.btn-nav:hover { background: var(--color-accent-h); }
+.nav-burger { display: none; flex-direction: column; gap: 5px; padding: var(--space-2); }
+.nav-burger span { display: block; width: 22px; height: 1.5px; background: var(--color-text); transition: var(--transition); }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 92vh;
+  min-height: 540px;
+  max-height: 860px;
+  overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(20,15,8,0.72) 0%, rgba(20,15,8,0.15) 55%, transparent 100%);
+}
+.hero-content {
+  position: relative;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--space-16) var(--space-8);
+  color: #fff;
+}
+.hero-eyebrow {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: var(--space-4);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: 500;
+  line-height: 1.0;
+  margin-bottom: var(--space-6);
+  max-width: 14ch;
+}
+.hero-title em { font-style: italic; color: rgba(255,255,255,0.82); }
+.hero-sub {
+  font-size: var(--text-base);
+  color: rgba(255,255,255,0.75);
+  max-width: 46ch;
+  margin-bottom: var(--space-8);
+  font-weight: 300;
+  line-height: 1.7;
+}
+.hero-actions { display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background var(--transition);
+}
+.btn-primary:hover { background: var(--color-accent-h); color: #fff; }
+.btn-ghost {
+  color: rgba(255,255,255,0.85);
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-sm);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.hero-scroll {
+  position: absolute; bottom: var(--space-8); right: var(--space-8);
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  color: rgba(255,255,255,0.5);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero-scroll::after {
+  content: '';
+  display: block; width: 1px; height: 40px;
+  background: rgba(255,255,255,0.3);
+}
+
+/* ===== TRUST BAR ===== */
+.trust-bar {
+  background: var(--color-text);
+  color: rgba(255,255,255,0.75);
+  padding: var(--space-4) var(--space-6);
+}
+.trust-bar-inner {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  display: flex; gap: var(--space-8);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+}
+.trust-item { display: flex; align-items: center; gap: var(--space-2); }
+.trust-item strong { color: #fff; }
+
+/* ===== SECTION UTILS ===== */
+.section { padding: clamp(var(--space-16), 7vw, var(--space-24)) var(--space-6); }
+.section-alt { background: var(--color-surface); }
+.section-linen { background: var(--color-linen); }
+.container { max-width: var(--content-wide); margin: 0 auto; }
+.container-narrow { max-width: var(--content-default); margin: 0 auto; }
+.section-eyebrow {
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+.section-sub {
+  color: var(--color-muted);
+  max-width: 54ch;
+  font-weight: 300;
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+/* ===== INTRO ===== */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+.intro-img-wrap { position: relative; }
+.intro-img {
+  width: 100%; aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.intro-badge {
+  position: absolute;
+  bottom: var(--space-6); left: calc(-1 * var(--space-6));
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+.intro-badge-num {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-accent);
+  line-height: 1;
+}
+.intro-badge-label { font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-1); }
+.intro-text { padding-left: var(--space-8); }
+.intro-features {
+  margin-top: var(--space-8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+.intro-feature {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+.intro-feature-label { font-size: var(--text-xs); color: var(--color-accent); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-bottom: var(--space-1); }
+.intro-feature-val { font-size: var(--text-base); font-weight: 500; }
+
+/* ===== APARTMENTS ===== */
+.apts-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-10);
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+.apt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: var(--space-6);
+}
+.apt-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.apt-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.apt-card-img {
+  width: 100%; aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+.apt-card-body { padding: var(--space-6); }
+.apt-card-color {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--color-muted); font-weight: 500; margin-bottom: var(--space-3);
+}
+.apt-dot { width: 8px; height: 8px; border-radius: 50%; }
+.apt-card-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+  line-height: 1.1;
+}
+.apt-card-desc { font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-5); font-weight: 300; }
+.apt-card-specs {
+  display: flex; gap: var(--space-4);
+  font-size: var(--text-xs); color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  flex-wrap: wrap;
+}
+.apt-spec { display: flex; align-items: center; gap: var(--space-1); }
+.apt-card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: var(--space-5);
+}
+.apt-price { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; }
+.apt-price span { font-family: var(--font-body); font-size: var(--text-xs); color: var(--color-muted); font-weight: 300; }
+.btn-apt {
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: background var(--transition);
+}
+.btn-apt:hover { background: var(--color-accent-h); }
+
+/* ===== RECENZE ===== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+.review-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+.review-stars { color: var(--color-oak); letter-spacing: 2px; font-size: var(--text-base); margin-bottom: var(--space-4); }
+.review-text {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: var(--space-5);
+  color: var(--color-text);
+}
+.review-author {
+  font-size: var(--text-xs); color: var(--color-muted);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.review-source { color: var(--color-faint); }
+.reviews-score {
+  display: flex; align-items: center; gap: var(--space-6);
+  margin-bottom: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+.score-big {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-accent);
+}
+.score-label { font-size: var(--text-sm); color: var(--color-muted); font-weight: 300; }
+.score-label strong { display: block; font-size: var(--text-base); color: var(--color-text); font-weight: 500; }
+
+/* ===== LOKALITA ===== */
+.location-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-16); align-items: center;
+}
+.location-img {
+  width: 100%; aspect-ratio: 3/2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.location-activities {
+  margin-top: var(--space-8);
+  display: flex; flex-direction: column; gap: var(--space-4);
+}
+.location-activity {
+  display: flex; gap: var(--space-4); align-items: flex-start;
+  padding: var(--space-4);
+  background: var(--color-linen);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.act-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.act-name { font-weight: 500; font-size: var(--text-sm); margin-bottom: 2px; }
+.act-desc { font-size: var(--text-xs); color: var(--color-muted); }
+
+/* ===== CTA REZERVACE ===== */
+.cta-section {
+  background: var(--color-text);
+  color: #fff;
+  text-align: center;
+  padding: clamp(var(--space-16), 8vw, var(--space-24)) var(--space-6);
+}
+.cta-eyebrow { color: var(--color-faint); font-size: var(--text-xs); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: var(--space-4); }
+.cta-title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 500; margin-bottom: var(--space-4); line-height: 1.1; }
+.cta-sub { color: rgba(255,255,255,0.6); max-width: 48ch; margin: 0 auto var(--space-8); font-weight: 300; font-size: var(--text-base); }
+.cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+.btn-cta-primary {
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-base);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background var(--transition);
+}
+.btn-cta-primary:hover { background: var(--color-accent-h); color:#fff; }
+.btn-cta-ghost {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.8);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-base);
+  transition: all var(--transition);
+}
+.btn-cta-ghost:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.previo-note { margin-top: var(--space-6); font-size: var(--text-xs); color: rgba(255,255,255,0.35); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #1c1610;
+  color: rgba(255,255,255,0.6);
+  padding: var(--space-12) var(--space-6) var(--space-8);
+}
+.footer-inner {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+}
+.footer-desc { font-size: var(--text-sm); font-weight: 300; line-height: 1.7; }
+.footer-col-title { color: rgba(255,255,255,0.9); font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; margin-bottom: var(--space-4); }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
+.footer-col a { font-size: var(--text-sm); font-weight: 300; transition: color var(--transition); }
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: var(--space-6);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: var(--space-4);
+  font-size: var(--text-xs);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+  .hero-content { padding: var(--space-12) var(--space-5); }
+  .intro-grid, .location-grid { grid-template-columns: 1fr; }
+  .intro-text { padding-left: 0; }
+  .intro-badge { left: var(--space-4); }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .trust-bar-inner { gap: var(--space-5); }
+}
+@media (max-width: 480px) {
+  .footer-inner { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(2.5rem, 12vw, 4rem); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Apartmány Černý vlk">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 3L4 12v17h8v-9h8v9h8V12L16 3z" stroke="#4a6741" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <circle cx="16" cy="10" r="2" fill="#4a6741"/>
+        <path d="M10 21l3-4 3 2 3-2 3 4" stroke="#4a6741" stroke-width="1" fill="none" opacity="0.5"/>
+      </svg>
+      <div>
+        Černý vlk
+        <span>Borová Lada · Šumava</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#apartmany">Apartmány</a></li>
+      <li><a href="#recenze">Recenze</a></li>
+      <li><a href="#lokalita">Lokalita</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="#rezervace" class="btn-nav">Rezervovat</a>
+    <button class="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img"
+    src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/52b7e74b280d36cb98afae015134210a210402fb.jpg"
+    alt="Interiér apartmánu s výhledem do lesa"
+    width="1280" height="853" decoding="async">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Národní park Šumava · 5 apartmánů</p>
+    <h1 class="hero-title">Odpočinek<br>v srdci <em>lesa</em></h1>
+    <p class="hero-sub">Pět prostorných apartmánů v Borové Ladě – tam, kde smrky sahají až k obloze a ticho je každodenním luxusem.</p>
+    <div class="hero-actions">
+      <a href="#rezervace" class="btn-primary">Zkontrolovat dostupnost</a>
+      <a href="#apartmany" class="btn-ghost">Prohlédnout apartmány</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">scroll</div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">★★★★★ <strong>9,6 / 10</strong> – Booking.com</div>
+    <div class="trust-item">·</div>
+    <div class="trust-item"><strong>5</strong> apartmánů, 2–8 osob</div>
+    <div class="trust-item">·</div>
+    <div class="trust-item">NP Šumava – <strong>přímý vstup do přírody</strong></div>
+    <div class="trust-item">·</div>
+    <div class="trust-item">Bezplatné storno</div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-img-wrap">
+        <img class="intro-img"
+          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/6423141c0299e82ddc07d94bd800932986ad952c.jpg"
+          alt="Moderní interiér horského apartmánu"
+          width="800" height="1000" loading="lazy" decoding="async">
+        <div class="intro-badge">
+          <div class="intro-badge-num">116</div>
+          <div class="intro-badge-label">m² největší apartmán</div>
+        </div>
+      </div>
+      <div class="intro-text">
+        <p class="section-eyebrow">Proč Černý vlk</p>
+        <h2 class="section-title">Šumava za dveřmi,<br>pohodlí uvnitř</h2>
+        <p class="section-sub">Nejsme hotel. Jsme pět apartmánů s duší – každý svůj, každý plně vybavený, každý s přímým výhledem do lesa. Vhodné pro rodiny, páry i skupiny přátel.</p>
+        <div class="intro-features">
+          <div class="intro-feature">
+            <div class="intro-feature-label">Lokalita</div>
+            <div class="intro-feature-val">Borová Lada 116 & 117</div>
+          </div>
+          <div class="intro-feature">
+            <div class="intro-feature-label">Apartmánů</div>
+            <div class="intro-feature-val">5 apartmánů</div>
+          </div>
+          <div class="intro-feature">
+            <div class="intro-feature-label">Kapacita</div>
+            <div class="intro-feature-val">2 – 8 osob</div>
+          </div>
+          <div class="intro-feature">
+            <div class="intro-feature-label">Partner</div>
+            <div class="intro-feature-val">Penzion Černý vlk</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APARTMÁNY -->
+<section class="section section-alt" id="apartmany">
+  <div class="container">
+    <div class="apts-header">
+      <div>
+        <p class="section-eyebrow">Ubytování</p>
+        <h2 class="section-title">Pět apartmánů,<br>jeden charakter místa</h2>
+      </div>
+      <p class="section-sub" style="max-width:36ch;">Každý apartmán má vlastní barevný charakter – vyberte ten, který sedí právě vám.</p>
+    </div>
+    <div class="apt-grid">
+
+      <!-- Červený -->
+      <div class="apt-card">
+        <img class="apt-card-img"
+          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/52b7e74b280d36cb98afae015134210a210402fb.jpg"
+          alt="Červený apartmán – obývací pokoj" width="680" height="425" loading="lazy" decoding="async">
+        <div class="apt-card-body">
+          <div class="apt-card-color"><span class="apt-dot" style="background:#c0392b"></span>Červený</div>
+          <h3 class="apt-card-name">Apartmán Červený</h3>
+          <p class="apt-card-desc">Největší apartmán pro velké rodiny a skupiny. Dva plnohodnotné obytné prostory, plně vybavená kuchyně.</p>
+          <div class="apt-card-specs">
+            <span class="apt-spec">👥 až 8 osob</span>
+            <span class="apt-spec">📐 116 m²</span>
+            <span class="apt-spec">🛏 4 ložnice</span>
+          </div>
+          <div class="apt-card-footer">
+            <div class="apt-price">od 4 200 Kč <span>/ noc</span></div>
+            <a href="#rezervace" class="btn-apt">Rezervovat</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Žlutý -->
+      <div class="apt-card">
+        <img class="apt-card-img"
+          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/a76c9d298c359f930b90fbe9aa776c669f776e33.jpg"
+          alt="Žlutý apartmán – útulný interiér" width="680" height="425" loading="lazy" decoding="async">
+        <div class="apt-card-body">
+          <div class="apt-card-color"><span class="apt-dot" style="background:#d4ac0d"></span>Žlutý</div>
+          <h3 class="apt-card-name">Apartmán Žlutý</h3>
+          <p class="apt-card-desc">Ideální pro rodinu 4+1. Vlastní kuchyně, koupelna, prostorný obývací pokoj s výhledem do lesa.</p>
+          <div class="apt-card-specs">
+            <span class="apt-spec">👥 4+1 osob</span>
+            <span class="apt-spec">📐 56 m²</span>
+            <span class="apt-spec">🛏 2 ložnice</span>
+          </div>
+          <div class="apt-card-footer">
+            <div class="apt-price">od 2 800 Kč <span>/ noc</span></div>
+            <a href="#rezervace" class="btn-apt">Rezervovat</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zelený -->
+      <div class="apt-card">
+        <img class="apt-card-img"
+          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b9e15e47ac6713e15954beeaeac4e29e2a024366.jpg"
+          alt="Zelený apartmán – jídelna" width="680" height="425" loading="lazy" decoding="async">
+        <div class="apt-card-body">
+          <div class="apt-card-color"><span class="apt-dot" style="background:#4a6741"></span>Zelený</div>
+          <h3 class="apt-card-name">Apartmán Zelený</h3>
+          <p class="apt-card-desc">Svěží interiér se šalvějovými tóny. Pro rodinu nebo přátele, kteří chtějí prostorné zázemí v přírodě.</p>
+          <div class="apt-card-specs">
+            <span class="apt-spec">👥 4+1 osob</span>
+            <span class="apt-spec">📐 56 m²</span>
+            <span class="apt-spec">🛏 2 ložnice</span>
+          </div>
+          <div class="apt-card-footer">
+            <div class="apt-price">od 2 800 Kč <span>/ noc</span></div>
+            <a href="#rezervace" class="btn-apt">Rezervovat</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Šedý -->
+      <div class="apt-card">
+        <img class="apt-card-img"
+          src="https://picsum.photos/seed/grey-apt/680/425"
+          alt="Šedý apartmán – připravujeme fotografie" width="680" height="425" loading="lazy" decoding="async">
+        <div class="apt-card-body">
+          <div class="apt-card-color"><span class="apt-dot" style="background:#7f8c8d"></span>Šedý</div>
+          <h3 class="apt-card-name">Apartmán Šedý</h3>
+          <p class="apt-card-desc">Klidný, neutrální interiér. Ideální pro páry nebo menší rodiny hledající soukromí a klid lesa.</p>
+          <div class="apt-card-specs">
+            <span class="apt-spec">👥 4+1 osob</span>
+            <span class="apt-spec">📐 56 m²</span>
+            <span class="apt-spec">🛏 2 ložnice</span>
+          </div>
+          <div class="apt-card-footer">
+            <div class="apt-price">od 2 800 Kč <span>/ noc</span></div>
+            <a href="#rezervace" class="btn-apt">Rezervovat</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modrý -->
+      <div class="apt-card">
+        <img class="apt-card-img"
+          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f537063100465a11a33afef4a1e83ddf84e9f9ea.jpg"
+          alt="Modrý apartmán" width="680" height="425" loading="lazy" decoding="async">
+        <div class="apt-card-body">
+          <div class="apt-card-color"><span class="apt-dot" style="background:#2980b9"></span>Modrý</div>
+          <h3 class="apt-card-name">Apartmán Modrý</h3>
+          <p class="apt-card-desc">Vzdušný a světlý apartmán s panoramatickým oknem. Pocit volnosti uprostřed šumavské přírody.</p>
+          <div class="apt-card-specs">
+            <span class="apt-spec">👥 4+1 osob</span>
+            <span class="apt-spec">📐 56 m²</span>
+            <span class="apt-spec">🛏 2 ložnice</span>
+          </div>
+          <div class="apt-card-footer">
+            <div class="apt-price">od 2 800 Kč <span>/ noc</span></div>
+            <a href="#rezervace" class="btn-apt">Rezervovat</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RECENZE -->
+<section class="section section-linen" id="recenze">
+  <div class="container">
+    <p class="section-eyebrow">Co říkají hosté</p>
+    <h2 class="section-title">Recenze na jednom místě</h2>
+    <div class="reviews-score">
+      <div class="score-big">9,6</div>
+      <div>
+        <div class="score-label"><strong>Výjimečné</strong> – Booking.com</div>
+        <div class="score-label" style="margin-top:0.25rem;">Přes 200 recenzí od skutečných hostů</div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:2rem;flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:600;font-size:1.1rem;">9,8</div>
+          <div style="font-size:var(--text-xs);color:var(--color-muted);">Čistota</div>
+        </div>
+        <div>
+          <div style="font-weight:600;font-size:1.1rem;">9,7</div>
+          <div style="font-size:var(--text-xs);color:var(--color-muted);">Poloha</div>
+        </div>
+        <div>
+          <div style="font-weight:600;font-size:1.1rem;">9,5</div>
+          <div style="font-size:var(--text-xs);color:var(--color-muted);">Vybavení</div>
+        </div>
+        <div>
+          <div style="font-weight:600;font-size:1.1rem;">9,4</div>
+          <div style="font-size:var(--text-xs);color:var(--color-muted);">Personál</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Nádherné místo, perfektní klid. Apartmán byl čistý, prostorný a vybavený na jedničku. Vrátíme se určitě!"</p>
+        <div class="review-author">Jana K. · Červený apartmán · <span class="review-source">Booking.com</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Toller Aufenthalt in der Natur. Die Wohnung war geräumig und sauber, die Lage perfekt für Wanderungen im Böhmerwald."</p>
+        <div class="review-author">Markus W. · Žlutý apartmán · <span class="review-source">Booking.com</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Skvělé ubytování pro celou rodinu. Děti milovaly les za domem, my jsme si konečně pořádně odpočinuli."</p>
+        <div class="review-author">Rodina Novákova · Zelený apartmán · <span class="review-source">TripAdvisor</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOKALITA -->
+<section class="section" id="lokalita">
+  <div class="container">
+    <div class="location-grid">
+      <div>
+        <p class="section-eyebrow">Kde nás najdete</p>
+        <h2 class="section-title">Borová Lada –<br>srdce Šumavy</h2>
+        <p class="section-sub">Jsme v Borové Ladě, malé vesnici uprostřed Národního parku Šumava – 8 km od Vimperku, méně než 50 km od německé hranice.</p>
+        <div class="location-activities">
+          <div class="location-activity">
+            <div class="act-icon">🥾</div>
+            <div>
+              <div class="act-name">Turistika a cykloturistika</div>
+              <div class="act-desc">Stovky km značených tras přímo od dveří. Šumavské hřebeny, Boubín, Březník.</div>
+            </div>
+          </div>
+          <div class="location-activity">
+            <div class="act-icon">⛷️</div>
+            <div>
+              <div class="act-name">Zimní sporty</div>
+              <div class="act-desc">Lyžování, běžkování a ski areály v dosahu 10–20 minut autem.</div>
+            </div>
+          </div>
+          <div class="location-activity">
+            <div class="act-icon">🌊</div>
+            <div>
+              <div class="act-name">Vodní sporty</div>
+              <div class="act-desc">Lipno, Otava, Vydra – kanoistika, paddleboarding, koupání v přírodě.</div>
+            </div>
+          </div>
+          <div class="location-activity">
+            <div class="act-icon">🦌</div>
+            <div>
+              <div class="act-name">Příroda a ticho</div>
+              <div class="act-desc">Národní park, pralesní rezervace Boubín, rašeliniště – unikátní ekosystém střední Evropy.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="location-img"
+        src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/7dd4b8e978a3eca90ad6ab59a33e3b1e7d918db6.jpg"
+        alt="Národní park Šumava – krajina"
+        width="800" height="540" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- CTA REZERVACE -->
+<section class="cta-section" id="rezervace">
+  <div class="container-narrow" style="text-align:center;">
+    <p class="cta-eyebrow">Přímá rezervace</p>
+    <h2 class="cta-title">Kdy přijedete?</h2>
+    <p class="cta-sub">Rezervujte přímo u nás – bez provize, s okamžitým potvrzením. Při přímé rezervaci máte nejlepší cenu garantovanou.</p>
+    <div class="cta-actions">
+      <a href="https://www.previo.cz" target="_blank" rel="noopener noreferrer" class="btn-cta-primary">Zkontrolovat dostupnost a rezervovat</a>
+      <a href="tel:+420728739288" class="btn-cta-ghost">📞 Zavolat nám</a>
+    </div>
+    <p class="previo-note">Rezervační systém Previo · Bezpečná platba · Okamžité potvrzení</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontakt">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Černý vlk</div>
+      <p class="footer-desc">Pět apartmánů v srdci Národního parku Šumava.<br>Borová Lada 116 a 117, 384 92.</p>
+      <p style="margin-top:1rem;font-size:var(--text-sm);font-weight:300;">
+        📞 <a href="tel:+420728739288" style="transition:color 200ms">+420 728 739 288</a><br>
+        📞 <a href="tel:+420739753580" style="transition:color 200ms">+420 739 753 580</a><br>
+        ✉️ <a href="mailto:recepce@apartmanycernyvlk.cz" style="transition:color 200ms">recepce@apartmanycernyvlk.cz</a>
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Apartmány</div>
+      <ul role="list">
+        <li><a href="#apartmany">Červený (8 os.)</a></li>
+        <li><a href="#apartmany">Žlutý (4+1)</a></li>
+        <li><a href="#apartmany">Zelený (4+1)</a></li>
+        <li><a href="#apartmany">Šedý (4+1)</a></li>
+        <li><a href="#apartmany">Modrý (4+1)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Informace</div>
+      <ul role="list">
+        <li><a href="#lokalita">Lokalita</a></li>
+        <li><a href="#recenze">Recenze</a></li>
+        <li><a href="#rezervace">Ceník</a></li>
+        <li><a href="#">Podmínky pobytu</a></li>
+        <li><a href="https://cernyvlk.cz" target="_blank" rel="noopener">Penzion Černý vlk</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Sledujte nás</div>
+      <ul role="list">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">TripAdvisor</a></li>
+        <li><a href="#">Booking.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Apartmány Černý vlk · Borová Lada</span>
+    <span>NP Šumava · <a href="https://cernyvlk.cz" target="_blank" rel="noopener" style="transition:color 200ms;">cernyvlk.cz</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

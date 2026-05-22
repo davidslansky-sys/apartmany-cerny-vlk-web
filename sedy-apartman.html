@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Šedý apartmán – Apartmány Černý vlk | Borová Lada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <style>
+:root,[data-theme="light"]{--color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;--color-surface-offset:#f3f0ec;--color-surface-offset-2:#edeae5;--color-surface-dynamic:#e6e4df;--color-divider:#dcd9d5;--color-border:#d4d1ca;--color-text:#28251d;--color-text-muted:#7a7974;--color-text-faint:#bab9b4;--color-text-inverse:#f9f8f4;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-active:#0f3638;--color-primary-highlight:#cedcd8;--color-warning:#964219;--color-warning-hover:#713417;--color-warning-active:#4b2614;--color-warning-highlight:#ddcfc6;--color-error:#a12c7b;--color-error-hover:#7d1e5e;--color-error-active:#561740;--color-error-highlight:#e0ced7;--color-notification:#a13544;--color-notification-hover:#782b33;--color-notification-active:#521f24;--color-notification-highlight:#dececb;--color-orange:#da7101;--color-orange-hover:#c55700;--color-orange-active:#ac3e00;--color-orange-highlight:#e7d7c4;--color-gold:#d19900;--color-gold-hover:#b07a00;--color-gold-active:#8a5b00;--color-gold-highlight:#e9e0c6;--color-yellow:#d19900;--color-yellow-hover:#b07a00;--color-yellow-active:#8a5b00;--color-yellow-highlight:#e6ddc4;--color-success:#437a22;--color-success-hover:#2e5c10;--color-success-active:#1e3f0a;--color-success-highlight:#d4dfcc;--color-blue:#006494;--color-blue-hover:#0b5177;--color-blue-active:#0b3751;--color-blue-highlight:#c6d8e4;--color-purple:#7a39bb;--color-purple-hover:#5f2699;--color-purple-active:#431673;--color-purple-highlight:#dacfde;--radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-full:9999px;--transition:180ms cubic-bezier(0.16,1,0.3,1);--shadow-sm:0 1px 2px oklch(0.2 0.01 80/0.06);--shadow-md:0 4px 12px oklch(0.2 0.01 80/0.08);--shadow-lg:0 12px 32px oklch(0.2 0.01 80/0.12);--content-narrow:640px;--content-default:960px;--content-wide:1200px;--content-full:100%;--text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);--text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);--text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-3xl:clamp(2.5rem,1rem + 4vw,5rem);--text-hero:clamp(3rem,0.5rem + 7vw,8rem);--space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;--font-display:'DM Sans',sans-serif;--font-body:'DM Sans',sans-serif}
+[data-theme="dark"]{--color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;--color-surface-offset:#1d1c1a;--color-surface-offset-2:#22211f;--color-surface-dynamic:#2d2c2a;--color-divider:#262523;--color-border:#393836;--color-text:#cdccca;--color-text-muted:#797876;--color-text-faint:#5a5957;--color-text-inverse:#2b2a28;--color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-active:#1a626b;--color-primary-highlight:#313b3b;--color-warning:#bb653b;--color-warning-hover:#b95525;--color-warning-active:#993d10;--color-warning-highlight:#564942;--color-error:#d163a7;--color-error-hover:#b9478f;--color-error-active:#9b2f76;--color-error-highlight:#4c3d46;--color-notification:#dd6974;--color-notification-hover:#c24a59;--color-notification-active:#a53142;--color-notification-highlight:#574848;--color-orange:#fdab43;--color-orange-hover:#fec47e;--color-orange-active:#fdd1a4;--color-orange-highlight:#564b3e;--color-gold:#e8af34;--color-gold-hover:#fdc551;--color-gold-active:#feda74;--color-gold-highlight:#4d4332;--color-yellow:#edb336;--color-yellow-hover:#fdc452;--color-yellow-active:#feda74;--color-yellow-highlight:#574e3d;--color-success:#6daa45;--color-success-hover:#4d8f25;--color-success-active:#387015;--color-success-highlight:#3a4435;--color-blue:#5591c7;--color-blue-hover:#3b78ab;--color-blue-active:#275f8e;--color-blue-highlight:#3a4550;--color-purple:#a86fdf;--color-purple-hover:#9250d0;--color-purple-active:#7537ba;--color-purple-highlight:#4e4652;--shadow-sm:0 1px 2px oklch(0 0 0/0.2);--shadow-md:0 4px 12px oklch(0 0 0/0.3);--shadow-lg:0 12px 32px oklch(0 0 0/0.4)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-moz-text-size-adjust:none;-webkit-text-size-adjust:none;text-size-adjust:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;scroll-behavior:smooth;hanging-punctuation:first last;scroll-padding-top:var(--space-16)}
+body{min-height:100dvh;line-height:1.6;font-family:var(--font-body,sans-serif);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg)}
+img,picture,video,canvas,svg{display:block;max-width:100%;height:auto}ul[role="list"],ol[role="list"]{list-style:none}input,button,textarea,select{font:inherit;color:inherit}h1,h2,h3,h4,h5,h6{text-wrap:balance;line-height:1.15}p,li,figcaption{text-wrap:pretty;max-width:72ch}::selection{background:oklch(from var(--color-primary) l c h / 0.25);color:var(--color-text)}:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}button{cursor:pointer;background:none;border:none}table{border-collapse:collapse;width:100%}a,button,[role="button"],[role="link"],input,textarea,select{transition:color var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.site-header{position:absolute;top:0;left:0;right:0;z-index:20;padding:var(--space-4) var(--space-6);display:flex;justify-content:space-between;align-items:center;color:var(--color-text-inverse)}.brand{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;color:inherit}.brand-mark{width:2.75rem;height:2.75rem;border:1px solid rgba(249,248,244,.45);border-radius:50%;display:grid;place-items:center;font-size:var(--text-lg);font-weight:700;letter-spacing:.08em;background:rgba(15,15,15,.18);backdrop-filter:blur(6px)}.brand-text{display:flex;flex-direction:column;font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase}.brand-text strong{font-size:var(--text-sm);letter-spacing:.08em}.header-actions{display:flex;align-items:center;gap:var(--space-3)}.nav-link,.theme-toggle{border:1px solid rgba(249,248,244,.35);border-radius:var(--radius-full);padding:.7rem 1rem;text-decoration:none;color:inherit;background:rgba(15,15,15,.18);backdrop-filter:blur(6px)}.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:2.85rem;height:2.85rem;padding:0}.hero{position:relative;min-height:100vh;display:grid;place-items:end start;padding:clamp(7rem,14vh,10rem) var(--space-6) var(--space-16);color:var(--color-text-inverse);background:url('file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/1.jpg') center/cover no-repeat}.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,15,.16) 0%,rgba(15,15,15,.48) 45%,rgba(15,15,15,.72) 100%)}.hero-content{position:relative;z-index:1;max-width:min(44rem,100%);display:grid;gap:var(--space-5)}.hero-eyebrow{font-size:var(--text-sm);letter-spacing:.28em;text-transform:uppercase;color:rgba(249,248,244,.72)}.hero h1{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:500;max-width:10ch}.hero h1 em,.section-title em{font-style:italic;font-weight:500}.hero-perex{font-size:var(--text-lg);max-width:38rem;color:rgba(249,248,244,.86)}.hero-cta{display:flex;flex-wrap:wrap;gap:var(--space-3)}.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.5rem;border-radius:var(--radius-full);text-decoration:none;font-size:var(--text-sm);font-weight:600}.btn-primary{background:var(--color-text-inverse);color:var(--color-text)}.btn-secondary{border:1px solid rgba(249,248,244,.4);color:var(--color-text-inverse);background:rgba(15,15,15,.12)}section{padding:clamp(var(--space-12),8vw,var(--space-24)) var(--space-6)}.section-inner{width:min(var(--content-wide),100%);margin:0 auto}.section-label{font-size:var(--text-xs);letter-spacing:.24em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-3)}.section-title{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:500;max-width:12ch;margin-bottom:var(--space-8)}.stat-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--space-4)}.stat-card{background:var(--color-surface);padding:var(--space-5);border-radius:var(--radius-lg);border:1px solid color-mix(in srgb,var(--color-border) 72%,transparent);min-height:10rem;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--shadow-sm)}.stat-value{font-family:var(--font-display);font-size:clamp(2.3rem,2rem + 1vw,3.15rem);font-weight:500;margin-bottom:var(--space-2)}.stat-label{font-size:var(--text-xs);letter-spacing:.2em;text-transform:uppercase;color:var(--color-text-muted)}.prose{display:grid;gap:var(--space-5);max-width:48rem;color:var(--color-text-muted)}.layout-section+.layout-section{margin-top:var(--space-8)}.layout-section h3{font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;margin-bottom:var(--space-4)}.layout-content{display:grid;grid-template-columns:minmax(0,.85fr) minmax(280px,.95fr);gap:var(--space-8);align-items:center}.layout-text ul{display:grid;gap:var(--space-3);padding-left:1.2rem;color:var(--color-text-muted)}.layout-text li{position:relative;list-style:none;padding-left:.2rem}.layout-text li::before{content:'•';position:absolute;left:-1rem;color:var(--color-primary)}.layout-text strong{color:var(--color-text);font-weight:600}.floor-plan{border-radius:var(--radius-lg);border:1px solid color-mix(in srgb,var(--color-border) 70%,transparent);background:var(--color-surface);box-shadow:var(--shadow-sm)}.feature-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5)}.feature-item{display:grid;grid-template-columns:auto 1fr;gap:var(--space-4);padding:var(--space-5);background:var(--color-surface);border-radius:var(--radius-lg);border:1px solid color-mix(in srgb,var(--color-border) 68%,transparent);box-shadow:var(--shadow-sm)}.feature-icon{width:2.5rem;height:2.5rem;border-radius:50%;display:grid;place-items:center;background:var(--color-primary-highlight);color:var(--color-primary);font-size:1.05rem;font-weight:700}.feature-item h3{font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;margin-bottom:var(--space-2)}.feature-item p{color:var(--color-text-muted)}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}.gallery figure{position:relative;overflow:hidden;border-radius:var(--radius-lg);min-height:15rem;background:var(--color-surface-offset);box-shadow:var(--shadow-sm)}.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 500ms ease}.gallery figure:hover img{transform:scale(1.04)}.site-footer{padding:var(--space-10) var(--space-6) var(--space-8);background:var(--color-surface);border-top:1px solid color-mix(in srgb,var(--color-border) 70%,transparent)}.footer-inner{width:min(var(--content-wide),100%);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-4);color:var(--color-text-muted);font-size:var(--text-sm)}.footer-inner a{color:inherit}.reveal{opacity:0;transform:translateY(24px);transition:opacity 620ms ease,transform 620ms ease}.reveal.is-visible{opacity:1;transform:none}.reveal-delay-1{transition-delay:.08s}.reveal-delay-2{transition-delay:.16s}@media (max-width:1100px){.stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:820px){.site-header{padding:var(--space-4)}.hero{padding-inline:var(--space-4)}section{padding-inline:var(--space-4)}.layout-content,.feature-list{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.footer-inner{flex-direction:column}}@media (max-width:640px){.stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat-card{min-height:8.5rem}.hero h1{max-width:12ch}.hero-cta{flex-direction:column;align-items:start}.btn-primary,.btn-secondary{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./apartmany-cerny-vlk.html">
+      <span class="brand-mark">ČV</span>
+      <span class="brand-text"><strong>Apartmány Černý vlk</strong><span>Borová Lada</span></span>
+    </a>
+    <div class="header-actions">
+      <a class="nav-link" href="./apartmany-cerny-vlk.html#apartmany">Zpět na přehled</a>
+      <button class="theme-toggle" type="button" aria-label="Přepnout režim" data-theme-toggle>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Šedý apartmán</p>
+        <h1>Příjemný standard s důrazem na <em>komfort</em></h1>
+        <p class="hero-perex">Komfortnější apartmán pro 4 až 5 hostů s výměrou 56 m², který staví na klidu, praktičnosti a o něco vyšším standardu pobytu. Hodí se pro hosty, kteří chtějí na Šumavě nejen dobře bydlet, ale i opravdu příjemně odpočívat.</p>
+        <div class="hero-cta">
+          <a href="./apartmany-cerny-vlk.html#rezervace" class="btn-primary">Rezervovat apartmán</a>
+          <a href="#galerie" class="btn-secondary">Prohlédnout fotky</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="prehled">
+      <div class="section-inner">
+        <p class="section-label reveal">Rychlý přehled</p>
+        <h2 class="section-title reveal reveal-delay-1">Apartmán v <em>číslech</em></h2>
+        <div class="stat-grid">
+          <div class="stat-card reveal"><div class="stat-value">4–5</div><div class="stat-label">Osob</div></div>
+          <div class="stat-card reveal reveal-delay-1"><div class="stat-value">56 m²</div><div class="stat-label">Plocha</div></div>
+          <div class="stat-card reveal reveal-delay-2"><div class="stat-value">2</div><div class="stat-label">Ložnice</div></div>
+          <div class="stat-card reveal"><div class="stat-value">1</div><div class="stat-label">Koupelna</div></div>
+          <div class="stat-card reveal reveal-delay-1"><div class="stat-value">1</div><div class="stat-label">Samostatné WC</div></div>
+          <div class="stat-card reveal reveal-delay-2"><div class="stat-value">117</div><div class="stat-label">Objekt č.p.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pro-koho">
+      <div class="section-inner">
+        <p class="section-label reveal">Pro koho je ideální</p>
+        <h2 class="section-title reveal reveal-delay-1">Pro hosty, kteří chtějí <em>o něco více</em></h2>
+        <div class="prose reveal reveal-delay-2">
+          <p>Šedý apartmán je ideální pro hosty, kteří hledají nejen funkci a klid, ale i o něco vyšší komfort. Kvalitnější kosmetika Rituals v koupelně, možnost regulovat teplotu v každé místnosti a přístup k pračce přímo v domě dělají z pobytu příjemnější zážitek.</p>
+          <p>Na 56 m² nabízí vše podstatné s důrazem na detail. Dispozice je čistá, přehledná a postavena na tom, abyste se tu cítili opravdu dobře — bez okázalosti, ale s viditelně vyšším standardem než v ostatních apartmánech.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dispozice">
+      <div class="section-inner">
+        <p class="section-label reveal">Dispozice</p>
+        <h2 class="section-title reveal reveal-delay-1">Jak vypadá <em>apartmán uvnitř</em></h2>
+        <div class="layout-section reveal reveal-delay-2">
+          <h3>Přízemí</h3>
+          <div class="layout-content">
+            <div class="layout-text">
+              <ul>
+                <li><strong>Obytný prostor</strong> s kuchyní, jídelní částí a posezením</li>
+                <li><strong>Koupelna se sprchou</strong></li>
+                <li><strong>Samostatné WC</strong></li>
+                <li><strong>Vstupní část</strong> s místem pro odložení věcí</li>
+              </ul>
+            </div>
+            <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_domy/dum-117/117_Pudorys_prizemi.jpg" alt="Půdorys přízemí domu 117" class="floor-plan" width="800" height="600" loading="lazy">
+          </div>
+        </div>
+        <div class="layout-section reveal">
+          <h3>Patro</h3>
+          <div class="layout-content">
+            <div class="layout-text">
+              <ul>
+                <li><strong>Ložnice č. 1</strong> pro hlavní spaní</li>
+                <li><strong>Ložnice č. 2</strong> pro děti nebo další hosty</li>
+                <li><strong>Úložné prostory</strong> pro pohodlný pobyt na více dní</li>
+              </ul>
+            </div>
+            <img src="file:///Users/davidslansky/Downloads/web_komplet_media/_domy/dum-117/117_Pudorys_1patro.jpg" alt="Půdorys patra domu 117" class="floor-plan" width="800" height="600" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vyhody">
+      <div class="section-inner">
+        <p class="section-label reveal">Co na něm oceníte</p>
+        <h2 class="section-title reveal reveal-delay-1">Vyšší standard a <em>promyšlené detaily</em></h2>
+        <div class="feature-list">
+          <div class="feature-item reveal"><div class="feature-icon">✦</div><div><h3>Kosmetika Rituals v koupelně</h3><p>Místo běžného vybavení tu najdete kvalitnější kosmetiku Rituals — sprše a umývání zpříjemní celý pobyt.</p></div></div>
+          <div class="feature-item reveal reveal-delay-1"><div class="feature-icon">☼</div><div><h3>Regulace teploty v každé místnosti</h3><p>Každá místnost má vlastní termostat, takže si každý může nastavit teplotu podle svých představ. To je u apartmánů vzácné.</p></div></div>
+          <div class="feature-item reveal reveal-delay-2"><div class="feature-icon">◆</div><div><h3>Pračka přímo v domě 117</h3><p>Pokud pobytu trávíte více dní, oceníte přístup k pračce přímo v domě — nemusíte nikam chodit ani plánovat praní předem.</p></div></div>
+          <div class="feature-item reveal"><div class="feature-icon">≈</div><div><h3>Klidný luxus bez okázalosti</h3><p>Vyšší standard tu není na první pohled vidět, ale rychle ho pocítíte — v detailech, v kvalitě materiálů i v tom, jak dobře apartmán funguje.</p></div></div>
+          <div class="feature-item reveal reveal-delay-1"><div class="feature-icon">✓</div><div><h3>Příjemnější večerní režim</h3><p>Kvalitnější postel, lepší kosmetika a možnost nastavit si přesnou teplotu dělají večerní návrat i ráno ještě příjemnějšími.</p></div></div>
+          <div class="feature-item reveal reveal-delay-2"><div class="feature-icon">→</div><div><h3>Kódové zámky a snadný vstup</h3><p>Vstup do domu i apartmánu funguje přes kódové zámky — nemusíte řešit předání klíčů ani čekat na recepci.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie">
+      <div class="section-inner">
+        <p class="section-label reveal">Fotogalerie</p>
+        <h2 class="section-title reveal reveal-delay-1">Prohlédněte si <em>apartmán</em></h2>
+        <div class="gallery">
+          <figure class="reveal"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/1.jpg" alt="Šedý apartmán – fotografie 1" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal reveal-delay-1"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/2.jpg" alt="Šedý apartmán – fotografie 2" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal reveal-delay-2"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/3.jpg" alt="Šedý apartmán – fotografie 3" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/4.jpg" alt="Šedý apartmán – fotografie 4" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal reveal-delay-1"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/5.jpg" alt="Šedý apartmán – fotografie 5" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal reveal-delay-2"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/6.jpg" alt="Šedý apartmán – fotografie 6" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/7.jpg" alt="Šedý apartmán – fotografie 7" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal reveal-delay-1"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/8.jpg" alt="Šedý apartmán – fotografie 8" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal reveal-delay-2"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/9.jpg" alt="Šedý apartmán – fotografie 9" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/10.jpg" alt="Šedý apartmán – fotografie 10" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal reveal-delay-1"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/11.jpg" alt="Šedý apartmán – fotografie 11" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal reveal-delay-2"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/12.jpg" alt="Šedý apartmán – fotografie 12" width="1200" height="900" loading="lazy"></figure>
+          <figure class="reveal"><img src="file:///Users/davidslansky/Downloads/web_komplet_media/_apartmany/sedy/13.jpg" alt="Šedý apartmán – fotografie 13" width="1200" height="900" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Apartmány Černý vlk</strong><br>
+        Borová Lada 116 a 117, Šumava
+      </div>
+      <div>
+        <a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a><br>
+        +420 728 739 288 · +420 739 753 580
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    (function(){
+      const toggle=document.querySelector('[data-theme-toggle]');
+      const root=document.documentElement;
+      let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',mode);
+      const sun='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      const moon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      const sync=()=>{toggle.innerHTML=mode==='dark'?sun:moon;toggle.setAttribute('aria-label',mode==='dark'?'Přepnout na světlý režim':'Přepnout na tmavý režim');};
+      sync();
+      toggle.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';root.setAttribute('data-theme',mode);sync();});
+    })();
+  </script>
+</body>
+</html>

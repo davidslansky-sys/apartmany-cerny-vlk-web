@@ -779,3 +779,633 @@ section {
     transform: scale(1);
   }
 }
+
+/* =========================================================
+   HOME PATCH — apartmány / okolí / recenze / rezervace / footer
+   vložit NA KONEC src/styles/prototype.css
+========================================================= */
+
+/* SECTION BASICS */
+section {
+  position: relative;
+}
+
+.section-inner {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 110px 0;
+}
+
+.section-label {
+  margin: 0 0 16px;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 230, 0.6);
+}
+
+.section-title {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2.2rem, 4vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: #f5efe6;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: rgba(245, 239, 230, 0.72);
+}
+
+.section-lead {
+  margin: 24px 0 0;
+  max-width: 64ch;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: rgba(245, 239, 230, 0.72);
+}
+
+/* APARTMÁNY */
+#apartmany {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 32%),
+    linear-gradient(180deg, #17130f 0%, #120f0c 100%);
+}
+
+.apt-grid {
+  margin-top: 52px;
+  display: grid;
+  gap: 26px;
+}
+
+.apt-row-label {
+  margin-top: 8px;
+  margin-bottom: -4px;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 230, 0.46);
+}
+
+.apt-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.apt-card-big,
+.apt-card-sm {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(6px);
+}
+
+.apt-card-big {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  min-height: 520px;
+}
+
+.apt-card-sm {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.apt-photo {
+  position: relative;
+  overflow: hidden;
+  background: #0f0c09;
+}
+
+.apt-card-big .apt-photo {
+  min-height: 520px;
+}
+
+.apt-card-sm .apt-photo {
+  aspect-ratio: 16 / 9;
+}
+
+.apt-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.18) 100%);
+  pointer-events: none;
+}
+
+.apt-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms ease;
+}
+
+.apt-card-big:hover .apt-photo img,
+.apt-card-sm:hover .apt-photo img {
+  transform: scale(1.04);
+}
+
+.apt-info {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 30px;
+}
+
+.apt-card-big .apt-info {
+  justify-content: flex-end;
+  padding: 34px;
+}
+
+.apt-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.apt-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.04);
+  flex: 0 0 auto;
+}
+
+.apt-name {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: #f5efe6;
+}
+
+.apt-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.apt-meta-item {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 0.88rem;
+  color: rgba(245, 239, 230, 0.78);
+}
+
+.apt-desc {
+  margin: 0;
+  max-width: 52ch;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(245, 239, 230, 0.72);
+}
+
+.apt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #f5efe6;
+}
+
+.apt-link:hover {
+  color: #d2c2a8;
+}
+
+.apt-link svg {
+  transition: transform 200ms ease;
+}
+
+.apt-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* OKOLÍ */
+#okoli {
+  background:
+    radial-gradient(circle at right top, rgba(210, 194, 168, 0.08), transparent 26%),
+    linear-gradient(180deg, #120f0c 0%, #1a1511 100%);
+}
+
+.okoli-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.okoli-text p:not(.section-label) {
+  margin: 0 0 18px;
+  max-width: 58ch;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(245, 239, 230, 0.72);
+}
+
+.okoli-photos {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-rows: 290px 220px;
+  gap: 18px;
+}
+
+.okoli-photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+}
+
+.okoli-photos img:first-child {
+  grid-column: 1 / -1;
+}
+
+/* RECENZE */
+#recenze {
+  background:
+    radial-gradient(circle at left center, rgba(255, 255, 255, 0.04), transparent 24%),
+    linear-gradient(180deg, #1a1511 0%, #130f0c 100%);
+}
+
+.recenze-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 42px;
+}
+
+.recenze-score {
+  flex: 0 0 auto;
+  min-width: 320px;
+  padding: 24px 26px;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.score-big {
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: #f5efe6;
+}
+
+.score-sub {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: rgba(245, 239, 230, 0.66);
+}
+
+.score-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.score-src {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(245, 239, 230, 0.78);
+  font-size: 0.84rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  padding: 28px;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.028));
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.review-quote {
+  margin: 0;
+  font-size: 1.04rem;
+  line-height: 1.9;
+  color: rgba(245, 239, 230, 0.82);
+}
+
+.review-author {
+  margin-top: 24px;
+  font-size: 0.92rem;
+  color: rgba(245, 239, 230, 0.56);
+}
+
+.recenze-cta {
+  margin-top: 26px;
+}
+
+.recenze-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #f5efe6;
+}
+
+.recenze-cta a:hover {
+  color: #d2c2a8;
+}
+
+/* REZERVACE */
+#rezervace {
+  background:
+    radial-gradient(circle at center top, rgba(210, 194, 168, 0.06), transparent 30%),
+    linear-gradient(180deg, #130f0c 0%, #0f0c09 100%);
+}
+
+.rezervace-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.rezervace-info p:not(.section-label) {
+  margin: 0 0 18px;
+  max-width: 56ch;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(245, 239, 230, 0.72);
+}
+
+.contact-line {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f5efe6;
+}
+
+.contact-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #d2c2a8;
+}
+
+.widget-placeholder {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 420px;
+  padding: 34px;
+  border-radius: 28px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  color: rgba(245, 239, 230, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.widget-placeholder svg {
+  margin-bottom: 14px;
+  color: rgba(245, 239, 230, 0.72);
+}
+
+.widget-placeholder p {
+  margin: 0;
+}
+
+.widget-placeholder p + p {
+  margin-top: 8px;
+  color: rgba(245, 239, 230, 0.5);
+}
+
+/* FOOTER PATCH */
+.site-footer {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.03), transparent 22%),
+    #0d0b09;
+  color: rgba(245, 239, 230, 0.74);
+}
+
+.footer-inner {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 34px 0 24px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.2fr) repeat(3, minmax(160px, 0.75fr));
+  gap: 28px;
+  padding-bottom: 30px;
+}
+
+.footer-brand {
+  max-width: 40ch;
+}
+
+.footer-brand h3,
+.footer-col h4 {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f5efe6;
+}
+
+.footer-brand p,
+.footer-col p,
+.footer-col a,
+.footer-bottom,
+.footer-bottom a {
+  font-size: 0.96rem;
+  line-height: 1.8;
+  color: rgba(245, 239, 230, 0.64);
+  text-decoration: none;
+}
+
+.footer-col a:hover,
+.footer-bottom a:hover {
+  color: #f5efe6;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 120ms;
+}
+
+.reveal-delay-2 {
+  transition-delay: 220ms;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .section-inner {
+    width: min(1100px, calc(100% - 32px));
+    padding: 88px 0;
+  }
+
+  .apt-card-big,
+  .okoli-layout,
+  .rezervace-layout,
+  .footer-top,
+  .recenze-header {
+    grid-template-columns: 1fr;
+  }
+
+  .apt-card-big {
+    min-height: initial;
+  }
+
+  .apt-card-big .apt-photo {
+    min-height: 360px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recenze-header {
+    display: grid;
+    align-items: start;
+  }
+
+  .recenze-score {
+    min-width: 0;
+  }
+
+  .footer-top {
+    display: grid;
+  }
+}
+
+@media (max-width: 820px) {
+  .section-title {
+    max-width: 100%;
+  }
+
+  .apt-row,
+  .okoli-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .okoli-photos {
+    grid-template-rows: auto;
+  }
+
+  .okoli-photos img:first-child {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-inner {
+    width: min(100%, calc(100% - 24px));
+    padding: 72px 0;
+  }
+
+  .apt-card-big .apt-photo {
+    min-height: 260px;
+  }
+
+  .apt-info,
+  .apt-card-big .apt-info,
+  .review-card,
+  .recenze-score,
+  .widget-placeholder {
+    padding: 22px;
+  }
+
+  .review-card {
+    min-height: initial;
+  }
+
+  .widget-placeholder {
+    min-height: 300px;
+  }
+
+  .contact-item {
+    min-height: 48px;
+    padding: 12px 14px;
+    align-items: flex-start;
+  }
+}

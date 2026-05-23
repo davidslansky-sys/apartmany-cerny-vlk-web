@@ -21,9 +21,10 @@ const { data } = apartment;
 <BaseLayout title={data.seo.title} description={data.seo.description}>
   <Header />
 
-  <main>
-    <section style="padding: 72px 24px; border-bottom: 1px solid rgba(255,255,255,.12);">
-      <div style="max-width: 1200px; margin: 0 auto;">
+  <main id="obsah">
+    {/* Hero sekce */}
+    <section class="page-section" style="border-bottom: 1px solid rgba(255,255,255,.12);">
+      <div class="page-inner">
         <p style="font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.7);">
           Apartmán · Borová Lada
         </p>
@@ -36,60 +37,67 @@ const { data } = apartment;
       </div>
     </section>
 
-    <section style="padding: 40px 24px;">
-      <div style="max-width: 1200px; margin: 0 auto; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-        <div style="padding: 20px; border: 1px solid rgba(255,255,255,.12);">
-          <p style="margin: 0 0 8px; color: rgba(255,255,255,.6);">Kapacita</p>
-          <strong>{data.capacityText}</strong>
-        </div>
-        <div style="padding: 20px; border: 1px solid rgba(255,255,255,.12);">
-          <p style="margin: 0 0 8px; color: rgba(255,255,255,.6);">Velikost</p>
-          <strong>{data.sizeM2} m²</strong>
-        </div>
-        <div style="padding: 20px; border: 1px solid rgba(255,255,255,.12);">
-          <p style="margin: 0 0 8px; color: rgba(255,255,255,.6);">Číslo objektu</p>
-          <strong>{data.houseNumber ?? 'Bude doplněno'}</strong>
+    {/* Parametry apartmánu */}
+    <section class="page-section">
+      <div class="page-inner">
+        <div class="info-grid">
+          <div class="info-card">
+            <p class="info-card-label">Kapacita</p>
+            <strong>{data.capacityText}</strong>
+          </div>
+          <div class="info-card">
+            <p class="info-card-label">Velikost</p>
+            <strong>{data.sizeM2} m²</strong>
+          </div>
+          <div class="info-card">
+            <p class="info-card-label">Číslo objektu</p>
+            <strong>{data.houseNumber ?? 'Bude doplněno'}</strong>
+          </div>
         </div>
       </div>
     </section>
 
-    <section style="padding: 0 24px 40px;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Hlavní výhody</h2>
+    {/* Hlavní výhody */}
+    <section class="page-section">
+      <div class="page-inner">
+        <h2 class="section-title">Hlavní výhody</h2>
         <ul style="padding-left: 20px; line-height: 1.8;">
           {data.highlights.map((item) => <li>{item}</li>)}
         </ul>
       </div>
     </section>
 
-    <section style="padding: 0 24px 40px;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Vybavení</h2>
+    {/* Vybavení */}
+    <section class="page-section">
+      <div class="page-inner">
+        <h2 class="section-title">Vybavení</h2>
         <ul style="padding-left: 20px; line-height: 1.8;">
           {data.amenities.map((item) => <li>{item}</li>)}
         </ul>
       </div>
     </section>
 
-    <section style="padding: 0 24px 40px;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Popis apartmánu</h2>
-        <div style="max-width: 760px; line-height: 1.8; color: rgba(255,255,255,.86);">
+    {/* Popis apartmánu */}
+    <section class="page-section">
+      <div class="page-inner">
+        <h2 class="section-title">Popis apartmánu</h2>
+        <div class="section-text">
           <Content />
         </div>
       </div>
     </section>
 
-    <section style="padding: 0 24px 72px;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Galerie</h2>
-        <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+    {/* Galerie */}
+    <section class="page-section">
+      <div class="page-inner">
+        <h2 class="section-title">Galerie</h2>
+        <div class="gallery-grid">
           {data.gallery.map((image) => (
             <img
               src={image}
               alt={data.title}
               loading="lazy"
-              style="width: 100%; height: 240px; object-fit: cover; background: #1a1a1a;"
+              class="gallery-img"
             />
           ))}
         </div>

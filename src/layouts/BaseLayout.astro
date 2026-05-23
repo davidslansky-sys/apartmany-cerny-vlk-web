@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import '../styles/prototype.css';
 
 interface Props {
   title?: string;
@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Apartmány Černý vlk',
-  description = 'Ubytování v Borových Ladech na Šumavě.'
+  title = 'Apartmány Černý vlk – Borová Lada, Šumava',
+  description = 'Pět apartmánů v Borových Ladech, Národní park Šumava.',
 } = Astro.props;
 ---
 
@@ -19,7 +19,16 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <slot />
   </body>

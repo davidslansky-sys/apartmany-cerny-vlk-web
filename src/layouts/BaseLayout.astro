@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Apartmány Černý vlk',
-  description = 'Ubytování v Borových Ladech na Šumavě.'
+  title = 'Apartmány Černý vlk | Borová Lada',
+  description = 'Ubytování v Borových Ladech na Šumavě.',
 } = Astro.props;
 ---
 
@@ -19,8 +19,11 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="format-detection" content="telephone=no" />
   </head>
+
   <body>
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
     <slot />
   </body>
 </html>

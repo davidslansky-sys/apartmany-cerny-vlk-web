@@ -5,26 +5,433 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Apartmány Černý vlk | Borová Lada"
-  description="Ubytování v Borových Ladech na Šumavě."
+  title="Apartmány Černý vlk – Borová Lada, Šumava"
+  description="Pět prostorných apartmánů v Borové Ladě – klid v srdci Národního parku Šumava."
 >
   <Header />
 
-  <main>
-    <section style="min-height: 70vh; display: flex; align-items: center; padding: 80px 24px; background: #1a1a1a;">
-      <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
-        <p style="font-size: 14px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.7);">
-          Borová Lada · Šumava
-        </p>
-        <h1 style="font-size: 56px; line-height: 1.05; margin: 16px 0; font-weight: 800;">
-          Apartmány Černý vlk
-        </h1>
-        <p style="max-width: 720px; font-size: 20px; color: rgba(255,255,255,.8);">
-          Moderní horské ubytování v srdci Národního parku Šumava.
+  <!-- HERO -->
+  <section class="hero">
+    <img
+      class="hero-img"
+      src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/52b7e74b280d36cb98afae015134210a210402fb.jpg"
+      alt="Interiér apartmánu s výhledem do lesa"
+      width="1280"
+      height="853"
+      decoding="async"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Národní park Šumava · 5 apartmánů</p>
+      <h1 class="hero-title">
+        Odpočinek<br />v srdci <em>lesa</em>
+      </h1>
+      <p class="hero-sub">
+        Pět prostorných apartmánů v Borové Ladě – tam, kde smrky sahají až k obloze a ticho je každodenním
+        luxusem.
+      </p>
+      <div class="hero-actions">
+        <a href="#rezervace" class="btn-primary">Zkontrolovat dostupnost</a>
+        <a href="#apartmany" class="btn-ghost">Prohlédnout apartmány</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">scroll</div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">★★★★★ <strong>9,6 / 10</strong> – Booking.com</div>
+      <div class="trust-item">·</div>
+      <div class="trust-item"><strong>5</strong> apartmánů, 2–8 osob</div>
+      <div class="trust-item">·</div>
+      <div class="trust-item">NP Šumava – <strong>přímý vstup do přírody</strong></div>
+      <div class="trust-item">·</div>
+      <div class="trust-item">Bezplatné storno</div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-img-wrap">
+          <img
+            class="intro-img"
+            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/6423141c0299e82ddc07d94bd800932986ad952c.jpg"
+            alt="Moderní interiér horského apartmánu"
+            width="800"
+            height="1000"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="intro-badge">
+            <div class="intro-badge-num">116</div>
+            <div class="intro-badge-label">m² největší apartmán</div>
+          </div>
+        </div>
+        <div class="intro-text">
+          <p class="section-eyebrow">Proč Černý vlk</p>
+          <h2 class="section-title">Šumava za dveřmi,<br />pohodlí uvnitř</h2>
+          <p class="section-sub">
+            Nejsme hotel. Jsme pět apartmánů s duší – každý svůj, každý plně vybavený, každý s přímým výhledem do
+            lesa. Vhodné pro rodiny, páry i skupiny přátel.
+          </p>
+          <div class="intro-features">
+            <div class="intro-feature">
+              <div class="intro-feature-label">Lokalita</div>
+              <div class="intro-feature-val">Borová Lada 116 &amp; 117</div>
+            </div>
+            <div class="intro-feature">
+              <div class="intro-feature-label">Apartmánů</div>
+              <div class="intro-feature-val">5 apartmánů</div>
+            </div>
+            <div class="intro-feature">
+              <div class="intro-feature-label">Kapacita</div>
+              <div class="intro-feature-val">2 – 8 osob</div>
+            </div>
+            <div class="intro-feature">
+              <div class="intro-feature-label">Partner</div>
+              <div class="intro-feature-val">Penzion Černý vlk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APARTMÁNY -->
+  <section class="section section-alt" id="apartmany">
+    <div class="container">
+      <div class="apts-header">
+        <div>
+          <p class="section-eyebrow">Ubytování</p>
+          <h2 class="section-title">Pět apartmánů,<br />jeden charakter místa</h2>
+        </div>
+        <p class="section-sub" style="max-width:36ch;">
+          Každý apartmán má vlastní barevný charakter – vyberte ten, který sedí právě vám.
         </p>
       </div>
-    </section>
-  </main>
+
+      <div class="apt-grid">
+        <!-- Červený -->
+        <div class="apt-card">
+          <img
+            class="apt-card-img"
+            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/52b7e74b280d36cb98afae015134210a210402fb.jpg"
+            alt="Červený apartmán – obývací pokoj"
+            width="680"
+            height="425"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="apt-card-body">
+            <div class="apt-card-color">
+              <span class="apt-dot" style="background:#c0392b;"></span>Červený
+            </div>
+            <h3 class="apt-card-name">Apartmán Červený</h3>
+            <p class="apt-card-desc">
+              Největší apartmán pro velké rodiny a skupiny. Dva plnohodnotné obytné prostory, plně vybavená kuchyně.
+            </p>
+            <div class="apt-card-specs">
+              <span class="apt-spec">👥 až 8 osob</span>
+              <span class="apt-spec">📐 116 m²</span>
+              <span class="apt-spec">🛏 4 ložnice</span>
+            </div>
+            <div class="apt-card-footer">
+              <div class="apt-price">
+                od 4 200 Kč <span>/ noc</span>
+              </div>
+              <a href="#rezervace" class="btn-apt">Rezervovat</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Žlutý -->
+        <div class="apt-card">
+          <img
+            class="apt-card-img"
+            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/a76c9d298c359f930b90fbe9aa776c669f776e33.jpg"
+            alt="Žlutý apartmán – útulný interiér"
+            width="680"
+            height="425"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="apt-card-body">
+            <div class="apt-card-color">
+              <span class="apt-dot" style="background:#d4ac0d;"></span>Žlutý
+            </div>
+            <h3 class="apt-card-name">Apartmán Žlutý</h3>
+            <p class="apt-card-desc">
+              Ideální pro rodinu 4+1. Vlastní kuchyně, koupelna, prostorný obývací pokoj s výhledem do lesa.
+            </p>
+            <div class="apt-card-specs">
+              <span class="apt-spec">👥 4+1 osob</span>
+              <span class="apt-spec">📐 56 m²</span>
+              <span class="apt-spec">🛏 2 ložnice</span>
+            </div>
+            <div class="apt-card-footer">
+              <div class="apt-price">
+                od 2 800 Kč <span>/ noc</span>
+              </div>
+              <a href="#rezervace" class="btn-apt">Rezervovat</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zelený -->
+        <div class="apt-card">
+          <img
+            class="apt-card-img"
+            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b9e15e47ac6713e15954beeaeac4e29e2a024366.jpg"
+            alt="Zelený apartmán – jídelna"
+            width="680"
+            height="425"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="apt-card-body">
+            <div class="apt-card-color">
+              <span class="apt-dot" style="background:#4a6741;"></span>Zelený
+            </div>
+            <h3 class="apt-card-name">Apartmán Zelený</h3>
+            <p class="apt-card-desc">
+              Svěží interiér se šalvějovými tóny. Pro rodinu nebo přátele, kteří chtějí prostorné zázemí v přírodě.
+            </p>
+            <div class="apt-card-specs">
+              <span class="apt-spec">👥 4+1 osob</span>
+              <span class="apt-spec">📐 56 m²</span>
+              <span class="apt-spec">🛏 2 ložnice</span>
+            </div>
+            <div class="apt-card-footer">
+              <div class="apt-price">
+                od 2 800 Kč <span>/ noc</span>
+              </div>
+              <a href="#rezervace" class="btn-apt">Rezervovat</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Šedý -->
+        <div class="apt-card">
+          <img
+            class="apt-card-img"
+            src="https://picsum.photos/seed/grey-apt/680/425"
+            alt="Šedý apartmán – připravujeme fotografie"
+            width="680"
+            height="425"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="apt-card-body">
+            <div class="apt-card-color">
+              <span class="apt-dot" style="background:#7f8c8d;"></span>Šedý
+            </div>
+            <h3 class="apt-card-name">Apartmán Šedý</h3>
+            <p class="apt-card-desc">
+              Klidný, neutrální interiér. Ideální pro páry nebo menší rodiny hledající soukromí a klid lesa.
+            </p>
+            <div class="apt-card-specs">
+              <span class="apt-spec">👥 4+1 osob</span>
+              <span class="apt-spec">📐 56 m²</span>
+              <span class="apt-spec">🛏 2 ložnice</span>
+            </div>
+            <div class="apt-card-footer">
+              <div class="apt-price">
+                od 2 800 Kč <span>/ noc</span>
+              </div>
+              <a href="#rezervace" class="btn-apt">Rezervovat</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modrý -->
+        <div class="apt-card">
+          <img
+            class="apt-card-img"
+            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f537063100465a11a33afef4a1e83ddf84e9f9ea.jpg"
+            alt="Modrý apartmán"
+            width="680"
+            height="425"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="apt-card-body">
+            <div class="apt-card-color">
+              <span class="apt-dot" style="background:#2980b9;"></span>Modrý
+            </div>
+            <h3 class="apt-card-name">Apartmán Modrý</h3>
+            <p class="apt-card-desc">
+              Vzdušný a světlý apartmán s panoramatickým oknem. Pocit volnosti uprostřed šumavské přírody.
+            </p>
+            <div class="apt-card-specs">
+              <span class="apt-spec">👥 4+1 osob</span>
+              <span class="apt-spec">📐 56 m²</span>
+              <span class="apt-spec">🛏 2 ložnice</span>
+            </div>
+            <div class="apt-card-footer">
+              <div class="apt-price">
+                od 2 800 Kč <span>/ noc</span>
+              </div>
+              <a href="#rezervace" class="btn-apt">Rezervovat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENZE -->
+  <section class="section section-linen" id="recenze">
+    <div class="container">
+      <p class="section-eyebrow">Co říkají hosté</p>
+      <h2 class="section-title">Recenze na jednom místě</h2>
+      <div class="reviews-score">
+        <div class="score-big">9,6</div>
+        <div>
+          <div class="score-label"><strong>Výjimečné</strong> – Booking.com</div>
+          <div class="score-label" style="margin-top:0.25rem;">Přes 200 recenzí od skutečných hostů</div>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:2rem;flex-wrap:wrap;">
+          <div>
+            <div style="font-weight:600;font-size:1.1rem;">9,8</div>
+            <div style="font-size:var(--text-xs);color:var(--color-muted);">Čistota</div>
+          </div>
+          <div>
+            <div style="font-weight:600;font-size:1.1rem;">9,7</div>
+            <div style="font-size:var(--text-xs);color:var(--color-muted);">Poloha</div>
+          </div>
+          <div>
+            <div style="font-weight:600;font-size:1.1rem;">9,5</div>
+            <div style="font-size:var(--text-xs);color:var(--color-muted);">Vybavení</div>
+          </div>
+          <div>
+            <div style="font-weight:600;font-size:1.1rem;">9,4</div>
+            <div style="font-size:var(--text-xs);color:var(--color-muted);">Personál</div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            „Nádherné místo, perfektní klid. Apartmán byl čistý, prostorný a vybavený na jedničku. Vrátíme se určitě!"
+          </p>
+          <div class="review-author">
+            Jana K. · Červený apartmán · <span class="review-source">Booking.com</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            „Toller Aufenthalt in der Natur. Die Wohnung war geräumig und sauber, die Lage perfekt für Wanderungen im
+            Böhmerwald."
+          </p>
+          <div class="review-author">
+            Markus W. · Žlutý apartmán · <span class="review-source">Booking.com</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            „Skvělé ubytování pro celou rodinu. Děti milovaly les za domem, my jsme si konečně pořádně odpočinuli."
+          </p>
+          <div class="review-author">
+            Rodina Novákova · Zelený apartmán · <span class="review-source">TripAdvisor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKALITA -->
+  <section class="section" id="lokalita">
+    <div class="container">
+      <div class="location-grid">
+        <div>
+          <p class="section-eyebrow">Kde nás najdete</p>
+          <h2 class="section-title">Borová Lada –<br />srdce Šumavy</h2>
+          <p class="section-sub">
+            Jsme v Borové Ladě, malé vesnici uprostřed Národního parku Šumava – 8 km od Vimperku, méně než 50 km od
+            německé hranice.
+          </p>
+          <div class="location-activities">
+            <div class="location-activity">
+              <div class="act-icon">🥾</div>
+              <div>
+                <div class="act-name">Turistika a cykloturistika</div>
+                <div class="act-desc">
+                  Stovky km značených tras přímo od dveří. Šumavské hřebeny, Boubín, Březník.
+                </div>
+              </div>
+            </div>
+            <div class="location-activity">
+              <div class="act-icon">⛷️</div>
+              <div>
+                <div class="act-name">Zimní sporty</div>
+                <div class="act-desc">
+                  Lyžování, běžkování a ski areály v dosahu 10–20 minut autem.
+                </div>
+              </div>
+            </div>
+            <div class="location-activity">
+              <div class="act-icon">🌊</div>
+              <div>
+                <div class="act-name">Vodní sporty</div>
+                <div class="act-desc">
+                  Lipno, Otava, Vydra – kanoistika, paddleboarding, koupání v přírodě.
+                </div>
+              </div>
+            </div>
+            <div class="location-activity">
+              <div class="act-icon">🦌</div>
+              <div>
+                <div class="act-name">Příroda a ticho</div>
+                <div class="act-desc">
+                  Národní park, pralesní rezervace Boubín, rašeliniště – unikátní ekosystém střední Evropy.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="location-img"
+          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/7dd4b8e978a3eca90ad6ab59a33e3b1e7d918db6.jpg"
+          alt="Národní park Šumava – krajina"
+          width="800"
+          height="540"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA REZERVACE -->
+  <section class="cta-section" id="rezervace">
+    <div class="container-narrow" style="text-align:center;">
+      <p class="cta-eyebrow">Přímá rezervace</p>
+      <h2 class="cta-title">Kdy přijedete?</h2>
+      <p class="cta-sub">
+        Rezervujte přímo u nás – bez provize, s okamžitým potvrzením. Při přímé rezervaci máte nejlepší cenu
+        garantovanou.
+      </p>
+      <div class="cta-actions">
+        <a
+          href="https://www.previo.cz"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-cta-primary"
+        >
+          Zkontrolovat dostupnost a rezervovat
+        </a>
+        <a href="tel:+420728739288" class="btn-cta-ghost">📞 Zavolat nám</a>
+      </div>
+      <p class="previo-note">Rezervační systém Previo · Bezpečná platba · Okamžité potvrzení</p>
+    </div>
+  </section>
 
   <Footer />
 </BaseLayout>

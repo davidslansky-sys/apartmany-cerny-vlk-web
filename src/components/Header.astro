@@ -1,13 +1,41 @@
-<header style="border-bottom: 1px solid rgba(255,255,255,.12);">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
-    <a href="/" style="font-size: 20px; font-weight: 700;">
-      Apartmány Černý vlk!
-    </a>
+---
+const { currentSection = '' } = Astro.props;
+---
 
-    <nav style="display: flex; gap: 20px; font-size: 14px; flex-wrap: wrap;">
-      <a href="/">Domů</a>
-      <a href="/vybaveni">Vybavení</a>
-      <a href="/apartmany/cerveny">Apartmány</a>
-    </nav>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Apartmány Černý vlk">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path
+          d="M16 3L4 12v17h8v-9h8v9h8V12L16 3z"
+          stroke="#4a6741"
+          stroke-width="1.5"
+          fill="none"
+          stroke-linejoin="round"
+        />
+        <circle cx="16" cy="10" r="2" fill="#4a6741" />
+        <path
+          d="M10 21l3-4 3 2 3-2 3 4"
+          stroke="#4a6741"
+          stroke-width="1"
+          fill="none"
+          opacity="0.5"
+        />
+      </svg>
+      <div>
+        Černý vlk
+        <span>Borová Lada · Šumava</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/#apartmany">Apartmány</a></li>
+      <li><a href="/#recenze">Recenze</a></li>
+      <li><a href="/#lokalita">Lokalita</a></li>
+      <li><a href="/#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="/#rezervace" class="btn-nav">Rezervovat</a>
+    <button class="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</header>
+</nav>

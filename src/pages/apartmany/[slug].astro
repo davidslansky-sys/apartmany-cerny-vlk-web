@@ -1,0 +1,101 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const apartments = await getCollection('apartments', ({ data }) => data.lang === 'cs');
+
+  return apartments.map((apartment) => ({
+    params: { slug: apartment.data.slug },
+    props: { apartment },
+  }));
+}
+
+const { apartment } = Astro.props;
+const { Content } = await render(apartment);
+const { data } = apartment;
+---
+
+<BaseLayout title={data.seo.title} description={data.seo.description}>
+  <Header />
+
+  <main>
+    <section style="padding: 72px 24px; border-bottom: 1px solid rgba(255,255,255,.12);">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <p style="font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.7);">
+          Apartmán · Borová Lada
+        </p>
+        <h1 style="font-size: 48px; line-height: 1.05; margin: 12px 0 20px; font-weight: 800;">
+          {data.title}
+        </h1>
+        <p style="max-width: 720px; font-size: 20px; color: rgba(255,255,255,.8);">
+          {data.summary}
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 40px 24px;">
+      <div style="max-width: 1200px; margin: 0 auto; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div style="padding: 20px; border: 1px solid rgba(255,255,255,.12);">
+          <p style="margin: 0 0 8px; color: rgba(255,255,255,.6);">Kapacita</p>
+          <strong>{data.capacityText}</strong>
+        </div>
+        <div style="padding: 20px; border: 1px solid rgba(255,255,255,.12);">
+          <p style="margin: 0 0 8px; color: rgba(255,255,255,.6);">Velikost</p>
+          <strong>{data.sizeM2} m²</strong>
+        </div>
+        <div style="padding: 20px; border: 1px solid rgba(255,255,255,.12);">
+          <p style="margin: 0 0 8px; color: rgba(255,255,255,.6);">Číslo objektu</p>
+          <strong>{data.houseNumber ?? 'Bude doplněno'}</strong>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 0 24px 40px;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 28px; margin-bottom: 20px;">Hlavní výhody</h2>
+        <ul style="padding-left: 20px; line-height: 1.8;">
+          {data.highlights.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section style="padding: 0 24px 40px;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 28px; margin-bottom: 20px;">Vybavení</h2>
+        <ul style="padding-left: 20px; line-height: 1.8;">
+          {data.amenities.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section style="padding: 0 24px 40px;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 28px; margin-bottom: 20px;">Popis apartmánu</h2>
+        <div style="max-width: 760px; line-height: 1.8; color: rgba(255,255,255,.86);">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 0 24px 72px;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 28px; margin-bottom: 20px;">Galerie</h2>
+        <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          {data.gallery.map((image) => (
+            <img
+              src={image}
+              alt={data.title}
+              loading="lazy"
+              style="width: 100%; height: 240px; object-fit: cover; background: #1a1a1a;"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

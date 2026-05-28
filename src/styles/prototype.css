@@ -973,10 +973,10 @@ footer {
   color: var(--color-primary);
 }
 
-/* REVEAL */
+/* REVEAL — safe: content visible even without JS */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
+  opacity: 1;
+  transform: none;
   transition:
     opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -984,7 +984,7 @@ footer {
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .reveal-delay-1 {

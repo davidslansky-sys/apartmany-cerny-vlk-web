@@ -5,12 +5,12 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
+  lang="cs"
   title="Apartmány Černý vlk – Borová Lada, Šumava"
   description="5 apartmánů v klidném centru Šumavy. Borová Lada – příroda, vybavenost a celá Šumava na dosah."
 >
   <Header />
 
-  <!-- HERO -->
   <section class="hero" id="uvod">
     <div
       class="hero-bg"
@@ -21,7 +21,7 @@ import Footer from '../components/Footer.astro';
       <p class="hero-eyebrow">Borová Lada · Šumava</p>
       <h1>
         V klidném centru Šumavy.
-        <em style="color: var(--color-primary);">A přesto s veškerým zázemím.</em>
+        <em>A přesto s veškerým zázemím.</em>
       </h1>
       <p class="hero-perex">
         Borová Lada leží v srdci Národního parku – lesy, cyklostezky i běžkařské stopy začínají přímo za obcí.
@@ -29,67 +29,22 @@ import Footer from '../components/Footer.astro';
         docházkové vzdálenosti.
       </p>
       <div class="hero-actions">
-        <a href="#rezervace" class="btn-primary">
-          Zkontrolovat dostupnost
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
+        <a href="#rezervace" class="btn-primary">Zkontrolovat dostupnost</a>
         <a href="#apartmany" class="btn-ghost">Prohlédnout apartmány</a>
       </div>
     </div>
     <div class="hero-scroll" aria-hidden="true">Scroll</div>
   </section>
 
-  <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stats-inner">
-      <div class="stat">
-        <span class="stat-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
-        </span>
-        <span><strong>5 apartmánů</strong> · 2 objekty</span>
-      </div>
-
-      <div class="stat">
-        <span class="stat-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg>
-        </span>
-        <span><strong>4–8 osob</strong> / apartmán</span>
-      </div>
-
-      <div class="stat">
-        <span class="stat-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M9 11h6" />
-            <path d="M12 8v6" />
-          </svg>
-        </span>
-        <span>Celková kapacita <strong>28 osob</strong></span>
-      </div>
-
-      <div class="stat">
-        <span class="stat-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-        </span>
-        <span>Hodnocení <strong>9.4/10</strong></span>
-      </div>
+      <div class="stat"><span><strong>5 apartmánů</strong> · 2 objekty</span></div>
+      <div class="stat"><span><strong>4–8 osob</strong> / apartmán</span></div>
+      <div class="stat"><span>Celková kapacita <strong>28 osob</strong></span></div>
+      <div class="stat"><span>Hodnocení <strong>9.4/10</strong></span></div>
     </div>
   </div>
 
-  <!-- APARTMÁNY -->
   <section id="apartmany">
     <div class="section-inner">
       <p class="section-label reveal">Ubytování</p>
@@ -104,13 +59,7 @@ import Footer from '../components/Footer.astro';
 
         <div class="apt-card-big reveal">
           <div class="apt-photo">
-            <img
-              src="/images/apartmany/cerveny/cerveny-01.jpeg"
-              alt="Červený apartmán – hlavní interiér"
-              width="800"
-              height="500"
-              loading="lazy"
-            />
+            <img src="/images/apartmany/cerveny/cerveny-01.jpeg" alt="Červený apartmán – hlavní interiér" width="800" height="500" loading="lazy" />
           </div>
           <div class="apt-info">
             <div class="apt-name-row">
@@ -127,25 +76,14 @@ import Footer from '../components/Footer.astro';
               Největší apartmán s rozlehlou společenskou místností přes celé přízemí. Tři ložnice, dvě koupelny,
               samostatné WC a velkorysé zázemí pro vícečlennou rodinu nebo skupinu přátel.
             </p>
-            <a href="/apartmany/cerveny" class="apt-link">
-              Detail apartmánu
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+            <a href="/apartmany/cerveny" class="apt-link">Detail apartmánu</a>
           </div>
         </div>
 
         <div class="apt-row">
           <div class="apt-card-sm reveal">
             <div class="apt-photo">
-              <img
-                src="/images/apartmany/zluty/zluty-01.jpg"
-                alt="Žlutý apartmán – hlavní interiér"
-                width="600"
-                height="300"
-                loading="lazy"
-              />
+              <img src="/images/apartmany/zluty/zluty-01.jpg" alt="Žlutý apartmán – hlavní interiér" width="600" height="300" loading="lazy" />
             </div>
             <div class="apt-info">
               <div class="apt-name-row">
@@ -157,28 +95,14 @@ import Footer from '../components/Footer.astro';
                 <span class="apt-meta-item">2 ložnice</span>
                 <span class="apt-meta-item">56 m²</span>
               </div>
-              <p class="apt-desc">
-                Světlý apartmán s odpoledním a večerním sluncem. Praktické rozvržení pro rodinu, pohodlné zázemí i pro
-                delší pobyty.
-              </p>
-              <a href="/apartmany/zluty" class="apt-link">
-                Detail apartmánu
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
+              <p class="apt-desc">Světlý apartmán s odpoledním a večerním sluncem. Praktické rozvržení pro rodinu, pohodlné zázemí i pro delší pobyty.</p>
+              <a href="/apartmany/zluty" class="apt-link">Detail apartmánu</a>
             </div>
           </div>
 
           <div class="apt-card-sm reveal reveal-delay-1">
             <div class="apt-photo">
-              <img
-                src="/images/apartmany/zeleny/zeleny-01.jpg"
-                alt="Zelený apartmán – hlavní interiér"
-                width="600"
-                height="300"
-                loading="lazy"
-              />
+              <img src="/images/apartmany/zeleny/zeleny-01.jpg" alt="Zelený apartmán – hlavní interiér" width="600" height="300" loading="lazy" />
             </div>
             <div class="apt-info">
               <div class="apt-name-row">
@@ -190,16 +114,8 @@ import Footer from '../components/Footer.astro';
                 <span class="apt-meta-item">2 ložnice</span>
                 <span class="apt-meta-item">56 m²</span>
               </div>
-              <p class="apt-desc">
-                Apartmán s ranním sluncem a klidnou atmosférou. Ideální pro hosty, kteří chtějí vyrážet do přírody hned
-                po snídani.
-              </p>
-              <a href="/apartmany/zeleny" class="apt-link">
-                Detail apartmánu
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
+              <p class="apt-desc">Apartmán s ranním sluncem a klidnou atmosférou. Ideální pro hosty, kteří chtějí vyrážet do přírody hned po snídani.</p>
+              <a href="/apartmany/zeleny" class="apt-link">Detail apartmánu</a>
             </div>
           </div>
         </div>
@@ -209,13 +125,7 @@ import Footer from '../components/Footer.astro';
         <div class="apt-row">
           <div class="apt-card-sm reveal">
             <div class="apt-photo">
-              <img
-                src="/images/apartmany/modry/modry-01.jpeg"
-                alt="Modrý apartmán – hlavní interiér"
-                width="600"
-                height="300"
-                loading="lazy"
-              />
+              <img src="/images/apartmany/modry/modry-01.jpeg" alt="Modrý apartmán – hlavní interiér" width="600" height="300" loading="lazy" />
             </div>
             <div class="apt-info">
               <div class="apt-name-row">
@@ -227,27 +137,14 @@ import Footer from '../components/Footer.astro';
                 <span class="apt-meta-item">2 ložnice</span>
                 <span class="apt-meta-item">56 m²</span>
               </div>
-              <p class="apt-desc">
-                Nadstandardní apartmán s ranním sluncem a komfortem pro pohodové delší pobyty v každém ročním období.
-              </p>
-              <a href="/apartmany/modry" class="apt-link">
-                Detail apartmánu
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
+              <p class="apt-desc">Nadstandardní apartmán s ranním sluncem a komfortem pro pohodové delší pobyty v každém ročním období.</p>
+              <a href="/apartmany/modry" class="apt-link">Detail apartmánu</a>
             </div>
           </div>
 
           <div class="apt-card-sm reveal reveal-delay-1">
             <div class="apt-photo">
-              <img
-                src="/images/apartmany/sedy/sedy-01.jpeg"
-                alt="Šedý apartmán – hlavní interiér"
-                width="600"
-                height="300"
-                loading="lazy"
-              />
+              <img src="/images/apartmany/sedy/sedy-01.jpeg" alt="Šedý apartmán – hlavní interiér" width="600" height="300" loading="lazy" />
             </div>
             <div class="apt-info">
               <div class="apt-name-row">
@@ -259,15 +156,8 @@ import Footer from '../components/Footer.astro';
                 <span class="apt-meta-item">2 ložnice</span>
                 <span class="apt-meta-item">56 m²</span>
               </div>
-              <p class="apt-desc">
-                Klidný apartmán s odpoledním sluncem. Stejné rozložení a komfort jako Modrý, ideální pro páry i rodiny.
-              </p>
-              <a href="/apartmany/sedy" class="apt-link">
-                Detail apartmánu
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
+              <p class="apt-desc">Klidný apartmán s odpoledním sluncem. Stejné rozložení a komfort jako Modrý, ideální pro páry i rodiny.</p>
+              <a href="/apartmany/sedy" class="apt-link">Detail apartmánu</a>
             </div>
           </div>
         </div>
@@ -275,7 +165,6 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- OKOLÍ -->
   <section id="okoli">
     <div class="section-inner">
       <div class="okoli-layout">
@@ -283,12 +172,10 @@ import Footer from '../components/Footer.astro';
           <p class="section-label reveal">Lokalita</p>
           <h2 class="section-title reveal reveal-delay-1">Šumava za dveřmi. <em>V každém ročním období.</em></h2>
           <p class="reveal reveal-delay-2">
-            Cyklostezky a běžkařské stopy začínají prakticky za obcí. Borová Lada je ideální výchozí bod pro výlety po
-            české i bavorské Šumavě.
+            Cyklostezky a běžkařské stopy začínají prakticky za obcí. Borová Lada je ideální výchozí bod pro výlety po české i bavorské Šumavě.
           </p>
           <p class="reveal">
-            V létě vás čekají lesní cesty, rašeliniště, výhledy i koupání v okolní přírodě. V zimě máte v dosahu
-            běžkařské trasy i sjezdovky na české i německé straně.
+            V létě vás čekají lesní cesty, rašeliniště, výhledy i koupání v okolní přírodě. V zimě máte v dosahu běžkařské trasy i sjezdovky na české i německé straně.
           </p>
           <p class="reveal">
             Přitom zůstáváte v místě, kde je klid, čistý vzduch a vše důležité v rozumné dostupnosti.
@@ -296,33 +183,14 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="okoli-photos reveal">
-          <img
-            src="/images/domy/dum-116/dum-116-02.jpeg"
-            alt="Apartmány Černý vlk – objekt č.p. 116 v Borových Ladech"
-            width="800"
-            height="280"
-            loading="lazy"
-          />
-          <img
-            src="/images/domy/dum-117/dum-117-01.jpg"
-            alt="Apartmány Černý vlk – objekt č.p. 117"
-            width="400"
-            height="200"
-            loading="lazy"
-          />
-          <img
-            src="/images/domy/dum-116/dum-116-07.jpg"
-            alt="Borová Lada a okolí apartmánů"
-            width="400"
-            height="200"
-            loading="lazy"
-          />
+          <img src="/images/domy/dum-116/dum-116-02.jpeg" alt="Apartmány Černý vlk – objekt č.p. 116 v Borových Ladech" width="800" height="280" loading="lazy" />
+          <img src="/images/domy/dum-117/dum-117-01.jpg" alt="Apartmány Černý vlk – objekt č.p. 117" width="400" height="200" loading="lazy" />
+          <img src="/images/domy/dum-116/dum-116-07.jpg" alt="Borová Lada a okolí apartmánů" width="400" height="200" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RECENZE -->
   <section id="recenze">
     <div class="section-inner">
       <div class="recenze-header">
@@ -344,41 +212,25 @@ import Footer from '../components/Footer.astro';
 
       <div class="reviews-grid">
         <div class="review-card reveal">
-          <p class="review-quote">
-            Dispozičně skvěle řešeno, vybavenost na výborné úrovni – de facto nám tu nechybělo nic, od vybavení kuchyně
-            po vysoušeč bot.
-          </p>
+          <p class="review-quote">Dispozičně skvěle řešeno, vybavenost na výborné úrovni – de facto nám tu nechybělo nic, od vybavení kuchyně po vysoušeč bot.</p>
           <div class="review-author"><strong>Jindřiška</strong> · duben 2025</div>
         </div>
-
         <div class="review-card reveal reveal-delay-1">
-          <p class="review-quote">
-            Beautiful location, stylish apartments, directly connected to the surrounding green areas. Well equipped
-            kitchen, practical storage room.
-          </p>
+          <p class="review-quote">Beautiful location, stylish apartments, directly connected to the surrounding green areas. Well equipped kitchen, practical storage room.</p>
           <div class="review-author"><strong>Hunor</strong> · Německo · Booking.com</div>
         </div>
-
         <div class="review-card reveal reveal-delay-2">
-          <p class="review-quote">
-            Apartmány jsou nové, hezky útulně zařízené. Dovolenou jsme si užili a rádi se vrátíme znovu.
-          </p>
+          <p class="review-quote">Apartmány jsou nové, hezky útulně zařízené. Dovolenou jsme si užili a rádi se vrátíme znovu.</p>
           <div class="review-author"><strong>Tomáš</strong> · Google</div>
         </div>
       </div>
 
       <div class="recenze-cta reveal">
-        <a href="#recenze">
-          → Přečíst všechny recenze
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
+        <a href="#recenze">→ Přečíst všechny recenze</a>
       </div>
     </div>
   </section>
 
-  <!-- REZERVACE -->
   <section id="rezervace">
     <div class="section-inner">
       <div class="rezervace-layout">
@@ -390,18 +242,9 @@ import Footer from '../components/Footer.astro';
           </p>
 
           <div class="contact-line reveal">
-            <div class="contact-item">
-              <span>📞</span>
-              <a href="tel:+420728739288">+420 728 739 288</a>
-            </div>
-            <div class="contact-item">
-              <span>📞</span>
-              <a href="tel:+420739753580">+420 739 753 580</a>
-            </div>
-            <div class="contact-item">
-              <span>✉️</span>
-              <a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a>
-            </div>
+            <div class="contact-item"><span>📞</span><a href="tel:+420728739288">+420 728 739 288</a></div>
+            <div class="contact-item"><span>📞</span><a href="tel:+420739753580">+420 739 753 580</a></div>
+            <div class="contact-item"><span>✉️</span><a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a></div>
           </div>
         </div>
 

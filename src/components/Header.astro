@@ -1,11 +1,57 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const { currentSection = '' } = Astro.props;
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const messages = {
+  cs: {
+    'nav.home': 'Úvodní stránka',
+    'nav.apartments': 'Apartmány',
+    'nav.location': 'Okolí',
+    'nav.reviews': 'Recenze',
+    'nav.book': 'Rezervovat',
+    'nav.theme': 'Přepnout světlý/tmavý režim',
+    'nav.menu': 'Otevřít menu',
+    'nav.lang.cs': 'CS',
+    'nav.lang.de': 'DE',
+    'nav.lang.en': 'EN',
+    'brand.name': 'Černý vlk',
+  },
+  de: {
+    'nav.home': 'Startseite',
+    'nav.apartments': 'Apartments',
+    'nav.location': 'Umgebung',
+    'nav.reviews': 'Bewertungen',
+    'nav.book': 'Buchen',
+    'nav.theme': 'Hell/Dunkel umschalten',
+    'nav.menu': 'Menü öffnen',
+    'nav.lang.cs': 'CS',
+    'nav.lang.de': 'DE',
+    'nav.lang.en': 'EN',
+    'brand.name': 'Černý vlk',
+  },
+  en: {
+    'nav.home': 'Homepage',
+    'nav.apartments': 'Apartments',
+    'nav.location': 'Location',
+    'nav.reviews': 'Reviews',
+    'nav.book': 'Book now',
+    'nav.theme': 'Toggle light/dark mode',
+    'nav.menu': 'Open menu',
+    'nav.lang.cs': 'CS',
+    'nav.lang.de': 'DE',
+    'nav.lang.en': 'EN',
+    'brand.name': 'Černý vlk',
+  },
+} as const;
+
+type Lang = keyof typeof messages;
+type MessageKey = keyof typeof messages.cs;
+
+const rawLocale = Astro.currentLocale ?? 'cs';
+const lang: Lang = rawLocale === 'de' || rawLocale === 'en' ? rawLocale : 'cs';
+
+const t = (key: MessageKey) => messages[lang][key] ?? messages.cs[key];
 
 const homeUrl = getRelativeLocaleUrl(lang, '/');
 const switchCs = getRelativeLocaleUrl('cs', '/');
@@ -20,190 +66,42 @@ const switchEn = getRelativeLocaleUrl('en', '/');
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m2109.87 544-550.872 459.931"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M2095 551h280.28"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M2364 553.628 2768.353 368"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M2752 388v248.245"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M2563 798.706 2759.458 619"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M2580 792h226.89"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M2785 944.502V782"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m2456 1286.18 333.721-357.182"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m2463.58 1268-7.578 1062.06"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M2472.22 2308h-415.221"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m2081 2296.78 11.463-306.782"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m1565.78 1000-248.776 113.036"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m1338 1113 219.92 106.38"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M1119 2254.95 1565.532 1195"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m1093 2267 446.53 45.92"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m1518 2330.39 134.924-400.392"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M1627 1946h481.14"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="M2092 1966.46v-399.459"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m1963 1549 148.62 41.86"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m1978.4 1570-8.397 210.472"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m1650 1886.9 201.655-332.897"
-        transform="translate(-1086 -343)"
-      />
-      <path
-        fill="none"
-        stroke-miterlimit="8"
-        stroke-width="45.833"
-        stroke="currentColor"
-        d="m1850 1580 118.61 187.87"
-        transform="translate(-1086 -343)"
-      />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2109.87 544-550.872 459.931" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2095 551h280.28" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2364 553.628 2768.353 368" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2752 388v248.245" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2563 798.706 2759.458 619" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2580 792h226.89" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2785 944.502V782" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2456 1286.18 333.721-357.182" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2463.58 1268-7.578 1062.06" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2472.22 2308h-415.221" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2081 2296.78 11.463-306.782" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1565.78 1000-248.776 113.036" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1338 1113 219.92 106.38" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1119 2254.95 1565.532 1195" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1093 2267 446.53 45.92" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1518 2330.39 134.924-400.392" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1627 1946h481.14" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2092 1966.46v-399.459" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1963 1549 148.62 41.86" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1978.4 1570-8.397 210.472" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1650 1886.9 201.655-332.897" transform="translate(-1086 -343)" />
+      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1850 1580 118.61 187.87" transform="translate(-1086 -343)" />
     </svg>
     <span class="nav-logo-text">{t('brand.name')}</span>
   </a>
 
   <div class="nav-links">
-    <a href="#apartmany">{t('nav.apartments')}</a>
-    <a href="#okoli">{t('nav.location')}</a>
-    <a href="#recenze">{t('nav.reviews')}</a>
+    <a href={`${homeUrl}#apartmany`} aria-current={currentSection === 'apartmany' ? 'page' : undefined}>
+      {t('nav.apartments')}
+    </a>
+    <a href={`${homeUrl}#okoli`} aria-current={currentSection === 'okoli' ? 'page' : undefined}>
+      {t('nav.location')}
+    </a>
+    <a href={`${homeUrl}#recenze`} aria-current={currentSection === 'recenze' ? 'page' : undefined}>
+      {t('nav.reviews')}
+    </a>
 
     <div class="nav-lang" aria-label="Language switcher">
       <a href={switchCs} class:list={[lang === 'cs' && 'is-active']}>{t('nav.lang.cs')}</a>
@@ -211,7 +109,7 @@ const switchEn = getRelativeLocaleUrl('en', '/');
       <a href={switchEn} class:list={[lang === 'en' && 'is-active']}>{t('nav.lang.en')}</a>
     </div>
 
-    <a href="#rezervace" class="nav-cta">{t('nav.book')}</a>
+    <a href={`${homeUrl}#rezervace`} class="nav-cta">{t('nav.book')}</a>
 
     <button
       class="nav-theme"

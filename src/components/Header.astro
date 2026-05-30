@@ -1,9 +1,20 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
 const { currentSection = '' } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const homeUrl = getRelativeLocaleUrl(lang, '/');
+const switchCs = getRelativeLocaleUrl('cs', '/');
+const switchDe = getRelativeLocaleUrl('de', '/');
+const switchEn = getRelativeLocaleUrl('en', '/');
 ---
 
 <nav id="main-nav">
-  <a href="/" class="nav-logo" aria-label="Apartmány Černý vlk – úvodní stránka">
+  <a href={homeUrl} class="nav-logo" aria-label={`Apartmány Černý vlk – ${t('nav.home')}`}>
     <svg
       viewBox="0 0 1746 2012"
       xmlns="http://www.w3.org/2000/svg"
@@ -186,19 +197,27 @@ const { currentSection = '' } = Astro.props;
         transform="translate(-1086 -343)"
       />
     </svg>
-    <span class="nav-logo-text">Černý vlk</span>
+    <span class="nav-logo-text">{t('brand.name')}</span>
   </a>
 
   <div class="nav-links">
-    <a href="#apartmany">Apartmány</a>
-    <a href="#okoli">Okolí</a>
-    <a href="#recenze">Recenze</a>
-    <a href="#rezervace" class="nav-cta">Rezervovat</a>
+    <a href="#apartmany">{t('nav.apartments')}</a>
+    <a href="#okoli">{t('nav.location')}</a>
+    <a href="#recenze">{t('nav.reviews')}</a>
+
+    <div class="nav-lang" aria-label="Language switcher">
+      <a href={switchCs} class:list={[lang === 'cs' && 'is-active']}>{t('nav.lang.cs')}</a>
+      <a href={switchDe} class:list={[lang === 'de' && 'is-active']}>{t('nav.lang.de')}</a>
+      <a href={switchEn} class:list={[lang === 'en' && 'is-active']}>{t('nav.lang.en')}</a>
+    </div>
+
+    <a href="#rezervace" class="nav-cta">{t('nav.book')}</a>
+
     <button
       class="nav-theme"
       data-theme-toggle
       type="button"
-      aria-label="Přepnout světlý/tmavý režim"
+      aria-label={t('nav.theme')}
     >
       <svg
         width="18"
@@ -217,7 +236,7 @@ const { currentSection = '' } = Astro.props;
   <div
     class="nav-hamburger"
     id="hamburger"
-    aria-label="Otevřít menu"
+    aria-label={t('nav.menu')}
     role="button"
     tabindex="0"
   >
@@ -229,14 +248,12 @@ const { currentSection = '' } = Astro.props;
       document.addEventListener('DOMContentLoaded', () => {
         const toggle = document.querySelector('[data-theme-toggle]');
         if (!toggle) return;
+
         toggle.addEventListener('click', () => {
           const html = document.documentElement;
           const current = html.getAttribute('data-theme') || 'light';
           const next = current === 'light' ? 'dark' : 'light';
           html.setAttribute('data-theme', next);
-          try {
-            window.localStorage.setItem('theme', next);
-          } catch {}
         });
       });
     `}

@@ -43,7 +43,7 @@
 
 /* LIGHT */
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --color-bg: #f4f0e8;
   --color-surface: #f8f5ef;
   --color-surface-2: #fcfaf6;
@@ -73,7 +73,7 @@
 }
 
 /* DARK */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --color-bg: #17150f;
   --color-surface: #201d17;
   --color-surface-2: #25211b;
@@ -127,13 +127,17 @@ svg {
   height: auto;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   line-height: 1.06;
   text-wrap: balance;
 }
 
-p, li {
+p,
+li {
   text-wrap: pretty;
 }
 
@@ -174,7 +178,7 @@ ul {
   backdrop-filter: blur(12px);
 }
 
-[data-theme="dark"] #main-nav {
+[data-theme='dark'] #main-nav {
   background: linear-gradient(to bottom, rgba(23, 21, 15, 0.92), rgba(23, 21, 15, 0.55) 55%, rgba(23, 21, 15, 0));
 }
 
@@ -205,7 +209,7 @@ ul {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .nav-links > a {
@@ -216,6 +220,44 @@ ul {
 
 .nav-links > a:hover {
   color: var(--color-text);
+}
+
+.nav-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme='dark'] .nav-lang {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.nav-lang a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.15rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.nav-lang a:hover {
+  color: var(--color-text);
+  background: var(--color-surface-offset);
+}
+
+.nav-lang a.is-active {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
 }
 
 .nav-cta {
@@ -348,7 +390,7 @@ ul {
 }
 
 .hero h1 em {
-  color: #d9e5d9;
+  color: var(--color-primary);
   font-style: italic;
   font-weight: 400;
 }
@@ -855,7 +897,7 @@ footer {
   border-top: 1px solid var(--color-divider);
 }
 
-[data-theme="dark"] footer {
+[data-theme='dark'] footer {
   background: #1d1a14;
 }
 
@@ -1015,6 +1057,16 @@ footer {
 
   .apt-card-big .apt-photo {
     min-height: 21rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .nav-links {
+    gap: 0.75rem;
+  }
+
+  .nav-lang {
+    order: 10;
   }
 }
 

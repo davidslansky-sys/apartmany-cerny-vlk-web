@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import PrevioWidget from '../../components/PrevioWidget.astro';
 ---
 
 <BaseLayout
@@ -233,9 +234,8 @@ import Footer from '../../components/Footer.astro';
           </div>
         </div>
 
-        <div class="widget-placeholder reveal">
-          <p>The Previo widget will be embedded here.</p>
-          <p>In the next step we will connect real availability and booking.</p>
+        <div class="reveal">
+          <PrevioWidget lang="en" />
         </div>
       </div>
     </div>

@@ -1,0 +1,46 @@
+---
+interface Props {
+  lang?: 'cs' | 'de' | 'en';
+}
+
+const { lang = 'cs' } = Astro.props;
+
+const langMap = {
+  cs: 'cs',
+  de: 'de',
+  en: 'en',
+};
+
+const previoLang = langMap[lang] ?? 'cs';
+const src = `https://reservation.previo.cz/?hotId=756911&lang=${previoLang}`;
+---
+
+<div class="previo-wrapper">
+  <iframe
+    src={src}
+    class="previo-iframe"
+    title="Online rezervace"
+    frameborder="0"
+    scrolling="yes"
+    allowtransparency="true"
+    loading="lazy"
+  ></iframe>
+</div>
+
+<style>
+  .previo-wrapper {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    min-height: 520px;
+  }
+
+  .previo-iframe {
+    width: 100%;
+    min-height: 520px;
+    border: none;
+    display: block;
+  }
+</style>

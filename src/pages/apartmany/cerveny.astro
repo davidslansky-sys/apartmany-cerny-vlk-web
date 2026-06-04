@@ -93,7 +93,9 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
             <h3>Přízemí</h3>
             <p>
               Srdcem apartmánu je rozlehlá společenská místnost přes celé přízemí, která vytváří velkorysý prostor pro společné chvíle.
-              Součástí je obývací zóna, kuchyňské zázemí, vstupní část i praktické provozní řešení pro pobyt větší skupiny.
+            </p>
+            <p>
+              Součástí je obývací zóna, kuchyňské zázemí, koupelna se sprchovým koutem a WC a velký sklad s úložnými prostory.
             </p>
             <p>
               Výjimečné jsou také výstupy na tři světové strany, díky kterým působí přízemí vzdušně, přirozeně světle a dobře propojeně s okolím domu.
@@ -120,6 +122,9 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
             </p>
             <p>
               Díky třem ložnicím je pobyt pohodlný i při plné obsazenosti apartmánu.
+            </p>
+            <p>
+              Samostatná koupelna s vanou a samostatné WC s velkorysým prostorem umožní pohodlný pobyt i větší skupině.
             </p>
           </div>
 
@@ -184,126 +189,173 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
           <h2 class="section-title">Podívejte se <em>dovnitř</em></h2>
         </div>
         <p class="gallery-note">
-          Kompletní fotogalerie Červeného apartmánu.
+          Kompletní fotogalerie Červeného apartmánu. Kliknutím otevřete fotku ve větším zobrazení.
         </p>
       </div>
 
-      <div class="gallery-grid gallery-grid--full">
-        <img
-          src="/images/apartmany/cerveny/cerveny-01.jpeg"
-          alt="Červený apartmán – fotografie 1"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-02.jpeg"
-          alt="Červený apartmán – fotografie 2"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-03.jpeg"
-          alt="Červený apartmán – fotografie 3"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-04.jpg"
-          alt="Červený apartmán – fotografie 4"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-05.jpeg"
-          alt="Červený apartmán – fotografie 5"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-06.jpg"
-          alt="Červený apartmán – fotografie 6"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-07.jpeg"
-          alt="Červený apartmán – fotografie 7"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-08.jpg"
-          alt="Červený apartmán – fotografie 8"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-09.jpeg"
-          alt="Červený apartmán – fotografie 9"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-10.jpeg"
-          alt="Červený apartmán – fotografie 10"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-11.jpeg"
-          alt="Červený apartmán – fotografie 11"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-12.jpg"
-          alt="Červený apartmán – fotografie 12"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-13.jpg"
-          alt="Červený apartmán – fotografie 13"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-14.jpg"
-          alt="Červený apartmán – fotografie 14"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
-        <img
-          src="/images/apartmany/cerveny/cerveny-15.jpeg"
-          alt="Červený apartmán – fotografie 15"
-          width="900"
-          height="700"
-          loading="lazy"
-        />
+      <div class="gallery-grid gallery-grid--full" data-gallery="cerveny">
+        <button type="button" class="gallery-item" data-gallery-index="0" aria-label="Otevřít fotografii 1">
+          <img
+            src="/images/apartmany/cerveny/cerveny-01.jpeg"
+            alt="Červený apartmán – fotografie 1"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="1" aria-label="Otevřít fotografii 2">
+          <img
+            src="/images/apartmany/cerveny/cerveny-02.jpeg"
+            alt="Červený apartmán – fotografie 2"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="2" aria-label="Otevřít fotografii 3">
+          <img
+            src="/images/apartmany/cerveny/cerveny-03.jpeg"
+            alt="Červený apartmán – fotografie 3"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="3" aria-label="Otevřít fotografii 4">
+          <img
+            src="/images/apartmany/cerveny/cerveny-04.jpg"
+            alt="Červený apartmán – fotografie 4"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="4" aria-label="Otevřít fotografii 5">
+          <img
+            src="/images/apartmany/cerveny/cerveny-05.jpeg"
+            alt="Červený apartmán – fotografie 5"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="5" aria-label="Otevřít fotografii 6">
+          <img
+            src="/images/apartmany/cerveny/cerveny-06.jpg"
+            alt="Červený apartmán – fotografie 6"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="6" aria-label="Otevřít fotografii 7">
+          <img
+            src="/images/apartmany/cerveny/cerveny-07.jpeg"
+            alt="Červený apartmán – fotografie 7"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="7" aria-label="Otevřít fotografii 8">
+          <img
+            src="/images/apartmany/cerveny/cerveny-08.jpg"
+            alt="Červený apartmán – fotografie 8"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="8" aria-label="Otevřít fotografii 9">
+          <img
+            src="/images/apartmany/cerveny/cerveny-09.jpeg"
+            alt="Červený apartmán – fotografie 9"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="9" aria-label="Otevřít fotografii 10">
+          <img
+            src="/images/apartmany/cerveny/cerveny-10.jpeg"
+            alt="Červený apartmán – fotografie 10"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="10" aria-label="Otevřít fotografii 11">
+          <img
+            src="/images/apartmany/cerveny/cerveny-11.jpeg"
+            alt="Červený apartmán – fotografie 11"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="11" aria-label="Otevřít fotografii 12">
+          <img
+            src="/images/apartmany/cerveny/cerveny-12.jpeg"
+            alt="Červený apartmán – fotografie 12"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="12" aria-label="Otevřít fotografii 13">
+          <img
+            src="/images/apartmany/cerveny/cerveny-13.jpg"
+            alt="Červený apartmán – fotografie 13"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="13" aria-label="Otevřít fotografii 14">
+          <img
+            src="/images/apartmany/cerveny/cerveny-14.jpg"
+            alt="Červený apartmán – fotografie 14"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
+
+        <button type="button" class="gallery-item" data-gallery-index="14" aria-label="Otevřít fotografii 15">
+          <img
+            src="/images/apartmany/cerveny/cerveny-15.jpeg"
+            alt="Červený apartmán – fotografie 15"
+            width="900"
+            height="700"
+            loading="lazy"
+          />
+        </button>
       </div>
     </div>
   </section>
 
   <section class="apartment-equipment-link">
-    <div class="section-inner equipment-link__inner equipment-link__inner--simple">
-      <p class="equipment-link__text">
-        Detailní seznam vybavení apartmánu najdete zde.
-      </p>
-      <a href="/vybaveni" class="btn-secondary">Přejít na stránku Vybavení</a>
+    <div class="section-inner equipment-link__inner">
+      <div>
+        <p class="section-label">Vybavení</p>
+        <h2 class="section-title">Potřebujete znát detaily vybavení? <em>Najdete je zde.</em></h2>
+      </div>
+      <div class="equipment-link__action">
+        <a href="/vybaveni" class="btn-secondary">Přejít na stránku Vybavení</a>
+      </div>
     </div>
   </section>
 
@@ -330,7 +382,139 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     </div>
   </section>
 
+  <dialog class="lightbox" id="gallery-lightbox" aria-labelledby="gallery-lightbox-title">
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+
+    <div class="lightbox__panel" role="document">
+      <div class="sr-only" id="gallery-lightbox-title">Galerie Červeného apartmánu</div>
+
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Zavřít galerii">
+        ×
+      </button>
+
+      <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Předchozí fotografie">
+        ‹
+      </button>
+
+      <figure class="lightbox__figure">
+        <img
+          id="lightbox-image"
+          src=""
+          alt=""
+          width="1600"
+          height="1100"
+        />
+        <figcaption id="lightbox-caption" class="lightbox__caption"></figcaption>
+      </figure>
+
+      <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Další fotografie">
+        ›
+      </button>
+    </div>
+  </dialog>
+
   <Footer lang="cs" />
+
+  <script>
+    {`
+      (() => {
+        const galleryButtons = Array.from(document.querySelectorAll('[data-gallery-index]'));
+        const dialog = document.getElementById('gallery-lightbox');
+        const image = document.getElementById('lightbox-image');
+        const caption = document.getElementById('lightbox-caption');
+        const prevButton = dialog?.querySelector('[data-lightbox-prev]');
+        const nextButton = dialog?.querySelector('[data-lightbox-next]');
+        const closeButtons = dialog?.querySelectorAll('[data-lightbox-close]');
+
+        if (!dialog || !image || !caption || galleryButtons.length === 0) return;
+
+        let currentIndex = 0;
+        let lastTrigger = null;
+
+        const items = galleryButtons.map((button) => {
+          const img = button.querySelector('img');
+          return {
+            src: img?.getAttribute('src') || '',
+            alt: img?.getAttribute('alt') || '',
+          };
+        });
+
+        const renderItem = (index) => {
+          const item = items[index];
+          if (!item) return;
+          currentIndex = index;
+          image.setAttribute('src', item.src);
+          image.setAttribute('alt', item.alt);
+          caption.textContent = item.alt;
+        };
+
+        const openLightbox = (index, trigger) => {
+          lastTrigger = trigger;
+          renderItem(index);
+          if (typeof dialog.showModal === 'function') {
+            dialog.showModal();
+          } else {
+            dialog.setAttribute('open', 'true');
+          }
+          document.documentElement.classList.add('lightbox-open');
+        };
+
+        const closeLightbox = () => {
+          if (typeof dialog.close === 'function') {
+            dialog.close();
+          } else {
+            dialog.removeAttribute('open');
+          }
+          document.documentElement.classList.remove('lightbox-open');
+          if (lastTrigger) lastTrigger.focus();
+        };
+
+        const showPrev = () => {
+          const nextIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+          renderItem(nextIndex);
+        };
+
+        const showNext = () => {
+          const nextIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+          renderItem(nextIndex);
+        };
+
+        galleryButtons.forEach((button, index) => {
+          button.addEventListener('click', () => openLightbox(index, button));
+        });
+
+        prevButton?.addEventListener('click', showPrev);
+        nextButton?.addEventListener('click', showNext);
+
+        closeButtons?.forEach((button) => {
+          button.addEventListener('click', closeLightbox);
+        });
+
+        dialog.addEventListener('click', (event) => {
+          if (event.target === dialog) closeLightbox();
+        });
+
+        dialog.addEventListener('close', () => {
+          document.documentElement.classList.remove('lightbox-open');
+        });
+
+        dialog.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            showPrev();
+          }
+          if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            showNext();
+          }
+          if (event.key === 'Escape') {
+            event.preventDefault();
+            closeLightbox();
+          }
+        });
+      })();
+    `}
+  </script>
 
   <style>
     .apartment-hero {
@@ -461,7 +645,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     }
 
     .apartment-intro__grid,
-    .booking-layout {
+    .booking-layout,
+    .equipment-link__inner {
       display: grid;
       grid-template-columns: 0.95fr 1.05fr;
       gap: clamp(2rem, 5vw, 5rem);
@@ -485,8 +670,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     .layout-card__text p,
     .highlight-card p,
     .gallery-note,
-    .booking-copy p,
-    .equipment-link__text {
+    .booking-copy p {
       margin: 0 0 1rem;
       font-size: 1.04rem;
       line-height: 1.85;
@@ -518,7 +702,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     }
 
     .layout-card__media img,
-    .gallery-grid img {
+    .gallery-item img,
+    .lightbox__figure img {
       width: 100%;
       border-radius: 1rem;
       border: 1px solid var(--color-border);
@@ -553,7 +738,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     }
 
     .gallery-note {
-      max-width: 28rem;
+      max-width: 30rem;
       margin: 0;
       color: var(--color-muted);
     }
@@ -564,9 +749,24 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       gap: 1rem;
     }
 
-    .gallery-grid--full img {
+    .gallery-item {
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .gallery-item img {
       aspect-ratio: 1.18 / 1;
       object-fit: cover;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:focus-visible img {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     }
 
     .apartment-equipment-link {
@@ -575,15 +775,10 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       border-bottom: 1px solid var(--color-border);
     }
 
-    .equipment-link__inner--simple {
+    .equipment-link__action {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 1.25rem;
-    }
-
-    .equipment-link__text {
-      margin: 0;
+      justify-content: flex-end;
     }
 
     .btn-primary,
@@ -646,6 +841,87 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       text-decoration: none;
     }
 
+    .lightbox {
+      width: min(100% - 2rem, 1200px);
+      max-width: 1200px;
+      border: none;
+      padding: 0;
+      background: transparent;
+    }
+
+    .lightbox::backdrop {
+      background: rgba(11, 12, 10, 0.78);
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox__panel {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1rem;
+      min-height: min(80vh, 860px);
+    }
+
+    .lightbox__figure {
+      margin: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .lightbox__figure img {
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .lightbox__caption {
+      text-align: center;
+      color: #f4efe7;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .lightbox__close,
+    .lightbox__nav {
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1.7rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox__close {
+      position: absolute;
+      top: -3.5rem;
+      right: 0;
+      z-index: 3;
+    }
+
+    .lightbox__backdrop {
+      display: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     @media (max-width: 1080px) {
       .highlights-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -654,12 +930,12 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       .layout-card,
       .apartment-intro__grid,
       .booking-layout,
-      .equipment-link__inner--simple {
+      .equipment-link__inner {
         grid-template-columns: 1fr;
       }
 
-      .equipment-link__inner--simple {
-        display: grid;
+      .equipment-link__action {
+        justify-content: flex-start;
       }
     }
 
@@ -681,6 +957,36 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       .gallery-heading {
         flex-direction: column;
         align-items: start;
+      }
+
+      .lightbox {
+        width: min(100% - 1rem, 1000px);
+      }
+
+      .lightbox__panel {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        min-height: auto;
+        padding-top: 3rem;
+      }
+
+      .lightbox__close {
+        top: 0;
+        right: 0;
+      }
+
+      .lightbox__nav {
+        position: fixed;
+        bottom: 1rem;
+        z-index: 4;
+      }
+
+      .lightbox__nav--prev {
+        left: 1rem;
+      }
+
+      .lightbox__nav--next {
+        right: 1rem;
       }
     }
 

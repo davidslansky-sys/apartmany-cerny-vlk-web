@@ -28,7 +28,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       <p class="apartment-hero__eyebrow">Apartmán č.p. 116</p>
       <h1>Červený apartmán</h1>
       <p class="apartment-hero__lead">
-        Nejprostornější apartmán pro společný pobyt na Šumavě – s velkou společenská místností přes celé přízemí,
+        Nejprostornější apartmán pro společný pobyt na Šumavě – s velkou společenskou místností přes celé přízemí,
         třemi ložnicemi a dostatkem soukromí i pro větší rodinu nebo partu přátel.
       </p>
 
@@ -102,14 +102,22 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
             </p>
           </div>
 
-          <div class="layout-card__media">
-            <img
-              src="/images/domy/dum-116/dum-116-pudorys-prizemi.jpg"
-              alt="Půdorys přízemí objektu 116"
-              width="1200"
-              height="900"
-              loading="lazy"
-            />
+          <div class="layout-card__media" data-gallery="cerveny-pudorysy">
+            <button
+              type="button"
+              class="gallery-item gallery-item--plan"
+              data-gallery-trigger="true"
+              data-gallery-index="0"
+              aria-label="Otevřít půdorys přízemí objektu 116"
+            >
+              <img
+                src="/images/domy/dum-116/dum-116-pudorys-prizemi.jpg"
+                alt="Půdorys přízemí objektu 116"
+                width="1200"
+                height="900"
+                loading="lazy"
+              />
+            </button>
           </div>
         </article>
 
@@ -128,14 +136,22 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
             </p>
           </div>
 
-          <div class="layout-card__media">
-            <img
-              src="/images/domy/dum-116/dum-116-pudorys-1patro.jpg"
-              alt="Půdorys prvního patra objektu 116"
-              width="1200"
-              height="900"
-              loading="lazy"
-            />
+          <div class="layout-card__media" data-gallery="cerveny-pudorysy">
+            <button
+              type="button"
+              class="gallery-item gallery-item--plan"
+              data-gallery-trigger="true"
+              data-gallery-index="1"
+              aria-label="Otevřít půdorys prvního patra objektu 116"
+            >
+              <img
+                src="/images/domy/dum-116/dum-116-pudorys-1patro.jpg"
+                alt="Půdorys prvního patra objektu 116"
+                width="1200"
+                height="900"
+                loading="lazy"
+              />
+            </button>
           </div>
         </article>
       </div>
@@ -348,11 +364,13 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
   </section>
 
   <section class="apartment-equipment-link">
-    <div class="section-inner equipment-link__stack">
-      <p class="section-label">Vybavení</p>
-      <h2 class="section-title">Potřebujete znát detaily vybavení? <em>Najdete je zde.</em></h2>
-      <div class="equipment-link__action equipment-link__action--below">
-        <a href="/vybaveni" class="btn-secondary">Přejít na stránku Vybavení</a>
+    <div class="section-inner">
+      <div class="equipment-link__stack">
+        <p class="section-label">Vybavení</p>
+        <h2 class="section-title">Potřebujete znát detaily vybavení? <em>Najdete je zde.</em></h2>
+        <div class="equipment-link__action equipment-link__action--below">
+          <a href="/vybaveni" class="btn-secondary">Přejít na stránku Vybavení</a>
+        </div>
       </div>
     </div>
   </section>
@@ -418,7 +436,6 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
   <script>
     (() => {
-      const gallery = document.querySelector('[data-gallery="cerveny"]');
       const dialog = document.getElementById('gallery-lightbox');
       const image = document.getElementById('lightbox-image');
       const caption = document.getElementById('lightbox-caption');
@@ -426,24 +443,29 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       const nextButton = dialog?.querySelector('[data-lightbox-next]');
       const closeButtons = dialog?.querySelectorAll('[data-lightbox-close]');
 
-      if (!gallery || !dialog || !image || !caption) return;
+      if (!dialog || !image || !caption) return;
 
-      const galleryButtons = Array.from(gallery.querySelectorAll('[data-gallery-index]'));
-      if (galleryButtons.length === 0) return;
+      const galleries = Array.from(document.querySelectorAll('[data-gallery]'));
+      if (galleries.length === 0) return;
 
+      let currentGalleryItems = [];
       let currentIndex = 0;
       let lastTrigger = null;
 
-      const items = galleryButtons.map((button) => {
-        const img = button.querySelector('img');
-        return {
-          src: img?.getAttribute('src') || '',
-          alt: img?.getAttribute('alt') || '',
-        };
-      });
+      const buildItems = (gallery) => {
+        const buttons = Array.from(gallery.querySelectorAll('[data-gallery-index]'));
+        return buttons.map((button) => {
+          const img = button.querySelector('img');
+          return {
+            src: img?.getAttribute('src') || '',
+            alt: img?.getAttribute('alt') || '',
+            trigger: button,
+          };
+        });
+      };
 
       const renderItem = (index) => {
-        const item = items[index];
+        const item = currentGalleryItems[index];
         if (!item) return;
         currentIndex = index;
         image.src = item.src;
@@ -451,7 +473,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         caption.textContent = item.alt;
       };
 
-      const openLightbox = (index, trigger) => {
+      const openLightbox = (gallery, index, trigger) => {
+        currentGalleryItems = buildItems(gallery);
         lastTrigger = trigger || null;
         renderItem(index);
 
@@ -479,27 +502,31 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       };
 
       const showPrev = () => {
-        const nextIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+        if (currentGalleryItems.length === 0) return;
+        const nextIndex = currentIndex === 0 ? currentGalleryItems.length - 1 : currentIndex - 1;
         renderItem(nextIndex);
       };
 
       const showNext = () => {
-        const nextIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+        if (currentGalleryItems.length === 0) return;
+        const nextIndex = currentIndex === currentGalleryItems.length - 1 ? 0 : currentIndex + 1;
         renderItem(nextIndex);
       };
 
-      gallery.addEventListener('click', (event) => {
-        const target = event.target;
-        if (!(target instanceof Element)) return;
+      galleries.forEach((gallery) => {
+        gallery.addEventListener('click', (event) => {
+          const target = event.target;
+          if (!(target instanceof Element)) return;
 
-        const trigger = target.closest('[data-gallery-index]');
-        if (!trigger) return;
+          const trigger = target.closest('[data-gallery-index]');
+          if (!trigger) return;
 
-        event.preventDefault();
-        const index = Number(trigger.getAttribute('data-gallery-index'));
-        if (Number.isNaN(index)) return;
+          event.preventDefault();
+          const index = Number(trigger.getAttribute('data-gallery-index'));
+          if (Number.isNaN(index)) return;
 
-        openLightbox(index, trigger);
+          openLightbox(gallery, index, trigger);
+        });
       });
 
       prevButton?.addEventListener('click', (event) => {
@@ -799,6 +826,16 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       pointer-events: none;
     }
 
+    .gallery-item--plan {
+      border-radius: 1rem;
+    }
+
+    .gallery-item--plan img {
+      aspect-ratio: auto;
+      object-fit: contain;
+      background: var(--color-surface);
+    }
+
     .gallery-item:hover img,
     .gallery-item:focus-visible img {
       transform: translateY(-2px);
@@ -811,10 +848,15 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       border-bottom: 1px solid var(--color-border);
     }
 
+    .apartment-equipment-link .section-inner {
+      display: block;
+    }
+
     .equipment-link__stack {
       display: grid;
       gap: 1.25rem;
-      max-width: 760px;
+      max-width: 880px;
+      margin-inline: 0;
     }
 
     .equipment-link__action--below {
@@ -903,6 +945,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       align-items: center;
       gap: 1rem;
       min-height: min(80vh, 860px);
+      padding-top: 4.5rem;
     }
 
     .lightbox__figure {
@@ -943,9 +986,9 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
     .lightbox__close {
       position: absolute;
-      top: -3.5rem;
-      right: 0;
-      z-index: 3;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 5;
     }
 
     .sr-only {
@@ -1000,12 +1043,12 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         grid-template-columns: 1fr;
         gap: 0.75rem;
         min-height: auto;
-        padding-top: 3rem;
+        padding-top: 4.5rem;
       }
 
       .lightbox__close {
-        top: 0;
-        right: 0;
+        top: 0.75rem;
+        right: 0.75rem;
       }
 
       .lightbox__nav {

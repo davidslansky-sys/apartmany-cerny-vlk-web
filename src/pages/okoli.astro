@@ -7,36 +7,32 @@ import Footer from '../components/Footer.astro';
 <BaseLayout
   lang="cs"
   title="Okolí a aktivity | Apartmány Černý vlk"
-  description="Borová Lada a centrální Šumava nabízejí klidnou přírodu, běžkařské trasy, výlety s dětmi, cyklovýlety i celodenní horské túry. Objevte tipy na místa a aktivity v okolí Apartmánů Černý vlk."
+  description="Borová Lada a centrální Šumava nabízejí klidnou přírodu, běžkařské trasy, výlety s dětmi, cyklovýlety i celodenní horské túry. Objevte tipy na aktivity v okolí Apartmánů Černý vlk."
 >
   <Header />
 
-  <section class="surroundings-hero">
-    <div class="surroundings-hero__media">
-      <img
-        src="/images/okoli/chalupska-slat.jpg"
-        alt="Šumavská krajina v okolí Borových Lad"
-        width="1600"
-        height="900"
-        loading="eager"
-      />
-      <div class="surroundings-hero__overlay"></div>
-    </div>
-
-    <div class="surroundings-hero__content">
-      <p class="surroundings-hero__eyebrow">Okolí</p>
-      <h1>Klid i sport v <em>srdci Šumavy</em></h1>
-      <p class="surroundings-hero__lead">
+  <section class="hero" id="uvod">
+    <div
+      class="hero-bg"
+      style="background-image:url('/images/okoli/chalupska-slat.jpg');"
+    ></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Okolí · Šumava</p>
+      <h1>
+        Šumava za dveřmi.
+        <em>V každém ročním období.</em>
+      </h1>
+      <p class="hero-perex">
         Borová Lada jsou skvělým výchozím bodem pro klidné procházky, rodinné výlety,
         běžky, cyklistiku i celodenní horské túry. V okolí najdete přírodu, sportovní zázemí
         i oblíbená místa centrální Šumavy.
       </p>
-
-      <div class="surroundings-hero__actions">
+      <div class="hero-actions">
         <a href="#rocni-obdobi" class="btn-primary">Co dělat během roku</a>
-        <a href="#tipy-na-mista" class="btn-ghost">Tipy na místa</a>
       </div>
     </div>
+    <div class="hero-scroll" aria-hidden="true">Scroll</div>
   </section>
 
   <section class="surroundings-intro">
@@ -53,8 +49,9 @@ import Footer from '../components/Footer.astro';
         </p>
         <p>
           Jen kousek od ubytování najdete stolní tenis, dětské hřiště i multifunkční hřiště pro tenis,
-          volejbal, nohejbal, futsal, házenou a další sporty. V obci je také restaurace, kavárna,
-          menší obchod, pošta a možnost půjčení sportovního vybavení.[web:1391]
+          volejbal, nohejbal, futsal, házenou a další sporty. V obci jsou také dvě restaurace, kavárna
+          <a href="https://www.facebook.com/people/Caf%C3%A9-Snack-Madam-%C4%8Cokol%C3%A1da-Borov%C3%A1-Lada/100063483432963/" target="_blank" rel="noopener noreferrer">Madam čokoláda</a>,
+          menší obchod, pošta a možnost půjčení sportovního vybavení.
         </p>
       </div>
     </div>
@@ -67,32 +64,31 @@ import Footer from '../components/Footer.astro';
 
       <div class="highlights-grid">
         <article class="highlight-card highlight-card--wide">
-          <span class="highlight-icon">⛰</span>
           <h3>Centrální Šumava na dosah</h3>
           <p>
             Z Borových Lad se snadno dostanete na nejznámější šumavská místa i na méně rušné trasy,
             které ocení hosté hledající klid a prostor.
           </p>
+          <p>
+            Vyráží se odtud dobře směrem na Kvildsko, Modravsko, Srní i další části Národního parku Šumava.
+          </p>
         </article>
 
         <article class="highlight-card">
-          <span class="highlight-icon">❄</span>
           <h3>Zima bez kompromisů</h3>
           <p>
-            Běžecké trasy, sáňkování, bruslení i blízkost menších lyžařských areálů a většího areálu Mitterdorf.
+            Běžecké trasy, sáňkování, bruslení i blízkost menších lyžařských areálů.
           </p>
         </article>
 
         <article class="highlight-card">
-          <span class="highlight-icon">☀</span>
           <h3>Jaro až podzim</h3>
           <p>
-            Krátké procházky, výlety s dětmi, cyklotrasy i celodenní túry po hřebenech a k ledovcovým jezerům.
+            Krátké procházky, výlety s dětmi, cyklotrasy i celodenní túry po hřebenech a k oblíbeným šumavským cílům.
           </p>
         </article>
 
         <article class="highlight-card">
-          <span class="highlight-icon">⚑</span>
           <h3>Vhodné i pro rodiny</h3>
           <p>
             V okolí jsou lehké trasy, naučné lokality i zastávky, které baví děti i dospělé.
@@ -100,18 +96,9 @@ import Footer from '../components/Footer.astro';
         </article>
 
         <article class="highlight-card">
-          <span class="highlight-icon">⌂</span>
-          <h3>Praktické zázemí v obci</h3>
+          <h3>Praktické zázemí</h3>
           <p>
-            Na místě máte po ruce základní služby i sportovní zázemí, aniž byste přišli o atmosféru šumavské vesnice.[web:1391]
-          </p>
-        </article>
-
-        <article class="highlight-card">
-          <span class="highlight-icon">↟</span>
-          <h3>Výchozí bod pro výlety</h3>
-          <p>
-            Odtud se dobře vyráží směrem na Kvildsko, Modravsko, Srní i další části Národního parku Šumava.
+            Na místě máte po ruce základní služby i sportovní zázemí, aniž byste přišli o atmosféru šumavské vesnice.
           </p>
         </article>
       </div>
@@ -126,27 +113,15 @@ import Footer from '../components/Footer.astro';
       <div class="season-grid">
         <article class="season-card">
           <div class="season-card__header">
-            <span class="season-icon">❄</span>
-            <h3>Zima</h3>
-          </div>
-          <p>
-            V zimě jsou Borová Lada skvělou volbou hlavně pro běžkaře. V okolí vedou upravované trasy
-            a snadno se dostanete i na další oblíbené běžecké úseky centrální Šumavy.[web:1391]
-          </p>
-          <p>
-            Pro děti i dospělé je v obci sáňkařský svah a možnost bruslení. Na sjezdové lyžování lze vyrazit
-            do menších okolních areálů nebo do většího německého areálu Mitterdorf.[web:1391]
-          </p>
-        </article>
-
-        <article class="season-card">
-          <div class="season-card__header">
-            <span class="season-icon">🌿</span>
             <h3>Jaro</h3>
           </div>
           <p>
             Jaro přeje kratším výletům, prvním delším procházkám i pozorování probouzející se šumavské krajiny.
-            Ideální jsou lehčí trasy v okolí Borových Lad a zastávky na známých přírodních lokalitách.[web:1391]
+            Ideální jsou lehčí trasy v okolí Borových Lad a zastávky na známých přírodních lokalitách –
+            na <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-svinna-lada/" target="_blank" rel="noopener noreferrer">Chalupskou slať</a>,
+            do <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/sovi-voliery/" target="_blank" rel="noopener noreferrer">sovích voliér</a>
+            či podél <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/rybi-lihen/" target="_blank" rel="noopener noreferrer">pstruhových líhní</a>
+            k Vltavskému potoku.
           </p>
           <p>
             Právě v tomto období vynikne klid okolní krajiny a menší návštěvnost oproti vrcholu sezony.
@@ -155,12 +130,17 @@ import Footer from '../components/Footer.astro';
 
         <article class="season-card">
           <div class="season-card__header">
-            <span class="season-icon">☀</span>
             <h3>Léto</h3>
           </div>
           <p>
             Léto je ideální pro pěší túry, cyklovýlety i celodenní program po celé centrální Šumavě.
-            V dosahu jsou lehké rodinné trasy i náročnější horské cíle.[web:1391]
+          </p>
+          <p>
+            V dosahu jsou lehké rodinné trasy i náročnější horské cíle – ať již další návštěvnická centra NP Šumava –
+            <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/navstevnicke-centrum-kvilda/" target="_blank" rel="noopener noreferrer">jeleni a rys na Kvildě</a>
+            nebo <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/nc-srni/" target="_blank" rel="noopener noreferrer">vlci v Srní</a>
+            – či výlety na <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-polednik/" target="_blank" rel="noopener noreferrer">Poledník</a>,
+            <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-idina-pila/" target="_blank" rel="noopener noreferrer">Boubín</a> a další.
           </p>
           <p>
             V horkých dnech je výhodou vyšší nadmořská výška a příjemnější klima než v nižších polohách.
@@ -169,109 +149,39 @@ import Footer from '../components/Footer.astro';
 
         <article class="season-card">
           <div class="season-card__header">
-            <span class="season-icon">🍂</span>
             <h3>Podzim</h3>
           </div>
           <p>
             Podzimní Šumava nabízí nejklidnější atmosféru, jasné výhledy a krásné barvy lesů i luk.
-            Je to ideální čas pro pěší výlety, fotografování a pomalejší objevování okolí.[web:1391]
+            Je to ideální čas pro pěší výlety, fotografování a pomalejší objevování okolí.
           </p>
           <p>
             Pokud hledáte klidnější pobyt bez letní špičky, právě podzim bývá jedním z nejhezčích období.
           </p>
         </article>
-      </div>
-    </div>
-  </section>
 
-  <section class="destinations-section" id="tipy-na-mista">
-    <div class="section-inner">
-      <div class="destinations-heading">
-        <div>
-          <p class="section-label">Tipy na místa</p>
-          <h2 class="section-title">Kam vyrazit <em>v okolí</em></h2>
-        </div>
-        <p class="destinations-note">
-          Vybrali jsme místa, která se objevují i na současné stránce Aktivity a která hosté v okolí Borových Lad vyhledávají nejčastěji.[web:1391]
-        </p>
-      </div>
-
-      <div class="destinations-grid">
-        <article class="destination-card">
-          <h3>Chalupská slať</h3>
+        <article class="season-card">
+          <div class="season-card__header">
+            <h3>Zima</h3>
+          </div>
           <p>
-            Jedna z nejznámějších šumavských lokalit a oblíbený cíl pro kratší výlet.
-            Patří k nejnavštěvovanějším místům v okolí Borových Lad.[web:1485][web:1482]
+            V zimě jsou Borová Lada skvělou volbou hlavně pro běžkaře. V okolí vedou upravované trasy
+            a snadno se dostanete i na další oblíbené
+            <a href="https://bilastopa.cz/cs/uvodni-strana-2/" target="_blank" rel="noopener noreferrer">běžecké úseky centrální Šumavy</a>.
+          </p>
+          <p>
+            Pro děti i dospělé je v obci sáňkařský svah a možnost bruslení.
+            Když situace dovolí, tak v okruhu 15-30 minut jízdy naleznete též lyžařské vleky
+            (spíše pro začátečníky) –
+            <a href="http://www.skikvilda.cz" target="_blank" rel="noopener noreferrer">Kvilda</a>,
+            <a href="https://www.lazadov.cz/la/" target="_blank" rel="noopener noreferrer">Zadov</a>,
+            <a href="https://www.novehute.cz/novehute/" target="_blank" rel="noopener noreferrer">Nové Hutě</a>,
+            <a href="https://www.ski-kubovka.com" target="_blank" rel="noopener noreferrer">Kubova Huť</a>
+            a <a href="https://www.skivltavice.cz" target="_blank" rel="noopener noreferrer">Horní Vltavice</a>,
+            případně se můžete vydat do půl hodiny vzdáleného německého lyžařského střediska
+            <a href="https://www.mitterdorf.info/cs/" target="_blank" rel="noopener noreferrer">Mitterdorf</a>.
           </p>
         </article>
-
-        <article class="destination-card">
-          <h3>Soví voliéry a informační středisko NP Šumava</h3>
-          <p>
-            Příjemná zastávka vhodná i pro rodiny s dětmi, kde se dá spojit procházka s poznáváním šumavské přírody.[web:1391]
-          </p>
-        </article>
-
-        <article class="destination-card">
-          <h3>Knížecí Pláně</h3>
-          <p>
-            Místo se silnou atmosférou a krásnými výhledy, ideální pro půldenní nebo delší pěší výlet.[web:1391]
-          </p>
-        </article>
-
-        <article class="destination-card">
-          <h3>Prameny Vltavy</h3>
-          <p>
-            Jeden z klasických cílů centrální Šumavy, který mnoho hostů spojuje s výletem na Kvildsku.[web:1391][web:1482]
-          </p>
-        </article>
-
-        <article class="destination-card">
-          <h3>Kvilda, Modrava a Srní</h3>
-          <p>
-            Tři známá šumavská místa, která stojí za návštěvu během pobytu a dobře doplňují program na více dní.[web:1391]
-          </p>
-        </article>
-
-        <article class="destination-card">
-          <h3>Poledník a Prášilské jezero</h3>
-          <p>
-            Oblíbené cíle pro delší výlet, pokud chcete během dne spojit horskou trasu s výraznějšími panoramaty a přírodními dominantami.[web:1391]
-          </p>
-        </article>
-
-        <article class="destination-card">
-          <h3>Boubín a Boubínské jezírko</h3>
-          <p>
-            Klasika širšího šumavského okolí, vhodná jako samostatný výlet pro hosty, kteří chtějí poznat i jinou část regionu.[web:1391]
-          </p>
-        </article>
-
-        <article class="destination-card">
-          <h3>Mitterdorf</h3>
-          <p>
-            V zimní sezoně dobrá volba pro sjezdové lyžování, pokud chcete kombinovat běžkařský pobyt s jedním či více dny na sjezdovce.[web:1391]
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="village-section">
-    <div class="section-inner village-section__grid">
-      <div>
-        <p class="section-label">Po ruce v obci</p>
-        <h2 class="section-title">Praktické zázemí bez ztráty <em>šumavského klidu</em></h2>
-      </div>
-
-      <div class="surroundings-copy">
-        <p>
-          Borová Lada nejsou jen výchozí bod na výlety, ale i příjemné místo pro pomalejší dny.
-          V obci najdete restauraci, kavárnu, obchod, poštu i sportovní zázemí, takže nemusíte za každou drobností sedat do auta.[web:1391]
-        </p>
-        <p>
-          To je výhoda hlavně pro rodiny s dětmi, hosty na delším pobytu i všechny, kdo si chtějí užít kombinaci pohodlí a klidné horské atmosféry.[web:1391]
-        </p>
       </div>
     </div>
   </section>
@@ -292,139 +202,37 @@ import Footer from '../components/Footer.astro';
   <Footer lang="cs" />
 
   <style>
-    .surroundings-hero {
-      position: relative;
-      min-height: 78svh;
-      display: grid;
-      align-items: end;
-      overflow: clip;
-      background: var(--color-bg);
-    }
-
-    .surroundings-hero__media {
-      position: absolute;
-      inset: 0;
-    }
-
-    .surroundings-hero__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .surroundings-hero__overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to top, rgba(12, 14, 12, 0.72) 0%, rgba(12, 14, 12, 0.34) 46%, rgba(12, 14, 12, 0.14) 100%);
-    }
-
-    .surroundings-hero__content {
-      position: relative;
-      z-index: 2;
-      width: min(100%, 980px);
-      padding: clamp(6rem, 10vw, 9rem) 1.25rem clamp(2.5rem, 5vw, 4rem);
-      margin-inline: auto;
-      color: #f8f3eb;
-    }
-
-    .surroundings-hero__eyebrow,
-    .section-label {
-      margin: 0 0 0.85rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(248, 243, 235, 0.78);
-    }
-
-    .section-label {
-      color: var(--color-muted);
-    }
-
-    .surroundings-hero h1 {
-      margin: 0;
-      max-width: 14ch;
-      font-size: clamp(2.8rem, 7vw, 5.9rem);
-      line-height: 0.94;
-      letter-spacing: -0.03em;
-      color: #f8f3eb;
-    }
-
-    .surroundings-hero h1 em {
-      font-style: italic;
-      font-weight: 500;
-      color: #7f9b77;
-    }
-
-    .surroundings-hero__lead {
-      max-width: 46rem;
-      margin: 1.5rem 0 0;
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      line-height: 1.75;
-      color: rgba(248, 243, 235, 0.88);
-    }
-
-    .surroundings-hero__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 2rem;
-    }
-
-    .section-inner {
-      width: min(100% - 2rem, 1180px);
-      margin-inline: auto;
-    }
-
     .surroundings-intro,
     .surroundings-highlights,
     .season-section,
-    .destinations-section,
-    .village-section,
     .surroundings-cta {
       padding: clamp(4.5rem, 7vw, 7rem) 0;
     }
 
-    .surroundings-intro__grid,
-    .village-section__grid {
+    .surroundings-intro__grid {
       display: grid;
       grid-template-columns: 0.95fr 1.05fr;
       gap: clamp(2rem, 5vw, 5rem);
       align-items: start;
     }
 
-    .section-title {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      color: var(--color-heading);
-    }
-
-    .section-title em {
-      display: inline-block;
-      font-style: italic;
-      font-weight: 500;
-      opacity: 1;
-      line-height: 1.14;
-      padding-right: 0.08em;
-      padding-bottom: 0.08em;
-      color: #7f9b77;
-    }
-
     .surroundings-copy p,
     .highlight-card p,
-    .season-card p,
-    .destination-card p,
-    .destinations-note {
+    .season-card p {
       margin: 0 0 1rem;
       font-size: 1.04rem;
       line-height: 1.85;
       color: var(--color-text);
     }
 
-    .surroundings-highlights,
-    .destinations-section {
+    .surroundings-copy a,
+    .season-card a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+    }
+
+    .surroundings-highlights {
       background: var(--color-surface);
       border-top: 1px solid var(--color-border);
       border-bottom: 1px solid var(--color-border);
@@ -438,8 +246,7 @@ import Footer from '../components/Footer.astro';
     }
 
     .highlight-card,
-    .season-card,
-    .destination-card {
+    .season-card {
       padding: 1.5rem;
       border: 1px solid var(--color-border);
       border-radius: 1.4rem;
@@ -450,69 +257,23 @@ import Footer from '../components/Footer.astro';
       grid-column: span 2;
     }
 
-    .highlight-icon,
-    .season-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.4rem;
-      height: 2.4rem;
-      margin-bottom: 1rem;
-      border-radius: 999px;
-      background: rgba(120, 145, 118, 0.12);
-      color: #7f9b77;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
     .highlight-card h3,
-    .season-card h3,
-    .destination-card h3 {
+    .season-card h3 {
       margin: 0 0 0.85rem;
       font-size: 1.35rem;
       line-height: 1.15;
       color: var(--color-heading);
     }
 
-    .season-grid,
-    .destinations-grid {
+    .season-grid {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
       margin-top: 2.5rem;
     }
 
-    .season-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .destinations-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-      align-items: end;
-      margin-bottom: 2rem;
-    }
-
-    .destinations-note {
-      max-width: 30rem;
-      margin: 0;
-      color: var(--color-muted);
-    }
-
-    .destinations-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .season-card__header {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
       margin-bottom: 0.75rem;
-    }
-
-    .season-card__header .season-icon {
-      margin-bottom: 0;
-      flex: 0 0 auto;
     }
 
     .surroundings-cta__inner {
@@ -529,57 +290,15 @@ import Footer from '../components/Footer.astro';
       justify-content: flex-end;
     }
 
-    .btn-primary,
-    .btn-ghost,
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 3.2rem;
-      padding: 0.85rem 1.2rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
-    }
-
-    .btn-primary {
-      background: var(--color-accent);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      border: 1px solid rgba(255,255,255,0.28);
-      color: #fff;
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-      background: transparent;
-    }
-
-    .btn-secondary:hover {
-      background: var(--color-card);
-    }
-
     @media (max-width: 1080px) {
       .surroundings-intro__grid,
-      .village-section__grid,
       .surroundings-cta__inner {
         grid-template-columns: 1fr;
         display: grid;
       }
 
       .highlights-grid,
-      .season-grid,
-      .destinations-grid {
+      .season-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -589,24 +308,8 @@ import Footer from '../components/Footer.astro';
     }
 
     @media (max-width: 720px) {
-      .surroundings-hero {
-        min-height: 74svh;
-      }
-
-      .surroundings-hero__content {
-        padding-inline: 1rem;
-      }
-
-      .destinations-heading,
-      .surroundings-cta__inner {
-        display: grid;
-        gap: 1rem;
-        align-items: start;
-      }
-
       .highlights-grid,
-      .season-grid,
-      .destinations-grid {
+      .season-grid {
         grid-template-columns: 1fr;
       }
 
@@ -614,8 +317,13 @@ import Footer from '../components/Footer.astro';
         grid-column: auto;
       }
 
-      .surroundings-cta__actions,
-      .surroundings-hero__actions {
+      .surroundings-cta__inner {
+        display: grid;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .surroundings-cta__actions {
         flex-direction: column;
         align-items: stretch;
       }

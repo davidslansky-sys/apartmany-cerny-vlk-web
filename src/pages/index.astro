@@ -181,6 +181,10 @@ import PrevioWidget from '../components/PrevioWidget.astro';
           <p class="reveal">
             Přitom zůstáváte v místě, kde je klid, čistý vzduch a vše důležité v rozumné dostupnosti.
           </p>
+
+          <div class="okoli-actions reveal">
+            <a href="/okoli" class="btn-primary">Prozkoumat okolí</a>
+          </div>
         </div>
 
         <div class="okoli-photos reveal">
@@ -271,4 +275,13 @@ import PrevioWidget from '../components/PrevioWidget.astro';
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     `}
   </script>
+
+  <style>
+    .okoli-actions {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+  </style>
 </BaseLayout>

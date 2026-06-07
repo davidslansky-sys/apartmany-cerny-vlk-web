@@ -6,34 +6,34 @@ import Footer from '../components/Footer.astro';
 const reviewSources = [
   {
     name: 'Booking.com',
-    rating: '9,6',
-    count: '128 hodnocení',
-    note: 'Ověřené pobyty přes rezervační platformu.',
-    url: '#',
+    rating: '9,4 / 10',
+    count: '98 hodnocení',
+    note: 'Ověřené pobyty přes rezervační platformu Booking.com.',
+    url: 'https://www.booking.com/hotel/cz/apartmany-cerny-vlk-borova-lada.cs.html',
     cta: 'Zobrazit Booking.com',
   },
   {
     name: 'Google',
     rating: '4,9 / 5',
-    count: '64 recenzí',
-    note: 'Veřejné hodnocení hostů na firemním profilu.',
-    url: '#',
+    count: '93 hodnocení',
+    note: 'Veřejné hodnocení hostů na firemním profilu v Mapách Google.',
+    url: 'https://maps.google.com/?cid=932837692893333767',
     cta: 'Zobrazit Google',
   },
   {
     name: 'Mapy.com',
-    rating: '4,8 / 5',
-    count: '37 hodnocení',
-    note: 'Lokální hodnocení a zkušenosti návštěvníků.',
-    url: '#',
+    rating: '5,0 / 5',
+    count: '24 hodnocení',
+    note: 'Lokální hodnocení a zkušenosti návštěvníků na Mapy.com.',
+    url: 'https://mapy.com/cs/?source=firm&id=13391926',
     cta: 'Zobrazit Mapy.com',
   },
   {
     name: 'Previo.cz',
-    rating: '9,4',
-    count: '52 hodnocení',
-    note: 'Hodnocení z rezervačního systému ubytování.',
-    url: '#',
+    rating: '9,7 / 10',
+    count: '84 hodnocení',
+    note: 'Hodnocení hostů přímo v rezervačním systému Previo.',
+    url: 'https://booking.previo.app/review/?hotId=756911&currency=CZK&lang=cs&redirectType=iframe&PHPSESSID=ul3mcupk25mapov978ofg1ef6b',
     cta: 'Zobrazit Previo.cz',
   },
 ];
@@ -61,39 +61,39 @@ const featuredReview = {
   quote:
     'Krásné, čisté a výborně vybavené apartmány na skvělém místě. Oceňujeme klid, pohodlné parkování i perfektní výchozí bod pro výlety po Šumavě.',
   source: 'Booking.com',
-  meta: 'Rodinný pobyt',
+  meta: 'Ověřené hodnocení hosta',
 };
 
 const reviews = [
   {
-    quote: 'Velmi příjemné ubytování, skvěle vybavená kuchyň a opravdu bezchybná čistota.',
-    source: 'Google',
-    meta: 'Pár',
-  },
-  {
-    quote: 'Výborná poloha, klidné místo a snadný přístup. Pobyt byl bez starostí od příjezdu až po odjezd.',
-    source: 'Mapy.com',
-    meta: 'Krátký pobyt',
-  },
-  {
-    quote: 'Apartmán působil nově, vše bylo připravené a celý dům byl velmi dobře organizovaný.',
-    source: 'Previo.cz',
-    meta: 'Pobyt s přáteli',
-  },
-  {
-    quote: 'Líbilo se nám sportovní zázemí i dostatek prostoru pro rodinu. Určitě bychom se vrátili.',
+    quote: 'Dispozičně skvěle řešeno, vybavenost na výborné úrovni – de facto nám tu nechybělo nic, od vybavení kuchyně po vysoušeč bot.',
     source: 'Booking.com',
-    meta: 'Rodina s dětmi',
+    meta: 'Jindřiška · duben 2025',
   },
   {
-    quote: 'Borová Lada je skvělé místo pro výlety a apartmán poskytl přesně ten komfort, který jsme hledali.',
+    quote: 'Beautiful location, stylish apartments, directly connected to the surrounding green areas. Well equipped kitchen, practical storage room.',
+    source: 'Booking.com',
+    meta: 'Hunor · Německo',
+  },
+  {
+    quote: 'Apartmány jsou nové, hezky útulně zařízené. Dovolenou jsme si užili a rádi se vrátíme znovu.',
     source: 'Google',
-    meta: 'Aktivní pobyt',
+    meta: 'Tomáš',
   },
   {
-    quote: 'Příjemná komunikace, pohodlný check-in a velmi hezké prostředí uvnitř i kolem domu.',
-    source: 'Previo.cz',
-    meta: 'Víkendový pobyt',
+    quote: 'Hosté opakovaně oceňují klidné prostředí, čistotu a velmi dobré zázemí pro delší i kratší pobyt.',
+    source: 'Souhrn recenzí',
+    meta: 'Napříč platformami',
+  },
+  {
+    quote: 'Silnou stránkou ubytování je také lokalita v Borových Ladech a pohodlný výchozí bod pro výlety po Šumavě.',
+    source: 'Souhrn recenzí',
+    meta: 'Napříč platformami',
+  },
+  {
+    quote: 'Velmi dobře je hodnocena i praktičnost pobytu — parkování, dostupnost a bezproblémový příjezd.',
+    source: 'Souhrn recenzí',
+    meta: 'Napříč platformami',
   },
 ];
 
@@ -101,22 +101,22 @@ const externalLinks = [
   {
     name: 'Booking.com',
     text: 'Kompletní hodnocení a recenze z ověřených pobytů na Booking.com.',
-    url: '#',
+    url: 'https://www.booking.com/hotel/cz/apartmany-cerny-vlk-borova-lada.cs.html',
   },
   {
     name: 'Google',
-    text: 'Firemní profil s veřejnými recenzemi a hodnocením na Google.',
-    url: '#',
+    text: 'Firemní profil s veřejnými recenzemi a hodnocením v Mapách Google.',
+    url: 'https://maps.google.com/?cid=932837692893333767',
   },
   {
     name: 'Mapy.com',
     text: 'Profil ubytování s hodnocením a zkušenostmi návštěvníků na Mapy.com.',
-    url: '#',
+    url: 'https://mapy.com/cs/?source=firm&id=13391926',
   },
   {
     name: 'Previo.cz',
-    text: 'Profil s recenzemi a hodnocením v rezervačním systému Previo.cz.',
-    url: '#',
+    text: 'Profil s recenzemi a hodnocením v rezervačním systému Previo.',
+    url: 'https://booking.previo.app/review/?hotId=756911&currency=CZK&lang=cs&redirectType=iframe&PHPSESSID=ul3mcupk25mapov978ofg1ef6b',
   },
 ];
 ---
@@ -124,14 +124,14 @@ const externalLinks = [
 <BaseLayout
   lang="cs"
   title="Recenze hostů | Apartmány Černý vlk"
-  description="Podívejte se, jak hodnotí pobyt hosté Apartmánů Černý vlk na Booking.com, Google, Mapy.com a Previo.cz. Přehled hodnocení, hlavní důvody spokojenosti i vybrané recenze."
+  description="Podívejte se, jak hodnotí pobyt hosté Apartmánů Černý vlk na Booking.com, Google, Mapy.com a Previo.cz. Přehled hodnocení, hlavní důvody spokojenosti i přesné odkazy na jednotlivé profily."
 >
   <Header />
 
   <section class="reviews-hero" id="uvod">
     <div
       class="reviews-hero__bg"
-      style="background-image:url('/images/hero/hero-homepage.jpg');"
+      style="background-image:url('/images/hero/hero-borova-lada.jpg');"
     ></div>
     <div class="reviews-hero__overlay"></div>
 
@@ -139,18 +139,18 @@ const externalLinks = [
       <p class="reviews-hero__eyebrow">Recenze hostů</p>
 
       <h1>
-        Jak hodnotí pobyt
-        <em>naši hosté</em>
+        Zkušenosti hostů
+        <em>na jednom místě</em>
       </h1>
 
       <p class="reviews-hero__lead">
-        Přehled hodnocení z více nezávislých platforem nabízí věcný pohled na to,
+        Přehled hodnocení z více nezávislých platforem nabízí jasný a věcný pohled na to,
         jak hosté vnímají čistotu, vybavení, lokalitu i celkový komfort pobytu v Apartmánech Černý vlk.
       </p>
 
       <div class="reviews-hero__actions">
         <a href="#zdroje" class="reviews-btn reviews-btn--primary">Zobrazit hodnocení</a>
-        <a href="#odkazy" class="reviews-btn reviews-btn--ghost">Přejít na zdroje recenzí</a>
+        <a href="#odkazy" class="reviews-btn reviews-btn--ghost">Přesné odkazy</a>
       </div>
     </div>
 
@@ -165,8 +165,7 @@ const externalLinks = [
           <h2 class="section-title">Hodnocení napříč <em>nezávislými platformami</em></h2>
         </div>
         <p class="section-note">
-          Každý zdroj uvádíme samostatně, aby bylo zřejmé, odkud hodnocení pochází
-          a jaký typ zkušenosti jednotlivé platformy zachycují.
+          Každý zdroj uvádíme samostatně, aby bylo zřejmé, odkud hodnocení pochází a kde si je můžete ověřit.
         </p>
       </div>
 
@@ -218,7 +217,7 @@ const externalLinks = [
           <h2 class="section-title">Krátce a konkrétně: co hosté píší <em>po pobytu</em></h2>
         </div>
         <p class="section-note">
-          Vybrané ukázky shrnují témata, která se v hodnoceních opakují nejčastěji.
+          Krátké ukázky níže shrnují témata, která se v hodnoceních opakují nejčastěji.
         </p>
       </div>
 
@@ -250,10 +249,10 @@ const externalLinks = [
       <div class="reviews-section-head">
         <div>
           <p class="section-label">Přesné odkazy</p>
-          <h2 class="section-title">Chcete si recenze projít přímo <em>u zdroje</em>?</h2>
+          <h2 class="section-title">Recenze si můžete projít přímo <em>u zdroje</em></h2>
         </div>
         <p class="section-note">
-          Každý odkaz vede přímo na příslušný profil nebo stránku s hodnocením.
+          Každý odkaz vede na veřejný profil nebo stránku s hodnocením.
         </p>
       </div>
 
@@ -551,10 +550,11 @@ const externalLinks = [
     }
 
     .source-card__rating {
-      font-size: 1.65rem;
-      line-height: 1;
+      font-size: 1.35rem;
+      line-height: 1.15;
       font-weight: 700;
       color: var(--color-heading);
+      text-align: right;
       white-space: nowrap;
     }
 

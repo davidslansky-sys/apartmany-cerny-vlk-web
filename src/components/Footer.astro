@@ -13,18 +13,19 @@ const content = {
       'Pět apartmánů ve dvou objektech v Borové Ladě – v klidném centru Šumavy, s přírodou i zázemím na dosah.',
     apartmentsTitle: 'Apartmány',
     apartments: [
-      { label: 'Červený · 8 osob', href: '#apartmany' },
-      { label: 'Žlutý · 4+1 osob', href: '#apartmany' },
-      { label: 'Zelený · 4+1 osob', href: '#apartmany' },
-      { label: 'Modrý · 4+1 osob', href: '#apartmany' },
-      { label: 'Šedý · 4+1 osob', href: '#apartmany' },
+      { label: 'Červený · 8 osob', href: '/apartmany/cerveny' },
+      { label: 'Žlutý · 4+1 osob', href: '/apartmany/zluty' },
+      { label: 'Zelený · 4+1 osob', href: '/apartmany/zeleny' },
+      { label: 'Modrý · 4+1 osob', href: '/apartmany/modry' },
+      { label: 'Šedý · 4+1 osob', href: '/apartmany/sedy' },
     ],
+    equipmentLabel: 'Vybavení',
     contactTitle: 'Kontakt',
     linksTitle: 'Užitečné odkazy',
     links: [
-      { label: 'Rezervace', href: '#rezervace' },
-      { label: 'Okolí', href: '#okoli' },
-      { label: 'Recenze hostů', href: '#recenze' },
+      { label: 'Rezervace', href: '/#rezervace' },
+      { label: 'Okolí', href: '/okoli' },
+      { label: 'Recenze hostů', href: '/recenze' },
       {
         label: 'Penzion Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -39,18 +40,19 @@ const content = {
       'Fünf Apartments in zwei Häusern in Borová Lada – im ruhigen Zentrum des Böhmerwalds, mit Natur und Komfort in Reichweite.',
     apartmentsTitle: 'Apartments',
     apartments: [
-      { label: 'Rotes · 8 Personen', href: '#apartmany' },
-      { label: 'Gelbes · 4+1 Personen', href: '#apartmany' },
-      { label: 'Grünes · 4+1 Personen', href: '#apartmany' },
-      { label: 'Blaues · 4+1 Personen', href: '#apartmany' },
-      { label: 'Graues · 4+1 Personen', href: '#apartmany' },
+      { label: 'Rotes · 8 Personen', href: '/de/apartmany/cerveny' },
+      { label: 'Gelbes · 4+1 Personen', href: '/de/apartmany/zluty' },
+      { label: 'Grünes · 4+1 Personen', href: '/de/apartmany/zeleny' },
+      { label: 'Blaues · 4+1 Personen', href: '/de/apartmany/modry' },
+      { label: 'Graues · 4+1 Personen', href: '/de/apartmany/sedy' },
     ],
+    equipmentLabel: 'Ausstattung',
     contactTitle: 'Kontakt',
     linksTitle: 'Nützliche Links',
     links: [
-      { label: 'Reservierung', href: '#rezervace' },
-      { label: 'Umgebung', href: '#okoli' },
-      { label: 'Gästebewertungen', href: '#recenze' },
+      { label: 'Reservierung', href: '/de/#rezervace' },
+      { label: 'Umgebung', href: '/de/okoli' },
+      { label: 'Gästebewertungen', href: '/de/recenze' },
       {
         label: 'Pension Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -65,18 +67,19 @@ const content = {
       'Five apartments in two houses in Borová Lada – in the quiet center of Šumava, with nature and everyday comfort close at hand.',
     apartmentsTitle: 'Apartments',
     apartments: [
-      { label: 'Red · 8 guests', href: '#apartmany' },
-      { label: 'Yellow · 4+1 guests', href: '#apartmany' },
-      { label: 'Green · 4+1 guests', href: '#apartmany' },
-      { label: 'Blue · 4+1 guests', href: '#apartmany' },
-      { label: 'Grey · 4+1 guests', href: '#apartmany' },
+      { label: 'Red · 8 guests', href: '/en/apartmany/cerveny' },
+      { label: 'Yellow · 4+1 guests', href: '/en/apartmany/zluty' },
+      { label: 'Green · 4+1 guests', href: '/en/apartmany/zeleny' },
+      { label: 'Blue · 4+1 guests', href: '/en/apartmany/modry' },
+      { label: 'Grey · 4+1 guests', href: '/en/apartmany/sedy' },
     ],
+    equipmentLabel: 'Equipment',
     contactTitle: 'Contact',
     linksTitle: 'Useful links',
     links: [
-      { label: 'Booking', href: '#rezervace' },
-      { label: 'Location', href: '#okoli' },
-      { label: 'Guest reviews', href: '#recenze' },
+      { label: 'Booking', href: '/en/#rezervace' },
+      { label: 'Location', href: '/en/okoli' },
+      { label: 'Guest reviews', href: '/en/recenze' },
       {
         label: 'Penzion Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -282,9 +285,24 @@ const content = {
         <p>{content.brandText}</p>
 
         <div class="footer-social">
-          <a href="#" class="social-icon" aria-label="Instagram">IG</a>
-          <a href="#" class="social-icon" aria-label="Facebook">FB</a>
-          <a href="#" class="social-icon" aria-label="TripAdvisor">TA</a>
+          <a
+            href="https://www.instagram.com/apartmanycernyvlkborovalada/"
+            class="social-icon"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            IG
+          </a>
+          <a
+            href="https://www.facebook.com/ApartmanyCernyVlk"
+            class="social-icon"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            FB
+          </a>
         </div>
       </div>
 
@@ -294,6 +312,11 @@ const content = {
           {content.apartments.map((item) => (
             <li><a href={item.href}>{item.label}</a></li>
           ))}
+          <li class="footer-col-divider">
+            <a href={lang === 'cs' ? '/vybaveni' : lang === 'de' ? '/de/vybaveni' : '/en/vybaveni'}>
+              {content.equipmentLabel}
+            </a>
+          </li>
         </ul>
       </div>
 

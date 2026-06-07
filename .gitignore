@@ -1,3 +1,4 @@
+tail -n 350 src/styles/prototype.css
 # wrangler files
 .wrangler
 .dev.vars*

@@ -17,21 +17,30 @@ import Footer from '../components/Footer.astro';
       style="background-image:url('/images/apartmany/cerveny/cerveny-01.jpeg');"
     ></div>
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
       <p class="hero-eyebrow">Vybavení</p>
+
       <h1>
         Nadstandardní pohodlí.
         <em>Uvnitř i venku.</em>
       </h1>
+
       <p class="hero-perex">
         Domy vybavujeme tak, abyste zde našli vše potřebné pro aktivní pobyt i klidnou dovolenou,
         ať přijedete v páru, s dětmi nebo s partou přátel.
       </p>
-      <div class="hero-actions">
-        <a href="#detailni-seznam" class="btn-primary">Kompletní seznam vybavení</a>
-        <a href="/#apartmany" class="btn-ghost">Zobrazit apartmány</a>
+
+      <div class="equipment-hero-actions">
+        <a href="#detailni-seznam" class="equipment-btn equipment-btn--primary">
+          Kompletní seznam vybavení
+        </a>
+        <a href="/#apartmany" class="equipment-btn equipment-btn--primary">
+          Zobrazit apartmány
+        </a>
       </div>
     </div>
+
     <div class="hero-scroll" aria-hidden="true">Scroll</div>
   </section>
 
@@ -314,7 +323,9 @@ import Footer from '../components/Footer.astro';
         <h2 class="section-title">Ve vybavení máte jasno. Teď už jen vybrat <em>apartmán</em></h2>
       </div>
       <div class="equipment-cta__actions">
-        <a href="/#apartmany" class="btn-primary">Zobrazit apartmány</a>
+        <a href="/#apartmany" class="equipment-btn equipment-btn--primary">
+          Zobrazit apartmány
+        </a>
       </div>
     </div>
   </section>
@@ -330,50 +341,59 @@ import Footer from '../components/Footer.astro';
       padding: clamp(4.5rem, 7vw, 7rem) 0;
     }
 
-    .hero-actions {
+    .equipment-hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.85rem;
       margin-top: 2rem;
     }
 
-    .btn-primary,
-    .btn-ghost,
-    .btn-secondary {
+    .equipment-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 3.2rem;
-      padding: 0.85rem 1.2rem;
+      padding: 0.9rem 1.35rem;
       border-radius: 999px;
-      font-weight: 600;
+      border: 1px solid transparent;
       text-decoration: none;
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
       transition:
         transform 180ms ease,
         background-color 180ms ease,
         border-color 180ms ease,
-        color 180ms ease;
+        color 180ms ease,
+        box-shadow 180ms ease;
     }
 
-    .btn-primary {
-      background: var(--color-accent);
-      color: #fff;
+    .equipment-btn--primary,
+    .equipment-btn--primary:link,
+    .equipment-btn--primary:visited {
+      background-color: #6f8f6b;
+      border-color: #6f8f6b;
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(30, 40, 30, 0.18);
     }
 
-    .btn-primary:hover {
+    .equipment-btn--primary:hover,
+    .equipment-btn--primary:focus-visible {
+      background-color: #5f7d5b;
+      border-color: #5f7d5b;
+      color: #ffffff;
       transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(30, 40, 30, 0.22);
     }
 
-    .btn-ghost {
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      color: #fff;
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-ghost:hover {
-      transform: translateY(-1px);
-      background: rgba(255, 255, 255, 0.12);
+    .equipment-btn--primary:active {
+      transform: translateY(0);
+      background-color: #557051;
+      border-color: #557051;
+      color: #ffffff;
     }
 
     .equipment-intro__grid {
@@ -540,10 +560,14 @@ import Footer from '../components/Footer.astro';
         grid-column: auto;
       }
 
-      .hero-actions,
+      .equipment-hero-actions,
       .equipment-cta__actions {
         flex-direction: column;
         align-items: stretch;
+      }
+
+      .equipment-btn {
+        width: 100%;
       }
     }
   </style>

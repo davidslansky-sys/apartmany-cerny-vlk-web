@@ -29,7 +29,7 @@ import Footer from '../components/Footer.astro';
       </p>
       <div class="hero-actions">
         <a href="#detailni-seznam" class="btn-primary">Kompletní seznam vybavení</a>
-        <a href="/apartmany" class="btn-primary">Zobrazit apartmány</a>
+        <a href="/#apartmany" class="btn-ghost">Zobrazit apartmány</a>
       </div>
     </div>
     <div class="hero-scroll" aria-hidden="true">Scroll</div>
@@ -314,7 +314,7 @@ import Footer from '../components/Footer.astro';
         <h2 class="section-title">Ve vybavení máte jasno. Teď už jen vybrat <em>apartmán</em></h2>
       </div>
       <div class="equipment-cta__actions">
-        <a href="/apartmany" class="btn-primary">Zobrazit apartmány</a>
+        <a href="/#apartmany" class="btn-primary">Zobrazit apartmány</a>
       </div>
     </div>
   </section>
@@ -328,6 +328,52 @@ import Footer from '../components/Footer.astro';
     .equipment-detail,
     .equipment-cta {
       padding: clamp(4.5rem, 7vw, 7rem) 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .btn-primary,
+    .btn-ghost,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.2rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.12);
     }
 
     .equipment-intro__grid {
@@ -457,15 +503,6 @@ import Footer from '../components/Footer.astro';
       flex-wrap: wrap;
       gap: 0.85rem;
       justify-content: flex-end;
-    }
-
-    .btn-primary {
-      background: var(--color-accent);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
     }
 
     @media (max-width: 1080px) {

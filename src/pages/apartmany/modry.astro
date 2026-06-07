@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PrevioWidget from '../../components/PrevioWidget.astro';
+---
+
+<BaseLayout
+  lang="cs"
+  title="Modrý apartmán – 4+1 osob, 56 m² | Apartmány Černý vlk"
+  description="Komfortní apartmán v objektu č.p. 117 pro 4 až 5 osob. Dvě ložnice, promyšlená dispozice, orientace na východ a sever, kosmetika Rituals a regulace teploty v každé místnosti."
+>
+  <Header />
+
+  <section class="apartment-hero">
+    <div class="apartment-hero__media">
+      <img
+        src="/images/apartmany/modry/modry-01.jpg"
+        alt="Modrý apartmán – hlavní obytný prostor"
+        width="1600"
+        height="900"
+        loading="eager"
+      />
+      <div class="apartment-hero__overlay"></div>
+    </div>
+
+    <div class="apartment-hero__content">
+      <p class="apartment-hero__eyebrow">Apartmán č.p. 117</p>
+      <h1>Modrý apartmán</h1>
+      <p class="apartment-hero__lead">
+        Elegantní apartmán pro hosty, kteří hledají klid, vyšší komfort a promyšlené zázemí
+        v jednom ze dvou luxusnějších apartmánů v areálu, navíc s kosmetikou Rituals
+        a možností regulovat teplotu v každé místnosti.
+      </p>
+
+      <div class="apartment-hero__actions">
+        <a href="#rezervace" class="apartment-hero-btn apartment-hero-btn--primary">Zkontrolovat dostupnost</a>
+        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost">Prohlédnout fotky</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-facts">
+    <div class="section-inner">
+      <div class="facts-grid facts-grid--simple">
+        <div class="fact-card">
+          <span class="fact-label">Velikost</span>
+          <strong>56 m²</strong>
+        </div>
+        <div class="fact-card">
+          <span class="fact-label">Kapacita</span>
+          <strong>4+1 osob</strong>
+        </div>
+        <div class="fact-card">
+          <span class="fact-label">Ložnice</span>
+          <strong>2 ložnice</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-intro">
+    <div class="section-inner apartment-intro__grid">
+      <div>
+        <p class="section-label">Pro koho je ideální</p>
+        <h2 class="section-title">Když hledáte více komfortu a <em>klidnější atmosféru pobytu</em>.</h2>
+      </div>
+
+      <div class="apartment-copy">
+        <p>
+          Modrý apartmán je vhodný pro hosty, kteří chtějí během pobytu na Šumavě nejen praktické zázemí,
+          ale také vyšší úroveň komfortu, klidnou atmosféru a pečlivě dotažené detaily.
+        </p>
+        <p>
+          Díky orientaci na východ a sever působí apartmán svěže a příjemně už od rána a nabízí klidnější
+          světelný charakter během dne, což podporuje pohodový pobyt v každém ročním období.
+        </p>
+        <p>
+          Oproti apartmánům v domě 116 zde hosté ocení i nadstandardní prvky, jako je kosmetika Rituals
+          a možnost regulovat teplotu samostatně v každé místnosti.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-layout">
+    <div class="section-inner">
+      <p class="section-label">Dispozice</p>
+      <h2 class="section-title">Dispozice, která spojuje pohodlí a <em>praktické fungování</em></h2>
+
+      <div class="layout-grid">
+        <article class="layout-card">
+          <div class="layout-card__text">
+            <h3>Přízemí</h3>
+            <p>
+              V přízemí se nachází společenská část s kuchyní, která tvoří hlavní obytný prostor apartmánu
+              a přirozené centrum společného času během celého pobytu.
+            </p>
+            <p>
+              Součástí přízemí je také samostatná toaleta a sklad, což přispívá k většímu pohodlí hostů
+              a praktičnosti při kratších i delších pobytech.
+            </p>
+            <p>
+              Celé přízemí působí vzdušně, přehledně a nabízí příjemné zázemí pro ranní snídani,
+              návraty z výletů i klidné večery na Šumavě.
+            </p>
+          </div>
+
+          <div class="layout-card__media" data-gallery="modry-pudorysy">
+            <button
+              type="button"
+              class="gallery-item gallery-item--plan"
+              data-gallery-trigger="t

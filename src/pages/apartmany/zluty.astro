@@ -90,53 +90,70 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       <div class="layout-grid">
         <article class="layout-card">
           <div class="layout-card__text">
-            <h3>Obytná část</h3>
+            <h3>Přízemí</h3>
             <p>
-              Apartmán nabízí příjemný hlavní obytný prostor, který propojuje posezení, jídelní část a kuchyňské zázemí
-              do jednoho funkčního celku pro každodenní pobyt.
+              V přízemí se nachází společenská část s kuchyní, která tvoří hlavní obytný prostor apartmánu
+              a přirozené místo pro společné chvíle během pobytu.
             </p>
             <p>
-              Právě tady se odehrává většina společného času – ranní snídaně, plánování výletů i klidné večery po návratu ze Šumavy.
+              Součástí přízemí je také samostatná toaleta a sklad, takže apartmán nabízí praktické zázemí
+              i pro delší pobyty nebo aktivní dovolenou na Šumavě.
             </p>
             <p>
-              Orientace na sever a západ pomáhá udržet v interiéru příjemnou atmosféru a přináší přirozené světlo bez přehřívání v průběhu dne.
+              Dispozice přízemí je přehledná, účelná a dobře funguje pro každodenní provoz rodiny i menší skupiny hostů.
             </p>
           </div>
 
-          <div class="layout-card__media">
-            <img
-              src="/images/apartmany/zluty/zluty-02.jpg"
-              alt="Žlutý apartmán – obytná část"
-              width="1200"
-              height="900"
-              loading="lazy"
-            />
+          <div class="layout-card__media" data-gallery="zluty-pudorysy">
+            <button
+              type="button"
+              class="gallery-item gallery-item--plan"
+              data-gallery-trigger="true"
+              data-gallery-index="0"
+              aria-label="Otevřít půdorys přízemí objektu 116"
+            >
+              <img
+                src="/images/domy/dum-116/dum-116-pudorys-prizemi.jpg"
+                alt="Půdorys přízemí objektu 116"
+                width="1200"
+                height="900"
+                loading="lazy"
+              />
+            </button>
           </div>
         </article>
 
         <article class="layout-card">
           <div class="layout-card__text">
-            <h3>Ložnicová a klidová zóna</h3>
+            <h3>1. patro</h3>
             <p>
-              Dvě samostatné ložnice umožňují pohodlný pobyt i tehdy, když má každý host jiný režim dne.
-              Apartmán tak dobře funguje pro rodiče s dětmi i pro více dospělých hostů.
+              V 1. patře jsou umístěné dvě ložnice, které vytvářejí klidovou část apartmánu oddělenou od denního života v přízemí.
             </p>
             <p>
-              Koupelna a další praktické zázemí navazují na celkově účelnou dispozici, která je kompaktní, přehledná a dobře použitelná při každodenním fungování.
+              Nachází se zde také koupelna se sprchou a WC, což zajišťuje pohodlné fungování apartmánu
+              pro rodiny i hosty, kteří chtějí mít vše prakticky po ruce.
             </p>
             <p>
-              Výsledkem je apartmán, který nepůsobí zbytečně velkolepě, ale velmi dobře funguje v praxi a nabízí přesně to, co hosté během pobytu opravdu potřebují.
+              Díky tomuto rozdělení působí apartmán kompaktně, ale zároveň velmi dobře organizačně zvládá pobyt více osob.
             </p>
           </div>
 
-          <div class="layout-card__media">
-            <img
-              src="/images/apartmany/zluty/zluty-03.jpg"
-              alt="Žlutý apartmán – ložnicová část"
-              width="1200"
-              height="900"
-              loading="lazy"
-            />
+          <div class="layout-card__media" data-gallery="zluty-pudorysy">
+            <button
+              type="button"
+              class="gallery-item gallery-item--plan"
+              data-gallery-trigger="true"
+              data-gallery-index="1"
+              aria-label="Otevřít půdorys prvního patra objektu 116"
+            >
+              <img
+                src="/images/domy/dum-116/dum-116-pudorys-1patro.jpg"
+                alt="Půdorys prvního patra objektu 116"
+                width="1200"
+                height="900"
+                loading="lazy"
+              />
+            </button>
           </div>
         </article>
       </div>
@@ -800,6 +817,16 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       object-fit: cover;
       transition: transform 180ms ease, box-shadow 180ms ease;
       pointer-events: none;
+    }
+
+    .gallery-item--plan {
+      border-radius: 1rem;
+    }
+
+    .gallery-item--plan img {
+      aspect-ratio: auto;
+      object-fit: contain;
+      background: var(--color-surface);
     }
 
     .gallery-item:hover img,

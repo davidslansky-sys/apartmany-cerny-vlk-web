@@ -33,8 +33,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       </p>
 
       <div class="apartment-hero__actions">
-        <a href="#rezervace" class="btn-primary">Zkontrolovat dostupnost</a>
-        <a href="#galerie" class="btn-ghost">Prohlédnout fotky</a>
+        <a href="#rezervace" class="apartment-hero-btn apartment-hero-btn--primary">Zkontrolovat dostupnost</a>
+        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost">Prohlédnout fotky</a>
       </div>
     </div>
   </section>
@@ -643,6 +643,79 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       margin-top: 2rem;
     }
 
+    .apartment-hero-btn,
+    .apartment-hero-btn:link,
+    .apartment-hero-btn:visited,
+    .btn-primary,
+    .btn-ghost,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.2rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .apartment-hero-btn--primary,
+    .apartment-hero-btn--primary:link,
+    .apartment-hero-btn--primary:visited {
+      background-color: #6f8f6b;
+      border: 1px solid #6f8f6b;
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(30, 40, 30, 0.18);
+    }
+
+    .apartment-hero-btn--primary:hover,
+    .apartment-hero-btn--primary:focus-visible {
+      background-color: #5f7d5b;
+      border-color: #5f7d5b;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(30, 40, 30, 0.22);
+    }
+
+    .apartment-hero-btn--primary:active {
+      transform: translateY(0);
+      background-color: #557051;
+      border-color: #557051;
+      color: #ffffff;
+    }
+
+    .apartment-hero-btn--ghost,
+    .apartment-hero-btn--ghost:link,
+    .apartment-hero-btn--ghost:visited {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fff;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: none;
+    }
+
+    .apartment-hero-btn--ghost:hover,
+    .apartment-hero-btn--ghost:focus-visible {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.42);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .apartment-hero-btn--ghost:active {
+      transform: translateY(0);
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.5);
+      color: #fff;
+    }
+
     .section-inner {
       width: min(100% - 2rem, 1180px);
       margin-inline: auto;
@@ -868,42 +941,42 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     .btn-primary,
     .btn-ghost,
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 3.2rem;
-      padding: 0.85rem 1.2rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+      border: 1px solid transparent;
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-primary:link,
+    .btn-primary:visited {
       background: var(--color-accent);
       color: #fff;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
       transform: translateY(-1px);
     }
 
     .btn-ghost,
-    .btn-secondary {
+    .btn-ghost:link,
+    .btn-ghost:visited {
       border: 1px solid rgba(255,255,255,0.28);
       color: #fff;
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
-    .btn-secondary {
+    .btn-secondary,
+    .btn-secondary:link,
+    .btn-secondary:visited {
       border-color: var(--color-border);
       color: var(--color-text);
       background: transparent;
       backdrop-filter: none;
     }
 
-    .btn-secondary:hover {
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
       background: var(--color-card);
     }
 

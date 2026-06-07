@@ -35,7 +35,7 @@ import Footer from '../components/Footer.astro';
         <a href="#detailni-seznam" class="equipment-btn equipment-btn--primary">
           Kompletní seznam vybavení
         </a>
-        <a href="/#apartmany" class="equipment-btn equipment-btn--primary">
+        <a href="/#apartmany" class="equipment-btn equipment-btn--ghost">
           Zobrazit apartmány
         </a>
       </div>
@@ -165,7 +165,7 @@ import Footer from '../components/Footer.astro';
           </div>
           <div class="feature-block__content">
             <p>
-              V hlavní místnosti je Smart TV s přednastaveným předplatným k MAX a dalšími internetovými aplikacemi,
+              V hlavní místnosti je Smart TV s aktivním předplatným k MAX a dalšími internetovými aplikacemi,
               které jsou vám po dobu pobytu k dispozici.
             </p>
             <p>
@@ -393,6 +393,32 @@ import Footer from '../components/Footer.astro';
       transform: translateY(0);
       background-color: #557051;
       border-color: #557051;
+      color: #ffffff;
+    }
+
+    .equipment-btn--ghost,
+    .equipment-btn--ghost:link,
+    .equipment-btn--ghost:visited {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.32);
+      color: #ffffff;
+      box-shadow: none;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .equipment-btn--ghost:hover,
+    .equipment-btn--ghost:focus-visible {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.46);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .equipment-btn--ghost:active {
+      transform: translateY(0);
+      background-color: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.52);
       color: #ffffff;
     }
 

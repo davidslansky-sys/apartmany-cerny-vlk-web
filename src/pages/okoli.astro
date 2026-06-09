@@ -14,7 +14,8 @@ import Footer from '../components/Footer.astro';
   <section class="hero" id="uvod">
     <div
       class="hero-bg"
-      style="background-image:url('/images/okoli/chalupska-slat.jpg');"
+      style="background-image:url('/images/okoli/okoli-01.jpg');"
+      aria-hidden="true"
     ></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -110,77 +111,121 @@ import Footer from '../components/Footer.astro';
       <p class="section-label">Během roku</p>
       <h2 class="section-title">Každé roční období má na Šumavě <em>své kouzlo</em></h2>
 
-      <div class="season-grid">
-        <article class="season-card">
-          <div class="season-card__header">
-            <h3>Jaro</h3>
+      <div class="season-stack">
+        <article class="season-feature">
+          <div class="season-feature__media">
+            <img
+              src="/images/okoli/okoli-10.jpg"
+              alt="Jarní Šumava v okolí Borových Lad"
+              loading="lazy"
+              width="1600"
+              height="1067"
+            />
           </div>
-          <p>
-            Jaro přeje kratším výletům, prvním delším procházkám i pozorování probouzející se šumavské krajiny.
-            Ideální jsou lehčí trasy v okolí Borových Lad a zastávky na známých přírodních lokalitách –
-            na <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-svinna-lada/" target="_blank" rel="noopener noreferrer">Chalupskou slať</a>,
-            do <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/sovi-voliery/" target="_blank" rel="noopener noreferrer">sovích voliér</a>
-            či podél <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/rybi-lihen/" target="_blank" rel="noopener noreferrer">pstruhových líhní</a>
-            k Vltavskému potoku.
-          </p>
-          <p>
-            Právě v tomto období vynikne klid okolní krajiny a menší návštěvnost oproti vrcholu sezony.
-          </p>
+          <div class="season-feature__content">
+            <div class="season-card__header">
+              <h3>Jaro</h3>
+            </div>
+            <p>
+              Jaro přeje kratším výletům, prvním delším procházkám i pozorování probouzející se šumavské krajiny.
+              Ideální jsou lehčí trasy v okolí Borových Lad a zastávky na známých přírodních lokalitách –
+              na <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-svinna-lada/" target="_blank" rel="noopener noreferrer">Chalupskou slať</a>,
+              do <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/sovi-voliery/" target="_blank" rel="noopener noreferrer">sovích voliér</a>
+              či podél <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/rybi-lihen/" target="_blank" rel="noopener noreferrer">pstruhových líhní</a>
+              k Vltavskému potoku.
+            </p>
+            <p>
+              Právě v tomto období vynikne klid okolní krajiny a menší návštěvnost oproti vrcholu sezony.
+            </p>
+          </div>
         </article>
 
-        <article class="season-card">
-          <div class="season-card__header">
-            <h3>Léto</h3>
+        <article class="season-feature season-feature--reverse">
+          <div class="season-feature__media">
+            <img
+              src="/images/okoli/okoli-08.jpg"
+              alt="Letní výlety a krajina centrální Šumavy"
+              loading="lazy"
+              width="1600"
+              height="1067"
+            />
           </div>
-          <p>
-            Léto je ideální pro pěší túry, cyklovýlety i celodenní program po celé centrální Šumavě.
-          </p>
-          <p>
-            V dosahu jsou lehké rodinné trasy i náročnější horské cíle – ať již další návštěvnická centra NP Šumava –
-            <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/navstevnicke-centrum-kvilda/" target="_blank" rel="noopener noreferrer">jeleni a rys na Kvildě</a>
-            nebo <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/nc-srni/" target="_blank" rel="noopener noreferrer">vlci v Srní</a>
-            – či výlety na <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-polednik/" target="_blank" rel="noopener noreferrer">Poledník</a>,
-            <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-idina-pila/" target="_blank" rel="noopener noreferrer">Boubín</a> a další.
-          </p>
-          <p>
-            V horkých dnech je výhodou vyšší nadmořská výška a příjemnější klima než v nižších polohách.
-          </p>
+          <div class="season-feature__content">
+            <div class="season-card__header">
+              <h3>Léto</h3>
+            </div>
+            <p>
+              Léto je ideální pro pěší túry, cyklovýlety i celodenní program po celé centrální Šumavě.
+            </p>
+            <p>
+              V dosahu jsou lehké rodinné trasy i náročnější horské cíle – ať již další návštěvnická centra NP Šumava –
+              <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/navstevnicke-centrum-kvilda/" target="_blank" rel="noopener noreferrer">jeleni a rys na Kvildě</a>
+              nebo <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/nc-srni/" target="_blank" rel="noopener noreferrer">vlci v Srní</a>
+              – či výlety na <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-polednik/" target="_blank" rel="noopener noreferrer">Poledník</a>,
+              <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-idina-pila/" target="_blank" rel="noopener noreferrer">Boubín</a> a další.
+            </p>
+            <p>
+              V horkých dnech je výhodou vyšší nadmořská výška a příjemnější klima než v nižších polohách.
+            </p>
+          </div>
         </article>
 
-        <article class="season-card">
-          <div class="season-card__header">
-            <h3>Podzim</h3>
+        <article class="season-feature">
+          <div class="season-feature__media">
+            <img
+              src="/images/okoli/okoli-03.jpg"
+              alt="Podzimní krajina Šumavy a barvy lesů"
+              loading="lazy"
+              width="1600"
+              height="1067"
+            />
           </div>
-          <p>
-            Podzimní Šumava nabízí nejklidnější atmosféru, jasné výhledy a krásné barvy lesů i luk.
-            Je to ideální čas pro pěší výlety, fotografování a pomalejší objevování okolí.
-          </p>
-          <p>
-            Pokud hledáte klidnější pobyt bez letní špičky, právě podzim bývá jedním z nejhezčích období.
-          </p>
+          <div class="season-feature__content">
+            <div class="season-card__header">
+              <h3>Podzim</h3>
+            </div>
+            <p>
+              Podzimní Šumava nabízí nejklidnější atmosféru, jasné výhledy a krásné barvy lesů i luk.
+              Je to ideální čas pro pěší výlety, fotografování a pomalejší objevování okolí.
+            </p>
+            <p>
+              Pokud hledáte klidnější pobyt bez letní špičky, právě podzim bývá jedním z nejhezčích období.
+            </p>
+          </div>
         </article>
 
-        <article class="season-card">
-          <div class="season-card__header">
-            <h3>Zima</h3>
+        <article class="season-feature season-feature--reverse">
+          <div class="season-feature__media">
+            <img
+              src="/images/okoli/okoli-02.jpg"
+              alt="Zimní Šumava v okolí Borových Lad"
+              loading="lazy"
+              width="1600"
+              height="1067"
+            />
           </div>
-          <p>
-            V zimě jsou Borová Lada skvělou volbou hlavně pro běžkaře. V okolí vedou upravované trasy
-            a snadno se dostanete i na další oblíbené
-            <a href="https://bilastopa.cz/cs/uvodni-strana-2/" target="_blank" rel="noopener noreferrer">běžecké úseky centrální Šumavy</a>.
-          </p>
-          <p>
-            Pro děti i dospělé je v obci sáňkařský svah a možnost bruslení.
-            Když situace dovolí, tak v okruhu 15-30 minut jízdy naleznete též lyžařské vleky
-            (spíše pro začátečníky) –
-            <a href="http://www.skikvilda.cz" target="_blank" rel="noopener noreferrer">Kvilda</a>,
-            <a href="https://www.lazadov.cz/la/" target="_blank" rel="noopener noreferrer">Zadov</a>,
-            <a href="https://www.novehute.cz/novehute/" target="_blank" rel="noopener noreferrer">Nové Hutě</a>,
-            <a href="https://www.ski-kubovka.com" target="_blank" rel="noopener noreferrer">Kubova Huť</a>
-            a <a href="https://www.skivltavice.cz" target="_blank" rel="noopener noreferrer">Horní Vltavice</a>,
-            případně se můžete vydat do půl hodiny vzdáleného německého lyžařského střediska
-            <a href="https://www.mitterdorf.info/cs/" target="_blank" rel="noopener noreferrer">Mitterdorf</a>.
-          </p>
+          <div class="season-feature__content">
+            <div class="season-card__header">
+              <h3>Zima</h3>
+            </div>
+            <p>
+              V zimě jsou Borová Lada skvělou volbou hlavně pro běžkaře. V okolí vedou upravované trasy
+              a snadno se dostanete i na další oblíbené
+              <a href="https://bilastopa.cz/cs/uvodni-strana-2/" target="_blank" rel="noopener noreferrer">běžecké úseky centrální Šumavy</a>.
+            </p>
+            <p>
+              Pro děti i dospělé je v obci sáňkařský svah a možnost bruslení.
+              Když situace dovolí, tak v okruhu 15-30 minut jízdy naleznete též lyžařské vleky
+              (spíše pro začátečníky) –
+              <a href="http://www.skikvilda.cz" target="_blank" rel="noopener noreferrer">Kvilda</a>,
+              <a href="https://www.lazadov.cz/la/" target="_blank" rel="noopener noreferrer">Zadov</a>,
+              <a href="https://www.novehute.cz/novehute/" target="_blank" rel="noopener noreferrer">Nové Hutě</a>,
+              <a href="https://www.ski-kubovka.com" target="_blank" rel="noopener noreferrer">Kubova Huť</a>
+              a <a href="https://www.skivltavice.cz" target="_blank" rel="noopener noreferrer">Horní Vltavice</a>,
+              případně se můžete vydat do půl hodiny vzdáleného německého lyžařského střediska
+              <a href="https://www.mitterdorf.info/cs/" target="_blank" rel="noopener noreferrer">Mitterdorf</a>.
+            </p>
+          </div>
         </article>
       </div>
     </div>
@@ -217,7 +262,7 @@ import Footer from '../components/Footer.astro';
 
     .surroundings-copy p,
     .highlight-card p,
-    .season-card p {
+    .season-feature__content p {
       margin: 0 0 1rem;
       font-size: 1.04rem;
       line-height: 1.85;
@@ -225,7 +270,7 @@ import Footer from '../components/Footer.astro';
     }
 
     .surroundings-copy a,
-    .season-card a {
+    .season-feature__content a {
       color: var(--color-accent);
       text-decoration: underline;
       text-underline-offset: 0.16em;
@@ -244,8 +289,7 @@ import Footer from '../components/Footer.astro';
       margin-top: 2.5rem;
     }
 
-    .highlight-card,
-    .season-card {
+    .highlight-card {
       padding: 1.5rem;
       border: 1px solid var(--color-border);
       border-radius: 1.4rem;
@@ -257,18 +301,55 @@ import Footer from '../components/Footer.astro';
     }
 
     .highlight-card h3,
-    .season-card h3 {
+    .season-feature h3 {
       margin: 0 0 0.85rem;
       font-size: 1.35rem;
       line-height: 1.15;
       color: var(--color-heading);
     }
 
-    .season-grid {
+    .season-stack {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 1.25rem;
       margin-top: 2.5rem;
+    }
+
+    .season-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(1.25rem, 3vw, 2rem);
+      align-items: stretch;
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 1.6rem;
+      background: var(--color-card);
+      overflow: hidden;
+    }
+
+    .season-feature--reverse .season-feature__media {
+      order: 2;
+    }
+
+    .season-feature--reverse .season-feature__content {
+      order: 1;
+    }
+
+    .season-feature__media {
+      min-height: 100%;
+    }
+
+    .season-feature__media img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      border-radius: 1.15rem;
+      display: block;
+    }
+
+    .season-feature__content {
+      padding: clamp(0.5rem, 1vw, 1rem) clamp(0.25rem, 0.8vw, 0.5rem);
+      align-self: center;
     }
 
     .season-card__header {
@@ -291,29 +372,43 @@ import Footer from '../components/Footer.astro';
 
     @media (max-width: 1080px) {
       .surroundings-intro__grid,
-      .surroundings-cta__inner {
+      .surroundings-cta__inner,
+      .season-feature {
         grid-template-columns: 1fr;
         display: grid;
       }
 
-      .highlights-grid,
-      .season-grid {
+      .highlights-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .highlight-card--wide {
         grid-column: span 2;
       }
+
+      .season-feature--reverse .season-feature__media,
+      .season-feature--reverse .season-feature__content {
+        order: initial;
+      }
     }
 
     @media (max-width: 720px) {
-      .highlights-grid,
-      .season-grid {
+      .highlights-grid {
         grid-template-columns: 1fr;
       }
 
       .highlight-card--wide {
         grid-column: auto;
+      }
+
+      .season-feature {
+        padding: 0.85rem;
+        border-radius: 1.25rem;
+      }
+
+      .season-feature__media img {
+        min-height: 240px;
+        border-radius: 1rem;
       }
 
       .surroundings-cta__inner {

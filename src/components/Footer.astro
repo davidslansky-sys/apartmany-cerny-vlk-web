@@ -1,5 +1,10 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import {
+  getApartmentUrl,
+  getEquipmentUrl,
+  getLocalizedSectionUrl,
+} from '../lib/apartmentUrls';
 
 type Lang = 'cs' | 'de' | 'en';
 
@@ -10,7 +15,7 @@ interface Props {
 const { lang = 'cs' } = Astro.props;
 
 const localize = (path: string) => getRelativeLocaleUrl(lang, path);
-const bookingHref = `${localize('')}#rezervace`;
+const bookingHref = getLocalizedSectionUrl(lang, 'rezervace');
 
 const content = {
   cs: {
@@ -18,14 +23,14 @@ const content = {
       'Pět apartmánů ve dvou objektech v Borové Ladě – v klidném centru Šumavy, s přírodou i zázemím na dosah.',
     apartmentsTitle: 'Apartmány',
     apartments: [
-      { label: 'Červený · 8 osob', href: localize('apartmany/cerveny') },
-      { label: 'Žlutý · 4+1 osob', href: localize('apartmany/zluty') },
-      { label: 'Zelený · 4+1 osob', href: localize('apartmany/zeleny') },
-      { label: 'Modrý · 4+1 osob', href: localize('apartmany/modry') },
-      { label: 'Šedý · 4+1 osob', href: localize('apartmany/sedy') },
+      { label: 'Červený · 8 osob', href: getApartmentUrl(lang, 'cerveny') },
+      { label: 'Žlutý · 4+1 osob', href: getApartmentUrl(lang, 'zluty') },
+      { label: 'Zelený · 4+1 osob', href: getApartmentUrl(lang, 'zeleny') },
+      { label: 'Modrý · 4+1 osob', href: getApartmentUrl(lang, 'modry') },
+      { label: 'Šedý · 4+1 osob', href: getApartmentUrl(lang, 'sedy') },
     ],
     equipmentLabel: 'Vybavení',
-    equipmentHref: localize('vybaveni'),
+    equipmentHref: getEquipmentUrl(lang),
     contactTitle: 'Kontakt',
     linksTitle: 'Užitečné odkazy',
     links: [
@@ -45,14 +50,14 @@ const content = {
       'Fünf Apartments in zwei Häusern in Borová Lada – im ruhigen Zentrum des Böhmerwalds, mit Natur und Komfort in Reichweite.',
     apartmentsTitle: 'Apartments',
     apartments: [
-      { label: 'Rotes · 8 Personen', href: localize('apartmany/cerveny') },
-      { label: 'Gelbes · 4+1 Personen', href: localize('apartmany/zluty') },
-      { label: 'Grünes · 4+1 Personen', href: localize('apartmany/zeleny') },
-      { label: 'Blaues · 4+1 Personen', href: localize('apartmany/modry') },
-      { label: 'Graues · 4+1 Personen', href: localize('apartmany/sedy') },
+      { label: 'Rotes · 8 Personen', href: getApartmentUrl(lang, 'cerveny') },
+      { label: 'Gelbes · 4+1 Personen', href: getApartmentUrl(lang, 'zluty') },
+      { label: 'Grünes · 4+1 Personen', href: getApartmentUrl(lang, 'zeleny') },
+      { label: 'Blaues · 4+1 Personen', href: getApartmentUrl(lang, 'modry') },
+      { label: 'Graues · 4+1 Personen', href: getApartmentUrl(lang, 'sedy') },
     ],
     equipmentLabel: 'Ausstattung',
-    equipmentHref: localize('vybaveni'),
+    equipmentHref: getEquipmentUrl(lang),
     contactTitle: 'Kontakt',
     linksTitle: 'Nützliche Links',
     links: [
@@ -72,14 +77,14 @@ const content = {
       'Five apartments in two houses in Borová Lada – in the quiet centre of Šumava, with nature and everyday comfort close at hand.',
     apartmentsTitle: 'Apartments',
     apartments: [
-      { label: 'Red · 8 guests', href: localize('apartmany/cerveny') },
-      { label: 'Yellow · 4+1 guests', href: localize('apartmany/zluty') },
-      { label: 'Green · 4+1 guests', href: localize('apartmany/zeleny') },
-      { label: 'Blue · 4+1 guests', href: localize('apartmany/modry') },
-      { label: 'Grey · 4+1 guests', href: localize('apartmany/sedy') },
+      { label: 'Red · 8 guests', href: getApartmentUrl(lang, 'cerveny') },
+      { label: 'Yellow · 4+1 guests', href: getApartmentUrl(lang, 'zluty') },
+      { label: 'Green · 4+1 guests', href: getApartmentUrl(lang, 'zeleny') },
+      { label: 'Blue · 4+1 guests', href: getApartmentUrl(lang, 'modry') },
+      { label: 'Grey · 4+1 guests', href: getApartmentUrl(lang, 'sedy') },
     ],
     equipmentLabel: 'Amenities',
-    equipmentHref: localize('vybaveni'),
+    equipmentHref: getEquipmentUrl(lang),
     contactTitle: 'Contact',
     linksTitle: 'Useful links',
     links: [

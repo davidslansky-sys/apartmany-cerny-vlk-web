@@ -1,49 +1,46 @@
-export const languages = {
+import type { Locale } from '../data/apartments';
+
+export const languages: Record<Locale, string> = {
   cs: 'Čeština',
   de: 'Deutsch',
-  en: 'English',
-} as const;
-
-export const defaultLang = 'cs';
+  en: 'English'
+};
 
 export const ui = {
   cs: {
-    'nav.home': 'Úvodní stránka',
-    'nav.apartments': 'Apartmány',
-    'nav.location': 'Okolí',
-    'nav.reviews': 'Recenze',
-    'nav.book': 'Rezervovat',
-    'nav.theme': 'Přepnout světlý/tmavý režim',
-    'nav.menu': 'Otevřít menu',
-    'nav.lang.cs': 'CS',
-    'nav.lang.de': 'DE',
-    'nav.lang.en': 'EN',
-    'brand.name': 'Černý vlk',
+    navHome: 'Domů',
+    navApartments: 'Apartmány',
+    navAmenities: 'Vybavení',
+    navSurroundings: 'Okolí',
+    navReviews: 'Recenze',
+    navBooking: 'Rezervace',
+    ctaAvailability: 'Zobrazit dostupnost',
+    ctaReviews: 'Přečíst všechny recenze'
   },
   de: {
-    'nav.home': 'Startseite',
-    'nav.apartments': 'Apartments',
-    'nav.location': 'Umgebung',
-    'nav.reviews': 'Bewertungen',
-    'nav.book': 'Buchen',
-    'nav.theme': 'Hell/Dunkel umschalten',
-    'nav.menu': 'Menü öffnen',
-    'nav.lang.cs': 'CS',
-    'nav.lang.de': 'DE',
-    'nav.lang.en': 'EN',
-    'brand.name': 'Černý vlk',
+    navHome: 'Start',
+    navApartments: 'Apartments',
+    navAmenities: 'Ausstattung',
+    navSurroundings: 'Umgebung',
+    navReviews: 'Bewertungen',
+    navBooking: 'Reservierung',
+    ctaAvailability: 'Verfügbarkeit prüfen',
+    ctaReviews: 'Alle Bewertungen lesen'
   },
   en: {
-    'nav.home': 'Homepage',
-    'nav.apartments': 'Apartments',
-    'nav.location': 'Location',
-    'nav.reviews': 'Reviews',
-    'nav.book': 'Book now',
-    'nav.theme': 'Toggle light/dark mode',
-    'nav.menu': 'Open menu',
-    'nav.lang.cs': 'CS',
-    'nav.lang.de': 'DE',
-    'nav.lang.en': 'EN',
-    'brand.name': 'Černý vlk',
-  },
+    navHome: 'Home',
+    navApartments: 'Apartments',
+    navAmenities: 'Amenities',
+    navSurroundings: 'Surroundings',
+    navReviews: 'Reviews',
+    navBooking: 'Booking',
+    ctaAvailability: 'Check availability',
+    ctaReviews: 'Read all reviews'
+  }
 } as const;
+
+export type TranslationKey = keyof (typeof ui)['cs'];
+
+export function t(locale: Locale, key: TranslationKey): string {
+  return ui[locale][key];
+}

@@ -1,216 +1,233 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import {
-  getApartmentUrl,
-  getEquipmentUrl,
-  getLocalizedSectionUrl,
-} from '../lib/apartmentUrls';
-
-type Lang = 'cs' | 'de' | 'en';
+import type { Locale } from '../data/apartments';
+import { apartments } from '../data/apartments';
+import { getRoute } from '../i18n/routes';
+import { getApartmentUrl } from '../lib/apartmentUrls';
 
 interface Props {
-  lang?: Lang;
+  lang?: Locale;
 }
 
-const props = Astro.props as Props;
+const { lang = 'cs' } = Astro.props;
 
-const lang: Lang =
-  (Astro.currentLocale as Lang | undefined) ??
-  props.lang ??
-  'cs';
-
-const localize = (path: string) => getRelativeLocaleUrl(lang, path);
-const bookingHref = getLocalizedSectionUrl(lang, 'rezervace');
-
-const content = {
+const labels = {
   cs: {
-    brandText:
-      'Pět apartmánů ve dvou objektech v Borové Ladě – v klidném centru Šumavy, s přírodou i zázemím na dosah.',
-    apartmentsTitle: 'Apartmány',
-    apartments: [
-      { label: 'Červený · 8 osob', href: getApartmentUrl(lang, 'cerveny') },
-      { label: 'Žlutý · 4+1 osob', href: getApartmentUrl(lang, 'zluty') },
-      { label: 'Zelený · 4+1 osob', href: getApartmentUrl(lang, 'zeleny') },
-      { label: 'Modrý · 4+1 osob', href: getApartmentUrl(lang, 'modry') },
-      { label: 'Šedý · 4+1 osob', href: getApartmentUrl(lang, 'sedy') },
-    ],
-    equipmentLabel: 'Vybavení',
-    equipmentHref: getEquipmentUrl(lang),
-    contactTitle: 'Kontakt',
-    linksTitle: 'Užitečné odkazy',
-    links: [
-      { label: 'Rezervace', href: bookingHref },
-      { label: 'Okolí', href: localize('okoli') },
-      { label: 'Recenze hostů', href: localize('recenze') },
-      {
-        label: 'Penzion Černý vlk',
-        href: 'https://cernyvlk.cz',
-        external: true,
-      },
-    ],
-    legal: `© ${new Date().getFullYear()} Apartmány Černý vlk · Borová Lada · Šumava`,
+    brandText: 'Stylové horské apartmány v Borové Ladě, v srdci Národního parku Šumava.',
+    apartments: 'Apartmány',
+    site: 'Web',
+    contact: 'Kontakt',
+    amenities: 'Vybavení',
+    surroundings: 'Okolí',
+    reviews: 'Recenze',
+    booking: 'Rezervace',
+    addressLabel: 'Adresa',
+    social: 'Sociální sítě',
+    rights: 'Všechna práva vyhrazena.'
   },
   de: {
-    brandText:
-      'Fünf Apartments in zwei Häusern in Borová Lada – im ruhigen Zentrum des Böhmerwalds, mit Natur und Komfort in Reichweite.',
-    apartmentsTitle: 'Apartments',
-    apartments: [
-      { label: 'Rotes · 8 Personen', href: getApartmentUrl(lang, 'cerveny') },
-      { label: 'Gelbes · 4+1 Personen', href: getApartmentUrl(lang, 'zluty') },
-      { label: 'Grünes · 4+1 Personen', href: getApartmentUrl(lang, 'zeleny') },
-      { label: 'Blaues · 4+1 Personen', href: getApartmentUrl(lang, 'modry') },
-      { label: 'Graues · 4+1 Personen', href: getApartmentUrl(lang, 'sedy') },
-    ],
-    equipmentLabel: 'Ausstattung',
-    equipmentHref: getEquipmentUrl(lang),
-    contactTitle: 'Kontakt',
-    linksTitle: 'Nützliche Links',
-    links: [
-      { label: 'Reservierung', href: bookingHref },
-      { label: 'Umgebung', href: localize('okoli') },
-      { label: 'Bewertungen', href: localize('recenze') },
-      {
-        label: 'Pension Černý vlk',
-        href: 'https://cernyvlk.cz',
-        external: true,
-      },
-    ],
-    legal: `© ${new Date().getFullYear()} Apartmány Černý vlk · Borová Lada · Böhmerwald`,
+    brandText: 'Stilvolle Bergapartments in Borová Lada, im Herzen des Nationalparks Šumava.',
+    apartments: 'Apartments',
+    site: 'Web',
+    contact: 'Kontakt',
+    amenities: 'Ausstattung',
+    surroundings: 'Umgebung',
+    reviews: 'Bewertungen',
+    booking: 'Reservierung',
+    addressLabel: 'Adresse',
+    social: 'Soziale Netzwerke',
+    rights: 'Alle Rechte vorbehalten.'
   },
   en: {
-    brandText:
-      'Five apartments in two houses in Borová Lada – in the quiet centre of Šumava, with nature and everyday comfort close at hand.',
-    apartmentsTitle: 'Apartments',
-    apartments: [
-      { label: 'Red · 8 guests', href: getApartmentUrl(lang, 'cerveny') },
-      { label: 'Yellow · 4+1 guests', href: getApartmentUrl(lang, 'zluty') },
-      { label: 'Green · 4+1 guests', href: getApartmentUrl(lang, 'zeleny') },
-      { label: 'Blue · 4+1 guests', href: getApartmentUrl(lang, 'modry') },
-      { label: 'Grey · 4+1 guests', href: getApartmentUrl(lang, 'sedy') },
-    ],
-    equipmentLabel: 'Amenities',
-    equipmentHref: getEquipmentUrl(lang),
-    contactTitle: 'Contact',
-    linksTitle: 'Useful links',
-    links: [
-      { label: 'Booking', href: bookingHref },
-      { label: 'Location', href: localize('okoli') },
-      { label: 'Guest reviews', href: localize('recenze') },
-      {
-        label: 'Penzion Černý vlk',
-        href: 'https://cernyvlk.cz',
-        external: true,
-      },
-    ],
-    legal: `© ${new Date().getFullYear()} Apartmány Černý vlk · Borová Lada · Šumava`,
-  },
-} as const;
-
-const current = content[lang];
+    brandText: 'Stylish mountain apartments in Borová Lada, in the heart of Šumava National Park.',
+    apartments: 'Apartments',
+    site: 'Website',
+    contact: 'Contact',
+    amenities: 'Amenities',
+    surroundings: 'Surroundings',
+    reviews: 'Reviews',
+    booking: 'Booking',
+    addressLabel: 'Address',
+    social: 'Social media',
+    rights: 'All rights reserved.'
+  }
+}[lang];
 ---
 
-<footer role="contentinfo">
+<footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <svg
-            viewBox="0 0 1746 2012"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2109.87 544-550.872 459.931" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2095 551h280.28" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2364 553.628 2768.353 368" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2752 388v248.245" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2563 798.706 2759.458 619" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2580 792h226.89" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2785 944.502V782" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2456 1286.18 333.721-357.182" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2463.58 1268-7.578 1062.06" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2472.22 2308h-415.221" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2081 2296.78 11.463-306.782" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1565.78 1000-248.776 113.036" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1338 1113 219.92 106.38" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1119 2254.95 1565.532 1195" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1093 2267 446.53 45.92" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1518 2330.39 134.924-400.392" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1627 1946h481.14" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2092 1966.46v-399.459" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1963 1549 148.62 41.86" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1978.4 1570-8.397 210.472" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1650 1886.9 201.655-332.897" transform="translate(-1086 -343)" />
-            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1850 1580 118.61 187.87" transform="translate(-1086 -343)" />
-          </svg>
-          <span class="footer-logo-text">Černý vlk</span>
-        </div>
+    <div class="footer-brand">
+      <a class="footer-logo" href={getRoute('home', lang)} aria-label="Apartmány Černý vlk">
+        <span class="footer-logo-mark" aria-hidden="true">ČV</span>
+        <span class="footer-logo-text">Apartmány Černý vlk</span>
+      </a>
+      <p>{labels.brandText}</p>
+    </div>
 
-        <p>{current.brandText}</p>
-
-        <div class="footer-social">
-          <a
-            href="https://www.instagram.com/apartmanycernyvlkborovalada/"
-            class="social-icon"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            IG
-          </a>
-          <a
-            href="https://www.facebook.com/ApartmanyCernyVlk"
-            class="social-icon"
-            aria-label="Facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            FB
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>{current.apartmentsTitle}</h4>
-        <ul>
-          {current.apartments.map((item) => (
-            <li><a href={item.href}>{item.label}</a></li>
-          ))}
-          <li class="footer-col-divider">
-            <a href={current.equipmentHref}>{current.equipmentLabel}</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>{current.contactTitle}</h4>
-        <ul>
-          <li>Borová Lada 116 a 117<br />384 92 · Šumava</li>
-          <li><a href="tel:+420728739288">+420 728 739 288</a></li>
-          <li><a href="tel:+420739753580">+420 739 753 580</a></li>
-          <li><a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>{current.linksTitle}</h4>
-        <ul>
-          {current.links.map((item) => (
+    <div class="footer-col">
+      <h3>{labels.apartments}</h3>
+      <ul>
+        {
+          apartments.map((apartment) => (
             <li>
-              <a
-                href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
-              >
-                {item.label}
+              <a href={getApartmentUrl(apartment.key, lang)}>
+                {apartment.names[lang]}
               </a>
             </li>
-          ))}
-        </ul>
-      </div>
+          ))
+        }
+      </ul>
     </div>
 
-    <div class="footer-bottom">
-      <div class="footer-legal">{current.legal}</div>
+    <div class="footer-col">
+      <h3>{labels.site}</h3>
+      <ul>
+        <li><a href={getRoute('vybaveni', lang)}>{labels.amenities}</a></li>
+        <li><a href={getRoute('okoli', lang)}>{labels.surroundings}</a></li>
+        <li><a href={getRoute('recenze', lang)}>{labels.reviews}</a></li>
+        <li><a href={getRoute('kontakt', lang)}>{labels.booking}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>{labels.contact}</h3>
+      <ul class="footer-contact">
+        <li>
+          <strong>{labels.addressLabel}</strong><br />
+          Borová Lada 116 a 117<br />
+          384 92 Borová Lada
+        </li>
+        <li><a href="tel:+420728739288">+420 728 739 288</a></li>
+        <li><a href="tel:+420739753580">+420 739 753 580</a></li>
+        <li><a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a></li>
+        <li>
+          <strong>{labels.social}</strong><br />
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>,
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>,
+          <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener noreferrer">TripAdvisor</a>
+        </li>
+      </ul>
     </div>
   </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Apartmány Černý vlk. {labels.rights}</p>
+  </div>
 </footer>
+
+<style>
+  .site-footer {
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.84);
+    background:
+      linear-gradient(180deg, rgba(17, 23, 25, 0.96), rgba(10, 14, 16, 1));
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-inner {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 4rem 0 2.25rem;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1.15fr;
+    gap: 2rem;
+  }
+
+  .footer-brand p {
+    margin-top: 1rem;
+    max-width: 34ch;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .footer-logo-mark {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-logo-text {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .footer-col h3 {
+    margin: 0 0 1rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .footer-col a {
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+  }
+
+  .footer-col a:hover,
+  .footer-col a:focus-visible {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .footer-contact li {
+    line-height: 1.55;
+  }
+
+  .footer-contact strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .footer-bottom {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 1.1rem 0 1.6rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-bottom p {
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 1100px) {
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .footer-inner {
+      width: min(100% - 1rem, 1200px);
+      padding: 3rem 0 1.75rem;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    .footer-bottom {
+      width: min(100% - 1rem, 1200px);
+      padding-bottom: 1.4rem;
+    }
+  }
+</style>

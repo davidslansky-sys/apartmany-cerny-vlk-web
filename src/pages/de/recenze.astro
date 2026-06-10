@@ -1,0 +1,499 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const reviewSources = [
+  {
+    name: 'Booking.com',
+    value: '9,4 / 10',
+    count: '98 Bewertungen',
+    href: 'https://www.booking.com/hotel/cz/apartmany-cerny-vlk-borova-lada.cs.html',
+  },
+  {
+    name: 'Google',
+    value: '4,9 / 5',
+    count: '93 Bewertungen',
+    href: 'https://www.google.com/search?sca_esv=0e07b4d6a31d3a97&q=Apartm%C3%A1ny+%C4%8Cern%C3%BD+vlk+Borov%C3%A1+Lada+recenze',
+  },
+  {
+    name: 'Mapy.cz',
+    value: '5,0 / 5',
+    count: '24 Bewertungen',
+    href: 'https://mapy.com/s/pozarucuzu',
+  },
+  {
+    name: 'Previo.cz',
+    value: '9,7 / 10',
+    count: '84 Bewertungen',
+    href: 'https://www.previo.cz/ubytovani/borova-lada/25765-apartmany-cerny-vlk#hodnoceni',
+  },
+];
+
+const selectedReviews = [
+  {
+    platform: 'Booking.com',
+    author: 'Dagmar',
+    country: 'Tschechien',
+    date: 'August 2025',
+    text: 'Großartige, moderne Unterkunft, bis ins kleinste Detail durchdacht. Ruhiger Ort und ideale Lage für viele Ausflüge und Aktivitäten direkt in Borová Lada oder in angenehmer Entfernung. Sehr freundliche und hilfsbereite Eigentümer. Wir empfehlen die Unterkunft wärmstens und kommen gerne wieder ☺️',
+  },
+  {
+    platform: 'Booking.com',
+    author: 'Hunor',
+    country: 'Deutschland',
+    date: 'November 2025',
+    text: 'Wunderschöne Lage, stilvolles Haus und stilvolle Apartments, schlüsselloser Zugang per Code, direkter Anschluss an die umliegende Natur, gut ausgestattete Küche und praktischer Abstellraum.',
+  },
+  {
+    platform: 'Google',
+    author: 'Tomáš',
+    country: 'Tschechien',
+    date: 'Dezember 2025',
+    text: 'Die Apartments sind neu, schön und gemütlich eingerichtet. Haustiere sind willkommen. Wir haben unseren Urlaub sehr genossen; wir fahren regelmäßig mit unserem Haustier zum Wandern in den Böhmerwald, daher entsprach alles unseren Erwartungen.',
+  },
+  {
+    platform: 'Google',
+    author: 'Helena',
+    country: 'Tschechien',
+    date: 'Sommer 2025',
+    text: 'Das Apartment ist geschmackvoll eingerichtet, sauber und sehr angenehm. Die Lage ist hervorragend. Wir waren mit kleinen Kindern hier und haben unseren Aufenthalt sehr genossen.',
+  },
+  {
+    platform: 'Mapy.cz',
+    author: 'Petra',
+    country: 'Tschechien',
+    date: 'Februar 2026',
+    text: 'Wunderschönes, komplett ausgestattetes Apartment. Es hat uns hier sehr gefallen und wir werden auf jeden Fall wiederkommen.',
+  },
+  {
+    platform: 'Previo.cz',
+    author: 'Jindřiška',
+    country: 'Tschechien',
+    date: 'März 2025',
+    text: 'Gelbes Apartment – ein großartiges Apartment für 5 Personen und einen Hund. Die Aufteilung ist hervorragend gelöst, wir haben die 2 WCs sehr geschätzt. Die Ausstattung des Apartments war auf ausgezeichnetem Niveau – es fehlte uns an nichts, von der Küchenausstattung über Handtücher bis hin zum Schuhtrockner. Das Apartment hat auch einen eigenen Skiraum. Tolle Lage – in Kvilda ist man in 10 Minuten. Die Hausverwalterin ist sehr freundlich und kümmert sich sofort um alles. Wir können die Unterkunft nur empfehlen.',
+  },
+];
+---
+
+<BaseLayout
+  lang="de"
+  title="Gästebewertungen | Apartmány Černý vlk"
+  description="Erfahrungen der Gäste und Bewertungen von Booking.com, Google, Mapy.cz und Previo.cz."
+  image="/images/hero/hero-borova-lada.jpg"
+>
+  <Header />
+
+  <section class="reviews-hero">
+    <div class="reviews-hero__media">
+      <img
+        src="/images/hero/hero-borova-lada.jpg"
+        alt="Borová Lada und die umliegende Landschaft des Böhmerwalds"
+        width="1600"
+        height="900"
+        loading="eager"
+      />
+      <div class="reviews-hero__overlay"></div>
+    </div>
+
+    <div class="section-inner reviews-hero__content">
+      <p class="reviews-hero__eyebrow">Gästebewertungen</p>
+      <h1>Erfahrungen unserer Gäste</h1>
+
+      <div class="reviews-summary-card" aria-label="Gesamtbewertung">
+        <div class="reviews-summary-card__score">9,4 <span>von 10</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-platforms">
+    <div class="section-inner">
+      <p class="section-label">Plattformen</p>
+      <h2 class="section-title">Bewertungen auf <em>einzelnen Plattformen</em></h2>
+
+      <div class="platform-grid">
+        {reviewSources.map((source) => (
+          <a
+            class="platform-card"
+            href={source.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Bewertungen auf der Plattform ${source.name} öffnen`}
+          >
+            <div class="platform-card__top">
+              <h3>{source.name}</h3>
+              <span class="platform-card__value">{source.value}</span>
+            </div>
+            <p class="platform-card__count">{source.count}</p>
+            <p class="platform-card__linkhint">Alle Bewertungen anzeigen</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-selected">
+    <div class="section-inner">
+      <p class="section-label">Ausgewählte Bewertungen</p>
+      <h2 class="section-title">Konkrete Erfahrungen <em>unserer Gäste</em></h2>
+
+      <div class="selected-reviews-grid">
+        {selectedReviews.map((review) => (
+          <article class="selected-review-card">
+            <div class="selected-review-card__meta">
+              <span class="selected-review-card__platform">{review.platform}</span>
+              <span class="selected-review-card__author">
+                <strong>{review.author}</strong> · {review.country} · {review.date}
+              </span>
+            </div>
+            <p class="selected-review-card__text">„{review.text}“</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-cta">
+    <div class="section-inner reviews-cta__inner">
+      <div>
+        <p class="section-label">Reservierung</p>
+        <h2 class="section-title">Möchten Sie sich <em>selbst ein Bild machen</em>?</h2>
+        <p class="reviews-cta__text">
+          Schauen Sie sich die verfügbaren Termine an und wählen Sie das Apartment, das am besten zu Ihnen passt.
+        </p>
+      </div>
+
+      <div class="reviews-cta__actions">
+        <a href="/de" class="btn-primary">Apartment auswählen</a>
+        <a href="/de" class="btn-secondary">Apartments ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang="de" />
+
+  <style>
+    .section-inner {
+      width: min(100% - 2rem, 1180px);
+      margin-inline: auto;
+    }
+
+    .section-label {
+      margin: 0 0 0.85rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .section-title em {
+      display: inline-block;
+      font-style: italic;
+      font-weight: 500;
+      opacity: 0.92;
+      line-height: 1.14;
+      padding-right: 0.08em;
+      padding-bottom: 0.08em;
+    }
+
+    .reviews-hero,
+    .reviews-platforms,
+    .reviews-selected,
+    .reviews-cta {
+      padding: clamp(4.5rem, 7vw, 7rem) 0;
+    }
+
+    .reviews-hero {
+      position: relative;
+      min-height: 72svh;
+      display: grid;
+      align-items: end;
+      overflow: clip;
+      background: #111;
+    }
+
+    .reviews-hero__media {
+      position: absolute;
+      inset: 0;
+    }
+
+    .reviews-hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .reviews-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(12, 14, 12, 0.72) 0%, rgba(12, 14, 12, 0.3) 42%, rgba(12, 14, 12, 0.14) 100%);
+    }
+
+    .reviews-hero__content {
+      position: relative;
+      z-index: 2;
+      color: #f8f3eb;
+      padding-bottom: clamp(2.5rem, 5vw, 4rem);
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .reviews-hero__eyebrow {
+      margin: 0;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(248, 243, 235, 0.8);
+    }
+
+    .reviews-hero h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.03em;
+      color: #f8f3eb;
+      font-weight: 400;
+    }
+
+    .reviews-summary-card {
+      width: fit-content;
+      min-width: 220px;
+      padding: 1.2rem 1.35rem;
+      border-radius: 1.35rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 18px 40px rgba(8, 10, 8, 0.14);
+    }
+
+    .reviews-summary-card__score {
+      display: flex;
+      align-items: baseline;
+      gap: 0.45rem;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .reviews-summary-card__score span {
+      font-size: 1rem;
+      letter-spacing: 0;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .reviews-platforms {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.25rem;
+    }
+
+    .platform-card {
+      display: block;
+      padding: 1.35rem;
+      border-radius: 1.3rem;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      text-decoration: none;
+      color: inherit;
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background-color 180ms ease;
+    }
+
+    .platform-card:hover,
+    .platform-card:focus-visible {
+      transform: translateY(-2px);
+      background: color-mix(in srgb, var(--color-card) 85%, white 15%);
+      border-color: color-mix(in srgb, var(--color-border) 75%, var(--color-accent) 25%);
+      box-shadow: 0 16px 34px rgba(12, 18, 12, 0.08);
+    }
+
+    .platform-card__top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .platform-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      color: var(--color-heading);
+    }
+
+    .platform-card__value {
+      font-size: 1.15rem;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--color-heading);
+    }
+
+    .platform-card__count,
+    .platform-card__linkhint {
+      margin: 0;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .platform-card__count {
+      color: var(--color-text);
+    }
+
+    .platform-card__linkhint {
+      margin-top: 0.4rem;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .selected-reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.25rem;
+    }
+
+    .selected-review-card {
+      padding: 1.45rem;
+      border-radius: 1.4rem;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+    }
+
+    .selected-review-card__meta {
+      display: grid;
+      gap: 0.35rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .selected-review-card__platform {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    .selected-review-card__author {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    .selected-review-card__text,
+    .reviews-cta__text {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--color-text);
+    }
+
+    .reviews-cta {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .reviews-cta__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .reviews-cta__text {
+      margin-top: 1rem;
+      max-width: 40rem;
+    }
+
+    .reviews-cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.2rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .btn-primary {
+      background-color: #6f8f6b;
+      border: 1px solid #6f8f6b;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background-color: #5f7d5b;
+      border-color: #5f7d5b;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: var(--color-card);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 1080px) {
+      .platform-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .reviews-cta__inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .selected-reviews-grid,
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-hero {
+        min-height: 64svh;
+      }
+    }
+  </style>
+</BaseLayout>

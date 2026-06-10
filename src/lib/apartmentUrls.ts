@@ -1,63 +1,10 @@
-type Lang = 'cs' | 'de' | 'en';
-type ApartmentKey = 'cerveny' | 'zluty' | 'zeleny' | 'modry' | 'sedy';
-type SectionKey = 'rezervace';
+import type { ApartmentKey, Locale } from '../data/apartments';
+import { getApartmentByKey } from '../data/apartments';
 
-const apartmentSlugs: Record<Lang, Record<ApartmentKey, string>> = {
-  cs: {
-    cerveny: 'cerveny',
-    zluty: 'zluty',
-    zeleny: 'zeleny',
-    modry: 'modry',
-    sedy: 'sedy',
-  },
-  de: {
-    cerveny: 'cerveny',
-    zluty: 'zluty',
-    zeleny: 'zeleny',
-    modry: 'modry',
-    sedy: 'sedy',
-  },
-  en: {
-    cerveny: 'cerveny',
-    zluty: 'zluty',
-    zeleny: 'zeleny',
-    modry: 'modry',
-    sedy: 'sedy',
-  },
-};
-
-const pageSlugs: Record<Lang, { equipment: string }> = {
-  cs: { equipment: 'vybaveni' },
-  de: { equipment: 'ausstattung' },
-  en: { equipment: 'amenities' },
-};
-
-const sectionIds: Record<Lang, Record<SectionKey, string>> = {
-  cs: { rezervace: 'rezervace' },
-  de: { rezervace: 'rezervace' },
-  en: { rezervace: 'rezervace' },
-};
-
-function withLocalePrefix(lang: Lang, slug: string) {
-  if (lang === 'cs') return `/${slug}`;
-  return `/${lang}/${slug}`;
+export function getApartmentUrl(key: ApartmentKey, locale: Locale): string {
+  return getApartmentByKey(key).urls[locale];
 }
 
-export function getApartmentUrl(lang: Lang, apartment: ApartmentKey) {
-  const slug = apartmentSlugs[lang][apartment];
-
-  if (lang === 'cs') {
-    return `/apartmany/${slug}`;
-  }
-
-  return `/${lang}/${slug}`;
-}
-
-export function getEquipmentUrl(lang: Lang) {
-  return withLocalePrefix(lang, pageSlugs[lang].equipment);
-}
-
-export function getLocalizedSectionUrl(lang: Lang, section: SectionKey) {
-  if (lang === 'cs') return `/#${sectionIds[lang][section]}`;
-  return `/${lang}/#${sectionIds[lang][section]}`;
+export function getApartmentName(key: ApartmentKey, locale: Locale): string {
+  return getApartmentByKey(key).names[locale];
 }

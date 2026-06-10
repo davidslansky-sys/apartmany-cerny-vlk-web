@@ -202,11 +202,10 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         </div>
       </div>
 
-        <div class="home-secondary-actions reveal">
-          <a href="/de/#rezervace" class="btn-primary">Verfügbarkeit prüfen</a>
-          <a href="/de/vybaveni" class="btn-secondary">Ausstattung und Service</a>
-        </div>
-
+      <div class="home-secondary-actions reveal">
+        <a href="/de/#rezervace" class="btn-primary">Verfügbarkeit prüfen</a>
+        <a href="/de/vybaveni" class="btn-secondary">Ausstattung und Service</a>
+      </div>
     </div>
   </section>
 
@@ -351,6 +350,59 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       display: flex;
       flex-wrap: wrap;
       gap: 0.85rem;
+    }
+
+    .home-secondary-actions .btn-primary,
+    .home-secondary-actions .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.25rem;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1;
+      transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .home-secondary-actions .btn-secondary,
+    .home-secondary-actions .btn-secondary:link,
+    .home-secondary-actions .btn-secondary:visited {
+      background: transparent;
+      border: 1px solid rgba(28, 34, 38, 0.18);
+      color: var(--color-text, #1f2933);
+      box-shadow: none;
+    }
+
+    .home-secondary-actions .btn-secondary:hover,
+    .home-secondary-actions .btn-secondary:focus-visible {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: rgba(28, 34, 38, 0.28);
+      color: var(--color-heading, #111827);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .home-secondary-actions .btn-secondary:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 720px) {
+      .home-secondary-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .home-secondary-actions .btn-primary,
+      .home-secondary-actions .btn-secondary {
+        width: 100%;
+      }
     }
   </style>
 </BaseLayout>

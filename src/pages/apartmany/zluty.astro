@@ -9,6 +9,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
   lang="cs"
   title="Žlutý apartmán – 4+1 osob, 56 m² | Apartmány Černý vlk"
   description="Komfortní apartmán v objektu č.p. 116 pro 4 až 5 osob. Dvě ložnice, promyšlená dispozice a orientace na sever a západ pro příjemný pobyt na Šumavě."
+  image="/images/apartmany/zluty/zluty-01.jpg"
 >
   <Header />
 
@@ -28,8 +29,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       <p class="apartment-hero__eyebrow">Apartmán č.p. 116</p>
       <h1>Žlutý apartmán</h1>
       <p class="apartment-hero__lead">
-        Prakticky řešený apartmán pro rodinu nebo menší skupinu hostů, kteří chtějí mít dostatek soukromí,
-        pohodlné zázemí a příjemnou atmosféru pobytu na Šumavě.
+        Prakticky řešený apartmán pro rodinu nebo menší skupinu hostů, kteří hledají dostatek soukromí,
+        pohodlné zázemí a klidné místo pro pobyt na Šumavě.
       </p>
 
       <div class="apartment-hero__actions">
@@ -76,7 +77,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         </p>
         <p>
           Dispozice je navržená prakticky pro krátké víkendy i delší pobyty, kdy oceníte oddělené ložnice,
-          společný obytný prostor a kvalitní zázemí bez zbytečných kompromisů.
+          společný obytný prostor a zázemí, které funguje jednoduše a bez zbytečných kompromisů.
         </p>
       </div>
     </div>
@@ -100,7 +101,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
               i pro delší pobyty nebo aktivní dovolenou na Šumavě.
             </p>
             <p>
-              Dispozice přízemí je přehledná, účelná a dobře funguje pro každodenní provoz rodiny i menší skupiny hostů.
+              Dispozice přízemí je přehledná, účelná a dobře funguje pro každodenní režim rodiny i menší skupiny hostů.
             </p>
           </div>
 
@@ -134,7 +135,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
               pro rodiny i hosty, kteří chtějí mít vše prakticky po ruce.
             </p>
             <p>
-              Díky tomuto rozdělení působí apartmán kompaktně, ale zároveň velmi dobře organizačně zvládá pobyt více osob.
+              Díky tomuto rozdělení působí apartmán kompaktně, ale zároveň nabízí pohodlné uspořádání i pro pobyt více osob.
             </p>
           </div>
 
@@ -178,12 +179,12 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
         <article class="highlight-card">
           <h3>Severozápadní orientace</h3>
-          <p>Apartmán má příjemný charakter světla během dne a klidnou atmosféru, kterou oceníte při odpočinku i večerním návratu z výletů.</p>
+          <p>Apartmán má příjemný charakter světla během dne a klidnější atmosféru, kterou oceníte při odpočinku i večerním návratu z výletů.</p>
         </article>
 
         <article class="highlight-card">
           <h3>Součást objektu č.p. 116</h3>
-          <p>Žlutý apartmán je ve stejném domě jako Červený a Zelený apartmán, takže je vhodný i pro kombinované rezervace více apartmánů najednou.</p>
+          <p>Žlutý apartmán je ve stejném domě jako Červený a Zelený apartmán, takže se hodí i pro kombinované rezervace více apartmánů najednou.</p>
         </article>
 
         <article class="highlight-card">
@@ -365,23 +366,41 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       if (!dialog || !image || !caption) return;
 
-      const galleries = Array.from(document.querySelectorAll('[data-gallery]'));
-      if (galleries.length === 0) return;
+      const galleryGroups = new Map();
+      const galleryWrappers = Array.from(document.querySelectorAll('[data-gallery]'));
+
+      if (galleryWrappers.length === 0) return;
+
+      galleryWrappers.forEach((wrapper) => {
+        const name = wrapper.getAttribute('data-gallery');
+        if (!name) return;
+
+        if (!galleryGroups.has(name)) {
+          galleryGroups.set(name, []);
+        }
+
+        const buttons = Array.from(wrapper.querySelectorAll('[data-gallery-index]'));
+        buttons.forEach((button) => {
+          galleryGroups.get(name).push(button);
+        });
+      });
 
       let currentGalleryItems = [];
       let currentIndex = 0;
       let lastTrigger = null;
 
-      const buildItems = (gallery) => {
-        const buttons = Array.from(gallery.querySelectorAll('[data-gallery-index]'));
-        return buttons.map((button) => {
-          const img = button.querySelector('img');
-          return {
-            src: img?.getAttribute('src') || '',
-            alt: img?.getAttribute('alt') || '',
-            trigger: button,
-          };
-        });
+      const buildItems = (galleryName) => {
+        const buttons = galleryGroups.get(galleryName) || [];
+        return buttons
+          .sort((a, b) => Number(a.getAttribute('data-gallery-index')) - Number(b.getAttribute('data-gallery-index')))
+          .map((button) => {
+            const img = button.querySelector('img');
+            return {
+              src: img?.getAttribute('src') || '',
+              alt: img?.getAttribute('alt') || '',
+              trigger: button,
+            };
+          });
       };
 
       const renderItem = (index) => {
@@ -393,8 +412,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         caption.textContent = item.alt;
       };
 
-      const openLightbox = (gallery, index, trigger) => {
-        currentGalleryItems = buildItems(gallery);
+      const openLightbox = (galleryName, index, trigger) => {
+        currentGalleryItems = buildItems(galleryName);
         lastTrigger = trigger || null;
         renderItem(index);
 
@@ -433,7 +452,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         renderItem(nextIndex);
       };
 
-      galleries.forEach((gallery) => {
+      galleryWrappers.forEach((gallery) => {
         gallery.addEventListener('click', (event) => {
           const target = event.target;
           if (!(target instanceof Element)) return;
@@ -442,10 +461,14 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
           if (!trigger) return;
 
           event.preventDefault();
+
           const index = Number(trigger.getAttribute('data-gallery-index'));
           if (Number.isNaN(index)) return;
 
-          openLightbox(gallery, index, trigger);
+          const galleryName = gallery.getAttribute('data-gallery');
+          if (!galleryName) return;
+
+          openLightbox(galleryName, index, trigger);
         });
       });
 

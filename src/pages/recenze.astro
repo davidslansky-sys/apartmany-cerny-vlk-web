@@ -11,13 +11,13 @@ const reviewSources = [
     href: 'https://www.booking.com/hotel/cz/apartmany-cerny-vlk-borova-lada.cs.html',
   },
   {
-    name: 'Google.com',
+    name: 'Google',
     value: '4,9 / 5',
     count: '93 hodnocení',
     href: 'https://www.google.com/search?sca_esv=0e07b4d6a31d3a97&q=Apartm%C3%A1ny+%C4%8Cern%C3%BD+vlk+Borov%C3%A1+Lada+recenze',
   },
   {
-    name: 'Mapy.com',
+    name: 'Mapy.cz',
     value: '5,0 / 5',
     count: '24 hodnocení',
     href: 'https://mapy.com/s/pozarucuzu',
@@ -46,21 +46,21 @@ const selectedReviews = [
     text: 'Krásná lokalita, stylový dům i apartmány, bezklíčový vstup na kód, přímé napojení na okolní přírodu, dobře vybavená kuchyně a praktická skladovací místnost.',
   },
   {
-    platform: 'Google.com',
+    platform: 'Google',
     author: 'Tomáš',
     country: 'ČR',
     date: 'prosinec 2025',
-    text: 'Apartmány jsou nové, hezky útulně zařízené. Domácí mazlíčci jsou vítáni. Dovolenou jsme si užili, jezdíme na Šumavu pravidelně za turistikou s naším mazlíčkem, takže vše dle očekávání.',
+    text: 'Apartmány jsou nové, hezky a útulně zařízené. Domácí mazlíčci jsou vítáni. Dovolenou jsme si užili, na Šumavu jezdíme pravidelně za turistikou s naším mazlíčkem, takže vše odpovídalo očekávání.',
   },
   {
-    platform: 'Google.com',
+    platform: 'Google',
     author: 'Helena',
     country: 'ČR',
     date: 'léto 2025',
-    text: 'Apartmán je vkusně zařízený, čistý, moc příjemný. Poloha výborná. Byly jsme se malými dětmi a moc jsme si to užili.',
+    text: 'Apartmán je vkusně zařízený, čistý a velmi příjemný. Poloha je výborná. Byly jsme zde s malými dětmi a pobyt jsme si moc užili.',
   },
   {
-    platform: 'Mapy.com',
+    platform: 'Mapy.cz',
     author: 'Petra',
     country: 'ČR',
     date: 'únor 2026',
@@ -71,7 +71,7 @@ const selectedReviews = [
     author: 'Jindřiška',
     country: 'ČR',
     date: 'březen 2025',
-    text: 'Žlutý apartmán – skvělý apartmán pro 5 lidí a pejska. Dispozičně skvěle řešeno, uvítali jsme 2x WC :) Vybavenost apartmánu opět na výborné úrovni – de facto nám zde nechybělo nic, od vybavení kuchyně po ručníky až po vysoušeč bot. Apartmán má i svoji vlastní lyžárnu, kam je možnost uložit i náhradní boty. Skvělá poloha – na Kvildě jste do 10 minutek. Paní správcová velice milá, řeší problémy ihned, pokud vůbec nějaké nastanou. Opravdu za nás můžeme jen a jen doporučit.',
+    text: 'Žlutý apartmán – skvělý apartmán pro 5 lidí a pejska. Dispozičně skvěle řešeno, uvítali jsme 2x WC. Vybavenost apartmánu byla na výborné úrovni – nechybělo nám nic, od vybavení kuchyně přes ručníky až po vysoušeč bot. Apartmán má i vlastní lyžárnu. Skvělá poloha – na Kvildě jste do 10 minut. Paní správcová je velmi milá a vše řeší ihned. Za nás můžeme jen doporučit.',
   },
 ];
 ---
@@ -79,7 +79,8 @@ const selectedReviews = [
 <BaseLayout
   lang="cs"
   title="Recenze hostů | Apartmány Černý vlk"
-  description="Zkušenosti hostů a hodnocení z Booking.com, Google.com, Mapy.com a Previo.cz."
+  description="Zkušenosti hostů a hodnocení z Booking.com, Google, Mapy.cz a Previo.cz."
+  image="/images/hero/hero-borova-lada.jpg"
 >
   <Header />
 
@@ -163,7 +164,7 @@ const selectedReviews = [
       </div>
 
       <div class="reviews-cta__actions">
-        <a href="/#rezervace" class="btn-primary">Zkontrolovat dostupnost</a>
+        <a href="/apartmany" class="btn-primary">Vybrat apartmán</a>
         <a href="/apartmany" class="btn-secondary">Prohlédnout apartmány</a>
       </div>
     </div>

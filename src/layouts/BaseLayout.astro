@@ -5,13 +5,23 @@ interface Props {
   title?: string;
   description?: string;
   lang?: string;
+  canonical?: string;
+  image?: string;
 }
+
+const siteUrl = 'https://www.apartmanycernyvlk.cz';
 
 const {
   title = 'Apartmány Černý vlk – Borová Lada, Šumava',
   description = '5 apartmánů v klidném centru Šumavy. Borová Lada – příroda, vybavenost a celá Šumava na dosah.',
   lang = 'cs',
+  canonical,
+  image = '/images/hero/hero-borova-lada.jpg',
 } = Astro.props;
+
+const pathname = Astro.url.pathname;
+const canonicalUrl = canonical ?? new URL(pathname, siteUrl).toString();
+const ogImageUrl = new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -22,8 +32,23 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#f7f6f2" />
 
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'cs' ? 'cs_CZ' : lang === 'de' ? 'de_DE' : 'en_GB'} />
+    <meta property="og:site_name" content="Apartmány Černý vlk" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,9 +60,13 @@ const {
     <script is:inline>
       (() => {
         const root = document.documentElement;
-        const saved = localStorage.getItem('theme');
-        const initial = saved === 'dark' || saved === 'light' ? saved : 'light';
-        root.setAttribute('data-theme', initial);
+        try {
+          const saved = localStorage.getItem('theme');
+          const initial = saved === 'dark' || saved === 'light' ? saved : 'light';
+          root.setAttribute('data-theme', initial);
+        } catch {
+          root.setAttribute('data-theme', 'light');
+        }
       })();
     </script>
   </head>

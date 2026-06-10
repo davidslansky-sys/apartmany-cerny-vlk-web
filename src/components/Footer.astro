@@ -1,4 +1,6 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
 type Lang = 'cs' | 'de' | 'en';
 
 interface Props {
@@ -7,31 +9,8 @@ interface Props {
 
 const { lang = 'cs' } = Astro.props;
 
-const localizedPaths = {
-  cs: {
-    apartmentBase: '/apartmany',
-    equipment: '/vybaveni',
-    booking: '/#rezervace',
-    location: '/okoli',
-    reviews: '/recenze',
-  },
-  de: {
-    apartmentBase: '/de/apartmany',
-    equipment: '/de/vybaveni',
-    booking: '/de/#rezervace',
-    location: '/de/okoli',
-    reviews: '/de/recenze',
-  },
-  en: {
-    apartmentBase: '/en/apartmany',
-    equipment: '/en/vybaveni',
-    booking: '/en/#rezervace',
-    location: '/en/okoli',
-    reviews: '/en/recenze',
-  },
-} as const;
-
-const paths = localizedPaths[lang];
+const localize = (path: string) => getRelativeLocaleUrl(lang, path);
+const bookingHref = `${localize('')}#rezervace`;
 
 const content = {
   cs: {
@@ -39,19 +18,20 @@ const content = {
       'Pět apartmánů ve dvou objektech v Borové Ladě – v klidném centru Šumavy, s přírodou i zázemím na dosah.',
     apartmentsTitle: 'Apartmány',
     apartments: [
-      { label: 'Červený · 8 osob', href: `${paths.apartmentBase}/cerveny` },
-      { label: 'Žlutý · 4+1 osob', href: `${paths.apartmentBase}/zluty` },
-      { label: 'Zelený · 4+1 osob', href: `${paths.apartmentBase}/zeleny` },
-      { label: 'Modrý · 4+1 osob', href: `${paths.apartmentBase}/modry` },
-      { label: 'Šedý · 4+1 osob', href: `${paths.apartmentBase}/sedy` },
+      { label: 'Červený · 8 osob', href: localize('apartmany/cerveny') },
+      { label: 'Žlutý · 4+1 osob', href: localize('apartmany/zluty') },
+      { label: 'Zelený · 4+1 osob', href: localize('apartmany/zeleny') },
+      { label: 'Modrý · 4+1 osob', href: localize('apartmany/modry') },
+      { label: 'Šedý · 4+1 osob', href: localize('apartmany/sedy') },
     ],
     equipmentLabel: 'Vybavení',
+    equipmentHref: localize('vybaveni'),
     contactTitle: 'Kontakt',
     linksTitle: 'Užitečné odkazy',
     links: [
-      { label: 'Rezervace', href: paths.booking },
-      { label: 'Okolí', href: paths.location },
-      { label: 'Recenze hostů', href: paths.reviews },
+      { label: 'Rezervace', href: bookingHref },
+      { label: 'Okolí', href: localize('okoli') },
+      { label: 'Recenze hostů', href: localize('recenze') },
       {
         label: 'Penzion Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -65,19 +45,20 @@ const content = {
       'Fünf Apartments in zwei Häusern in Borová Lada – im ruhigen Zentrum des Böhmerwalds, mit Natur und Komfort in Reichweite.',
     apartmentsTitle: 'Apartments',
     apartments: [
-      { label: 'Rotes · 8 Personen', href: `${paths.apartmentBase}/cerveny` },
-      { label: 'Gelbes · 4+1 Personen', href: `${paths.apartmentBase}/zluty` },
-      { label: 'Grünes · 4+1 Personen', href: `${paths.apartmentBase}/zeleny` },
-      { label: 'Blaues · 4+1 Personen', href: `${paths.apartmentBase}/modry` },
-      { label: 'Graues · 4+1 Personen', href: `${paths.apartmentBase}/sedy` },
+      { label: 'Rotes · 8 Personen', href: localize('apartmany/cerveny') },
+      { label: 'Gelbes · 4+1 Personen', href: localize('apartmany/zluty') },
+      { label: 'Grünes · 4+1 Personen', href: localize('apartmany/zeleny') },
+      { label: 'Blaues · 4+1 Personen', href: localize('apartmany/modry') },
+      { label: 'Graues · 4+1 Personen', href: localize('apartmany/sedy') },
     ],
     equipmentLabel: 'Ausstattung',
+    equipmentHref: localize('vybaveni'),
     contactTitle: 'Kontakt',
     linksTitle: 'Nützliche Links',
     links: [
-      { label: 'Reservierung', href: paths.booking },
-      { label: 'Umgebung', href: paths.location },
-      { label: 'Bewertungen', href: paths.reviews },
+      { label: 'Reservierung', href: bookingHref },
+      { label: 'Umgebung', href: localize('okoli') },
+      { label: 'Bewertungen', href: localize('recenze') },
       {
         label: 'Pension Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -91,19 +72,20 @@ const content = {
       'Five apartments in two houses in Borová Lada – in the quiet centre of Šumava, with nature and everyday comfort close at hand.',
     apartmentsTitle: 'Apartments',
     apartments: [
-      { label: 'Red · 8 guests', href: `${paths.apartmentBase}/cerveny` },
-      { label: 'Yellow · 4+1 guests', href: `${paths.apartmentBase}/zluty` },
-      { label: 'Green · 4+1 guests', href: `${paths.apartmentBase}/zeleny` },
-      { label: 'Blue · 4+1 guests', href: `${paths.apartmentBase}/modry` },
-      { label: 'Grey · 4+1 guests', href: `${paths.apartmentBase}/sedy` },
+      { label: 'Red · 8 guests', href: localize('apartmany/cerveny') },
+      { label: 'Yellow · 4+1 guests', href: localize('apartmany/zluty') },
+      { label: 'Green · 4+1 guests', href: localize('apartmany/zeleny') },
+      { label: 'Blue · 4+1 guests', href: localize('apartmany/modry') },
+      { label: 'Grey · 4+1 guests', href: localize('apartmany/sedy') },
     ],
     equipmentLabel: 'Amenities',
+    equipmentHref: localize('vybaveni'),
     contactTitle: 'Contact',
     linksTitle: 'Useful links',
     links: [
-      { label: 'Booking', href: paths.booking },
-      { label: 'Location', href: paths.location },
-      { label: 'Guest reviews', href: paths.reviews },
+      { label: 'Booking', href: bookingHref },
+      { label: 'Location', href: localize('okoli') },
+      { label: 'Guest reviews', href: localize('recenze') },
       {
         label: 'Penzion Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -184,7 +166,7 @@ const current = content[lang];
             <li><a href={item.href}>{item.label}</a></li>
           ))}
           <li class="footer-col-divider">
-            <a href={paths.equipment}>{current.equipmentLabel}</a>
+            <a href={current.equipmentHref}>{current.equipmentLabel}</a>
           </li>
         </ul>
       </div>

@@ -12,7 +12,12 @@ interface Props {
   lang?: Lang;
 }
 
-const { lang = 'cs' } = Astro.props;
+const props = Astro.props as Props;
+
+const lang: Lang =
+  (Astro.currentLocale as Lang | undefined) ??
+  props.lang ??
+  'cs';
 
 const localize = (path: string) => getRelativeLocaleUrl(lang, path);
 const bookingHref = getLocalizedSectionUrl(lang, 'rezervace');

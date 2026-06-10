@@ -1,190 +1,419 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { Locale } from '../data/apartments';
+import { getRoute } from '../i18n/routes';
+import { t, languages } from '../i18n/ui';
+import { stripLocaleFromPathname, localizePath } from '../lib/i18n';
 
-const { currentSection = '' } = Astro.props;
+interface Props {
+  lang?: Locale;
+}
 
-const messages = {
-  cs: {
-    'nav.home': 'Úvodní stránka',
-    'nav.apartments': 'Apartmány',
-    'nav.location': 'Okolí',
-    'nav.reviews': 'Recenze',
-    'nav.book': 'Rezervovat',
-    'nav.theme': 'Přepnout světlý/tmavý režim',
-    'nav.menu': 'Otevřít menu',
-    'nav.lang.switcher': 'Přepínač jazyka',
-    'nav.lang.cs': 'CS',
-    'nav.lang.de': 'DE',
-    'nav.lang.en': 'EN',
-    'brand.name': 'Černý vlk',
+const { lang = 'cs' } = Astro.props;
+
+const pathname = Astro.url.pathname;
+const currentPath = stripLocaleFromPathname(pathname);
+
+const navItems = [
+  { key: 'navApartments', href: '#apartmany' },
+  { key: 'navAmenities', href: getRoute('vybaveni', lang) },
+  { key: 'navSurroundings', href: getRoute('okoli', lang) },
+  { key: 'navReviews', href: getRoute('recenze', lang) },
+  { key: 'navBooking', href: '#rezervace' }
+] as const;
+
+const languageLinks = [
+  {
+    code: 'cs' as const,
+    label: languages.cs,
+    href: localizePath(currentPath, 'cs')
   },
-  de: {
-    'nav.home': 'Startseite',
-    'nav.apartments': 'Apartments',
-    'nav.location': 'Umgebung',
-    'nav.reviews': 'Bewertungen',
-    'nav.book': 'Buchen',
-    'nav.theme': 'Hell/Dunkel umschalten',
-    'nav.menu': 'Menü öffnen',
-    'nav.lang.switcher': 'Sprachauswahl',
-    'nav.lang.cs': 'CS',
-    'nav.lang.de': 'DE',
-    'nav.lang.en': 'EN',
-    'brand.name': 'Černý vlk',
+  {
+    code: 'de' as const,
+    label: languages.de,
+    href: localizePath(currentPath, 'de')
   },
-  en: {
-    'nav.home': 'Homepage',
-    'nav.apartments': 'Apartments',
-    'nav.location': 'Location',
-    'nav.reviews': 'Reviews',
-    'nav.book': 'Book now',
-    'nav.theme': 'Toggle light/dark mode',
-    'nav.menu': 'Open menu',
-    'nav.lang.switcher': 'Language switcher',
-    'nav.lang.cs': 'CS',
-    'nav.lang.de': 'DE',
-    'nav.lang.en': 'EN',
-    'brand.name': 'Černý vlk',
-  },
-} as const;
+  {
+    code: 'en' as const,
+    label: languages.en,
+    href: localizePath(currentPath, 'en')
+  }
+];
 
-type Lang = keyof typeof messages;
-type MessageKey = keyof typeof messages.cs;
-
-const rawLocale = Astro.currentLocale ?? 'cs';
-const lang: Lang = rawLocale === 'de' || rawLocale === 'en' ? rawLocale : 'cs';
-
-const t = (key: MessageKey) => messages[lang][key] ?? messages.cs[key];
-
-const homeUrl = getRelativeLocaleUrl(lang, '/');
-const switchCs = getRelativeLocaleUrl('cs', '/');
-const switchDe = getRelativeLocaleUrl('de', '/');
-const switchEn = getRelativeLocaleUrl('en', '/');
+function isActiveLink(href: string) {
+  if (href.startsWith('#')) return false;
+  return pathname === href;
+}
 ---
 
-<nav id="main-nav">
-  <a href={homeUrl} class="nav-logo" aria-label={`Apartmány Černý vlk – ${t('nav.home')}`}>
-    <svg
-      viewBox="0 0 1746 2012"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2109.87 544-550.872 459.931" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2095 551h280.28" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2364 553.628 2768.353 368" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2752 388v248.245" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2563 798.706 2759.458 619" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2580 792h226.89" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2785 944.502V782" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2456 1286.18 333.721-357.182" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2463.58 1268-7.578 1062.06" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2472.22 2308h-415.221" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2081 2296.78 11.463-306.782" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1565.78 1000-248.776 113.036" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1338 1113 219.92 106.38" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1119 2254.95 1565.532 1195" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1093 2267 446.53 45.92" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1518 2330.39 134.924-400.392" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1627 1946h481.14" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2092 1966.46v-399.459" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1963 1549 148.62 41.86" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1978.4 1570-8.397 210.472" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1650 1886.9 201.655-332.897" transform="translate(-1086 -343)" />
-      <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1850 1580 118.61 187.87" transform="translate(-1086 -343)" />
-    </svg>
-    <span class="nav-logo-text">{t('brand.name')}</span>
-  </a>
-
-  <div class="nav-links">
-    <a href={`${homeUrl}#apartmany`} aria-current={currentSection === 'apartmany' ? 'page' : undefined}>
-      {t('nav.apartments')}
-    </a>
-    <a href={`${homeUrl}#okoli`} aria-current={currentSection === 'okoli' ? 'page' : undefined}>
-      {t('nav.location')}
-    </a>
-    <a href={`${homeUrl}#recenze`} aria-current={currentSection === 'recenze' ? 'page' : undefined}>
-      {t('nav.reviews')}
-    </a>
-
-    <div class="nav-lang" aria-label={t('nav.lang.switcher')}>
-      <a href={switchCs} class:list={[lang === 'cs' && 'is-active']} lang="cs" hreflang="cs">
-        {t('nav.lang.cs')}
-      </a>
-      <a href={switchDe} class:list={[lang === 'de' && 'is-active']} lang="de" hreflang="de">
-        {t('nav.lang.de')}
-      </a>
-      <a href={switchEn} class:list={[lang === 'en' && 'is-active']} lang="en" hreflang="en">
-        {t('nav.lang.en')}
-      </a>
-    </div>
-
-    <a href={`${homeUrl}#rezervace`} class="nav-cta">{t('nav.book')}</a>
-
-    <button
-      class="nav-theme"
-      data-theme-toggle
-      type="button"
-      aria-label={t('nav.theme')}
-      title={t('nav.theme')}
-    >
-      <span class="theme-icon theme-icon-sun" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="5" />
-          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-        </svg>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href={getRoute('home', lang)} aria-label="Apartmány Černý vlk">
+      <span class="brand-mark" aria-hidden="true">ČV</span>
+      <span class="brand-text">
+        <strong>Apartmány Černý vlk</strong>
+        <small>Borová Lada · Šumava</small>
       </span>
-      <span class="theme-icon theme-icon-moon" aria-hidden="true" hidden>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-      </span>
-    </button>
-  </div>
+    </a>
 
-  <div
-    class="nav-hamburger"
-    id="hamburger"
-    aria-label={t('nav.menu')}
-    role="button"
-    tabindex="0"
-  >
-    <span></span><span></span><span></span>
-  </div>
-
-  <script>
-    (() => {
-      const initThemeToggle = () => {
-        const button = document.querySelector('[data-theme-toggle]');
-        if (!button) return;
-
-        const sun = button.querySelector('.theme-icon-sun');
-        const moon = button.querySelector('.theme-icon-moon');
-        const root = document.documentElement;
-
-        const syncIcon = (theme) => {
-          const isDark = theme === 'dark';
-          if (sun) sun.hidden = isDark;
-          if (moon) moon.hidden = !isDark;
-        };
-
-        const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        syncIcon(currentTheme);
-
-        if (button.dataset.bound === 'true') return;
-        button.dataset.bound = 'true';
-
-        button.addEventListener('click', () => {
-          const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          root.setAttribute('data-theme', nextTheme);
-          syncIcon(nextTheme);
-        });
-      };
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initThemeToggle, { once: true });
-      } else {
-        initThemeToggle();
+    <nav class="main-nav" aria-label="Hlavní navigace">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'nav-link',
+              { 'is-active': isActiveLink(item.href) }
+            ]}
+            aria-current={isActiveLink(item.href) ? 'page' : undefined}
+          >
+            {t(lang, item.key)}
+          </a>
+        ))
       }
-    })();
-  </script>
-</nav>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switcher" aria-label="Přepínač jazyků">
+        {
+          languageLinks.map((item) => (
+            <a
+              href={item.href}
+              class:list={['lang-link', { 'is-current': item.code === lang }]}
+              lang={item.code}
+              hreflang={item.code}
+              aria-current={item.code === lang ? 'true' : undefined}
+            >
+              {item.code.toUpperCase()}
+            </a>
+          ))
+        }
+      </div>
+
+      <a class="header-cta btn-primary" href="#rezervace">
+        {t(lang, 'ctaAvailability')}
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        data-menu-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+    <nav class="mobile-nav" aria-label="Mobilní navigace">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'mobile-nav-link',
+              { 'is-active': isActiveLink(item.href) }
+            ]}
+            aria-current={isActiveLink(item.href) ? 'page' : undefined}
+          >
+            {t(lang, item.key)}
+          </a>
+        ))
+      }
+
+      <div class="mobile-lang-switcher">
+        {
+          languageLinks.map((item) => (
+            <a
+              href={item.href}
+              class:list={['lang-link', { 'is-current': item.code === lang }]}
+              lang={item.code}
+              hreflang={item.code}
+              aria-current={item.code === lang ? 'true' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <a class="btn-primary mobile-cta" href="#rezervace">
+        {t(lang, 'ctaAvailability')}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+  if (toggle && mobileMenu) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      mobileMenu.hidden = expanded;
+      document.documentElement.classList.toggle('menu-open', !expanded);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.hidden = true;
+        document.documentElement.classList.remove('menu-open');
+      });
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    backdrop-filter: blur(18px);
+    background: rgba(14, 18, 20, 0.58);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .header-inner {
+    width: min(1200px, calc(100% - 2rem));
+    min-height: 5rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    text-decoration: none;
+    color: #fff;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .brand-text strong {
+    font-size: 0.98rem;
+    color: #fff;
+  }
+
+  .brand-text small {
+    margin-top: 0.18rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.15rem;
+    min-width: 0;
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.84);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 180ms ease;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-link.is-active {
+    color: #ffffff;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .lang-switcher,
+  .mobile-lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .lang-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.3rem;
+    min-height: 2.3rem;
+    padding: 0 0.7rem;
+    border-radius: 999px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .lang-link:hover,
+  .lang-link:focus-visible,
+  .lang-link.is-current {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .header-cta,
+  .mobile-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.85rem 1.15rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1;
+    color: #ffffff;
+  }
+
+  .header-cta:link,
+  .header-cta:visited,
+  .header-cta:hover,
+  .header-cta:focus-visible,
+  .mobile-cta:link,
+  .mobile-cta:visited,
+  .mobile-cta:hover,
+  .mobile-cta:focus-visible {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.22rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+  }
+
+  .menu-toggle span:not(.sr-only) {
+    width: 1rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  @media (max-width: 980px) {
+    .main-nav,
+    .header-actions .lang-switcher,
+    .header-actions .header-cta {
+      display: none;
+    }
+
+    .header-inner {
+      grid-template-columns: 1fr auto;
+    }
+
+    .menu-toggle {
+      display: inline-flex;
+    }
+
+    .mobile-menu {
+      display: block;
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .mobile-nav {
+      display: grid;
+      gap: 0.65rem;
+      padding: 1rem;
+      border-radius: 1.25rem;
+      background: rgba(12, 16, 18, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-nav-link {
+      padding: 0.85rem 0;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-nav-link.is-active {
+      color: #ffffff;
+    }
+
+    .mobile-lang-switcher {
+      padding-top: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .mobile-cta {
+      margin-top: 0.35rem;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header-inner {
+      width: min(100% - 1rem, 1200px);
+      min-height: 4.4rem;
+    }
+
+    .brand-text small {
+      display: none;
+    }
+
+    .brand-mark {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+
+    .brand-text strong {
+      font-size: 0.92rem;
+    }
+  }
+</style>

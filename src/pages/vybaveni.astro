@@ -8,6 +8,7 @@ import Footer from '../components/Footer.astro';
   lang="cs"
   title="Vybavení apartmánů | Apartmány Černý vlk"
   description="Podívejte se na kompletní vybavení apartmánů Černý vlk v Borových Ladech. Kuchyně, Smart TV s MAX, Wi‑Fi, dětské vybavení, bezpečnost, úložné prostory i detailní seznam všeho, co je vám během pobytu k dispozici."
+  image="/images/vybaveni/pribory.jpg"
 >
   <Header />
 
@@ -15,6 +16,7 @@ import Footer from '../components/Footer.astro';
     <div
       class="hero-bg"
       style="background-image:url('/images/vybaveni/pribory.jpg');"
+      aria-hidden="true"
     ></div>
     <div class="hero-overlay"></div>
 
@@ -35,7 +37,7 @@ import Footer from '../components/Footer.astro';
         <a href="#detailni-seznam" class="equipment-btn equipment-btn--primary">
           Kompletní seznam vybavení
         </a>
-        <a href="/#apartmany" class="equipment-btn equipment-btn--ghost">
+        <a href="/apartmany" class="equipment-btn equipment-btn--ghost">
           Zobrazit apartmány
         </a>
       </div>
@@ -53,7 +55,7 @@ import Footer from '../components/Footer.astro';
 
       <div class="equipment-copy">
         <p>
-          Průběžně vše zlepšujeme a ladíme podle toho, co hosté při pobytu skutečně využijí.
+          Vybavení průběžně zlepšujeme a ladíme podle toho, co hosté při pobytu skutečně využijí.
           Chceme, abyste si s sebou nemuseli brát zbytečnosti a po příjezdu měli vše připravené.
         </p>
         <p>
@@ -74,14 +76,15 @@ import Footer from '../components/Footer.astro';
           <h3>Pohodlí od příjezdu</h3>
           <p>
             Teplotu v jednotlivých místnostech vám můžeme nastavit ještě před příjezdem podle vašich požadavků.
-            V Modrém a Šedém apartmánu si teplotu regulujete následně i sami.
+            V Modrém a Šedém apartmánu si teplotu následně regulujete i sami.
           </p>
         </article>
 
         <article class="highlight-card">
           <h3>Kódové zámky</h3>
           <p>
-            Do domu i apartmánů vstupujete pomocí kódových zámků, takže není potřeba řešit přesný čas příjezdu a předání klíčů.
+            Do domu i apartmánů vstupujete pomocí kódových zámků, takže není potřeba řešit přesný čas příjezdu
+            ani předání klíčů.
           </p>
         </article>
 
@@ -96,7 +99,7 @@ import Footer from '../components/Footer.astro';
         <article class="highlight-card">
           <h3>Smart TV a MAX</h3>
           <p>
-            V hlavní místnosti je Smart TV s aktivním předplatným k HBO MAX a dalšími internetovými aplikacemi,
+            V hlavní místnosti je Smart TV s aktivním předplatným MAX a dalšími internetovými aplikacemi,
             které jsou vám po dobu pobytu k dispozici.
           </p>
         </article>
@@ -104,7 +107,8 @@ import Footer from '../components/Footer.astro';
         <article class="highlight-card">
           <h3>Wi‑Fi v celém domě</h3>
           <p>
-            Stabilní internet je dostupný po celém domě, ať plánujete odpočinek, večerní film nebo pracovní pobyt na dálku.
+            Stabilní internet je dostupný po celém domě, ať plánujete odpočinek, večerní film
+            nebo pracovní pobyt na dálku.
           </p>
         </article>
 
@@ -140,7 +144,7 @@ import Footer from '../components/Footer.astro';
         <article class="feature-block">
           <div class="feature-block__intro">
             <p class="section-label">Kuchyně</p>
-            <h2 class="section-title">Mistrovské kuchyně <em>bez kompromisů</em></h2>
+            <h2 class="section-title">Plně vybavená kuchyně <em>bez kompromisů</em></h2>
           </div>
           <div class="feature-block__content">
             <p>
@@ -149,10 +153,10 @@ import Footer from '../components/Footer.astro';
             </p>
             <p>
               Milovníci kávy ocení French Press i kávovar na kapsle Nespresso Original.
-              Nechybí ani široká paleta kuchyňského nádobí a náčiní, takže si můžete bez omezení vařit i péct.
+              Nechybí ani široká nabídka kuchyňského nádobí a náčiní, takže si můžete bez omezení vařit i péct.
             </p>
             <p>
-              Nemusíte s sebou vozit ani drobnosti na údržbu – vše je připravené včetně houbiček,
+              Nemusíte s sebou vozit ani drobnosti pro běžný provoz – vše je připravené včetně houbiček,
               utěrek na nádobí, mycích prostředků a tablet do myčky.
             </p>
           </div>
@@ -165,12 +169,13 @@ import Footer from '../components/Footer.astro';
           </div>
           <div class="feature-block__content">
             <p>
-              V hlavní místnosti je Smart TV s aktivním předplatným k HBO MAX a dalšími internetovými aplikacemi,
+              V hlavní místnosti je Smart TV s aktivním předplatným MAX a dalšími internetovými aplikacemi,
               které jsou vám po dobu pobytu k dispozici.
             </p>
             <p>
-              Samozřejmostí je ložní prádlo, ručník a osuška pro každého hosta, v každém apartmánu je také fén
-              a základní hygienické potřeby, jako je tekuté mýdlo, sprchový gel, šampon, toaletní papír a osvěžovač vzduchu.
+              Samozřejmostí je ložní prádlo, ručník a osuška pro každého hosta. V každém apartmánu je také fén
+              a základní hygienické potřeby, jako je tekuté mýdlo, sprchový gel, šampon, toaletní papír
+              a osvěžovač vzduchu.
             </p>
           </div>
         </article>
@@ -186,7 +191,7 @@ import Footer from '../components/Footer.astro';
               Pro každý apartmán je navíc k dispozici sklad s dalším úložným prostorem.
             </p>
             <p>
-              V ložnicích najdete police, šatní stěny s věšáky, skříně nebo velkoobjemová šuplata pod postelemi,
+              V ložnicích najdete police, šatní stěny s věšáky, skříně nebo velkoobjemové zásuvky pod postelemi,
               podle konkrétní místnosti.
             </p>
           </div>
@@ -200,7 +205,7 @@ import Footer from '../components/Footer.astro';
           <div class="feature-block__content">
             <p>
               Myslíme i na bezpečnost – každý apartmán je vybaven alarmem a kouřovými čidly,
-              v centrální chodbě každého domu je bezpečnostní kamera a další kamera monitoruje úschovnu sportovních potřeb a parkoviště.
+              v centrální chodbě každého domu je bezpečnostní kamera a další kamera monitoruje úschovnu sportovních potřeb i parkoviště.
             </p>
             <p>
               V garážovém domě máte k dispozici víceúčelovou místnost pod dohledem kamery,
@@ -236,7 +241,7 @@ import Footer from '../components/Footer.astro';
             <li>kráječ na vajíčka, lis na česnek</li>
             <li>otvírák na lahve / vývrtka, škrabka</li>
             <li>příbory</li>
-            <li>sada talířů – hluboký, mělký, desertní, misky</li>
+            <li>sada talířů – hluboký, mělký, dezertní, misky</li>
             <li>hrnečky na čaj a kávu</li>
             <li>sklenice na vodu, latte, šumivé víno, víno, panáky</li>
             <li>sítko na těstoviny, napařovací podložka</li>
@@ -244,7 +249,7 @@ import Footer from '../components/Footer.astro';
             <li>sada hrnců s pokličkami</li>
             <li>struhadlo</li>
             <li>odměrka, odšťavňovač na citrusy</li>
-            <li>konev na čaj, frenchpress</li>
+            <li>konvice na čaj, French Press</li>
             <li>karafa na vodu</li>
             <li>velká salátová mísa</li>
             <li>prkénka</li>
@@ -257,7 +262,7 @@ import Footer from '../components/Footer.astro';
             <li>lednička</li>
             <li>mrazák</li>
             <li>myčka nádobí</li>
-            <li>sporák (elektrický či indukční)</li>
+            <li>sporák (elektrický nebo indukční)</li>
             <li>trouba</li>
             <li>mikrovlnná trouba</li>
             <li>rychlovarná konvice</li>
@@ -291,7 +296,7 @@ import Footer from '../components/Footer.astro';
             <li>osušky</li>
             <li>ručníky</li>
             <li>podložka na zem</li>
-            <li>toaletní papíry</li>
+            <li>toaletní papír</li>
             <li>tekuté mýdlo na ruce</li>
             <li>sprchový gel a šampon</li>
             <li>osvěžovač vzduchu</li>
@@ -306,7 +311,7 @@ import Footer from '../components/Footer.astro';
             <li>vysoušeč pro 4 páry bot</li>
             <li>kovový stojan na boty</li>
             <li>nazouvák</li>
-            <li>desinfekce</li>
+            <li>dezinfekce</li>
           </ul>
         </article>
       </div>
@@ -320,7 +325,7 @@ import Footer from '../components/Footer.astro';
         <h2 class="section-title">Ve vybavení máte jasno. Teď už jen vybrat <em>apartmán</em></h2>
       </div>
       <div class="equipment-cta__actions">
-        <a href="/#apartmany" class="equipment-btn equipment-btn--primary">
+        <a href="/apartmany" class="equipment-btn equipment-btn--primary">
           Zobrazit apartmány
         </a>
       </div>

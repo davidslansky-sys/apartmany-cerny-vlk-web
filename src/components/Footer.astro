@@ -7,25 +7,51 @@ interface Props {
 
 const { lang = 'cs' } = Astro.props;
 
+const localizedPaths = {
+  cs: {
+    apartmentBase: '/apartmany',
+    equipment: '/vybaveni',
+    booking: '/#rezervace',
+    location: '/okoli',
+    reviews: '/recenze',
+  },
+  de: {
+    apartmentBase: '/de/apartmany',
+    equipment: '/de/vybaveni',
+    booking: '/de/#rezervace',
+    location: '/de/okoli',
+    reviews: '/de/recenze',
+  },
+  en: {
+    apartmentBase: '/en/apartmany',
+    equipment: '/en/vybaveni',
+    booking: '/en/#rezervace',
+    location: '/en/okoli',
+    reviews: '/en/recenze',
+  },
+} as const;
+
+const paths = localizedPaths[lang];
+
 const content = {
   cs: {
     brandText:
       'Pět apartmánů ve dvou objektech v Borové Ladě – v klidném centru Šumavy, s přírodou i zázemím na dosah.',
     apartmentsTitle: 'Apartmány',
     apartments: [
-      { label: 'Červený · 8 osob', href: '/apartmany/cerveny' },
-      { label: 'Žlutý · 4+1 osob', href: '/apartmany/zluty' },
-      { label: 'Zelený · 4+1 osob', href: '/apartmany/zeleny' },
-      { label: 'Modrý · 4+1 osob', href: '/apartmany/modry' },
-      { label: 'Šedý · 4+1 osob', href: '/apartmany/sedy' },
+      { label: 'Červený · 8 osob', href: `${paths.apartmentBase}/cerveny` },
+      { label: 'Žlutý · 4+1 osob', href: `${paths.apartmentBase}/zluty` },
+      { label: 'Zelený · 4+1 osob', href: `${paths.apartmentBase}/zeleny` },
+      { label: 'Modrý · 4+1 osob', href: `${paths.apartmentBase}/modry` },
+      { label: 'Šedý · 4+1 osob', href: `${paths.apartmentBase}/sedy` },
     ],
     equipmentLabel: 'Vybavení',
     contactTitle: 'Kontakt',
     linksTitle: 'Užitečné odkazy',
     links: [
-      { label: 'Rezervace', href: '/#rezervace' },
-      { label: 'Okolí', href: '/okoli' },
-      { label: 'Recenze hostů', href: '/recenze' },
+      { label: 'Rezervace', href: paths.booking },
+      { label: 'Okolí', href: paths.location },
+      { label: 'Recenze hostů', href: paths.reviews },
       {
         label: 'Penzion Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -39,19 +65,19 @@ const content = {
       'Fünf Apartments in zwei Häusern in Borová Lada – im ruhigen Zentrum des Böhmerwalds, mit Natur und Komfort in Reichweite.',
     apartmentsTitle: 'Apartments',
     apartments: [
-      { label: 'Rotes · 8 Personen', href: '/de/apartmany/cerveny' },
-      { label: 'Gelbes · 4+1 Personen', href: '/de/apartmany/zluty' },
-      { label: 'Grünes · 4+1 Personen', href: '/de/apartmany/zeleny' },
-      { label: 'Blaues · 4+1 Personen', href: '/de/apartmany/modry' },
-      { label: 'Graues · 4+1 Personen', href: '/de/apartmany/sedy' },
+      { label: 'Rotes · 8 Personen', href: `${paths.apartmentBase}/cerveny` },
+      { label: 'Gelbes · 4+1 Personen', href: `${paths.apartmentBase}/zluty` },
+      { label: 'Grünes · 4+1 Personen', href: `${paths.apartmentBase}/zeleny` },
+      { label: 'Blaues · 4+1 Personen', href: `${paths.apartmentBase}/modry` },
+      { label: 'Graues · 4+1 Personen', href: `${paths.apartmentBase}/sedy` },
     ],
     equipmentLabel: 'Ausstattung',
     contactTitle: 'Kontakt',
     linksTitle: 'Nützliche Links',
     links: [
-      { label: 'Reservierung', href: '/de/#rezervace' },
-      { label: 'Umgebung', href: '/de/okoli' },
-      { label: 'Gästebewertungen', href: '/de/recenze' },
+      { label: 'Reservierung', href: paths.booking },
+      { label: 'Umgebung', href: paths.location },
+      { label: 'Bewertungen', href: paths.reviews },
       {
         label: 'Pension Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -62,22 +88,22 @@ const content = {
   },
   en: {
     brandText:
-      'Five apartments in two houses in Borová Lada – in the quiet center of Šumava, with nature and everyday comfort close at hand.',
+      'Five apartments in two houses in Borová Lada – in the quiet centre of Šumava, with nature and everyday comfort close at hand.',
     apartmentsTitle: 'Apartments',
     apartments: [
-      { label: 'Red · 8 guests', href: '/en/apartmany/cerveny' },
-      { label: 'Yellow · 4+1 guests', href: '/en/apartmany/zluty' },
-      { label: 'Green · 4+1 guests', href: '/en/apartmany/zeleny' },
-      { label: 'Blue · 4+1 guests', href: '/en/apartmany/modry' },
-      { label: 'Grey · 4+1 guests', href: '/en/apartmany/sedy' },
+      { label: 'Red · 8 guests', href: `${paths.apartmentBase}/cerveny` },
+      { label: 'Yellow · 4+1 guests', href: `${paths.apartmentBase}/zluty` },
+      { label: 'Green · 4+1 guests', href: `${paths.apartmentBase}/zeleny` },
+      { label: 'Blue · 4+1 guests', href: `${paths.apartmentBase}/modry` },
+      { label: 'Grey · 4+1 guests', href: `${paths.apartmentBase}/sedy` },
     ],
-    equipmentLabel: 'Equipment',
+    equipmentLabel: 'Amenities',
     contactTitle: 'Contact',
     linksTitle: 'Useful links',
     links: [
-      { label: 'Booking', href: '/en/#rezervace' },
-      { label: 'Location', href: '/en/okoli' },
-      { label: 'Guest reviews', href: '/en/recenze' },
+      { label: 'Booking', href: paths.booking },
+      { label: 'Location', href: paths.location },
+      { label: 'Guest reviews', href: paths.reviews },
       {
         label: 'Penzion Černý vlk',
         href: 'https://cernyvlk.cz',
@@ -86,10 +112,12 @@ const content = {
     ],
     legal: `© ${new Date().getFullYear()} Apartmány Černý vlk · Borová Lada · Šumava`,
   },
-}[lang];
+} as const;
+
+const current = content[lang];
 ---
 
-<footer>
+<footer role="contentinfo">
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
@@ -99,187 +127,33 @@ const content = {
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m2109.87 544-550.872 459.931"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M2095 551h280.28"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M2364 553.628 2768.353 368"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M2752 388v248.245"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M2563 798.706 2759.458 619"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M2580 792h226.89"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M2785 944.502V782"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m2456 1286.18 333.721-357.182"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m2463.58 1268-7.578 1062.06"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M2472.22 2308h-415.221"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m2081 2296.78 11.463-306.782"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m1565.78 1000-248.776 113.036"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m1338 1113 219.92 106.38"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M1119 2254.95 1565.532 1195"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m1093 2267 446.53 45.92"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m1518 2330.39 134.924-400.392"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M1627 1946h481.14"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="M2092 1966.46v-399.459"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m1963 1549 148.62 41.86"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m1978.4 1570-8.397 210.472"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m1650 1886.9 201.655-332.897"
-              transform="translate(-1086 -343)"
-            />
-            <path
-              fill="none"
-              stroke-miterlimit="8"
-              stroke-width="45.833"
-              stroke="currentColor"
-              d="m1850 1580 118.61 187.87"
-              transform="translate(-1086 -343)"
-            />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2109.87 544-550.872 459.931" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2095 551h280.28" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2364 553.628 2768.353 368" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2752 388v248.245" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2563 798.706 2759.458 619" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2580 792h226.89" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2785 944.502V782" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2456 1286.18 333.721-357.182" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2463.58 1268-7.578 1062.06" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2472.22 2308h-415.221" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m2081 2296.78 11.463-306.782" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1565.78 1000-248.776 113.036" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1338 1113 219.92 106.38" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1119 2254.95 1565.532 1195" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1093 2267 446.53 45.92" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1518 2330.39 134.924-400.392" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M1627 1946h481.14" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="M2092 1966.46v-399.459" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1963 1549 148.62 41.86" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1978.4 1570-8.397 210.472" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1650 1886.9 201.655-332.897" transform="translate(-1086 -343)" />
+            <path fill="none" stroke-miterlimit="8" stroke-width="45.833" stroke="currentColor" d="m1850 1580 118.61 187.87" transform="translate(-1086 -343)" />
           </svg>
           <span class="footer-logo-text">Černý vlk</span>
         </div>
 
-        <p>{content.brandText}</p>
+        <p>{current.brandText}</p>
 
         <div class="footer-social">
           <a
@@ -304,21 +178,19 @@ const content = {
       </div>
 
       <div class="footer-col">
-        <h4>{content.apartmentsTitle}</h4>
+        <h4>{current.apartmentsTitle}</h4>
         <ul>
-          {content.apartments.map((item) => (
+          {current.apartments.map((item) => (
             <li><a href={item.href}>{item.label}</a></li>
           ))}
           <li class="footer-col-divider">
-            <a href={lang === 'cs' ? '/vybaveni' : lang === 'de' ? '/de/vybaveni' : '/en/vybaveni'}>
-              {content.equipmentLabel}
-            </a>
+            <a href={paths.equipment}>{current.equipmentLabel}</a>
           </li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>{content.contactTitle}</h4>
+        <h4>{current.contactTitle}</h4>
         <ul>
           <li>Borová Lada 116 a 117<br />384 92 · Šumava</li>
           <li><a href="tel:+420728739288">+420 728 739 288</a></li>
@@ -328,9 +200,9 @@ const content = {
       </div>
 
       <div class="footer-col">
-        <h4>{content.linksTitle}</h4>
+        <h4>{current.linksTitle}</h4>
         <ul>
-          {content.links.map((item) => (
+          {current.links.map((item) => (
             <li>
               <a
                 href={item.href}
@@ -346,7 +218,7 @@ const content = {
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-legal">{content.legal}</div>
+      <div class="footer-legal">{current.legal}</div>
     </div>
   </div>
 </footer>

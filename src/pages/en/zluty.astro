@@ -1,0 +1,1024 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import PrevioWidget from '../../../components/PrevioWidget.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Yellow apartment – up to 5 guests, 56 m² | Apartmány Černý vlk"
+  description="Comfortable apartment in house no. 116 for 4 to 5 guests. Two bedrooms, a practical layout and north-west orientation for a pleasant stay in Šumava."
+  image="/images/apartmany/zluty/zluty-01.jpg"
+>
+  <Header />
+
+  <section class="apartment-hero">
+    <div class="apartment-hero__media">
+      <img
+        src="/images/apartmany/zluty/zluty-01.jpg"
+        alt="Yellow apartment – main living area"
+        width="1600"
+        height="900"
+        loading="eager"
+      />
+      <div class="apartment-hero__overlay"></div>
+    </div>
+
+    <div class="apartment-hero__content">
+      <p class="apartment-hero__eyebrow">Apartment in house no. 116</p>
+      <h1>Yellow apartment</h1>
+      <p class="apartment-hero__lead">
+        A practically designed apartment for a family or a smaller group of guests looking for privacy,
+        comfortable facilities and a peaceful place to stay in Šumava.
+      </p>
+
+      <div class="apartment-hero__actions">
+        <a href="#rezervace" class="apartment-hero-btn apartment-hero-btn--primary">Check availability</a>
+        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost">View photos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-facts">
+    <div class="section-inner">
+      <div class="facts-grid facts-grid--simple">
+        <div class="fact-card">
+          <span class="fact-label">Size</span>
+          <strong>56 m²</strong>
+        </div>
+        <div class="fact-card">
+          <span class="fact-label">Capacity</span>
+          <strong>up to 5 guests</strong>
+        </div>
+        <div class="fact-card">
+          <span class="fact-label">Bedrooms</span>
+          <strong>2 bedrooms</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-intro">
+    <div class="section-inner apartment-intro__grid">
+      <div>
+        <p class="section-label">Who it is ideal for</p>
+        <h2 class="section-title">When you are looking for comfort for <em>family stays and quiet time</em>.</h2>
+      </div>
+
+      <div class="apartment-copy">
+        <p>
+          The Yellow apartment is suitable for a family with children, two couples or a smaller group of guests
+          who want comfort during their stay together with a pleasantly compact layout.
+        </p>
+        <p>
+          Thanks to its north and west orientation, the apartment feels balanced throughout the day and offers pleasant light,
+          especially in the afternoon and evening.
+        </p>
+        <p>
+          The layout is designed practically for short weekends as well as longer stays, where you will appreciate separate bedrooms,
+          a shared living area and facilities that work simply and without unnecessary compromises.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-layout">
+    <div class="section-inner">
+      <p class="section-label">Layout</p>
+      <h2 class="section-title">A practical space for a <em>comfortable stay</em></h2>
+
+      <div class="layout-grid">
+        <article class="layout-card">
+          <div class="layout-card__text">
+            <h3>Ground floor</h3>
+            <p>
+              The ground floor contains the social area with kitchen, which forms the main living space of the apartment
+              and a natural place to spend time together during the stay.
+            </p>
+            <p>
+              The ground floor also includes a separate toilet and storage room, so the apartment offers practical facilities
+              even for longer stays or an active holiday in Šumava.
+            </p>
+            <p>
+              The ground-floor layout is clear, functional and works well for the everyday rhythm of a family or a smaller group of guests.
+            </p>
+          </div>
+
+          <div class="layout-card__media" data-gallery="zluty-pudorysy">
+            <button
+              type="button"
+              class="gallery-item gallery-item--plan"
+              data-gallery-trigger="true"
+              data-gallery-index="0"
+              aria-label="Open ground floor plan of house 116"
+            >
+              <img
+                src="/images/domy/dum-116/dum-116-pudorys-prizemi.jpg"
+                alt="Ground floor plan of house 116"
+                width="1200"
+                height="900"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </article>
+
+        <article class="layout-card">
+          <div class="layout-card__text">
+            <h3>First floor</h3>
+            <p>
+              The first floor contains two bedrooms that create the quiet part of the apartment, separated from daily life on the ground floor.
+            </p>
+            <p>
+              There is also a bathroom with shower and toilet, which ensures comfortable use of the apartment
+              for families and guests who want everything conveniently close at hand.
+            </p>
+            <p>
+              Thanks to this division, the apartment feels compact while still offering a comfortable arrangement even for several guests.
+            </p>
+          </div>
+
+          <div class="layout-card__media" data-gallery="zluty-pudorysy">
+            <button
+              type="button"
+              class="gallery-item gallery-item--plan"
+              data-gallery-trigger="true"
+              data-gallery-index="1"
+              aria-label="Open first floor plan of house 116"
+            >
+              <img
+                src="/images/domy/dum-116/dum-116-pudorys-1patro.jpg"
+                alt="First floor plan of house 116"
+                width="1200"
+                height="900"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-highlights">
+    <div class="section-inner">
+      <p class="section-label">Highlights</p>
+      <h2 class="section-title">What makes the Yellow apartment a <em>pleasant choice</em></h2>
+
+      <div class="highlights-grid">
+        <article class="highlight-card">
+          <h3>Ideal for 4 to 5 guests</h3>
+          <p>The size and layout work well for families, two couples or a smaller group that wants to stay together while still enjoying comfort.</p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Two separate bedrooms</h3>
+          <p>Separate sleeping areas increase comfort and provide more privacy during both shorter and longer stays.</p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>North-west orientation</h3>
+          <p>The apartment has a pleasant character of light during the day and a calmer atmosphere that you will appreciate both when resting and when returning from trips in the evening.</p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Part of house no. 116</h3>
+          <p>The Yellow apartment is in the same house as the Red and Green apartments, so it also works well for combined bookings of several apartments at once.</p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Practical size</h3>
+          <p>56 m² offers a balanced ratio between comfort, privacy and easy day-to-day use throughout the entire stay.</p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>A good choice for longer stays</h3>
+          <p>Thanks to its full facilities and thoughtful layout, the apartment is comfortable not only for a weekend but also for a longer holiday.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-gallery" id="galerie">
+    <div class="section-inner">
+      <div class="gallery-heading">
+        <div>
+          <p class="section-label">Gallery</p>
+          <h2 class="section-title">Take a look <em>inside</em></h2>
+        </div>
+        <p class="gallery-note">
+          Complete photo gallery of the Yellow apartment. Click any photo to open it in a larger view.
+        </p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--full" data-gallery="zluty">
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="0" aria-label="Open photo 1"><img src="/images/apartmany/zluty/zluty-01.jpg" alt="Yellow apartment – photo 1" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="1" aria-label="Open photo 2"><img src="/images/apartmany/zluty/zluty-02.jpg" alt="Yellow apartment – photo 2" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="2" aria-label="Open photo 3"><img src="/images/apartmany/zluty/zluty-03.jpg" alt="Yellow apartment – photo 3" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="3" aria-label="Open photo 4"><img src="/images/apartmany/zluty/zluty-04.jpg" alt="Yellow apartment – photo 4" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="4" aria-label="Open photo 5"><img src="/images/apartmany/zluty/zluty-05.jpg" alt="Yellow apartment – photo 5" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="5" aria-label="Open photo 6"><img src="/images/apartmany/zluty/zluty-06.jpg" alt="Yellow apartment – photo 6" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="6" aria-label="Open photo 7"><img src="/images/apartmany/zluty/zluty-07.jpg" alt="Yellow apartment – photo 7" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="7" aria-label="Open photo 8"><img src="/images/apartmany/zluty/zluty-08.jpg" alt="Yellow apartment – photo 8" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="8" aria-label="Open photo 9"><img src="/images/apartmany/zluty/zluty-09.jpg" alt="Yellow apartment – photo 9" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="9" aria-label="Open photo 10"><img src="/images/apartmany/zluty/zluty-10.jpg" alt="Yellow apartment – photo 10" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="10" aria-label="Open photo 11"><img src="/images/apartmany/zluty/zluty-11.jpg" alt="Yellow apartment – photo 11" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="11" aria-label="Open photo 12"><img src="/images/apartmany/zluty/zluty-12.jpg" alt="Yellow apartment – photo 12" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="12" aria-label="Open photo 13"><img src="/images/apartmany/zluty/zluty-13.jpg" alt="Yellow apartment – photo 13" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="13" aria-label="Open photo 14"><img src="/images/apartmany/zluty/zluty-14.jpg" alt="Yellow apartment – photo 14" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="14" aria-label="Open photo 15"><img src="/images/apartmany/zluty/zluty-15.jpg" alt="Yellow apartment – photo 15" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="15" aria-label="Open photo 16"><img src="/images/apartmany/zluty/zluty-16.jpg" alt="Yellow apartment – photo 16" width="900" height="700" loading="lazy" /></button>
+        <button type="button" class="gallery-item" data-gallery-trigger="true" data-gallery-index="16" aria-label="Open photo 17"><img src="/images/apartmany/zluty/zluty-17.jpg" alt="Yellow apartment – photo 17" width="900" height="700" loading="lazy" /></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-equipment-link">
+    <div class="section-inner">
+      <div class="equipment-link__stack">
+        <p class="section-label">Amenities</p>
+        <h2 class="section-title">Need to know the amenity details? <em>You can find them here.</em></h2>
+        <div class="equipment-link__action equipment-link__action--below">
+          <a href="/en/vybaveni" class="btn-secondary">Go to the amenities page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartment-booking" id="rezervace">
+    <div class="section-inner booking-layout">
+      <div class="booking-copy">
+        <p class="section-label">Booking</p>
+        <h2 class="section-title">Have you chosen your date? <em>Book online.</em></h2>
+        <p>
+          You can check availability directly online. If you are planning a stay in several apartments in house 116,
+          you can also call or write to us.
+        </p>
+
+        <div class="contact-line">
+          <div class="contact-item"><span>📞</span><a href="tel:+420728739288">+420 728 739 288</a></div>
+          <div class="contact-item"><span>📞</span><a href="tel:+420739753580">+420 739 753 580</a></div>
+          <div class="contact-item"><span>✉️</span><a href="mailto:recepce@apartmanycernyvlk.cz">recepce@apartmanycernyvlk.cz</a></div>
+        </div>
+      </div>
+
+      <div>
+        <PrevioWidget lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <dialog class="lightbox" id="gallery-lightbox" aria-labelledby="gallery-lightbox-title" aria-modal="true">
+    <div class="lightbox__panel" role="document">
+      <div class="sr-only" id="gallery-lightbox-title">Gallery of the Yellow apartment</div>
+
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close gallery">×</button>
+      <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Previous photo">‹</button>
+
+      <figure class="lightbox__figure">
+        <img id="lightbox-image" src="" alt="" width="1600" height="1100" />
+        <figcaption id="lightbox-caption" class="lightbox__caption"></figcaption>
+      </figure>
+
+      <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Next photo">›</button>
+    </div>
+  </dialog>
+
+  <Footer lang="en" />
+
+  <script>
+    (() => {
+      const dialog = document.getElementById('gallery-lightbox');
+      const image = document.getElementById('lightbox-image');
+      const caption = document.getElementById('lightbox-caption');
+      const prevButton = dialog?.querySelector('[data-lightbox-prev]');
+      const nextButton = dialog?.querySelector('[data-lightbox-next]');
+      const closeButtons = dialog?.querySelectorAll('[data-lightbox-close]');
+
+      if (!dialog || !image || !caption) return;
+
+      const galleryGroups = new Map();
+      const galleryWrappers = Array.from(document.querySelectorAll('[data-gallery]'));
+
+      if (galleryWrappers.length === 0) return;
+
+      galleryWrappers.forEach((wrapper) => {
+        const name = wrapper.getAttribute('data-gallery');
+        if (!name) return;
+
+        if (!galleryGroups.has(name)) {
+          galleryGroups.set(name, []);
+        }
+
+        const buttons = Array.from(wrapper.querySelectorAll('[data-gallery-index]'));
+        buttons.forEach((button) => {
+          galleryGroups.get(name).push(button);
+        });
+      });
+
+      let currentGalleryItems = [];
+      let currentIndex = 0;
+      let lastTrigger = null;
+
+      const buildItems = (galleryName) => {
+        const buttons = galleryGroups.get(galleryName) || [];
+        return buttons
+          .sort((a, b) => Number(a.getAttribute('data-gallery-index')) - Number(b.getAttribute('data-gallery-index')))
+          .map((button) => {
+            const img = button.querySelector('img');
+            return {
+              src: img?.getAttribute('src') || '',
+              alt: img?.getAttribute('alt') || '',
+              trigger: button,
+            };
+          });
+      };
+
+      const renderItem = (index) => {
+        const item = currentGalleryItems[index];
+        if (!item) return;
+        currentIndex = index;
+        image.src = item.src;
+        image.alt = item.alt;
+        caption.textContent = item.alt;
+      };
+
+      const openLightbox = (galleryName, index, trigger) => {
+        currentGalleryItems = buildItems(galleryName);
+        lastTrigger = trigger || null;
+        renderItem(index);
+
+        if (typeof dialog.showModal === 'function' && !dialog.open) {
+          dialog.showModal();
+        } else {
+          dialog.setAttribute('open', 'true');
+        }
+
+        document.documentElement.classList.add('lightbox-open');
+      };
+
+      const closeLightbox = () => {
+        if (typeof dialog.close === 'function' && dialog.open) {
+          dialog.close();
+        } else {
+          dialog.removeAttribute('open');
+        }
+
+        document.documentElement.classList.remove('lightbox-open');
+
+        if (lastTrigger) {
+          lastTrigger.focus();
+        }
+      };
+
+      const showPrev = () => {
+        if (currentGalleryItems.length === 0) return;
+        const nextIndex = currentIndex === 0 ? currentGalleryItems.length - 1 : currentIndex - 1;
+        renderItem(nextIndex);
+      };
+
+      const showNext = () => {
+        if (currentGalleryItems.length === 0) return;
+        const nextIndex = currentIndex === currentGalleryItems.length - 1 ? 0 : currentIndex + 1;
+        renderItem(nextIndex);
+      };
+
+      galleryWrappers.forEach((gallery) => {
+        gallery.addEventListener('click', (event) => {
+          const target = event.target;
+          if (!(target instanceof Element)) return;
+
+          const trigger = target.closest('[data-gallery-index]');
+          if (!trigger) return;
+
+          event.preventDefault();
+
+          const index = Number(trigger.getAttribute('data-gallery-index'));
+          if (Number.isNaN(index)) return;
+
+          const galleryName = gallery.getAttribute('data-gallery');
+          if (!galleryName) return;
+
+          openLightbox(galleryName, index, trigger);
+        });
+      });
+
+      prevButton?.addEventListener('click', (event) => {
+        event.preventDefault();
+        showPrev();
+      });
+
+      nextButton?.addEventListener('click', (event) => {
+        event.preventDefault();
+        showNext();
+      });
+
+      closeButtons?.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
+          closeLightbox();
+        });
+      });
+
+      dialog.addEventListener('cancel', (event) => {
+        event.preventDefault();
+        closeLightbox();
+      });
+
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          showPrev();
+        }
+
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          showNext();
+        }
+
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
+
+  <style>
+    .apartment-hero {
+      position: relative;
+      min-height: 82svh;
+      display: grid;
+      align-items: end;
+      overflow: clip;
+      background: var(--color-bg);
+    }
+
+    .apartment-hero__media {
+      position: absolute;
+      inset: 0;
+    }
+
+    .apartment-hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .apartment-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(12, 14, 12, 0.7) 0%, rgba(12, 14, 12, 0.28) 42%, rgba(12, 14, 12, 0.12) 100%);
+    }
+
+    .apartment-hero__content {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 880px);
+      padding: clamp(6rem, 10vw, 9rem) 1.25rem clamp(2.5rem, 5vw, 4rem);
+      margin-inline: auto;
+      color: #f8f3eb;
+    }
+
+    .apartment-hero__eyebrow,
+    .section-label {
+      margin: 0 0 0.85rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(248, 243, 235, 0.78);
+    }
+
+    .section-label {
+      color: var(--color-muted);
+    }
+
+    .apartment-hero h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.03em;
+      color: #f8f3eb;
+    }
+
+    .apartment-hero__lead {
+      max-width: 44rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.75;
+      color: rgba(248, 243, 235, 0.88);
+    }
+
+    .apartment-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .apartment-hero-btn,
+    .apartment-hero-btn:link,
+    .apartment-hero-btn:visited,
+    .btn-primary,
+    .btn-ghost,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.2rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .apartment-hero-btn--primary,
+    .apartment-hero-btn--primary:link,
+    .apartment-hero-btn--primary:visited {
+      background-color: #6f8f6b;
+      border: 1px solid #6f8f6b;
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(30, 40, 30, 0.18);
+    }
+
+    .apartment-hero-btn--primary:hover,
+    .apartment-hero-btn--primary:focus-visible {
+      background-color: #5f7d5b;
+      border-color: #5f7d5b;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(30, 40, 30, 0.22);
+    }
+
+    .apartment-hero-btn--primary:active {
+      transform: translateY(0);
+      background-color: #557051;
+      border-color: #557051;
+      color: #ffffff;
+    }
+
+    .apartment-hero-btn--ghost,
+    .apartment-hero-btn--ghost:link,
+    .apartment-hero-btn--ghost:visited {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fff;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: none;
+    }
+
+    .apartment-hero-btn--ghost:hover,
+    .apartment-hero-btn--ghost:focus-visible {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.42);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .apartment-hero-btn--ghost:active {
+      transform: translateY(0);
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.5);
+      color: #fff;
+    }
+
+    .section-inner {
+      width: min(100% - 2rem, 1180px);
+      margin-inline: auto;
+    }
+
+    .apartment-facts,
+    .apartment-intro,
+    .apartment-layout,
+    .apartment-highlights,
+    .apartment-gallery,
+    .apartment-equipment-link,
+    .apartment-booking {
+      padding: clamp(4.5rem, 7vw, 7rem) 0;
+    }
+
+    .apartment-facts {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .facts-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .facts-grid--simple {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 780px;
+      margin-inline: auto;
+    }
+
+    .fact-card {
+      padding: 1.25rem 1rem;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 1.2rem;
+      text-align: center;
+    }
+
+    .fact-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    .fact-card strong {
+      font-size: 1.08rem;
+      line-height: 1.4;
+      color: var(--color-text);
+    }
+
+    .apartment-intro__grid,
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .section-title em {
+      display: inline-block;
+      font-style: italic;
+      font-weight: 500;
+      opacity: 0.9;
+      line-height: 1.14;
+      padding-right: 0.08em;
+      padding-bottom: 0.08em;
+    }
+
+    .apartment-copy p,
+    .layout-card__text p,
+    .highlight-card p,
+    .gallery-note,
+    .booking-copy p {
+      margin: 0 0 1rem;
+      font-size: 1.04rem;
+      line-height: 1.85;
+      color: var(--color-text);
+    }
+
+    .layout-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .layout-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.5rem;
+      padding: 1.35rem;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 1.5rem;
+    }
+
+    .layout-card__text h3,
+    .highlight-card h3 {
+      margin: 0 0 0.9rem;
+      font-size: 1.4rem;
+      line-height: 1.15;
+      color: var(--color-heading);
+    }
+
+    .layout-card__media img,
+    .gallery-item img,
+    .lightbox__figure img {
+      width: 100%;
+      border-radius: 1rem;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      display: block;
+    }
+
+    .apartment-highlights {
+      background: var(--color-surface);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .highlight-card {
+      padding: 1.4rem;
+      border: 1px solid var(--color-border);
+      border-radius: 1.3rem;
+      background: var(--color-card);
+    }
+
+    .gallery-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-note {
+      max-width: 30rem;
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .gallery-grid--full {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      -webkit-appearance: none;
+      appearance: none;
+      touch-action: manipulation;
+    }
+
+    .gallery-item img {
+      aspect-ratio: 1.18 / 1;
+      object-fit: cover;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      pointer-events: none;
+    }
+
+    .gallery-item--plan {
+      border-radius: 1rem;
+    }
+
+    .gallery-item--plan img {
+      aspect-ratio: auto;
+      object-fit: contain;
+      background: var(--color-surface);
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:focus-visible img {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .apartment-equipment-link {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .apartment-equipment-link .section-inner {
+      display: block;
+    }
+
+    .equipment-link__stack {
+      display: grid;
+      gap: 1.25rem;
+      max-width: 880px;
+      margin-inline: 0;
+    }
+
+    .equipment-link__action--below {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-ghost,
+    .btn-secondary {
+      border: 1px solid transparent;
+    }
+
+    .btn-primary,
+    .btn-primary:link,
+    .btn-primary:visited {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost,
+    .btn-ghost:link,
+    .btn-ghost:visited {
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary,
+    .btn-secondary:link,
+    .btn-secondary:visited {
+      border-color: var(--color-border);
+      color: var(--color-text);
+      background: transparent;
+      backdrop-filter: none;
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: var(--color-card);
+    }
+
+    .contact-line {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--color-text);
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .lightbox {
+      width: min(100% - 2rem, 1200px);
+      max-width: 1200px;
+      border: none;
+      padding: 0;
+      background: transparent;
+    }
+
+    .lightbox::backdrop {
+      background: rgba(11, 12, 10, 0.78);
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox__panel {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1rem;
+      min-height: min(80vh, 860px);
+      padding-top: 4.5rem;
+    }
+
+    .lightbox__figure {
+      margin: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .lightbox__figure img {
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .lightbox__caption {
+      text-align: center;
+      color: #f4efe7;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .lightbox__close,
+    .lightbox__nav {
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1.7rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox__close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 5;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1080px) {
+      .highlights-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .layout-card,
+      .apartment-intro__grid,
+      .booking-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .apartment-hero {
+        min-height: 76svh;
+      }
+
+      .apartment-hero__content {
+        padding-inline: 1rem;
+      }
+
+      .facts-grid--simple,
+      .highlights-grid,
+      .gallery-grid--full {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-heading {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .lightbox {
+        width: min(100% - 1rem, 1000px);
+      }
+
+      .lightbox__panel {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        min-height: auto;
+        padding-top: 4.5rem;
+      }
+
+      .lightbox__close {
+        top: 0.75rem;
+        right: 0.75rem;
+      }
+
+      .lightbox__nav {
+        position: fixed;
+        bottom: 1rem;
+        z-index: 4;
+      }
+
+      .lightbox__nav--prev {
+        left: 1rem;
+      }
+
+      .lightbox__nav--next {
+        right: 1rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .apartment-hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</BaseLayout>

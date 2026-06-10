@@ -38,13 +38,19 @@ const sectionIds: Record<Lang, Record<SectionKey, string>> = {
   en: { rezervace: 'rezervace' },
 };
 
-const withLocalePrefix = (lang: Lang, slug: string) => {
+function withLocalePrefix(lang: Lang, slug: string) {
   if (lang === 'cs') return `/${slug}`;
   return `/${lang}/${slug}`;
-};
+}
 
 export function getApartmentUrl(lang: Lang, apartment: ApartmentKey) {
-  return withLocalePrefix(lang, apartmentSlugs[lang][apartment]);
+  const slug = apartmentSlugs[lang][apartment];
+
+  if (lang === 'cs') {
+    return `/apartmany/${slug}`;
+  }
+
+  return `/${lang}/${slug}`;
 }
 
 export function getEquipmentUrl(lang: Lang) {

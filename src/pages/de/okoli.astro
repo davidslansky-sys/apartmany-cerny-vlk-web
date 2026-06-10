@@ -1,0 +1,427 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+  lang="de"
+  title="Umgebung und Aktivitäten | Apartmány Černý vlk"
+  description="Borová Lada und der zentrale Böhmerwald bieten ruhige Natur, Langlaufloipen, Ausflüge mit Kindern, Radtouren und ganztägige Wanderungen. Entdecken Sie Tipps für Aktivitäten rund um die Apartmány Černý vlk."
+  image="/images/okoli/okoli-01.jpg"
+>
+  <Header />
+
+  <section class="hero" id="uvod">
+    <div
+      class="hero-bg"
+      style="background-image:url('/images/okoli/okoli-01.jpg');"
+      aria-hidden="true"
+    ></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Umgebung · Böhmerwald</p>
+      <h1>
+        Der Böhmerwald direkt vor der Tür.
+        <em>In jeder Jahreszeit.</em>
+      </h1>
+      <p class="hero-perex">
+        Borová Lada ist ein hervorragender Ausgangspunkt für ruhige Spaziergänge, Familienausflüge,
+        Langlauf, Radfahren und ganztägige Bergwanderungen. In der Umgebung finden Sie Natur,
+        Sportmöglichkeiten und beliebte Orte des zentralen Böhmerwalds.
+      </p>
+      <div class="hero-actions">
+        <a href="#rocni-obdobi" class="btn-primary">Was man im Jahresverlauf unternehmen kann</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">Scroll</div>
+  </section>
+
+  <section class="surroundings-intro">
+    <div class="section-inner surroundings-intro__grid">
+      <div>
+        <p class="section-label">Borová Lada</p>
+        <h2 class="section-title">Ein Ort, an dem sich <em>Ruhe, Natur und Bewegung</em> begegnen</h2>
+      </div>
+
+      <div class="surroundings-copy">
+        <p>
+          Borová Lada gehört zu den schönsten Orten des zentralen Böhmerwalds. Die Umgebung bietet unberührte Natur,
+          das angenehme Tempo eines kleinen Bergdorfes und eine gute Infrastruktur für einen Aufenthalt zu jeder Jahreszeit.
+        </p>
+        <p>
+          Nur ein kurzes Stück von der Unterkunft entfernt finden Sie Tischtennis, einen Kinderspielplatz und einen Multifunktionsplatz für Tennis,
+          Volleyball, Fußballtennis, Futsal und Handball. Im Ort gibt es außerdem zwei Restaurants, das Café
+          <a href="https://www.facebook.com/people/Caf%C3%A9-Snack-Madam-%C4%8Cokol%C3%A1da-Borov%C3%A1-Lada/100063483432963/" target="_blank" rel="noopener noreferrer">Madam čokoláda</a>,
+          ein kleines Geschäft, eine Postfiliale und die Möglichkeit, Sportausrüstung auszuleihen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="surroundings-highlights">
+    <div class="section-inner">
+      <p class="section-label">Warum gerade hier</p>
+      <h2 class="section-title">Was die Umgebung des Černý vlk <em>besonders macht</em></h2>
+
+      <div class="highlights-grid">
+        <article class="highlight-card highlight-card--wide">
+          <h3>Der zentrale Böhmerwald ganz nah</h3>
+          <p>
+            Von Borová Lada aus erreichen Sie bequem die bekanntesten Orte des Böhmerwalds ebenso wie ruhigere Routen,
+            die vor allem Gäste schätzen, die Ruhe und Weite suchen.
+          </p>
+          <p>
+            Von hier aus lässt sich gut in Richtung Kvilda, Modrava, Srní und in weitere Teile des Nationalparks Šumava aufbrechen.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Winter ohne Kompromisse</h3>
+          <p>
+            Langlaufloipen, Rodeln, Eislaufen und die Nähe kleinerer Skigebiete.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Frühling bis Herbst</h3>
+          <p>
+            Kurze Spaziergänge, Ausflüge mit Kindern, Radwege und ganztägige Wanderungen über Kämme und zu beliebten Zielen im Böhmerwald.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Auch für Familien geeignet</h3>
+          <p>
+            In der Umgebung gibt es leichte Wege, Lehrpfade und Stopps, die Kinder wie Erwachsene begeistern.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Praktische Infrastruktur</h3>
+          <p>
+            Vor Ort haben Sie grundlegende Dienstleistungen und Sportmöglichkeiten in Reichweite, ohne auf die Atmosphäre eines Böhmerwald-Dorfes zu verzichten.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="season-section" id="rocni-obdobi">
+    <div class="section-inner">
+      <p class="section-label">Im Jahresverlauf</p>
+      <h2 class="section-title">Jede Jahreszeit hat im Böhmerwald <em>ihren eigenen Zauber</em></h2>
+
+      <div class="season-stack">
+        <article class="season-feature">
+          <div class="season-feature__media">
+            <img
+              src="/images/okoli/okoli-10.jpg"
+              alt="Frühlingslandschaft im Böhmerwald bei Borová Lada"
+              loading="lazy"
+              width="1600"
+              height="1067"
+            />
+          </div>
+          <div class="season-feature__content">
+            <div class="season-card__header">
+              <h3>Frühling</h3>
+            </div>
+            <p>
+              Der Frühling eignet sich ideal für kürzere Ausflüge, die ersten längeren Spaziergänge und das Beobachten der erwachenden Landschaft des Böhmerwalds.
+              Perfekt sind leichtere Routen rund um Borová Lada und Stopps an bekannten Naturorten –
+              an der <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-svinna-lada/" target="_blank" rel="noopener noreferrer">Chalupská slať</a>,
+              bei den <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/sovi-voliery/" target="_blank" rel="noopener noreferrer">Eulenvolieren</a>
+              oder entlang der <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/rybi-lihen/" target="_blank" rel="noopener noreferrer">Forellenbrutanstalten</a>
+              zum Moldaubach.
+            </p>
+            <p>
+              Gerade in dieser Zeit kommen die Ruhe der umliegenden Landschaft und die geringere Besucherzahl im Vergleich zur Hochsaison besonders gut zur Geltung.
+            </p>
+          </div>
+        </article>
+
+        <article class="season-feature season-feature--reverse">
+          <div class="season-feature__media">
+            <img
+              src="/images/okoli/okoli-08.jpg"
+              alt="Sommerliche Ausflüge und Landschaft des zentralen Böhmerwalds"
+              loading="lazy"
+              width="1600"
+              height="1067"
+            />
+          </div>
+          <div class="season-feature__content">
+            <div class="season-card__header">
+              <h3>Sommer</h3>
+            </div>
+            <p>
+              Der Sommer ist ideal für Wanderungen, Radtouren und ganztägige Programme im gesamten zentralen Böhmerwald.
+            </p>
+            <p>
+              In Reichweite liegen leichte Familienrouten ebenso wie anspruchsvollere Bergziele – ob Besucherzentren des Nationalparks Šumava,
+              <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/navstevnicke-centrum-kvilda/" target="_blank" rel="noopener noreferrer">Hirsche und Luchse in Kvilda</a>,
+              <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/nc-srni/" target="_blank" rel="noopener noreferrer">Wölfe in Srní</a>,
+              oder Ausflüge zum <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-polednik/" target="_blank" rel="noopener noreferrer">Poledník</a>,
+              <a href="https://www.npsumava.cz/navstivte-sumavu/navstevnicka-centra/informacni-stredisko-idina-pila/" target="_blank" rel="noopener noreferrer">Boubín</a> und weiteren Orten.
+            </p>
+            <p>
+              An heißen Tagen ist die höhere Lage ein Vorteil, denn das Klima ist angenehmer als in tiefer gelegenen Regionen.
+            </p>
+          </div>
+        </article>
+
+        <article class="season-feature">
+          <div class="season-feature__media">
+            <img
+              src="/images/okoli/okoli-03.jpg"
+              alt="Herbstlandschaft im Böhmerwald mit den Farben der Wälder"
+              loading="lazy"
+              width="1600"
+              height="1067"
+            />
+          </div>
+          <div class="season-feature__content">
+            <div class="season-card__header">
+              <h3>Herbst</h3>
+            </div>
+            <p>
+              Der herbstliche Böhmerwald bietet die ruhigste Atmosphäre, klare Ausblicke und wunderschöne Farben von Wäldern und Wiesen.
+              Das ist die ideale Zeit für Wanderungen, Fotografie und ein langsameres Entdecken der Umgebung.
+            </p>
+            <p>
+              Wenn Sie einen ruhigeren Aufenthalt ohne sommerliche Hochsaison suchen, ist gerade der Herbst oft eine der schönsten Zeiten.
+            </p>
+          </div>
+        </article>
+
+        <article class="season-feature season-feature--reverse">
+          <div class="season-feature__media">
+            <img
+              src="/images/okoli/okoli-02.jpg"
+              alt="Winterlicher Böhmerwald in der Umgebung von Borová Lada"
+              loading="lazy"
+              width="1600"
+              height="1067"
+            />
+          </div>
+          <div class="season-feature__content">
+            <div class="season-card__header">
+              <h3>Winter</h3>
+            </div>
+            <p>
+              Im Winter ist Borová Lada vor allem für Langläufer eine hervorragende Wahl. In der Umgebung verlaufen präparierte Loipen,
+              und Sie erreichen auch weitere beliebte
+              <a href="https://bilastopa.cz/cs/uvodni-strana-2/" target="_blank" rel="noopener noreferrer">Langlaufabschnitte des zentralen Böhmerwalds</a>.
+            </p>
+            <p>
+              Für Kinder und Erwachsene gibt es im Ort einen Rodelhang und die Möglichkeit zum Eislaufen.
+              Wenn die Bedingungen passen, finden Sie im Umkreis von 15–30 Minuten Fahrt auch kleinere Skigebiete,
+              die eher für Anfänger geeignet sind –
+              <a href="http://www.skikvilda.cz" target="_blank" rel="noopener noreferrer">Kvilda</a>,
+              <a href="https://www.lazadov.cz/la/" target="_blank" rel="noopener noreferrer">Zadov</a>,
+              <a href="https://www.novehute.cz/novehute/" target="_blank" rel="noopener noreferrer">Nové Hutě</a>,
+              <a href="https://www.ski-kubovka.com" target="_blank" rel="noopener noreferrer">Kubova Huť</a>
+              und <a href="https://www.skivltavice.cz" target="_blank" rel="noopener noreferrer">Horní Vltavice</a>,
+              alternativ können Sie auch in das etwa eine halbe Stunde entfernte deutsche Skizentrum
+              <a href="https://www.mitterdorf.info/cs/" target="_blank" rel="noopener noreferrer">Mitterdorf</a> fahren.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="surroundings-cta">
+    <div class="section-inner surroundings-cta__inner">
+      <div>
+        <p class="section-label">Aufenthalt im Böhmerwald</p>
+        <h2 class="section-title">Ihr Programm steht schon. Jetzt fehlt nur noch das richtige <em>Apartment</em></h2>
+      </div>
+      <div class="surroundings-cta__actions">
+        <a href="/de" class="btn-primary">Apartments ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang="de" />
+
+  <style>
+    .surroundings-intro,
+    .surroundings-highlights,
+    .season-section,
+    .surroundings-cta {
+      padding: clamp(4.5rem, 7vw, 7rem) 0;
+    }
+
+    .surroundings-intro__grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .surroundings-copy p,
+    .highlight-card p,
+    .season-feature__content p {
+      margin: 0 0 1rem;
+      font-size: 1.04rem;
+      line-height: 1.85;
+      color: var(--color-text);
+    }
+
+    .surroundings-copy a,
+    .season-feature__content a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+    }
+
+    .surroundings-highlights {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .highlight-card {
+      padding: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 1.4rem;
+      background: var(--color-card);
+    }
+
+    .highlight-card--wide {
+      grid-column: span 2;
+    }
+
+    .highlight-card h3,
+    .season-feature h3 {
+      margin: 0 0 0.85rem;
+      font-size: 1.35rem;
+      line-height: 1.15;
+      color: var(--color-heading);
+    }
+
+    .season-stack {
+      display: grid;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .season-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(1.25rem, 3vw, 2rem);
+      align-items: stretch;
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 1.6rem;
+      background: var(--color-card);
+      overflow: hidden;
+    }
+
+    .season-feature--reverse .season-feature__media {
+      order: 2;
+    }
+
+    .season-feature--reverse .season-feature__content {
+      order: 1;
+    }
+
+    .season-feature__media {
+      min-height: 100%;
+    }
+
+    .season-feature__media img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      border-radius: 1.15rem;
+      display: block;
+    }
+
+    .season-feature__content {
+      padding: clamp(0.5rem, 1vw, 1rem) clamp(0.25rem, 0.8vw, 0.5rem);
+      align-self: center;
+    }
+
+    .season-card__header {
+      margin-bottom: 0.75rem;
+    }
+
+    .surroundings-cta__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .surroundings-cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 1080px) {
+      .surroundings-intro__grid,
+      .surroundings-cta__inner,
+      .season-feature {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .highlights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .highlight-card--wide {
+        grid-column: span 2;
+      }
+
+      .season-feature--reverse .season-feature__media,
+      .season-feature--reverse .season-feature__content {
+        order: initial;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .highlights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-card--wide {
+        grid-column: auto;
+      }
+
+      .season-feature {
+        padding: 0.85rem;
+        border-radius: 1.25rem;
+      }
+
+      .season-feature__media img {
+        min-height: 240px;
+        border-radius: 1rem;
+      }
+
+      .surroundings-cta__inner {
+        display: grid;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .surroundings-cta__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</BaseLayout>

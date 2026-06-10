@@ -12,6 +12,7 @@ const messages = {
     'nav.book': 'Rezervovat',
     'nav.theme': 'Přepnout světlý/tmavý režim',
     'nav.menu': 'Otevřít menu',
+    'nav.lang.switcher': 'Přepínač jazyka',
     'nav.lang.cs': 'CS',
     'nav.lang.de': 'DE',
     'nav.lang.en': 'EN',
@@ -25,6 +26,7 @@ const messages = {
     'nav.book': 'Buchen',
     'nav.theme': 'Hell/Dunkel umschalten',
     'nav.menu': 'Menü öffnen',
+    'nav.lang.switcher': 'Sprachauswahl',
     'nav.lang.cs': 'CS',
     'nav.lang.de': 'DE',
     'nav.lang.en': 'EN',
@@ -38,6 +40,7 @@ const messages = {
     'nav.book': 'Book now',
     'nav.theme': 'Toggle light/dark mode',
     'nav.menu': 'Open menu',
+    'nav.lang.switcher': 'Language switcher',
     'nav.lang.cs': 'CS',
     'nav.lang.de': 'DE',
     'nav.lang.en': 'EN',
@@ -103,10 +106,16 @@ const switchEn = getRelativeLocaleUrl('en', '/');
       {t('nav.reviews')}
     </a>
 
-    <div class="nav-lang" aria-label="Language switcher">
-      <a href={switchCs} class:list={[lang === 'cs' && 'is-active']}>{t('nav.lang.cs')}</a>
-      <a href={switchDe} class:list={[lang === 'de' && 'is-active']}>{t('nav.lang.de')}</a>
-      <a href={switchEn} class:list={[lang === 'en' && 'is-active']}>{t('nav.lang.en')}</a>
+    <div class="nav-lang" aria-label={t('nav.lang.switcher')}>
+      <a href={switchCs} class:list={[lang === 'cs' && 'is-active']} lang="cs" hreflang="cs">
+        {t('nav.lang.cs')}
+      </a>
+      <a href={switchDe} class:list={[lang === 'de' && 'is-active']} lang="de" hreflang="de">
+        {t('nav.lang.de')}
+      </a>
+      <a href={switchEn} class:list={[lang === 'en' && 'is-active']} lang="en" hreflang="en">
+        {t('nav.lang.en')}
+      </a>
     </div>
 
     <a href={`${homeUrl}#rezervace`} class="nav-cta">{t('nav.book')}</a>
@@ -167,7 +176,6 @@ const switchEn = getRelativeLocaleUrl('en', '/');
         button.addEventListener('click', () => {
           const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
           root.setAttribute('data-theme', nextTheme);
-          localStorage.setItem('theme', nextTheme);
           syncIcon(nextTheme);
         });
       };

@@ -445,23 +445,41 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       if (!dialog || !image || !caption) return;
 
-      const galleries = Array.from(document.querySelectorAll('[data-gallery]'));
-      if (galleries.length === 0) return;
+      const galleryGroups = new Map();
+      const galleryWrappers = Array.from(document.querySelectorAll('[data-gallery]'));
+
+      if (galleryWrappers.length === 0) return;
+
+      galleryWrappers.forEach((wrapper) => {
+        const name = wrapper.getAttribute('data-gallery');
+        if (!name) return;
+
+        if (!galleryGroups.has(name)) {
+          galleryGroups.set(name, []);
+        }
+
+        const buttons = Array.from(wrapper.querySelectorAll('[data-gallery-index]'));
+        buttons.forEach((button) => {
+          galleryGroups.get(name).push(button);
+        });
+      });
 
       let currentGalleryItems = [];
       let currentIndex = 0;
       let lastTrigger = null;
 
-      const buildItems = (gallery) => {
-        const buttons = Array.from(gallery.querySelectorAll('[data-gallery-index]'));
-        return buttons.map((button) => {
-          const img = button.querySelector('img');
-          return {
-            src: img?.getAttribute('src') || '',
-            alt: img?.getAttribute('alt') || '',
-            trigger: button,
-          };
-        });
+      const buildItems = (galleryName) => {
+        const buttons = galleryGroups.get(galleryName) || [];
+        return buttons
+          .sort((a, b) => Number(a.getAttribute('data-gallery-index')) - Number(b.getAttribute('data-gallery-index')))
+          .map((button) => {
+            const img = button.querySelector('img');
+            return {
+              src: img?.getAttribute('src') || '',
+              alt: img?.getAttribute('alt') || '',
+              trigger: button,
+            };
+          });
       };
 
       const renderItem = (index) => {
@@ -473,8 +491,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         caption.textContent = item.alt;
       };
 
-      const openLightbox = (gallery, index, trigger) => {
-        currentGalleryItems = buildItems(gallery);
+      const openLightbox = (galleryName, index, trigger) => {
+        currentGalleryItems = buildItems(galleryName);
         lastTrigger = trigger || null;
         renderItem(index);
 
@@ -513,7 +531,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         renderItem(nextIndex);
       };
 
-      galleries.forEach((gallery) => {
+      galleryWrappers.forEach((gallery) => {
         gallery.addEventListener('click', (event) => {
           const target = event.target;
           if (!(target instanceof Element)) return;
@@ -522,10 +540,14 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
           if (!trigger) return;
 
           event.preventDefault();
+
           const index = Number(trigger.getAttribute('data-gallery-index'));
           if (Number.isNaN(index)) return;
 
-          openLightbox(gallery, index, trigger);
+          const galleryName = gallery.getAttribute('data-gallery');
+          if (!galleryName) return;
+
+          openLightbox(galleryName, index, trigger);
         });
       });
 

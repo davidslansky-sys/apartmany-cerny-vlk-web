@@ -1,0 +1,23 @@
+/online-rezervace /#rezervace 301
+/apartmany /#apartmany 301
+/cenik /#rezervace 301
+/vybaveni /vybaveni 301
+/aktivity /okoli 301
+/blog / 301
+/kontakt / 301
+
+/de/online-rezervace /de/#rezervace 301
+/de/apartmany /de/#apartmany 301
+/de/cenik /de/#rezervace 301
+/de/vybaveni /de/vybaveni 301
+/de/aktivity /de/okoli 301
+/de/blog /de/ 301
+/de/kontakt /de/ 301
+
+/en/online-rezervace /en/#rezervace 301
+/en/apartmany /en/#apartmany 301
+/en/cenik /en/#rezervace 301
+/en/vybaveni /en/vybaveni 301
+/en/aktivity /en/okoli 301
+/en/blog /en/ 301
+/en/kontakt /en/ 301

@@ -298,7 +298,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       </div>
 
       <div class="recenze-cta reveal">
-        <a href="/de/recenze">→ Alle Bewertungen lesen</a>
+        <a href="/de/recenze" class="btn-primary">Alle Bewertungen lesen</a>
       </div>
     </div>
   </section>
@@ -345,7 +345,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
   <style>
     .okoli-actions,
-    .home-secondary-actions {
+    .home-secondary-actions,
+    .recenze-cta {
       margin-top: 1.75rem;
       display: flex;
       flex-wrap: wrap;
@@ -394,13 +395,15 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     }
 
     @media (max-width: 720px) {
-      .home-secondary-actions {
+      .home-secondary-actions,
+      .recenze-cta {
         flex-direction: column;
         align-items: stretch;
       }
 
       .home-secondary-actions .btn-primary,
-      .home-secondary-actions .btn-secondary {
+      .home-secondary-actions .btn-secondary,
+      .recenze-cta .btn-primary {
         width: 100%;
       }
     }

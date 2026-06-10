@@ -1,0 +1,602 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Apartment amenities | Apartmány Černý vlk"
+  description="See the complete amenities of Apartmány Černý vlk in Borová Lada. Kitchen, Smart TV with MAX, Wi‑Fi, children’s equipment, safety features, storage space and a detailed list of everything available during your stay."
+  image="/images/vybaveni/pribory.jpg"
+>
+  <Header />
+
+  <section class="hero" id="uvod">
+    <div
+      class="hero-bg"
+      style="background-image:url('/images/vybaveni/pribory.jpg');"
+      aria-hidden="true"
+    ></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Amenities</p>
+
+      <h1>
+        Elevated comfort.
+        <em>Inside and out.</em>
+      </h1>
+
+      <p class="hero-perex">
+        We equip the houses so that you will find everything you need for an active stay or a peaceful holiday,
+        whether you arrive as a couple, with children or with a group of friends.
+      </p>
+
+      <div class="equipment-hero-actions">
+        <a href="#detailni-seznam" class="equipment-btn equipment-btn--primary">
+          Full amenities list
+        </a>
+        <a href="/en" class="equipment-btn equipment-btn--ghost">
+          View apartments
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">Scroll</div>
+  </section>
+
+  <section class="equipment-intro">
+    <div class="section-inner equipment-intro__grid">
+      <div>
+        <p class="section-label">How it works here</p>
+        <h2 class="section-title">We approach amenities so your stay feels <em>as comfortable as possible</em></h2>
+      </div>
+
+      <div class="equipment-copy">
+        <p>
+          We keep improving and fine-tuning the amenities based on what guests actually use during their stay.
+          Our goal is that you do not need to bring unnecessary extras and that everything is ready when you arrive.
+        </p>
+        <p>
+          All apartments can use the shared utility room with a washing machine and dryer in each house,
+          and free parking directly in front of the buildings is naturally included.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="equipment-highlights">
+    <div class="section-inner">
+      <p class="section-label">Main highlights</p>
+      <h2 class="section-title">What guests appreciate <em>the most</em></h2>
+
+      <div class="highlights-grid">
+        <article class="highlight-card highlight-card--wide">
+          <h3>Comfort from the moment you arrive</h3>
+          <p>
+            We can set the temperature in individual rooms before your arrival according to your preferences.
+            In the Blue and Grey apartments, you can then regulate the temperature yourselves as well.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Code locks</h3>
+          <p>
+            You enter both the house and the apartments using code locks, so there is no need to arrange
+            an exact arrival time or key handover.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Fully equipped kitchen</h3>
+          <p>
+            Fridge with freezer, hob, oven, microwave, French Press, Nespresso Original
+            and a wide range of cookware and kitchen utensils.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Smart TV and MAX</h3>
+          <p>
+            The main room includes a Smart TV with an active MAX subscription and other internet apps
+            available to you throughout your stay.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Wi‑Fi throughout the house</h3>
+          <p>
+            Stable internet is available throughout the whole house, whether you are here to relax,
+            watch a film in the evening or work remotely during your stay.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Families with children</h3>
+          <p>
+            Children’s tableware, potties, baby cots and other equipment for younger guests are available on request.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Safety</h3>
+          <p>
+            Each apartment is equipped with an alarm and smoke detectors. Security cameras cover the shared areas,
+            the sports storage area and the parking spaces.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Sports facilities</h3>
+          <p>
+            Each apartment has its own storage room, and there is also a boot dryer, clothes drying rack and a multipurpose room
+            with a bike repair stand and tools, as well as a waxing and service table for cross-country skis.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="equipment-sections">
+    <div class="section-inner">
+      <div class="feature-stack">
+        <article class="feature-block">
+          <div class="feature-block__intro">
+            <p class="section-label">Kitchen</p>
+            <h2 class="section-title">A fully equipped kitchen <em>without compromise</em></h2>
+          </div>
+          <div class="feature-block__content">
+            <p>
+              A fully equipped kitchen is available – a fridge with freezer, ceramic or induction hob,
+              multifunction oven and microwave.
+            </p>
+            <p>
+              Coffee lovers will appreciate both the French Press and the Nespresso Original capsule machine.
+              A wide selection of cookware and kitchen utensils is also included, so you can cook and bake without limitations.
+            </p>
+            <p>
+              You do not need to bring small everyday essentials either – everything is ready,
+              including sponges, dish towels, washing-up liquid and dishwasher tablets.
+            </p>
+          </div>
+        </article>
+
+        <article class="feature-block">
+          <div class="feature-block__intro">
+            <p class="section-label">Entertainment and comfort</p>
+            <h2 class="section-title">Smart entertainment and amenities for <em>everyday comfort</em></h2>
+          </div>
+          <div class="feature-block__content">
+            <p>
+              The main room includes a Smart TV with an active MAX subscription and other internet apps
+              available to you during your stay.
+            </p>
+            <p>
+              Bed linen, a towel and a bath towel are provided for every guest. Each apartment also includes a hairdryer
+              and basic toiletries such as liquid soap, shower gel, shampoo, toilet paper
+              and air freshener.
+            </p>
+          </div>
+        </article>
+
+        <article class="feature-block">
+          <div class="feature-block__intro">
+            <p class="section-label">Practical facilities</p>
+            <h2 class="section-title">The things you will genuinely <em>appreciate during your stay</em></h2>
+          </div>
+          <div class="feature-block__content">
+            <p>
+              All apartments can use the shared utility room with a washing machine and dryer in each house.
+              In addition, every apartment has access to a storage room with extra space.
+            </p>
+            <p>
+              In the bedrooms you will find shelves, wardrobe walls with hangers, wardrobes or large drawers under the beds,
+              depending on the specific room.
+            </p>
+          </div>
+        </article>
+
+        <article class="feature-block">
+          <div class="feature-block__intro">
+            <p class="section-label">Safety and sport</p>
+            <h2 class="section-title">Safe facilities even for an active stay <em>in Šumava</em></h2>
+          </div>
+          <div class="feature-block__content">
+            <p>
+              We also think about safety – every apartment is equipped with an alarm and smoke detectors,
+              there is a security camera in the central corridor of each house, and another camera monitors the sports storage area and the parking spaces.
+            </p>
+            <p>
+              In the garage building, you have access to a camera-monitored multipurpose room
+              where sports equipment can be stored safely and where you can use a bike repair stand and tools
+              or a service table for cross-country skis.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="equipment-detail" id="detailni-seznam">
+    <div class="section-inner">
+      <div class="equipment-detail__heading">
+        <div>
+          <p class="section-label">Complete overview</p>
+          <h2 class="section-title">Detailed list of <em>amenities</em></h2>
+        </div>
+        <p class="equipment-detail__note">
+          Below you will find the full list of amenities available to guests in the apartments.
+        </p>
+      </div>
+
+      <div class="detail-list">
+        <article class="detail-card">
+          <h3>Kitchen equipment</h3>
+          <ul>
+            <li>dish towels, sponge and dish cloth, washing-up liquid, dishwasher tablets, kitchen paper towels</li>
+            <li>baking tray and oven rack, oven gloves, trivets for hot pots</li>
+            <li>wooden spoons, spatulas, scraper, pastry brush, whisk, potato masher, turner, ladles, kitchen tongs</li>
+            <li>scissors, set of sharp knives</li>
+            <li>egg slicer, garlic press</li>
+            <li>bottle opener / corkscrew, peeler</li>
+            <li>cutlery</li>
+            <li>set of plates – deep, flat, dessert plates, bowls</li>
+            <li>tea and coffee mugs</li>
+            <li>glasses for water, latte, sparkling wine, wine, shots</li>
+            <li>pasta strainer, steaming insert</li>
+            <li>frying pan</li>
+            <li>set of pots with lids</li>
+            <li>grater</li>
+            <li>measuring jug, citrus juicer</li>
+            <li>tea pot, French Press</li>
+            <li>water carafe</li>
+            <li>large salad bowl</li>
+            <li>cutting boards</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Kitchen appliances</h3>
+          <ul>
+            <li>fridge</li>
+            <li>freezer</li>
+            <li>dishwasher</li>
+            <li>stove (electric or induction)</li>
+            <li>oven</li>
+            <li>microwave</li>
+            <li>electric kettle</li>
+            <li>Nespresso Original capsule machine</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Food basics</h3>
+          <ul>
+            <li>coffee capsules</li>
+            <li>tea</li>
+            <li>sugar</li>
+            <li>salt</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Cleaning supplies</h3>
+          <ul>
+            <li>dustpan and brush</li>
+            <li>floor cloth</li>
+            <li>broom</li>
+            <li>bucket</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Bathroom equipment</h3>
+          <ul>
+            <li>bath towels</li>
+            <li>hand towels</li>
+            <li>bath mat</li>
+            <li>toilet paper</li>
+            <li>liquid hand soap</li>
+            <li>shower gel and shampoo</li>
+            <li>air freshener</li>
+            <li>hairdryer</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Other</h3>
+          <ul>
+            <li>clothes drying rack</li>
+            <li>boot dryer for 4 pairs of shoes</li>
+            <li>metal shoe rack</li>
+            <li>shoehorn</li>
+            <li>disinfectant</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="equipment-cta">
+    <div class="section-inner equipment-cta__inner">
+      <div>
+        <p class="section-label">Booking</p>
+        <h2 class="section-title">Now that the amenities are clear, all that remains is to choose your <em>apartment</em></h2>
+      </div>
+      <div class="equipment-cta__actions">
+        <a href="/en" class="equipment-btn equipment-btn--primary">
+          View apartments
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang="en" />
+
+  <style>
+    .equipment-intro,
+    .equipment-highlights,
+    .equipment-sections,
+    .equipment-detail,
+    .equipment-cta {
+      padding: clamp(4.5rem, 7vw, 7rem) 0;
+    }
+
+    .equipment-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .equipment-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.2rem;
+      padding: 0.9rem 1.35rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .equipment-btn--primary,
+    .equipment-btn--primary:link,
+    .equipment-btn--primary:visited {
+      background-color: #6f8f6b;
+      border-color: #6f8f6b;
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(30, 40, 30, 0.18);
+    }
+
+    .equipment-btn--primary:hover,
+    .equipment-btn--primary:focus-visible {
+      background-color: #5f7d5b;
+      border-color: #5f7d5b;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(30, 40, 30, 0.22);
+    }
+
+    .equipment-btn--primary:active {
+      transform: translateY(0);
+      background-color: #557051;
+      border-color: #557051;
+      color: #ffffff;
+    }
+
+    .equipment-btn--ghost,
+    .equipment-btn--ghost:link,
+    .equipment-btn--ghost:visited {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.32);
+      color: #ffffff;
+      box-shadow: none;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .equipment-btn--ghost:hover,
+    .equipment-btn--ghost:focus-visible {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.46);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .equipment-btn--ghost:active {
+      transform: translateY(0);
+      background-color: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.52);
+      color: #ffffff;
+    }
+
+    .equipment-intro__grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .equipment-copy p,
+    .highlight-card p,
+    .feature-block__content p,
+    .equipment-detail__note {
+      margin: 0 0 1rem;
+      font-size: 1.04rem;
+      line-height: 1.85;
+      color: var(--color-text);
+    }
+
+    .equipment-highlights {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .highlight-card {
+      padding: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 1.4rem;
+      background: var(--color-card);
+    }
+
+    .highlight-card--wide {
+      grid-column: span 2;
+    }
+
+    .highlight-card h3,
+    .detail-card h3 {
+      margin: 0 0 0.85rem;
+      font-size: 1.35rem;
+      line-height: 1.15;
+      color: var(--color-heading);
+    }
+
+    .feature-stack {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .feature-block {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      padding: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 1.5rem;
+      background: var(--color-card);
+    }
+
+    .feature-block__content p:last-child,
+    .highlight-card p:last-child,
+    .equipment-copy p:last-child,
+    .equipment-detail__note:last-child {
+      margin-bottom: 0;
+    }
+
+    .equipment-detail {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .equipment-detail__heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+
+    .equipment-detail__note {
+      max-width: 30rem;
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .detail-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .detail-card {
+      padding: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 1.4rem;
+      background: var(--color-card);
+    }
+
+    .detail-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .detail-card li {
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    .equipment-cta__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .equipment-cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 1080px) {
+      .equipment-intro__grid,
+      .feature-block,
+      .equipment-cta__inner {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .highlights-grid,
+      .detail-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .highlight-card--wide {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .equipment-detail__heading,
+      .equipment-cta__inner {
+        display: grid;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .highlights-grid,
+      .detail-list {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-card--wide {
+        grid-column: auto;
+      }
+
+      .equipment-hero-actions,
+      .equipment-cta__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .equipment-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</BaseLayout>

@@ -204,7 +204,7 @@ import PrevioWidget from '../components/PrevioWidget.astro';
 
       <div class="home-secondary-actions reveal">
         <a href="/#rezervace" class="btn-primary">Zobrazit dostupnost</a>
-        <a href="/vybaveni/" class="btn-secondary">Společné vybavení a služby</a>
+        <a href="/vybaveni" class="btn-secondary">Společné vybavení a služby</a>
       </div>
     </div>
   </section>
@@ -354,7 +354,9 @@ import PrevioWidget from '../components/PrevioWidget.astro';
     }
 
     .home-secondary-actions .btn-primary,
-    .home-secondary-actions .btn-secondary {
+    .home-secondary-actions .btn-secondary,
+    .okoli-actions .btn-primary,
+    .recenze-cta .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -370,6 +372,28 @@ import PrevioWidget from '../components/PrevioWidget.astro';
         border-color 180ms ease,
         color 180ms ease,
         box-shadow 180ms ease;
+    }
+
+    .home-secondary-actions .btn-primary,
+    .home-secondary-actions .btn-primary:link,
+    .home-secondary-actions .btn-primary:visited,
+    .okoli-actions .btn-primary,
+    .okoli-actions .btn-primary:link,
+    .okoli-actions .btn-primary:visited,
+    .recenze-cta .btn-primary,
+    .recenze-cta .btn-primary:link,
+    .recenze-cta .btn-primary:visited {
+      color: #ffffff;
+    }
+
+    .home-secondary-actions .btn-primary:hover,
+    .home-secondary-actions .btn-primary:focus-visible,
+    .okoli-actions .btn-primary:hover,
+    .okoli-actions .btn-primary:focus-visible,
+    .recenze-cta .btn-primary:hover,
+    .recenze-cta .btn-primary:focus-visible {
+      color: #ffffff;
+      text-decoration: none;
     }
 
     .home-secondary-actions .btn-secondary,

@@ -1,0 +1,139 @@
+{
+  "$ref": "#/definitions/apartments",
+  "definitions": {
+    "apartments": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": [
+            "cerveny",
+            "zluty",
+            "zeleny",
+            "sedy",
+            "modry"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "enum": [
+            "cs",
+            "de",
+            "en"
+          ]
+        },
+        "slug": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "navTitle": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "capacityText": {
+          "type": "string"
+        },
+        "capacityBase": {
+          "type": "number"
+        },
+        "extraBeds": {
+          "type": "number"
+        },
+        "sizeM2": {
+          "type": "number"
+        },
+        "houseNumber": {
+          "type": "string",
+          "enum": [
+            "116",
+            "117"
+          ]
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "amenities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "gallery": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "heroImage": {
+          "type": "string"
+        },
+        "seo": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "ogImage": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "description"
+          ],
+          "additionalProperties": false
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "originalHtml": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "sortOrder": {
+          "type": "number"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "lang",
+        "slug",
+        "title",
+        "summary",
+        "capacityText",
+        "capacityBase",
+        "sizeM2",
+        "heroImage",
+        "seo",
+        "sortOrder"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -95,6 +95,7 @@ const switchEn = getRelativeLocaleUrl('en', '/');
     <span class="nav-logo-text">{t('brand.name')}</span>
   </a>
 
+  <!-- Desktop nav links -->
   <div class="nav-links">
     <a href={`${homeUrl}#apartmany`} aria-current={currentSection === 'apartmany' ? 'page' : undefined}>
       {t('nav.apartments')}
@@ -141,18 +142,42 @@ const switchEn = getRelativeLocaleUrl('en', '/');
     </button>
   </div>
 
-  <div
+  <!-- Mobile hamburger — OPRAVENO: <button> místo <div> pro iOS Safari -->
+  <button
     class="nav-hamburger"
     id="hamburger"
     aria-label={t('nav.menu')}
-    role="button"
-    tabindex="0"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    type="button"
   >
     <span></span><span></span><span></span>
+  </button>
+
+  <!-- Mobile menu — NOVÉ: samostatný panel s přepínačem jazyků -->
+  <div class="nav-mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href={`${homeUrl}#apartmany`}>{t('nav.apartments')}</a>
+    <a href={`${homeUrl}#okoli`}>{t('nav.location')}</a>
+    <a href={`${homeUrl}#recenze`}>{t('nav.reviews')}</a>
+
+    <div class="nav-mobile-lang" aria-label={t('nav.lang.switcher')}>
+      <a href={switchCs} class:list={[lang === 'cs' && 'is-active']} lang="cs" hreflang="cs">
+        {t('nav.lang.cs')}
+      </a>
+      <a href={switchDe} class:list={[lang === 'de' && 'is-active']} lang="de" hreflang="de">
+        {t('nav.lang.de')}
+      </a>
+      <a href={switchEn} class:list={[lang === 'en' && 'is-active']} lang="en" hreflang="en">
+        {t('nav.lang.en')}
+      </a>
+    </div>
+
+    <a href={`${homeUrl}#rezervace`} class="nav-cta nav-mobile-cta">{t('nav.book')}</a>
   </div>
 
   <script>
     (() => {
+      // --- Theme toggle ---
       const initThemeToggle = () => {
         const button = document.querySelector('[data-theme-toggle]');
         if (!button) return;
@@ -161,17 +186,17 @@ const switchEn = getRelativeLocaleUrl('en', '/');
         const moon = button.querySelector('.theme-icon-moon');
         const root = document.documentElement;
 
-        const syncIcon = (theme) => {
+        const syncIcon = (theme: string) => {
           const isDark = theme === 'dark';
-          if (sun) sun.hidden = isDark;
-          if (moon) moon.hidden = !isDark;
+          if (sun) (sun as HTMLElement).hidden = isDark;
+          if (moon) (moon as HTMLElement).hidden = !isDark;
         };
 
         const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
         syncIcon(currentTheme);
 
-        if (button.dataset.bound === 'true') return;
-        button.dataset.bound = 'true';
+        if ((button as HTMLElement).dataset.bound === 'true') return;
+        (button as HTMLElement).dataset.bound = 'true';
 
         button.addEventListener('click', () => {
           const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
@@ -180,11 +205,130 @@ const switchEn = getRelativeLocaleUrl('en', '/');
         });
       };
 
+      // --- Mobile menu ---
+      const initMobileMenu = () => {
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('mobile-menu');
+        if (!hamburger || !menu) return;
+
+        const toggle = () => {
+          const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', String(!isOpen));
+          menu.setAttribute('aria-hidden', String(isOpen));
+          hamburger.classList.toggle('is-open', !isOpen);
+          menu.classList.toggle('is-open', !isOpen);
+          document.body.classList.toggle('nav-open', !isOpen);
+        };
+
+        // Zavřít po kliknutí na odkaz uvnitř menu
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.setAttribute('aria-expanded', 'false');
+            menu.setAttribute('aria-hidden', 'true');
+            hamburger.classList.remove('is-open');
+            menu.classList.remove('is-open');
+            document.body.classList.remove('nav-open');
+          });
+        });
+
+        hamburger.addEventListener('click', toggle);
+      };
+
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initThemeToggle, { once: true });
+        document.addEventListener('DOMContentLoaded', () => {
+          initThemeToggle();
+          initMobileMenu();
+        }, { once: true });
       } else {
         initThemeToggle();
+        initMobileMenu();
       }
     })();
   </script>
+
+  <style>
+    /* Mobile menu panel */
+    .nav-mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-surface, #fff);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem 1.25rem 1.5rem;
+      flex-direction: column;
+      gap: 0.25rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .nav-mobile-menu.is-open {
+      display: flex;
+    }
+
+    .nav-mobile-menu a {
+      display: block;
+      padding: 0.75rem 0.5rem;
+      font-size: 1.05rem;
+      color: var(--color-text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-mobile-menu a:last-of-type {
+      border-bottom: none;
+    }
+
+    .nav-mobile-lang {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-mobile-lang a {
+      border-bottom: none !important;
+      padding: 0.35rem 0.6rem !important;
+      font-size: 0.9rem !important;
+      font-weight: 500;
+      border-radius: 6px;
+      background: var(--color-surface-offset, #f3f0ec);
+    }
+
+    .nav-mobile-lang a.is-active {
+      background: var(--color-accent, #6f8f6b);
+      color: #fff;
+    }
+
+    .nav-mobile-cta {
+      margin-top: 0.75rem;
+      text-align: center;
+      background: var(--color-accent, #6f8f6b);
+      color: #fff !important;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Hamburger animace při otevření */
+    .nav-hamburger {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-hamburger.is-open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav-hamburger.is-open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .nav-hamburger.is-open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Blokovat scroll stránky při otevřeném menu */
+    body.nav-open {
+      overflow: hidden;
+    }
+  </style>
 </nav>

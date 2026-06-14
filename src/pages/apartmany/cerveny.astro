@@ -35,7 +35,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       <div class="apartment-hero__actions">
         <a href="#rezervace" class="apartment-hero-btn apartment-hero-btn--primary">Zkontrolovat dostupnost</a>
-        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost" data-scroll-gallery>Prohlédnout fotky</a>
+        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost">Prohlédnout fotky</a>
       </div>
     </div>
   </section>
@@ -436,30 +436,6 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
   <script>
     (() => {
-      const galleryLink = document.querySelector('[data-scroll-gallery]');
-      const galleryTarget = document.getElementById('galerie');
-
-      if (galleryLink && galleryTarget) {
-        galleryLink.addEventListener('click', (event) => {
-          event.preventDefault();
-
-          const header = document.getElementById('main-nav');
-          const headerHeight = header ? header.getBoundingClientRect().height : 0;
-          const extraOffset = window.innerWidth <= 720 ? 20 : 12;
-
-          const targetTop =
-            galleryTarget.getBoundingClientRect().top +
-            window.scrollY -
-            headerHeight -
-            extraOffset;
-
-          window.scrollTo({
-            top: targetTop,
-            behavior: 'smooth',
-          });
-        });
-      }
-
       const dialog = document.getElementById('gallery-lightbox');
       const image = document.getElementById('lightbox-image');
       const caption = document.getElementById('lightbox-caption');
@@ -777,6 +753,10 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       padding: clamp(4.5rem, 7vw, 7rem) 0;
     }
 
+    .apartment-gallery {
+      scroll-margin-top: 96px;
+    }
+
     .apartment-facts {
       background: var(--color-surface);
       border-top: 1px solid var(--color-border);
@@ -1045,16 +1025,18 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     }
 
     .lightbox {
-      width: min(100% - 2rem, 1200px);
-      max-width: 1200px;
+      width: min(100% - 2rem, 1000px);
+      max-width: 1000px;
       border: none;
       padding: 0;
       background: transparent;
+      color: #fff;
     }
 
     .lightbox::backdrop {
-      background: rgba(11, 12, 10, 0.78);
-      backdrop-filter: blur(4px);
+      background: rgba(10, 12, 10, 0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
 
     .lightbox__panel {
@@ -1063,29 +1045,26 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
       gap: 1rem;
-      min-height: min(80vh, 860px);
-      padding-top: 4.5rem;
+      min-height: min(78vh, 820px);
     }
 
     .lightbox__figure {
       margin: 0;
-      display: grid;
-      gap: 0.75rem;
     }
 
     .lightbox__figure img {
-      max-height: 75vh;
+      max-height: 78vh;
       object-fit: contain;
-      border-radius: 1rem;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
+      border: none;
+      background: transparent;
     }
 
     .lightbox__caption {
+      margin-top: 0.85rem;
       text-align: center;
-      color: #f4efe7;
+      color: rgba(255,255,255,0.82);
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .lightbox__close,
@@ -1141,6 +1120,10 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       .apartment-hero__content {
         padding-inline: 1rem;
+      }
+
+      .apartment-gallery {
+        scroll-margin-top: 84px;
       }
 
       .facts-grid--simple,

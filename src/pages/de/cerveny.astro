@@ -35,7 +35,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       <div class="apartment-hero__actions">
         <a href="#rezervace" class="apartment-hero-btn apartment-hero-btn--primary">Verfügbarkeit prüfen</a>
-        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost" data-scroll-gallery>Fotos ansehen</a>
+        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost">Fotos ansehen</a>
       </div>
     </div>
   </section>
@@ -333,30 +333,6 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
   <script>
     (() => {
-      const galleryLink = document.querySelector('[data-scroll-gallery]');
-      const galleryTarget = document.getElementById('galerie');
-
-      if (galleryLink && galleryTarget) {
-        galleryLink.addEventListener('click', (event) => {
-          event.preventDefault();
-
-          const header = document.getElementById('main-nav');
-          const headerHeight = header ? header.getBoundingClientRect().height : 0;
-          const extraOffset = window.innerWidth <= 720 ? 20 : 12;
-
-          const targetTop =
-            galleryTarget.getBoundingClientRect().top +
-            window.scrollY -
-            headerHeight -
-            extraOffset;
-
-          window.scrollTo({
-            top: targetTop,
-            behavior: 'smooth',
-          });
-        });
-      }
-
       const dialog = document.getElementById('gallery-lightbox');
       const image = document.getElementById('lightbox-image');
       const caption = document.getElementById('lightbox-caption');
@@ -672,6 +648,10 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     .apartment-equipment-link,
     .apartment-booking {
       padding: clamp(4.5rem, 7vw, 7rem) 0;
+    }
+
+    .apartment-gallery {
+      scroll-margin-top: 96px;
     }
 
     .apartment-facts {
@@ -1038,6 +1018,10 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       .apartment-hero__content {
         padding-inline: 1rem;
+      }
+
+      .apartment-gallery {
+        scroll-margin-top: 84px;
       }
 
       .facts-grid--simple,

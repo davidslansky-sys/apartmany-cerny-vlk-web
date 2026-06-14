@@ -490,6 +490,11 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
   </script>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 4rem;
+    }
+
     .apartment-hero {
       position: relative;
       min-height: 82svh;
@@ -651,7 +656,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     }
 
     .apartment-gallery {
-      scroll-margin-top: 96px;
+      scroll-margin-top: 0;
     }
 
     .apartment-facts {
@@ -1018,10 +1023,6 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       .apartment-hero__content {
         padding-inline: 1rem;
-      }
-
-      .apartment-gallery {
-        scroll-margin-top: 84px;
       }
 
       .facts-grid--simple,

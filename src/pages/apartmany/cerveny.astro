@@ -35,7 +35,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       <div class="apartment-hero__actions">
         <a href="#rezervace" class="apartment-hero-btn apartment-hero-btn--primary">Zkontrolovat dostupnost</a>
-        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost">Prohlédnout fotky</a>
+        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost" data-scroll-gallery>Prohlédnout fotky</a>
       </div>
     </div>
   </section>
@@ -436,6 +436,30 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
   <script>
     (() => {
+      const galleryLink = document.querySelector('[data-scroll-gallery]');
+      const galleryTarget = document.getElementById('galerie');
+
+      if (galleryLink && galleryTarget) {
+        galleryLink.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          const header = document.getElementById('main-nav');
+          const headerHeight = header ? header.getBoundingClientRect().height : 0;
+          const extraOffset = window.innerWidth <= 720 ? 20 : 12;
+
+          const targetTop =
+            galleryTarget.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight -
+            extraOffset;
+
+          window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth',
+          });
+        });
+      }
+
       const dialog = document.getElementById('gallery-lightbox');
       const image = document.getElementById('lightbox-image');
       const caption = document.getElementById('lightbox-caption');
@@ -752,17 +776,6 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     .apartment-booking {
       padding: clamp(4.5rem, 7vw, 7rem) 0;
     }
-
-#galerie {
-  scroll-margin-top: 5.5rem;
-}
-
-@media (max-width: 720px) {
-  #galerie {
-    scroll-margin-top: 6.5rem;
-  }
-}
-
 
     .apartment-facts {
       background: var(--color-surface);

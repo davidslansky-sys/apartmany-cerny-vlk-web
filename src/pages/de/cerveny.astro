@@ -5,8 +5,6 @@ import Footer from '../../components/Footer.astro';
 import PrevioWidget from '../../components/PrevioWidget.astro';
 ---
 
-
-
 <BaseLayout
   lang="de"
   title="Rotes Apartment – 8 Personen, 116 m² | Apartmány Černý vlk"
@@ -37,7 +35,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       <div class="apartment-hero__actions">
         <a href="#rezervace" class="apartment-hero-btn apartment-hero-btn--primary">Verfügbarkeit prüfen</a>
-        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost">Fotos ansehen</a>
+        <a href="#galerie" class="apartment-hero-btn apartment-hero-btn--ghost" data-scroll-gallery>Fotos ansehen</a>
       </div>
     </div>
   </section>
@@ -65,7 +63,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner apartment-intro__grid">
       <div>
         <p class="section-label">Für wen es ideal ist</p>
-        <h2 class="section-title">Wenn Sie gemeinsam sein möchten, <em>aber bequem.</em></h2>
+        <h2 class="section-title">Wenn Sie gemeinsam sein möchten, <em>aber bequem</em></h2>
       </div>
 
       <div class="apartment-copy">
@@ -200,8 +198,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     </div>
   </section>
 
-  <section class="apartment-gallery" id="galerie">
-    <div class="section-inner">
+  <section class="apartment-gallery">
+    <div class="section-inner" id="galerie">
       <div class="gallery-heading">
         <div>
           <p class="section-label">Galerie</p>
@@ -266,7 +264,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner">
       <div class="equipment-link__stack">
         <p class="section-label">Ausstattung</p>
-        <h2 class="section-title">Möchten Sie die Ausstattungsdetails kennen? <em>Hier finden Sie sie.</em></h2>
+        <h2 class="section-title">Möchten Sie die Ausstattungsdetails kennen? <em>Hier finden Sie sie </em></h2>
         <div class="equipment-link__action equipment-link__action--below">
           <a href="/de/vybaveni/" class="btn-secondary">Zur Ausstattungsseite</a>
         </div>
@@ -278,7 +276,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner booking-layout">
       <div class="booking-copy">
         <p class="section-label">Reservierung</p>
-        <h2 class="section-title">Haben Sie Ihren Termin gewählt? <em>Buchen Sie online.</em></h2>
+        <h2 class="section-title">Haben Sie Ihren Termin gewählt? <em>Buchen Sie online </em></h2>
         <p>
           Die Verfügbarkeit können Sie direkt online prüfen. Wenn Sie einen Aufenthalt für eine größere Gruppe oder die Kombination mehrerer Apartments im Haus 116 planen,
           können Sie uns auch anrufen oder schreiben.
@@ -335,6 +333,30 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
   <script>
     (() => {
+      const galleryLink = document.querySelector('[data-scroll-gallery]');
+      const galleryTarget = document.getElementById('galerie');
+
+      if (galleryLink && galleryTarget) {
+        galleryLink.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          const header = document.getElementById('main-nav');
+          const headerHeight = header ? header.getBoundingClientRect().height : 0;
+          const extraOffset = window.innerWidth <= 720 ? 20 : 12;
+
+          const targetTop =
+            galleryTarget.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight -
+            extraOffset;
+
+          window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth',
+          });
+        });
+      }
+
       const dialog = document.getElementById('gallery-lightbox');
       const image = document.getElementById('lightbox-image');
       const caption = document.getElementById('lightbox-caption');

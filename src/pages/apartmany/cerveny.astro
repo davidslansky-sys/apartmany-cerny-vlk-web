@@ -753,10 +753,6 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       padding: clamp(4.5rem, 7vw, 7rem) 0;
     }
 
-    .apartment-gallery {
-      scroll-margin-top: 96px;
-    }
-
     .apartment-facts {
       background: var(--color-surface);
       border-top: 1px solid var(--color-border);
@@ -1025,18 +1021,16 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     }
 
     .lightbox {
-      width: min(100% - 2rem, 1000px);
-      max-width: 1000px;
+      width: min(100% - 2rem, 1200px);
+      max-width: 1200px;
       border: none;
       padding: 0;
       background: transparent;
-      color: #fff;
     }
 
     .lightbox::backdrop {
-      background: rgba(10, 12, 10, 0.82);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      background: rgba(11, 12, 10, 0.78);
+      backdrop-filter: blur(4px);
     }
 
     .lightbox__panel {
@@ -1045,26 +1039,29 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
       gap: 1rem;
-      min-height: min(78vh, 820px);
+      min-height: min(80vh, 860px);
+      padding-top: 4.5rem;
     }
 
     .lightbox__figure {
       margin: 0;
+      display: grid;
+      gap: 0.75rem;
     }
 
     .lightbox__figure img {
-      max-height: 78vh;
+      max-height: 75vh;
       object-fit: contain;
-      border: none;
-      background: transparent;
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
     }
 
     .lightbox__caption {
-      margin-top: 0.85rem;
       text-align: center;
-      color: rgba(255,255,255,0.82);
+      color: #f4efe7;
       font-size: 0.95rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .lightbox__close,
@@ -1120,10 +1117,6 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       .apartment-hero__content {
         padding-inline: 1rem;
-      }
-
-      .apartment-gallery {
-        scroll-margin-top: 84px;
       }
 
       .facts-grid--simple,

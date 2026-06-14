@@ -197,8 +197,8 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     </div>
   </section>
 
-  <section class="apartment-gallery" id="galerie">
-    <div class="section-inner">
+  <section class="apartment-gallery">
+    <div class="section-inner" id="galerie">
       <div class="gallery-heading">
         <div>
           <p class="section-label">Galerie</p>
@@ -753,15 +753,16 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       padding: clamp(4.5rem, 7vw, 7rem) 0;
     }
 
-.apartment-gallery {
+#galerie {
   scroll-margin-top: 5.5rem;
 }
 
 @media (max-width: 720px) {
-  .apartment-gallery {
+  #galerie {
     scroll-margin-top: 6.5rem;
   }
 }
+
 
     .apartment-facts {
       background: var(--color-surface);

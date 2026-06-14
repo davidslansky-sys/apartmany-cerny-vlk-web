@@ -545,6 +545,7 @@ section {
   color: var(--color-primary);
   font-style: italic;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 .section-lead {

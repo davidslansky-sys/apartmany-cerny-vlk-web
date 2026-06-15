@@ -5,7 +5,6 @@ import Footer from '../../components/Footer.astro';
 import PrevioWidget from '../../components/PrevioWidget.astro';
 ---
 
-
 <BaseLayout
   lang="de"
   title="Grünes Apartment – 4+1 Personen, 56 m² | Apartmány Černý vlk"
@@ -64,7 +63,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner apartment-intro__grid">
       <div>
         <p class="section-label">Für wen es ideal ist</p>
-        <h2 class="section-title">Wenn Sie Komfort für <em>Familie und einen ruhigen Aufenthalt</em> suchen.</h2>
+        <h2 class="section-title">Wenn Sie Komfort für <em>Familie und einen ruhigen Aufenthalt</em> suchen</h2>
       </div>
 
       <div class="apartment-copy">
@@ -234,7 +233,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner">
       <div class="equipment-link__stack">
         <p class="section-label">Ausstattung</p>
-        <h2 class="section-title">Möchten Sie die Ausstattungsdetails kennen? <em>Hier finden Sie sie.</em></h2>
+        <h2 class="section-title">Möchten Sie die Ausstattungsdetails kennen? <em>Hier finden Sie sie</em></h2>
         <div class="equipment-link__action equipment-link__action--below">
           <a href="/de/vybaveni/" class="btn-secondary">Zur Ausstattungsseite</a>
         </div>
@@ -246,7 +245,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner booking-layout">
       <div class="booking-copy">
         <p class="section-label">Reservierung</p>
-        <h2 class="section-title">Haben Sie Ihren Termin gewählt? <em>Buchen Sie online.</em></h2>
+        <h2 class="section-title">Haben Sie Ihren Termin gewählt? <em>Buchen Sie online</em></h2>
         <p>
           Die Verfügbarkeit können Sie direkt online prüfen. Wenn Sie einen Aufenthalt in mehreren Apartments im Haus 116 planen,
           können Sie uns auch anrufen oder schreiben.
@@ -442,6 +441,15 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
   </script>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 3.5rem;
+    }
+
+    .apartment-gallery {
+      scroll-margin-top: 0;
+    }
+
     .apartment-hero {
       position: relative;
       min-height: 82svh;

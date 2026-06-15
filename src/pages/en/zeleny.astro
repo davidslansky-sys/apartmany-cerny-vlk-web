@@ -8,7 +8,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 <BaseLayout
   lang="en"
   title="Green apartment – up to 5 guests, 56 m² | Apartmány Černý vlk"
-  description="Comfortable apartment in house no. 116 for up to 5 guests. Two bedrooms, a practical layout and north-east orientation for a pleasant stay in Šumava."
+  description="Comfortable apartment in house no. 116 for 4 to 5 guests. Two bedrooms, a practical layout and north-east orientation for a pleasant stay in Šumava."
   image="/images/apartmany/zeleny/zeleny-01.jpg"
 >
   <Header />
@@ -29,7 +29,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
       <p class="apartment-hero__eyebrow">Apartment in house no. 116</p>
       <h1>Green apartment</h1>
       <p class="apartment-hero__lead">
-        A practically designed apartment for a family or a smaller group of guests looking for peaceful accommodation,
+        A practically designed apartment for a family or a smaller group of guests looking for quiet accommodation,
         two separate bedrooms and a comfortable stay in the heart of Šumava.
       </p>
 
@@ -49,7 +49,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
         </div>
         <div class="fact-card">
           <span class="fact-label">Capacity</span>
-          <strong>Up to 5 guests</strong>
+          <strong>up to 5 guests</strong>
         </div>
         <div class="fact-card">
           <span class="fact-label">Bedrooms</span>
@@ -63,21 +63,21 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner apartment-intro__grid">
       <div>
         <p class="section-label">Who it is ideal for</p>
-        <h2 class="section-title">When you are looking for comfort for <em>family stays and quiet time</em>.</h2>
+        <h2 class="section-title">When you are looking for comfort for <em>family stays and quiet time</em></h2>
       </div>
 
       <div class="apartment-copy">
         <p>
           The Green apartment is suitable for a family with children, two couples or a smaller group of guests
-          who want enough comfort during their stay together with a practically arranged space.
+          who want comfort during their stay together with a practical layout.
         </p>
         <p>
-          Thanks to its north and east orientation, the apartment feels fresh and calm and offers pleasant natural light,
-          especially in the morning and before noon.
+          Thanks to its north and east orientation, the apartment feels fresh and calm and offers pleasant daylight,
+          especially in the morning and late morning hours.
         </p>
         <p>
           The layout is designed for a comfortable weekend stay as well as a longer holiday, when you will appreciate separate bedrooms,
-          a shared living area and facilities that work well for everyday living.
+          a shared living area and facilities that work well for everyday use.
         </p>
       </div>
     </div>
@@ -168,7 +168,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
       <div class="highlights-grid">
         <article class="highlight-card">
-          <h3>Ideal for up to 5 guests</h3>
+          <h3>Ideal for 4 to 5 guests</h3>
           <p>The size and layout work well for families, two couples or a smaller group that wants to stay together while still enjoying comfort.</p>
         </article>
 
@@ -179,7 +179,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
 
         <article class="highlight-card">
           <h3>North-east orientation</h3>
-          <p>The apartment feels fresh and calm and offers pleasant daylight especially in the morning and before noon.</p>
+          <p>The apartment feels fresh and calm and offers pleasant daylight especially in the morning and late morning hours.</p>
         </article>
 
         <article class="highlight-card">
@@ -233,7 +233,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner">
       <div class="equipment-link__stack">
         <p class="section-label">Amenities</p>
-        <h2 class="section-title">Need to know the amenity details? <em>You can find them here.</em></h2>
+        <h2 class="section-title">Need to know the amenity details? <em>You can find them here</em></h2>
         <div class="equipment-link__action equipment-link__action--below">
           <a href="/en/vybaveni/" class="btn-secondary">Go to the amenities page</a>
         </div>
@@ -245,7 +245,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner booking-layout">
       <div class="booking-copy">
         <p class="section-label">Booking</p>
-        <h2 class="section-title">Have you chosen your date? <em>Book online.</em></h2>
+        <h2 class="section-title">Have you chosen your date? <em>Book online</em></h2>
         <p>
           You can check availability directly online. If you are planning a stay in several apartments in house 116,
           you can also call or write to us.
@@ -441,6 +441,15 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
   </script>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 3.5rem;
+    }
+
+    .apartment-gallery {
+      scroll-margin-top: 0;
+    }
+
     .apartment-hero {
       position: relative;
       min-height: 82svh;

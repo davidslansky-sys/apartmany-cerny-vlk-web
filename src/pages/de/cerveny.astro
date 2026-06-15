@@ -5,20 +5,18 @@ import Footer from '../../components/Footer.astro';
 import PrevioWidget from '../../components/PrevioWidget.astro';
 ---
 
-
-
 <BaseLayout
   lang="de"
   title="Rotes Apartment – 8 Personen, 116 m² | Apartmány Černý vlk"
   description="Das größte Apartment im Haus Nr. 116 für bis zu 8 Personen. Drei Schlafzimmer, ein großzügiger Gemeinschaftsraum über das gesamte Erdgeschoss und komfortable Ausstattung für Familien und Freundesgruppen."
-  image="/images/apartmany/cerveny/cerveny-01.jpg"
+  image="/images/apartmany/cerveny/cerveny-16.jpg"
 >
   <Header />
 
   <section class="apartment-hero">
     <div class="apartment-hero__media">
       <img
-        src="/images/apartmany/cerveny/cerveny-01.jpg"
+        src="/images/apartmany/cerveny/cerveny-16.jpg"
         alt="Rotes Apartment – Hauptwohnbereich"
         width="1600"
         height="900"
@@ -65,7 +63,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner apartment-intro__grid">
       <div>
         <p class="section-label">Für wen es ideal ist</p>
-        <h2 class="section-title">Wenn Sie gemeinsam sein möchten, <em>aber bequem.</em></h2>
+        <h2 class="section-title">Wenn Sie gemeinsam sein möchten, <em>aber bequem</em></h2>
       </div>
 
       <div class="apartment-copy">
@@ -266,7 +264,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner">
       <div class="equipment-link__stack">
         <p class="section-label">Ausstattung</p>
-        <h2 class="section-title">Möchten Sie die Ausstattungsdetails kennen? <em>Hier finden Sie sie.</em></h2>
+        <h2 class="section-title">Möchten Sie die Ausstattungsdetails kennen? <em>Hier finden Sie sie </em></h2>
         <div class="equipment-link__action equipment-link__action--below">
           <a href="/de/vybaveni/" class="btn-secondary">Zur Ausstattungsseite</a>
         </div>
@@ -278,7 +276,7 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     <div class="section-inner booking-layout">
       <div class="booking-copy">
         <p class="section-label">Reservierung</p>
-        <h2 class="section-title">Haben Sie Ihren Termin gewählt? <em>Buchen Sie online.</em></h2>
+        <h2 class="section-title">Haben Sie Ihren Termin gewählt? <em>Buchen Sie online </em></h2>
         <p>
           Die Verfügbarkeit können Sie direkt online prüfen. Wenn Sie einen Aufenthalt für eine größere Gruppe oder die Kombination mehrerer Apartments im Haus 116 planen,
           können Sie uns auch anrufen oder schreiben.
@@ -492,6 +490,11 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
   </script>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 3.5rem;
+    }
+
     .apartment-hero {
       position: relative;
       min-height: 82svh;
@@ -650,6 +653,10 @@ import PrevioWidget from '../../components/PrevioWidget.astro';
     .apartment-equipment-link,
     .apartment-booking {
       padding: clamp(4.5rem, 7vw, 7rem) 0;
+    }
+
+    .apartment-gallery {
+      scroll-margin-top: 0;
     }
 
     .apartment-facts {
